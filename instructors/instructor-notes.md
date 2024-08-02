@@ -1,5 +1,5 @@
 ---
-title: 'Instructor Notes'
+title: 'Notizen'
 ---
 
-This is a placeholder file. Please add content here. 
+Bislang keine Notizen
