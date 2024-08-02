@@ -17,3 +17,5 @@ StripTrailingWhitespace: Yes
 LineEndingConversion: Posix
 
 BuildType: Website
+
+SpellingDictionary: de_DE_neu

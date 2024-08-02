@@ -2,8 +2,7 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench]. 
+Dieser Kurs wird Sie durch die Installation und Konfiguration eines linuxbasierten Servers zum Dateimanagement ("Cloudserver") führen. Hierbei wird als Hardware der [Minicomputer Raspberry Pi](https://www.raspberrypi.com) eingesetzt, als [Betriebssystem Raspberry Pi OS](https://www.raspberrypi.com/software/) und als Software [Nextcloud](https://www.nextcloud.com)
 
-
-[workbench]: https://carpentries.github.io/sandpaper-docs
+Diese Kursseite wurde dabei mit dem [The Carpentries Workbench][workbench] erstellt. 
 
