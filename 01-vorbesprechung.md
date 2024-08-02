@@ -1,5 +1,5 @@
 ---
-title: '01 Vorbesprechung'
+title: 'Vorbesprechung'
 teaching: 45
 exercises: 90
 ---
