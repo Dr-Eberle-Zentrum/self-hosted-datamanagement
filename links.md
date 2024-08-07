@@ -7,4 +7,6 @@ any links that you are not going to use.
 [r-markdown]: https://rmarkdown.rstudio.com/
 [rstudio]: https://www.rstudio.com/
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
+[github]: https://dr-eberle-zentrum.github.io/self-hosted-datamanagement/
+[ilias]: https://ovidius.uni-tuebingen.de/
 
