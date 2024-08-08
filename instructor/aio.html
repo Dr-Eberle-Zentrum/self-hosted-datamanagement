@@ -253,6 +253,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-hardware-betriebssystem.html">2. Hardware und Betriebssystem</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -310,7 +322,7 @@
         
 <section id="aio-01-vorbesprechung"><p>Content from <a href="01-vorbesprechung.html">Vorbesprechung</a></p>
 <hr>
-<p>Last updated on 2024-08-07 |
+<p>Last updated on 2024-08-08 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/01-vorbesprechung.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
@@ -446,7 +458,7 @@ Situation?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>In diesem Fall ist einiges schief gelaufen. Wir werden darüber in der
 ersten Präsenzsitzung diskutieren.</p>
@@ -506,7 +518,7 @@ welchen Bereichen können Sie noch “mündiger” werden?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Nutzen Sie ein kostenloses E-Mailpostfach? Speichern Sie Daten in
 verdächtig günstigen Onlinespeichern? Wie abhängig sind Sie von Big Tech
@@ -537,8 +549,11 @@ Selbstbestimmtheit.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="mehr-zu-digitaler-selbstbestimmtheit-und-selbstverteidigung">Mehr zu digitaler Selbstbestimmtheit und Selbstverteidigung<a class="anchor" aria-label="anchor" href="#mehr-zu-digitaler-selbstbestimmtheit-und-selbstverteidigung"></a>
+<h3 id="noch-mehr-zu-digitaler-selbstbestimmtheit-und-selbstverteidigung">Noch mehr zu digitaler Selbstbestimmtheit und
+Selbstverteidigung<a class="anchor" aria-label="anchor" href="#noch-mehr-zu-digitaler-selbstbestimmtheit-und-selbstverteidigung"></a>
 </h3>
+<p>Noch mehr Informationen zum Thema finden Sie bei Interesse unter
+anderem bei den folgenden Quellen:</p>
 <ul>
 <li><p><a href="https://github.com/Dr-Eberle-Zentrum/Digitale-Selbstverteidigung" class="external-link">Seminar
 zur digitalen Selbstverteidigung</a></p></li>
@@ -766,6 +781,190 @@ any links that you are not going to use.
 <li id="fn1"><p>L. Simon, Digitale Mündigkeit - Wie wir mit einer neuen
 Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
+</div></section><section id="aio-02-hardware-betriebssystem"><p>Content from <a href="02-hardware-betriebssystem.html">Hardware und Betriebssystem</a></p>
+<hr>
+<p>Last updated on 2024-08-08 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/02-hardware-betriebssystem.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li><p>Was steht am Anfang eines jeden IT-Projekts?</p></li>
+<li><p>Welche Betriebssystem-Optionen gibt es?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Raspberry Pi Set zusammen bauen</li>
+<li>Raspberry Pi erstmalig starten</li>
+<li>Erste administrative Schritte mit dem Raspberry Pi</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level1">
+<h1 id="die-hard--und-software">Die Hard- und Software<a class="anchor" aria-label="anchor" href="#die-hard--und-software"></a>
+</h1>
+<div class="section level2">
+<h2 id="hardware">Hardware<a class="anchor" aria-label="anchor" href="#hardware"></a>
+</h2>
+<p>Zu Beginn der meisten IT-Projekte steht die Frage, wo diese Projekte
+umgesetzt werden sollen. Dabei gibt es heutzutage unterschiedliche
+Möglichkeiten. Abgesehen von Tests auf lokalen Endgeräten wie PC oder
+Notebook, werden für viele Projekte spezialisierte Geräte genutzt. Vor
+allem für Firmen, Rechenzentren und andere Hochleistungsszenarien werden
+hierfür Computer mit Prozessoren, Festplatten, Arbeitsspeichern und
+anderer Hardware eingesetzt, die für diese anspruchsvollen Aufgaben
+geeignet sind.</p>
+<p>Für dezentrale Projekte können sogenannte Embedded Devices genutzt
+werden. Hierbei handelt es sich häufig um Spezialanfertigungen für genau
+einen Einsatzzweck, z.B. als Kassensystem oder Waage im Supermarkt oder
+Informationdisplays im öffentlichen Raum. Für diese Geräte werden auch
+spezielle Betriebssysteme und Software benötigt.</p>
+<p>Für kleinere Projekte wie Heimanwender können normale PCs genutzt
+werden. Passender für Projekte mit wenig Leistungsanspruch (und im
+Heimanwenderbereich ist das i.d.R. der Fall) sind Mini-PCs, bei denen
+sämtliche oder die meisten Bauteile (Prozessor, Arbeitsspeicher,
+Datenspeicher und externe Schnittstellen wie Netzwerk und USB) auf einer
+Platine verbaut sind. Diese sogenannten Systems-on-a-Chip (SoC) haben
+den Vorteil, dass sie besonders energiesparsam sind, wenig Platz
+benötigen, keinen oder kaum Lärm verursachen und im Vergleich mit
+herkömmlichen PCs oder gar professionellen Servern deutlich günstiger
+sind.</p>
+</div>
+<div class="section level2">
+<h2 id="server-vs--client">Server vs. Client<a class="anchor" aria-label="anchor" href="#server-vs--client"></a>
+</h2>
+<p>Bezogen auf ihre Funktion innerhalb eines Computernetzwerks werden
+diese Gerät unterschiedlich bezeichnet:</p>
+<ol style="list-style-type: decimal">
+<li>Client</li>
+</ol>
+<p>Klassische Endgerät wie PC, Notebook oder Smartphone. Hat keine
+zentralen Aufgaben. Ist ein Client-Gerät ausgefallen, ist das Netzwerk
+nicht betroffen.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Server</li>
+</ol>
+<p>Übernimmt als Kommunikationsknotenpunkt zentrale Aufgaben im
+Netzwerk. Je nach Leistungsbedarf wird spezialisierte
+Hochleistungshardware, normale PCs oder SoCs genutzt. Fällt ein Server
+aus, fehlt damit i.d.R. eine zentrale Funktion im Netzwerk. Je nachdem
+welche Aufgaben der Server hat, kann dies zum vollständigen versagen des
+Netzwerks führen oder nur zur nicht Erreichbarkeit eines Dienstes (z.B.
+einer Website).</p>
+</div>
+<div class="section level2">
+<h2 id="software">Software<a class="anchor" aria-label="anchor" href="#software"></a>
+</h2>
+<p>Unter Software kann all das verstanden werden, was nicht anfassbar
+ist. Also sämtlicher Programmcode, der auf einem Computer installiert
+ist. Dazu gehört sowohl das Betriebssystem, die Boot-Umgebung (welche
+das Betriebssystem lädt) aber auch alle anderen Programme wie Treiber,
+eine Firewall, ein Office-Programm oder ein Webserver-Programm.</p>
+<p>Möchte man ein bestimmtes IT-Projekt umsetzen und hat die Hardware
+besorgt, gilt es auch die richtige Software auszuwählen. Hierbei ist zu
+beachten, dass Hard- und Software miteinander kompatibel sein müssen.
+Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor.</p>
+<p>Abhängig von den Programmen, die man nutzen möchte, kann das passende
+Betriebssystem gewählt werden. Für viele Serveranwendungen, wie die in
+diesem Kurs genutzte Software <a href="https://nextcloud.com" class="external-link">Nextcloud</a>, werden Linux-Betriebssysteme
+empfohlen. In vielen Fällen werden für die Funktion des Hauptprogramms
+(in unserem Fall Nextcloud) weitere Programme benötigt. Das sind häufig
+ein <a href="https://de.wikipedia.org/wiki/Datenbank#Komponenten_eines_Datenbanksystems" class="external-link">Datenbankmanagementsystem</a>
+wie Mysql oder MariaDB, die Skriptsprache PHP, und ein Webserver wie <a href="https://httpd.apache.org/" class="external-link">Apache2</a>. In dieser Kombination
+spricht man auch von einem LAMP-Stack (<strong>L</strong>inux,
+<strong>A</strong>pache, <strong>M</strong>ysql/<strong>M</strong>ariaDB
+und <strong>P</strong>HP).</p>
+<p>Die genauen Anforderungen an die Hard- und Software sind häufig den
+Handbüchern der Programme zu entnehmen. Allerdings hängt die richtige
+Wahl auch von der Intensivität der Nutzung, persönlichen Vorlieben oder
+Vorgaben innerhalb einer Organisation ab.</p>
+<div id="system-requirements" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="system-requirements" class="callout-inner">
+<h3 class="callout-title">System requirements<a class="anchor" aria-label="anchor" href="#system-requirements"></a>
+</h3>
+<div class="callout-content">
+<p>Szenario: Sie wollen für eine kleine Forschungsgruppe (ca. 10
+Personen) eine Datenmanagement-Lösung betreiben und als Serversoftware
+<a href="https://nextcloud.com" class="external-link">Nextcloud</a> installieren.</p>
+<p>Welche Hardware wählen Sie dafür? Schauen Sie sich dafür die <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html" class="external-link">System
+requirements</a> von Nextcloud an und wählen Sie aus einer der folgenden
+Hardware-Optionen:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/" class="external-link">Raspberry
+Pi</a> 4 mit 8GB RAM und einer externen <a href="https://www.idealo.de/preisvergleich/OffersOfProduct/204400140_-mysafe-advance-3-5-usb-3-0-2tb-i-tec.html" class="external-link">2
+TB USB-HDD-Festplatte</a></p></li>
+<li><p><a href="https://www.raspberrypi.com/products/raspberry-pi-5/" class="external-link">Raspberry Pi
+5</a> mit 8GB RAM und einer <a href="https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&amp;hloc=de" class="external-link">2
+TB SSD-Festplatte</a></p></li>
+<li><p><a href="https://www.hardkernel.com/shop/odroid-h4-ultra/" class="external-link">Odroid
+H4 Ultra</a> mit <a href="https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&amp;hloc=de" class="external-link">2
+TB SSD-Festplatte</a></p></li>
+<li><p>Einen Tower Server <embed src="files/server-angebot.pdf"></embed></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Die genauen Hardwareanforderungen sind (v.a. am Anfang des Projekts
+und ohne Vorkenntnisse) schwer abzuschätzen. Geeignete Lösungen können
+aber die Nummern 2. und 3. sein. Die Nummer 4 wäre überdimensioniert und
+mit der Nummer 1. kommt das System an seine Grenzen. Auch der Raspberry
+Pi 5 ist für 10 Personen vermutlich zu schwach. Das hängt aber stark von
+der Art und Intensivität der Nutzung ab.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Hardwareaufbau: Fingerspitzengefühl ist gefragt.</li>
+<li>Kühlung: insbesondere beim Raspberry Pi 5 ist eine aktive Kühlung
+empfehlenswert, ansonsten können Kühlkörper ausreichen</li>
+<li>Der Raspberry Pi ist zunächst wie ein normaler Desktop-PC zu
+bedienen</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
 </div></section>
 </div>
     </main>
@@ -814,8 +1013,8 @@ Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footno
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/aio.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-08-07",
-  "datePublished": "2024-08-07"
+  "dateModified": "2024-08-08",
+  "datePublished": "2024-08-08"
 }
 
   </script><script>
