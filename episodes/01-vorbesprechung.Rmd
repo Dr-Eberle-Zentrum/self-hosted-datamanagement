@@ -133,7 +133,9 @@ Deshalb:
  - Community statt Großkonzern
 :::
 
-### Mehr zu digitaler Selbstbestimmtheit und Selbstverteidigung
+### Noch mehr zu digitaler Selbstbestimmtheit und Selbstverteidigung
+
+Noch mehr Informationen zum Thema finden Sie bei Interesse unter anderem bei den folgenden Quellen:
 
 - [Seminar zur digitalen Selbstverteidigung](https://github.com/Dr-Eberle-Zentrum/Digitale-Selbstverteidigung)
 

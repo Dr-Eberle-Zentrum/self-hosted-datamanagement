@@ -58,17 +58,18 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes:
+episodes: 
 - 01-vorbesprechung.Rmd
+- 02-hardware-betriebssystem.Rmd
 
 # Information for Learners
-learners:
+learners: 
 
 # Information for Instructors
-instructors:
+instructors: 
 
 # Learner Profiles
-profiles:
+profiles: 
 
 # Customisation ---------------------------------------------
 #

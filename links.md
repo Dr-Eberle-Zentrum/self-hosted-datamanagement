@@ -9,4 +9,6 @@ any links that you are not going to use.
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
 [github]: https://dr-eberle-zentrum.github.io/self-hosted-datamanagement/
 [ilias]: https://ovidius.uni-tuebingen.de/
+[nextcloud]: https://nextcloud.com
+[nextcloud-doc]: https://docs.nextcloud.com/server/latest/admin_manual/
 
