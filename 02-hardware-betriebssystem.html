@@ -303,7 +303,9 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li><p>Was steht am Anfang eines jeden IT-Projekts?</p></li>
-<li><p>Welche Betriebssystem-Optionen gibt es?</p></li>
+<li><p>Was ist ein Server, was ein Client?</p></li>
+<li><p>Welche Betriebssystem-Optionen gibt es für den Raspberry
+Pi?</p></li>
 </ul></div>
 </div>
 </div>
@@ -311,8 +313,9 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Raspberry Pi Set zusammen bauen</li>
-<li>Raspberry Pi erstmalig starten</li>
+<ul><li>Begriffsklärung</li>
+<li>Betriebssystem installieren</li>
+<li>Raspberry Pi zusammenbauen und erstmalig starten</li>
 <li>Erste administrative Schritte mit dem Raspberry Pi</li>
 </ul></div>
 </div>
@@ -328,14 +331,22 @@ umgesetzt werden sollen. Dabei gibt es heutzutage unterschiedliche
 Möglichkeiten. Abgesehen von Tests auf lokalen Endgeräten wie PC oder
 Notebook, werden für viele Projekte spezialisierte Geräte genutzt. Vor
 allem für Firmen, Rechenzentren und andere Hochleistungsszenarien werden
-hierfür Computer mit Prozessoren, Festplatten, Arbeitsspeichern und
-anderer Hardware eingesetzt, die für diese anspruchsvollen Aufgaben
-geeignet sind.</p>
+Computer mit spezialisierter Hardware wie Prozessoren, Festplatten oder
+Arbeitsspeichern eingesetzt, die für diese anspruchsvollen Aufgaben
+geeignet sind und häufig nicht mit Hardware vergleichbar ist, die in PCs
+verbaut wird.</p>
+<p>Neben eigener Hardware besteht heute auch die Möglichkeit, seine
+Projekte auf fremder Hardware umzusetzen. Diese fremde Hardware befindet
+sich in einem entfernten Rechenzentrum (“der Cloud”) und ist über das
+Internet erreich- und steuerbar. Häufig wird die Hardware dabei
+virtualisiert, d.h. das z.B. die Leistung eines echten Prozessors
+mithilfe von Software für mehrere virtuelle Computer zur Verfügung
+gestellt wird.</p>
 <p>Für dezentrale Projekte können sogenannte Embedded Devices genutzt
 werden. Hierbei handelt es sich häufig um Spezialanfertigungen für genau
 einen Einsatzzweck, z.B. als Kassensystem oder Waage im Supermarkt oder
-Informationdisplays im öffentlichen Raum. Für diese Geräte werden auch
-spezielle Betriebssysteme und Software benötigt.</p>
+als Informationsdisplay im öffentlichen Raum. Für diese Geräte werden
+auch spezielle Betriebssysteme und Software eingesetzt.</p>
 <p>Für kleinere Projekte wie Heimanwender können normale PCs genutzt
 werden. Passender für Projekte mit wenig Leistungsanspruch (und im
 Heimanwenderbereich ist das i.d.R. der Fall) sind Mini-PCs, bei denen
@@ -350,9 +361,9 @@ sind.</p>
 <div class="section level2">
 <h2 id="server-vs--client">Server vs. Client<a class="anchor" aria-label="anchor" href="#server-vs--client"></a></h2>
 <p>Bezogen auf ihre Funktion innerhalb eines Computernetzwerks werden
-diese Gerät unterschiedlich bezeichnet:</p>
+Geräte unterschiedlich bezeichnet:</p>
 <ol style="list-style-type: decimal"><li>Client</li>
-</ol><p>Klassische Endgerät wie PC, Notebook oder Smartphone. Hat keine
+</ol><p>Klassisches Endgerät wie PC, Notebook oder Smartphone. Hat keine
 zentralen Aufgaben. Ist ein Client-Gerät ausgefallen, ist das Netzwerk
 nicht betroffen.</p>
 <ol start="2" style="list-style-type: decimal"><li>Server</li>
@@ -366,15 +377,17 @@ einer Website).</p>
 </div>
 <div class="section level2">
 <h2 id="software">Software<a class="anchor" aria-label="anchor" href="#software"></a></h2>
-<p>Unter Software kann all das verstanden werden, was nicht anfassbar
-ist. Also sämtlicher Programmcode, der auf einem Computer installiert
-ist. Dazu gehört sowohl das Betriebssystem, die Boot-Umgebung (welche
-das Betriebssystem lädt) aber auch alle anderen Programme wie Treiber,
-eine Firewall, ein Office-Programm oder ein Webserver-Programm.</p>
+<p>Unter Software kann all das verstanden werden, was nicht angefasst
+werden kann. Also sämtlicher Programmcode, der auf einem Computer
+installiert ist. Dazu gehört sowohl das Betriebssystem, die
+Boot-Umgebung (welche das Betriebssystem lädt) aber auch alle anderen
+Programme wie Treiber, eine Firewall, ein Office-Programm oder ein
+Webserver-Programm.</p>
 <p>Möchte man ein bestimmtes IT-Projekt umsetzen und hat die Hardware
 besorgt, gilt es auch die richtige Software auszuwählen. Hierbei ist zu
 beachten, dass Hard- und Software miteinander kompatibel sein müssen.
-Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor.</p>
+Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor
+(siehe auch diesen <a href="https://de.wikipedia.org/wiki/Prozessorarchitektur" class="external-link">Wikipedia-Artikel</a>.</p>
 <p>Abhängig von den Programmen, die man nutzen möchte, kann das passende
 Betriebssystem gewählt werden. Für viele Serveranwendungen, wie die in
 diesem Kurs genutzte Software <a href="https://nextcloud.com" class="external-link">Nextcloud</a>, werden Linux-Betriebssysteme
@@ -404,15 +417,16 @@ Personen) eine Datenmanagement-Lösung betreiben und als Serversoftware
 requirements</a> von Nextcloud an und wählen Sie aus einer der folgenden
 Hardware-Optionen:</p>
 <ol style="list-style-type: decimal"><li><p><a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/" class="external-link">Raspberry
-Pi</a> 4 mit 8GB RAM und einer externen <a href="https://www.idealo.de/preisvergleich/OffersOfProduct/204400140_-mysafe-advance-3-5-usb-3-0-2tb-i-tec.html" class="external-link">2
+Pi 4</a> mit 8GB RAM für ca. 100€ und einer externen <a href="https://www.idealo.de/preisvergleich/OffersOfProduct/204400140_-mysafe-advance-3-5-usb-3-0-2tb-i-tec.html" class="external-link">2
 TB USB-HDD-Festplatte</a></p></li>
 <li><p><a href="https://www.raspberrypi.com/products/raspberry-pi-5/" class="external-link">Raspberry Pi
-5</a> mit 8GB RAM und einer <a href="https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&amp;hloc=de" class="external-link">2
+5</a> mit 8GB RAM für ca. 110€ und einer <a href="https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&amp;hloc=de" class="external-link">2
 TB SSD-Festplatte</a></p></li>
 <li><p><a href="https://www.hardkernel.com/shop/odroid-h4-ultra/" class="external-link">Odroid
-H4 Ultra</a> mit <a href="https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&amp;hloc=de" class="external-link">2
+H4 Ultra</a> mit einer <a href="https://geizhals.de/crucial-p310-ssd-2tb-ct2000p310ssd2-a3234426.html?hloc=at&amp;hloc=de" class="external-link">2
 TB SSD-Festplatte</a></p></li>
-<li><p>Einen Tower Server <embed src="files/server-angebot.pdf"></embed></p></li>
+<li><p>Einen Tower Server <a href="files/server-angebot.pdf">SR10766 der
+Intel Xeon E-2400 Serie</a></p></li>
 </ol></div>
 </div>
 </div>
@@ -433,7 +447,100 @@ der Art und Intensivität der Nutzung ab.</p>
 </div>
 </div>
 </div>
-<div id="keypoints1" class="callout keypoints">
+</div>
+</div>
+<div class="section level1">
+<h1 id="praktische-umsetzung">Praktische Umsetzung<a class="anchor" aria-label="anchor" href="#praktische-umsetzung"></a></h1>
+<p>Im Folgenden werden die Schritte zur praktischen Umsetzung erklärt.
+Diese können gemeinsam während der Präsenzsitzungen oder selbstständig
+durchgeführt werden.</p>
+<div class="section level2">
+<h2 id="installation-des-betriebssystems">Installation des Betriebssystems<a class="anchor" aria-label="anchor" href="#installation-des-betriebssystems"></a></h2>
+<p>Für unser Projekt nutzen wir als Hardware den Raspberry Pi 4 oder 5.
+Als Betriebssystem installieren wir das offizielle Betriebssystem des
+Herstellers: <a href="https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit" class="external-link">Raspberry
+Pi OS 64-Bit</a>. Dabei handelt es sich um ein Linux-Betriebssystem aus
+der Reihe der Debian-Linux-Systeme. Damit ist unser System sehr ähnlich
+zu den Linux-Betriebssystemen Debian, Ubuntu oder Linux Mint.</p>
+<p>Grundlegend können auf einem Raspberry Pi unterschiedliche
+Betriebssystem installiert werden. Sie müssen jedoch mit dem
+ARM-Prozessor kompatibel sein. Möglich sind z.B. Ubuntu, Windows, viele
+Linux-Distribution oder Spezialanwendungen wie <a href="https://libreelec.tv/" class="external-link">LibreElec</a> als
+Medienstreaming-Server.</p>
+<p>Für die Installation des Betriebssystems wird vom Hersteller der
+Hardware das Programm <a href="https://www.raspberrypi.com/software/" class="external-link">Raspberry Pi Imager</a> zur
+Verfügung gestellt. Dieses wird auf dem eigenen (Windows, Linux)-PC oder
+Mac installiert. Anschließend kann damit das Betriebssystem auf die
+SD-Karte oder Festplatte des Raspberry Pi geschrieben werden.</p>
+<div class="section level3">
+<h3 id="vorgehen">Vorgehen:<a class="anchor" aria-label="anchor" href="#vorgehen"></a></h3>
+<ol style="list-style-type: decimal"><li>Betriebssystem auswählen: Rapsberry Pi OS 64 Bit</li>
+</ol><figure><img src="fig/02_imager_write.png" alt="Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 32 Bit ausgewählt ist" class="figure mx-auto d-block"><div class="figcaption">Raspberry Pi Imager mit ausgewähltem
+Betriebssystem (hier in der 32 Bit-Variante).</div>
+</figure><ol start="2" style="list-style-type: decimal"><li><p>Speicher auswählen: die SD-Karte muss im PC eingesteckt sein und
+nun ausgewählt werden.</p></li>
+<li><p>Über das Zahnradsymbol die erweiterten Einstellungen
+öffnen</p></li>
+</ol><figure><img src="fig/02_imager_settings.png" alt="Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 32 Bit ausgewählt ist" class="figure mx-auto d-block"><div class="figcaption">Erweiterte Einstellungen des Raspberry Pi
+Imager</div>
+</figure><ol start="4" style="list-style-type: decimal"><li>
+<p>Folgende Optionen einstellen:</p>
+<ol style="list-style-type: decimal"><li><p>Hostname: ein Name für deinen Raspberry Pi (keine Sonderzeichen,
+keine Leerzeichen)</p></li>
+<li><p><em>SSH aktivieren</em> auswählen</p></li>
+<li><p>Benutzername und Passwort festlegen (und merken!)</p></li>
+<li><p>WLAN-Zugang konfigurieren</p></li>
+<li><p>Spracheinstellungen festlegen: <em>Europe/Berlin</em> und
+<em>de</em></p></li>
+<li><p>Telemetrie deaktivieren</p></li>
+</ol></li>
+<li><p>Inhalte mit dem <em>Schreiben</em> Button auf die SD-Karte
+schreiben</p></li>
+</ol></div>
+</div>
+<div class="section level2">
+<h2 id="hardware-zusammen-bauen">Hardware zusammen bauen<a class="anchor" aria-label="anchor" href="#hardware-zusammen-bauen"></a></h2>
+<ol style="list-style-type: decimal"><li><p>Gehäuse öffnen (Pfeile am Deckel beachten)</p></li>
+<li><p>Raspberry Pi Board auf die Zapfen des Gehäuses setzen</p></li>
+<li><p>Wenn noch nicht geschehen: Kühlkörper aufkleben</p></li>
+<li><p>Gehäuse schließen und falls vorhanden zuvor den Lüfter
+einsetzen</p></li>
+<li><p>Netzkabel und HDMI-Kabel anschließen (noch nicht mit dem
+Stromnetz verbinden)</p></li>
+<li><p>SD-Karte einsetzen</p></li>
+<li><p>Monitor verbinden</p></li>
+<li><p>Maus und Tastatur anschließen</p></li>
+<li><p>Netzteil in die Steckdose stecken</p></li>
+</ol></div>
+<div class="section level2">
+<h2 id="erster-start">Erster Start<a class="anchor" aria-label="anchor" href="#erster-start"></a></h2>
+<p>Der erste Start ist i.d.R. etwas langsam, da im Hintergrund noch ein
+paar einmalige Prozesse ablaufen. Diesen Startvorgang einfach abwarten,
+bis der Desktop des Raspberry Pi OS erscheint.</p>
+<p>Nun können erste Grundeinstellungen vorgenommen werden:</p>
+<ol style="list-style-type: decimal"><li><p>Im Hauptmenü (oben links) unter Einstellungen auf Raspberry Pi
+Konfiguration gehen</p></li>
+<li><p>Autologin deaktivieren</p></li>
+<li><p>Interfaces: SSH aktivieren (wenn noch nicht passiert)</p></li>
+<li><p>Performance: ggf. Raspberry Pi Lüfter konfigurieren</p></li>
+<li><p>Localisation: ggf. Sprache einstellen</p></li>
+<li><p>Bluethooth ausschalten (Symbol oben rechts)</p></li>
+</ol><p>Der Raspberry Pi ist nun grundlegend eingerichtet und einsatzbereit.
+Die Nutzung unterscheidet sich hierbei zunächst nicht von einem
+herkömmlichen PC. In den folgenden Lektionen wird der Mini-Computer
+jedoch in seiner Funktionalität erweitert, um als Server genutzt werden
+zu können.</p>
+</div>
+</div>
+<div class="section level1">
+<h1 id="weitere-quellen">Weitere Quellen<a class="anchor" aria-label="anchor" href="#weitere-quellen"></a></h1>
+<ul><li><p>Empfehlung: <a href="https://dr-eberle-zentrum.github.io/DataBASHing/basics.html" class="external-link">Grundlagen
+mit der Linux-Kommandozeile</a> aneignen</p></li>
+<li><p><a href="https://www.youtube.com/watch?v=uXUjwk2-qx4&amp;t=103s" class="external-link">Youtube:
+Raspberry Pi Basisinformation</a></p></li>
+<li><p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2002221.htm" class="external-link">Elektronik-Kompendium:
+Raspberry Pi Grundkonfiguration</a></p></li>
+</ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -441,11 +548,16 @@ der Art und Intensivität der Nutzung ab.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Hardwareaufbau: Fingerspitzengefühl ist gefragt.</li>
-<li>Kühlung: insbesondere beim Raspberry Pi 5 ist eine aktive Kühlung
-empfehlenswert, ansonsten können Kühlkörper ausreichen</li>
-<li>Der Raspberry Pi ist zunächst wie ein normaler Desktop-PC zu
-bedienen</li>
+<ul><li>Für viele Heimanwender und Kleinprojekte reichen Mini-PCs (SoC)
+aus.</li>
+<li>Für große Projekte wird spezialisierte Serverhardware benötigt</li>
+<li>In diesem Kurs wird auf einem Raspberry Pi mit Linux-Betriebssystem
+die Cloud-Software <a href="https://nextcloud.com" class="external-link">Nextcloud</a>
+installiert.</li>
+<li>Die Installation des Betriebssystems erfolgt mit dem Raspberry Pi
+Imager</li>
+<li>Der Raspberry Pi mit dem Raspberry Pi OS kann sowohl wie ein
+herkömmlicher PC, als auch wie ein Server genutzt werden</li>
 </ul></div>
 </div>
 </div>
@@ -453,7 +565,6 @@ bedienen</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </div>
 
 
