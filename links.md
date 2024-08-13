@@ -11,4 +11,5 @@ any links that you are not going to use.
 [ilias]: https://ovidius.uni-tuebingen.de/
 [nextcloud]: https://nextcloud.com
 [nextcloud-doc]: https://docs.nextcloud.com/server/latest/admin_manual/
+[raspberrypios]: https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit
 
