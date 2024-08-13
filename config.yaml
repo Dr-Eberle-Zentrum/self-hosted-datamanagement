@@ -61,6 +61,7 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 episodes: 
 - 01-vorbesprechung.Rmd
 - 02-hardware-betriebssystem.Rmd
+- 03-linux-grundlagen.Rmd
 
 # Information for Learners
 learners: 
