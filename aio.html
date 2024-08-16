@@ -267,7 +267,19 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-linux-grundlagen.html">3. Linux und Raspberry Pi OS: Schnellstart</a>
+        <a href="03-linux-grundlagen.html">3. Linux Schnellstart</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-remote-access.html">4. Remote Access: das SSH-Protokoll</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -332,7 +344,7 @@
         
 <section id="aio-01-vorbesprechung"><p>Content from <a href="01-vorbesprechung.html">Vorbesprechung</a></p>
 <hr>
-<p>Last updated on 2024-08-13 |
+<p>Last updated on 2024-08-16 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/01-vorbesprechung.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -467,7 +479,7 @@ Situation?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>In diesem Fall ist einiges schief gelaufen. Wir werden darüber in der
 ersten Präsenzsitzung diskutieren.</p>
@@ -527,7 +539,7 @@ welchen Bereichen können Sie noch “mündiger” werden?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Nutzen Sie ein kostenloses E-Mailpostfach? Speichern Sie Daten in
 verdächtig günstigen Onlinespeichern? Wie abhängig sind Sie von Big Tech
@@ -792,7 +804,7 @@ Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footno
 </ol>
 </div></section><section id="aio-02-hardware-betriebssystem"><p>Content from <a href="02-hardware-betriebssystem.html">Hardware und Betriebssystem</a></p>
 <hr>
-<p>Last updated on 2024-08-13 |
+<p>Last updated on 2024-08-16 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/02-hardware-betriebssystem.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1104,9 +1116,9 @@ herkömmlicher PC, als auch wie ein Server genutzt werden</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section><section id="aio-03-linux-grundlagen"><p>Content from <a href="03-linux-grundlagen.html">Linux und Raspberry Pi OS: Schnellstart</a></p>
+</div></section><section id="aio-03-linux-grundlagen"><p>Content from <a href="03-linux-grundlagen.html">Linux Schnellstart</a></p>
 <hr>
-<p>Last updated on 2024-08-13 |
+<p>Last updated on 2024-08-16 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/03-linux-grundlagen.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1143,19 +1155,19 @@ Windows/Mac</p></li>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="status-quo">Status Quo:<a class="anchor" aria-label="anchor" href="#status-quo"></a>
-</h1>
+<section><h2 class="section-heading" id="status-quo">Status Quo:<a class="anchor" aria-label="anchor" href="#status-quo"></a>
+<a class="anchor" aria-label="anchor" href="#status-quo"></a>
+</h2>
+<hr class="half-width">
 <ul>
 <li><p>Das Betriebssystem wurde installiert</p></li>
 <li><p>Der erste Start wurde durchgeführt</p></li>
 <li><p>Der Raspberry Pi ist mit dem Netzwerk verbunden und der
 SSH-Dienst ist aktiviert</p></li>
-</ul>
-</div>
-<div class="section level1">
-<h1 id="raspberry-pi-os">Raspberry Pi OS<a class="anchor" aria-label="anchor" href="#raspberry-pi-os"></a>
-</h1>
+</ul></section><section><h2 class="section-heading" id="raspberry-pi-os">Raspberry Pi OS<a class="anchor" aria-label="anchor" href="#raspberry-pi-os"></a>
+<a class="anchor" aria-label="anchor" href="#raspberry-pi-os"></a>
+</h2>
+<hr class="half-width">
 <p>Beim Raspberry Pi OS handelt es sich um eine
 <strong>Linux-Distribution</strong>. Da das Kernstück eines jeden
 Linux-Systems, der <strong>Linux-Kernel</strong>, unter einer offenen
@@ -1172,13 +1184,13 @@ Distribution Timeline</a> auf Wikipedia.</p>
 speziell auf die Hardware des Raspberry Pis angepasst, ressourcensparend
 und basiert auf der Debian-Distribution. Deshalb sind Anleitungen für
 Debian-Linux-Systeme häufig auch für das Raspberry Pi OS passend.</p>
-</div>
-<div class="section level1">
-<h1 id="linux-schnellstart">Linux Schnellstart:<a class="anchor" aria-label="anchor" href="#linux-schnellstart"></a>
-</h1>
-<div class="section level2">
-<h2 id="dateisystem">Dateisystem<a class="anchor" aria-label="anchor" href="#dateisystem"></a>
+</section><section><h2 class="section-heading" id="linux-schnellstart">Linux Schnellstart:<a class="anchor" aria-label="anchor" href="#linux-schnellstart"></a>
+<a class="anchor" aria-label="anchor" href="#linux-schnellstart"></a>
 </h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="dateisystem">Dateisystem<a class="anchor" aria-label="anchor" href="#dateisystem"></a>
+</h3>
 <p>Das Linux-Dateisystem ist für alles Linux-Distributionen
 weitestgehend einheitlich. Die oberste Hierarchie-Ebene ist dabei immer
 das Verzeichnis <code>/</code> (Slash). Dieses ist vergleichbar mit dem
@@ -1211,14 +1223,14 @@ werden in Linux-Systemen zunächst durch eine Gerätedatei im Verzeichnis
 Einhängepunkte oder Mountpoints an einer beliebigen Stelle des
 Verzeichnisbaumes verfügbar gemacht werden (“eingehängt” oder
 “gemountet” werden). Unter Windows haben zusätzliche Datenträger und
-Laufwerke stets ihre eigene unabhängige Verzeichnishierachie, was die
+Laufwerke stets ihre eigene unabhängige Verzeichnishierarchie, was die
 Verwaltung von Festplatten weniger flexibel macht.</p>
 <figure><img src="fig/03_Filesystem.png" alt="Die Abbildung zeigt nebeneinander drei Verzeichnisbäume. Je einen für die Betriebssystem Linux, Mac und Windows. Dabei wird insbesondere die unterschiedliche Art der Einhängung von zusätzlichen Datenträgern wie Festplatten oder USB-Sticks hervorgehoben." class="figure mx-auto d-block"><div class="figcaption">Vergleich der Dateisysteme von Linux, Mac und
 Windows</div>
-</figure><div class="section level3">
-<h3 id="systemweite-konfigurationen-in-etc">Systemweite Konfigurationen in <code>/etc/</code>
+</figure><div class="section level4">
+<h4 id="systemweite-konfigurationen-in-etc">Systemweite Konfigurationen in <code>/etc/</code>
 <a class="anchor" aria-label="anchor" href="#systemweite-konfigurationen-in-etc"></a>
-</h3>
+</h4>
 <p>Das Verzeichnis <code>/etc/</code> enthält zahlreiche
 Konfigurationsdateien für die systemweite Verwaltung von Programmen.
 Viele Programme haben hier eigene Unterordner (z.B.
@@ -1227,11 +1239,11 @@ Möchte man die Konfiguration eines Programms systemweit ändern, ist das
 <code>/etc/</code> Verzeichnis i.d.R. ein guter Startpunkt.
 Schreibrechte haben hier nur Administratoren.</p>
 </div>
-<div class="section level3">
-<h3 id="programmverzeichnnisse-bin-sbin-usrbin-usrsbin">Programmverzeichnnisse: <code>/bin/</code>, <code>/sbin/</code>,
+<div class="section level4">
+<h4 id="programmverzeichnnisse-bin-sbin-usrbin-usrsbin">Programmverzeichnnisse: <code>/bin/</code>, <code>/sbin/</code>,
 <code>/usr/bin/</code> <code>/usr/sbin/</code>
 <a class="anchor" aria-label="anchor" href="#programmverzeichnnisse-bin-sbin-usrbin-usrsbin"></a>
-</h3>
+</h4>
 <ul>
 <li><p><code>/bin/</code>: Essentielle Systemprogramme (Start, Restore,
 Basisprogramm des Betriebssystems)</p></li>
@@ -1240,18 +1252,18 @@ Basisprogramm des Betriebssystems)</p></li>
 Administratoren nutzbare Programme</p></li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="dynamische-programmdateien-var">Dynamische Programmdateien: <code>/var/</code>
+<div class="section level4">
+<h4 id="dynamische-programmdateien-var">Dynamische Programmdateien: <code>/var/</code>
 <a class="anchor" aria-label="anchor" href="#dynamische-programmdateien-var"></a>
-</h3>
+</h4>
 <p>Das Betriebssystem erzeugt ständig neue Dateien, z.B. werden in den
 Log-Dateien Systemereignisse protokolliert. Solche dynamischen Inhalte
 werden i.d.R. im <code>/var/</code>-Verzeichnis gespeichert.</p>
 </div>
-<div class="section level3">
-<h3 id="einhängepunkte-mnt-und-media">Einhängepunkte <code>/mnt/</code> und <code>/media/</code>
+<div class="section level4">
+<h4 id="einhängepunkte-mnt-und-media">Einhängepunkte <code>/mnt/</code> und <code>/media/</code>
 <a class="anchor" aria-label="anchor" href="#einh%C3%A4ngepunkte-mnt-und-media"></a>
-</h3>
+</h4>
 <p>Externe Laufwerke und Wechselmedien werden standardmäßig in den
 Verzeichnisse <code>/mnt/</code> und <code>/media/</code> eingebunden.
 Dies ist allerdings kein zwingende Vorgabe und häufig gibt es gute
@@ -1259,26 +1271,26 @@ Gründe eine Festplatte an einer anderen Stelle des Verzeichnisbaumes
 einzuhängen, z.B. im Home-Verzeichnis eines Users.</p>
 </div>
 </div>
-<div class="section level2">
-<h2 id="weitere-quellen">Weitere Quellen<a class="anchor" aria-label="anchor" href="#weitere-quellen"></a>
-</h2>
+<div class="section level3">
+<h3 id="weitere-quellen">Weitere Quellen<a class="anchor" aria-label="anchor" href="#weitere-quellen"></a>
+</h3>
 <p>Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei <a href="https://wiki.ubuntuusers.de/Verzeichnisstruktur/" class="external-link">Ubuntusers</a>
 oder bei der Tuxacademy im Handbuch zur <a href="https://www.tuxcademy.org/product/lxes/" class="external-link">Linux-Essentials-Zertifizierung</a>
 auf den Seiten 146-154.</p>
 </div>
-</div>
-<div class="section level1">
-<h1 id="paketverwaltung">Paketverwaltung<a class="anchor" aria-label="anchor" href="#paketverwaltung"></a>
-</h1>
+</section><section><h2 class="section-heading" id="paketverwaltung">Paketverwaltung<a class="anchor" aria-label="anchor" href="#paketverwaltung"></a>
+<a class="anchor" aria-label="anchor" href="#paketverwaltung"></a>
+</h2>
+<hr class="half-width">
 <p>Programme (oder auch Pakete, Packages, Software oder Apps) werden in
 Linux i.d.R. durch eine zentrale Paketverwaltung ähnlich einem App-Store
 auf dem Smartphone installiert. Da auch Android auf dem Linux-Kernel
 aufbaut, sind die Prozesse zur Softwareverwaltung im Raspberry Pi OS
 vergleichbar mit den Prozessen, die im Hintergrund ablaufen, wenn man
 auf dem Smartphone eine App installiert und aktualisiert.</p>
-<div class="section level2">
-<h2 id="paketquellen">Paketquellen<a class="anchor" aria-label="anchor" href="#paketquellen"></a>
-</h2>
+<div class="section level3">
+<h3 id="paketquellen">Paketquellen<a class="anchor" aria-label="anchor" href="#paketquellen"></a>
+</h3>
 <p>Zur Installation verfügbare Software wird unter Linux in
 Paketrepositorien (oder auch Paketkatalogen oder Paketquellen)
 aufgelistet und verfügbar gemacht. Ein Repositorium wird i.d.R. vom
@@ -1304,9 +1316,9 @@ Programme mit dem Repositorium kann die Paketverwaltung so schnell
 ermitteln, für welche Programme es Aktualisierungen gibt. Um diese dann
 zu installieren, muss der Befehl <code>sudo apt-get upgrade</code>
 ausgeführt werden.</p>
-<div class="section level3">
-<h3 id="fremdquellen">Fremdquellen<a class="anchor" aria-label="anchor" href="#fremdquellen"></a>
-</h3>
+<div class="section level4">
+<h4 id="fremdquellen">Fremdquellen<a class="anchor" aria-label="anchor" href="#fremdquellen"></a>
+</h4>
 <p>Ist den Paketquellen des OS-Herstellers nicht die nötige Software
 enthalten, können auch Fremdquellen zum System hinzugefügt werden.
 Hierbei handelt es sich um Paketkataloge, die nicht vom OS-Hersteller
@@ -1318,9 +1330,9 @@ können, ist z.B. <a href="https://linuxize.com/post/how-to-add-apt-repository-i
 für die Ubuntu-Distribution geschildert und kann so auch für das
 Raspberry Pi OS übernommen werden.</p>
 </div>
-<div class="section level3">
-<h3 id="paketverwaltung-1">Paketverwaltung<a class="anchor" aria-label="anchor" href="#paketverwaltung-1"></a>
-</h3>
+<div class="section level4">
+<h4 id="weitere-befehle">Weitere Befehle<a class="anchor" aria-label="anchor" href="#weitere-befehle"></a>
+</h4>
 <p>Weiter wichtige Befehle für die Paketverwaltung sind z.B.</p>
 <ul>
 <li><p><code>sudo apt-get autoremove &lt;Paketname&gt;</code>: entfernt
@@ -1334,9 +1346,9 @@ Paket, nicht jedoch dessen Konfigurationsdateien</p></li>
 Paket inkl. dessen Konfigurationsdateien</p></li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="stolpersteine-bei-der-paketverwaltung">Stolpersteine bei der Paketverwaltung<a class="anchor" aria-label="anchor" href="#stolpersteine-bei-der-paketverwaltung"></a>
-</h3>
+<div class="section level4">
+<h4 id="stolpersteine-bei-der-paketverwaltung">Stolpersteine bei der Paketverwaltung<a class="anchor" aria-label="anchor" href="#stolpersteine-bei-der-paketverwaltung"></a>
+</h4>
 <ul>
 <li><p>Abhängigkeitsprobleme: v.a. bei der manuellen Installation von
 Paketen oder der Nutzung von Fremdquellen besteht die Möglichkeit, dass
@@ -1353,15 +1365,500 @@ die Programmkataloge durchsucht werden:
 natürlich auch im Internet nach dem genauen Namen eines Pakets gesucht
 werden.</p></li>
 </ul>
+<div id="webserver" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="webserver" class="callout-inner">
+<h3 class="callout-title">Webserver<a class="anchor" aria-label="anchor" href="#webserver"></a>
+</h3>
+<div class="callout-content">
+<p>Sie möchten auf Ihrem Linux-Server eine Website hosten. Dazu wollen
+Sie den Webserver Apache installieren. Wie gehen Sie vor?</p>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="kommandozeile">Kommandozeile<a class="anchor" aria-label="anchor" href="#kommandozeile"></a>
-</h1>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Der erste Schritt bei der Softwareverwaltung sollte immer die
+Aktualisierung der Paketquellen sein:
+<code>sudo apt-get update</code>.</p>
+<p>Auch kann es nicht schaden, das System auf den aktuellen Stand zu
+bringen, bevor neue Software installiert wird:
+<code>sudo apt-get upgrade</code>.</p>
+<p>Dann müssen Sie herausfinden, wie das Paket, das den Apache-Webserver
+für das Raspberry Pi OS liefert, heißt. Das können Sie mit einer
+Internetrecherche oder dem Befehl
+<code>sudo apt-cache search apache</code> tun.</p>
+<p>Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem
+Befehl <code>sudo apt-get install &lt;Paketname&gt;</code>
+installieren.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="kommandozeile">Kommandozeile<a class="anchor" aria-label="anchor" href="#kommandozeile"></a>
+<a class="anchor" aria-label="anchor" href="#kommandozeile"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="grundlegende-bedienung">Grundlegende Bedienung<a class="anchor" aria-label="anchor" href="#grundlegende-bedienung"></a>
+</h3>
 <ul>
-<li>ToDo</li>
+<li><p><em>Pfeiltasten</em> hoch/runter: durch bisherige Befehle
+blättern und diese wieder aufrufen</p></li>
+<li><p><em>Tab-Taste:</em> Autovervollständigung von Pfaden und
+Befehlen. Erste Buchstaben eines Pfades tippen, dann TAB-Taste für die
+Autovervollständigung oder anzeigen von Optionen.</p></li>
+<li><p><em>STRG + C</em>: bricht den laufenden Befehl ab</p></li>
+<li><p>Kopieren: mit dem Cursor Text auswählen, dann <em>STRG + Umschalt
++ C</em></p></li>
+<li><p>Einfügen: <em>STRG + Umschalt + V</em></p></li>
+<li><p>Cursor-Position: mit Pfeiltasten ändern, geht nicht per
+Mausklick</p></li>
 </ul>
+</div>
+<div class="section level3">
+<h3 id="mit-der-kommandozeile-im-dateisystem-navigieren">Mit der Kommandozeile im Dateisystem navigieren<a class="anchor" aria-label="anchor" href="#mit-der-kommandozeile-im-dateisystem-navigieren"></a>
+</h3>
+<ul>
+<li>Verzeichnis wechseln: <code>cd &lt;Pfadangabe&gt;</code>, z.B.
+<code>cd /home/david/Dokumente</code>
+</li>
+</ul>
+<p>-in das eigene Home-Verzeichnis wechseln: <code>cd</code></p>
+<ul>
+<li><p>Eine Ebene nach oben gehen: <code>cd ..</code></p></li>
+<li><p>Zwei Ebenen nach oben gehen: <code>cd ../..</code></p></li>
+<li><p>Aktuelle Positin im Dateisystem anzeigen:
+<code>pwd</code></p></li>
+<li><p>Verzeichnisinhalt anzeigen lassen: <code>ls</code> oder mit mehr
+Informationen <code>ls -l</code></p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="dateioperationen">Dateioperationen:<a class="anchor" aria-label="anchor" href="#dateioperationen"></a>
+</h3>
+<ul>
+<li><p>Datei erstellen:
+<code>touch &lt;Dateipfad&gt;/&lt;Dateiname&gt;</code></p></li>
+<li><p>Verzeichnis anlegen:
+<code>mkdir &lt;Dateipfad&gt;/&lt;Neuer-Ordner&gt;</code></p></li>
+<li><p>Inhalt einer Textdatei ausgeben:
+<code>cat &lt;Datename&gt;</code></p></li>
+<li><p>Oberste oder letze 10 Zeilen einer Datei anzeigen lassen:
+<code>head &lt;Dateiname&gt;</code> und
+<code>tail &lt;Dateiname&gt;</code></p></li>
+<li>
+<p>Datei kopieren/verschieben/löschen:</p>
+<ul>
+<li><p>Copy:
+<code>cp &lt;Quelldatei&gt; &lt;Zieldatei&gt;</code></p></li>
+<li><p>Move:
+<code>mv &lt;Quelldatei&gt; &lt;Zeildatei&gt;</code></p></li>
+<li><p>remove: <code>rm &lt;Dateiname&gt;</code> oder remove recursive:
+`rm -r <verzeichnispfad></verzeichnispfad></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="textdateien-bearbeiten-nano-editor">Textdateien bearbeiten: Nano-Editor<a class="anchor" aria-label="anchor" href="#textdateien-bearbeiten-nano-editor"></a>
+</h3>
+<p>Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B.
+<strong>nano</strong> und <strong>vim</strong>, wobei nano der
+einsteigerfreundlichere Editor ist. Deshalb arbeiten wir im Kurs mit dem
+nano-Editor.</p>
+<ul>
+<li><p>Datei im Nano-Editor öffnen:
+<code>nano &lt;Dateipfad&gt;/&lt;Dateiname&gt;</code></p></li>
+<li><p>Navigation erfolgt ohne Maus, nur mit den Pfeiltasten
+navigieren!</p></li>
+<li><p>Datei schließen und speichern: <em>STRG + X</em>, dann
+<em>J</em>, dann <em>ENTER</em></p></li>
+<li><p>Schließen ohne zu speichern: <em>STRG + X</em>, dann
+<em>N</em></p></li>
+<li><p>Komplette Zeile löschen: <em>STRG + K</em></p></li>
+<li><p>Kopieren und einfügen wie auf dem Terminal</p></li>
+<li><p>Text suchen: <em>STRG + W</em>, dann Suchbegriff eingeben oder
+für weitere Treffer direkt mit <em>ENTER</em> bestätigen</p></li>
+<li><p>Zu bestimmter Zeile springen: <em>STRG + /</em>, dann
+Zeilennummer eingeben</p></li>
+</ul>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li><p>Raspberry Pi OS ist das Linux-Betriebssystem unserer
+Wahl</p></li>
+<li><p>Das Dateisystem unter Linux besteht aus einem einzigen
+Verzeichnisbaum. “/” ist dabei die obersterte Ebene</p></li>
+<li><p>Software wird unter Linux zentral verwaltet. Die Verwaltung
+erfolgt bei der Debian-Familie mit den Programmen <em>apt-get</em> oder
+<em>apt</em></p></li>
+<li><p>Ein Linux-Server wird i.d.R. über die Kommandozeile gesteuert.
+Dabei erfolgt die Arbeit ohne Maus. Programmsteuerung, Dateioperationen
+und die Dateierstellung werden per Tastatur erledigt.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-04-remote-access"><p>Content from <a href="04-remote-access.html">Remote Access: das SSH-Protokoll</a></p>
+<hr>
+<p>Last updated on 2024-08-16 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/04-remote-access.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li><p>Wie kann ein Computer aus der Ferne verwaltet werden, wenn er
+keinen Bildschirm hat?</p></li>
+<li><p>Wie kann eine SSH-Verbindung sicher über unsichere Netzwerke
+hergestellt werden?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li><p>Grundlagen des SSH-Protokolls verstehen</p></li>
+<li><p>SSH-Server sicher konfigurieren</p></li>
+<li><p>Sichere SSH-Verbindungen mit Schlüssel-Authentifikation
+aufbauen</p></li>
+<li><p>den Raspberry Pi im Headless-Setup aus der Ferne steuern</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="das-ssh-protokoll">Das SSH-Protokoll<a class="anchor" aria-label="anchor" href="#das-ssh-protokoll"></a>
+<a class="anchor" aria-label="anchor" href="#das-ssh-protokoll"></a>
+</h2>
+<hr class="half-width">
+<p>Server stehen häufig an unzugänglichen Orten (Keller, gekühlte
+Serverräume, weit entfernte Rechenzentren o.Ä.). Dennoch müssen sie
+verwaltet werden. Dies wird heutzutage mittels des SSH-Protokolls
+gemacht (früher wurde das inzwischen veraltete Telnet-Protokoll
+genutzt).</p>
+<p>Das SSH-Protokoll baut eine sichere Verbindung zwischen einem
+Clientgerät (z.B. Ihrem Notebook) und einem Server (z.B. Ihrem Raspberry
+Pi) über ein (ggf. auch unsicheres) Netzwerk auf. Über diese Verbindung
+besteht in der Regel Zugriff auf die Kommandozeile des entfernten
+Geräts. Die Verbindung kann aber auch zum Übertragen anderer Daten
+genutzt werden. So können Daten übertragen werden (mit dem
+<code>scp</code>-Befehl), entfernte Dateisysteme lokal genutzt werden
+(per SSHFS, siehe <a href="https://de.wikipedia.org/wiki/SSHFS" class="external-link">Wikipedia</a>) oder die
+graphische Ausgabe eines entfernten Programms lokal dargestellt werden
+<a href="https://www.heise.de/tipps-tricks/SSH-Tunnel-nutzen-so-geht-s-4320041.html" class="external-link">siehe
+diesen Heise-Artikel</a>.</p>
+<div id="protokoll" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="protokoll" class="callout-inner">
+<h3 class="callout-title">Protokoll<a class="anchor" aria-label="anchor" href="#protokoll"></a>
+</h3>
+<div class="callout-content">
+<p>Bei einem Protokoll handelt es sich um genau festgelegte technische
+Parameter für den Kommunikationsausstausch zwischen Computern. Ähnlich
+der Sprache und ihrer Grammatik, auf die sich zwei Menschen zum
+Kommunizieren einigen. Ein Protokoll hat einen genauen Einsatzzweck und
+eine klar definierte Funktionsweise. z.B. ist das HTTPS-Protokoll dafür
+gemacht, Daten zwischen einem Browser und einem Webserver verschlüssel
+mittels der TLS-Verschlüsselung zu übertragen.</p>
+</div>
+</div>
+</div>
+<p>Das SSH-Protkoll nutzt dafür verschiedene Technologien zur
+Gewährleistung der sicheren Übertragung. Ähnlich einer <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/" class="external-link">HTTPS-Verbindung</a>
+werden beim Verbindungsaufbau zunächst die Kommunikationsstandards
+zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys
+ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben.
+Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer
+symmetrischen Verschlüsselung (welche deutliche schneller ist, als die
+zuvor stattfindende asymetrische Verschlüsselung, siehe dazu auch die
+Ressourcen von Studyflix zur <a href="https://studyflix.de/informatik/symmetrische-verschlusselung-1610" class="external-link">symetrischen</a>
+und <a href="https://studyflix.de/informatik/asymmetrische-verschlusselung-1609" class="external-link">asymmetrischen</a>
+Verschlüsselung).</p>
+<div id="voraussetzung-für-die-ssh-verbindung" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="voraussetzung-für-die-ssh-verbindung" class="callout-inner">
+<h3 class="callout-title">Voraussetzung für die SSH-Verbindung<a class="anchor" aria-label="anchor" href="#voraussetzung-f%C3%BCr-die-ssh-verbindung"></a>
+</h3>
+<div class="callout-content">
+<p>Sie haben wie in <a href="Sitzung%202">01-hardware-betriebssystem.Rmd</a> besprochen auf
+Ihrem Raspberry Pi das Raspberry Pi OS installiert. Nun wollen Sie eine
+SSH-Verbindung von Ihrem Notebook mit Ihrem Raspberry Pi herstellen. Was
+sind die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li><p>Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein.
+Dazu müssen entweder Server und Client im Selben Netzwerk (z.B.
+demselben Heimnetzwerk) sein oder der Server muss im Internet erreichbar
+sein.</p></li>
+<li><p>Software: Auf dem Raspberry Pi muss die SSH-Server-Software
+installiert sein (das <strong>Paket openssh-server</strong>) und auf dem
+Client ein SSH-Client-Programm (das OpenSSH-Client-Programm für die
+Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann
+auch das graphische Programm <a href="https://putty.org/" class="external-link">Putty</a>
+installiert werden).</p></li>
+<li><p>Berechtigungen: die Anmeldung am entfernten Server ist nur
+möglich, wenn Sie die Berechtigungen haben. Sie benötigen also einen
+Account auf dem Raspberry Pi OS und dessen Passwort.</p></li>
+<li><p>Firewall: eine etwaige Firewall am Server muss die SSH-Verbindung
+zulassen</p></li>
+<li><p>Identifizierung: der Server muss für eine ordentliche Verbindung
+eindeutig identifizierbar sein. Dies geschieht durch sogenannte
+Host-Keys, die bei der erstmaligen Verbindung vom Server zum Client
+übertragen werden. Ändert sich der Host-Key (z.B. nach einer
+Neuinstallation oder weil ein bösartiger Akteur sich als Ihren Raspberry
+Pi ausgibt) und passt nicht mehr zum ursprünglichen, schlägt die
+Verbindung fehl. Erst wenn der neue Key akzeptiert wird ist eine
+Verbindung wieder möglich (gespeicherte Keys finden Sie in der Datei
+<em>know_hosts.conf</em> im Verzeichis <em>.ssh</em> in Ihrem
+persönlichen Ordner).</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="grundlegender-verbindungsaufbau">Grundlegender Verbindungsaufbau<a class="anchor" aria-label="anchor" href="#grundlegender-verbindungsaufbau"></a>
+</h3>
+<p>Wenn die Voraussetzungen stimmen (siehe <a href="#voraussetzung-f%C3%BCr-die-ssh-verbindung">Vorraussetzungen für die
+SSH-Verbindung</a>), kann eine einfache SSH-Verbindung mit folgendem
+Befehl aufgebaut werden: <code>ssh &lt;user&gt;@&lt;server&gt;</code>
+Dabei ist <user> der Username am entferten Gerät und <server> ist die
+Adresse des Servers. Die Adresse kann entweder in Form einer IP-Adresse
+(z.B. 192.168.178.10) oder, als Hostname (z.B. mein-cloudserver)
+angegeben werden. Die Variante mit dem Hostname funktioniert jedoch nur,
+wenn dieser im lokalen Netzwerk bekannt ist (z.B. in einem Heimnetzwerk
+im Router eingezeigt wird.)</server></user></p>
+<div id="ssh-verbindung" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="ssh-verbindung" class="callout-inner">
+<h3 class="callout-title">SSH-Verbindung<a class="anchor" aria-label="anchor" href="#ssh-verbindung"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>So bauen Sie eine einfache SSH-Verbindung auf:
+<strong><code>ssh &lt;user&gt;@&lt;server&gt;</code></strong>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="schlüssel-authtenfikation">Schlüssel-Authtenfikation<a class="anchor" aria-label="anchor" href="#schl%C3%BCssel-authtenfikation"></a>
+<a class="anchor" aria-label="anchor" href="#schl%C3%BCssel-authtenfikation"></a>
+</h2>
+<hr class="half-width">
+<p>Die einfache SSH-Verbindung genügt zwar schon, um das entfernte
+System zu verwalten. Allerdings könnte eine angreifende Person
+versuchen, den Usernamen und das Passwort zu erraten und damit Zugriff
+auf den Server erlangen (leider sind Passwörter häufig nicht allzu
+kreativ erdacht). Um dies zu verhindern, kann die Verbindung zusätzlich
+gesichert werden:</p>
+<ul>
+<li><p>am Client, indem statt Passwörtern kaum zu erratende Schlüssel
+zur Anmeldung genutzt werden</p></li>
+<li><p>am Server, indem zu häufige Fehlanmeldungen zu einem Blockieren
+führen</p></li>
+</ul>
+<p>Die Anmeldung per Schlüssel erfolgt mit einem Schlüsselpaar. Ein
+solches Schlüsselpaar besteht aus einem privaten und einem öffentlichen
+Schlüssel. Während der öffentliche Schlüsse herausgegeben werden kann,
+muss der private Schlüssel privat bleiben und sollte das eigene Gerät
+niemals verlassen. Vereinfacht kann man sich das Konzept wie ein
+Vorhängeschloss und den dazugehörigen Schlüssel vorstellen. Das Schloss
+ist in dieser Analogie der öffentliche Schlüssel und wird in geöffnetem
+Zustand an den Server übergeben. Dieser “verschließt” damit die Tür zum
+SSH-Server. Zwar können alle sehen, dass Ihr (öffentliches) Schloss an
+der Tür hängt, aber nur Sie können mit Ihrem privaten Schlüssel die Tür
+wieder öffnen.</p>
+<p>Aufgrund der komplexen krytpographischen Struktur der Schlüssel sind
+diese deutlich schwerer bis gar nicht zu erraten. Zusätzlich empfiehlt
+es sich, den privaten Schlüssel mit einer Passphrase vor unbfugtem
+Zugriff zu schützen. Dann muss jedes mal, wenn der private Schlüssel
+genutzt wird, ein zusätzliches Passwort eingegeben werden.</p>
+<div id="schlüsselauthentifikation" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="schlüsselauthentifikation" class="callout-inner">
+<h3 class="callout-title">Schlüsselauthentifikation<a class="anchor" aria-label="anchor" href="#schl%C3%BCsselauthentifikation"></a>
+</h3>
+<div class="callout-content">
+<p>Für eine sichere SSH-Verbindung empfiehlt es sich, auf Passwörter zu
+verzichten und sich stattdessen mit einem Schlüsselpaar zu
+authentifizieren.</p>
+<p>Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung etwas anders:
+<code>ssh &lt;user&gt;@&lt;server&gt; -i &lt;Pfad-zum-privaten-schlüssel&gt;</code>
+mit dem Befehlsparameter <em>-i</em> wird der der Pfad zum privaten
+Schlüssel am Client angegeben.</p>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="schlüsselpaar-erstellen">Schlüsselpaar erstellen<a class="anchor" aria-label="anchor" href="#schl%C3%BCsselpaar-erstellen"></a>
+</h3>
+<p>Die Erstellung eines Schlüsselpaars erfolgt am Client. Dazu wird auf
+der Kommandozeile (“Eingabeaufforderung” unter Windows) folgender Befehl
+abgesetzt:
+<code>ssh-keygen -t &lt;Schlüsseltyp&gt; -b &lt;Schlüssellänge&gt;</code>
+Es müssen Angaben zum Speicherort und der Passphrase gemacht werden.
+Wird kein Speicherort angegeben, wird das Schlüsselpaar im Ordner .ssh
+des Benutzerverzeichnisses gespeichert.</p>
+<p>Es stehen unterschiedliche Schlüsseltypen- und -längen zur
+Verfügung:</p>
+<ul>
+<li><p>RSA: weit verbreitet, kann mit sehr viel Rechenaufwand evtl.
+geknackt werden (siehe letzter Absatz <a href="https://www.onlinesicherheit.gv.at/Services/News/RSA-Verschluesselung-Sicherheit.html" class="external-link">dieses
+Artikels</a>). Als Schlüssellänge sollte 4096 bit gewählt
+werden</p></li>
+<li><p>ecdsa: ist ein neueres Verfahren, das aber kurze Schlüssel
+nutzt</p></li>
+<li><p>ed25519: ist ein neues Verfahren, das auf sog. elliptische Kurven
+setzt und als am sichersten gilt. Dieses Verfahren empfehle ich zu
+nutzen.</p></li>
+</ul>
+<p>Zur Wahl des Schlüsseltyps gibt es bei <a href="https://goteleport.com/blog/comparing-ssh-keys/#rsa-vs-dsa-vs-ecdsa-vs-eddsa" class="external-link">goteleport</a>
+eine informative Vergleichstabelle.</p>
+<div id="wichitg" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="wichitg" class="callout-inner">
+<h3 class="callout-title">
+<strong>WICHITG</strong><a class="anchor" aria-label="anchor" href="#wichitg"></a>
+</h3>
+<div class="callout-content">
+<p>Das Schlüsselpaar muss <strong>am Client</strong> erstellt werden.
+Sonst ist der private Schlüssel bereits mit der Erstellung auf einem
+fremden Gerät und damit kompromittiert.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="schlüssel-übertragen">Schlüssel übertragen<a class="anchor" aria-label="anchor" href="#schl%C3%BCssel-%C3%BCbertragen"></a>
+</h3>
+<p>Ist das Schlüsselpaar erzeugt, muss der <strong>öffentliche</strong>
+(und nur der öffentliche!) Schlüssel zum Server übertragen werden (nur
+zur Erinnerung: nur der <strong>öffentliche</strong> Schlüssel wird
+übertragen). Dies kann je nach Betriebssystem des Clients
+unterschiedlich bewerkstelligt werden.</p>
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  Windows
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Mac
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-3" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-3" type="button" role="tab" aria-controls="nav-tabpanel-1-3" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-3">
+  Linux
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<p>Unter Windows muss das Programm scp genutzt werden, mit welchem über
+eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
+übertragen werden können:</p>
+<p>Übertragung:
+<code>scp &lt;ffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p>
+<p>einfache SSH-Verbindung zum Server:
+<code>ssh &lt;username&gt;@&lt;server&gt;</code></p>
+<p>Verzeichnis erstellen: <code>mkdir .ssh</code></p>
+<p>Datei für zugelassen Schlüssel erstellen:
+<code>touch .ssh/authorized_keys</code></p>
+<p>Öffentlichen Schlüssel in Datei kopieren:
+<code>cat Desktop/&lt;öffentlicher-schlüssel.pub&gt; &gt;&gt; .ssh/authorized_keys</code></p>
+<p>Überprüfung: <code>cat .ssh/authorized_keys</code></p>
+<p>SSH-Verbindung verlassen: <code>exit</code></p>
+<p>SSH-Verbindung mit privatem Schlüssel testen:
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;schluessel&gt;</code></p>
+<ul>
+<li><p>Übertragung:
+<code>scp &lt;ffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p></li>
+<li><p>einfache SSH-Verbindung zum Server:
+<code>ssh &lt;username&gt;@&lt;server&gt;</code></p></li>
+<li><p>Verzeichnis erstellen: <code>mkdir .ssh</code></p></li>
+<li><p>Datei für zugelassen Schlüssel erstellen:
+<code>touch .ssh/authorized_keys</code></p></li>
+<li><p>Öffentlichen Schlüssel in Datei kopieren:
+<code>cat Desktop/&lt;öffentlicher-schlüssel.pub&gt; &gt;&gt; .ssh/authorized_keys</code></p></li>
+<li><p>Überprüfung: <code>cat .ssh/authorized_keys</code></p></li>
+<li><p>SSH-Verbindung verlassen: <code>exit</code></p></li>
+<li><p>SSH-Verbindung mit privatem Schlüssel testen:
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;schluessel&gt;</code></p></li>
+</ul>
+</div>
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<ul>
+<li>ssh-copy-id</li>
+</ul>
+</div>
+<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
+<ul>
+<li>ssh-copy-id</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="konfiguration-des-ssh-servers">Konfiguration des SSH-Servers<a class="anchor" aria-label="anchor" href="#konfiguration-des-ssh-servers"></a>
+<a class="anchor" aria-label="anchor" href="#konfiguration-des-ssh-servers"></a>
+</h2>
+<hr class="half-width">
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1379,7 +1876,7 @@ werden.</p></li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section>
+</section></section>
 </div>
     </main>
 </div>
@@ -1427,8 +1924,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/aio.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-08-13",
-  "datePublished": "2024-08-13"
+  "dateModified": "2024-08-16",
+  "datePublished": "2024-08-16"
 }
 
   </script><script>
