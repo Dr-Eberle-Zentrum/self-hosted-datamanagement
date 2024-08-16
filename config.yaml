@@ -62,6 +62,7 @@ episodes:
 - 01-vorbesprechung.Rmd
 - 02-hardware-betriebssystem.Rmd
 - 03-linux-grundlagen.Rmd
+- 04-remote-access.Rmd
 
 # Information for Learners
 learners: 
