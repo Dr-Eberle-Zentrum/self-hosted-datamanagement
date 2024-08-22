@@ -262,6 +262,8 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#netzwerkkommunikation">Netzwerkkommunikation</a></li>
+<li><a href="#firewall">Firewall</a></li>
+<li><a href="#fail2ban">Fail2Ban</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -440,7 +442,38 @@ Adresszuweisung fehlschlägt</td>
 <td align="left">255.0.0.0</td>
 <td align="left">16777216</td>
 <td>Loopback-Adresse für Kommunikation innerhalb eines Geräts</td>
-</tr></tbody></table><div id="keypoints1" class="callout keypoints">
+</tr></tbody></table></div>
+<div class="section level3">
+<h3 id="ports">Ports<a class="anchor" aria-label="anchor" href="#ports"></a></h3>
+<p>Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also
+einem Gerät) angekommen, muss noch geklärt werden, wohin das Paket
+innerhalb des Geräts gehört. Da auf einem Computer viele Programm
+gleichzeitig aktiv sind, muss entschied werden, für welches der
+Programme ein Paket gedacht ist. Dazu werden <strong>Ports</strong>
+genutzt. Ein Programm, welches Daten aus dem Netzwerk empfangen soll,
+nutzt dabei einen bestimmten Port. Kommt am Gerät ein Datenpaket an, das
+mit dem Port des Programms adressiert ist, wird das Paket an das
+entsprechende Programm geleitet und von diesem Verarbeitet. Zum Beispiel
+“lauscht” der SSH-Server standardmäßig auf Port 22 für eingehenden
+Datenverkehr. Wir haben diesen Port in <a href="04-remote-access.html">Lektion 4</a> manuell abgeändert.</p>
+<p>Einige Ports sind fest für bestimmte Programme definiert und sollten
+nicht von anderen Programmen oder manuell belegt werden. Andere Ports
+könne jedoch von Systemadministratoren frei genutzt werden. Die
+Portnummern reichen von 0 bis 65.535. Eine Auflistung aller Ports findet
+sich bei <a href="https://de.wikipedia.org/wiki/Liste_der_standardisierten_Ports" class="external-link">Wikipedia</a></p>
+<p>Ein Port kann auf einem Gerät offen oder geschlossen sein, z.B. kann
+eine Firewall die Kommunikation über einen Port blockieren. Außerdem
+muss auch ein Prozess hinter einem Port “hören”, damit eine
+Kommunikation aufgebaut werden kann.</p>
+<p>Um zu sehen, welche Prozesse auf welchen Ports hören kann der Befehl
+<code>netstat -tulp</code> ausgeführt werden. Vorher muss dafür das
+Paket <em>net-tools</em> installiert werden.</p>
+</div>
+</section><section><h2 class="section-heading" id="firewall">Firewall<a class="anchor" aria-label="anchor" href="#firewall"></a>
+<a class="anchor" aria-label="anchor" href="#firewall"></a></h2>
+<hr class="half-width"></section><section><h2 class="section-heading" id="fail2ban">Fail2Ban<a class="anchor" aria-label="anchor" href="#fail2ban"></a>
+<a class="anchor" aria-label="anchor" href="#fail2ban"></a></h2>
+<hr class="half-width"><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -456,7 +489,6 @@ Adresszuweisung fehlschlägt</td>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="05-sicherheit-1.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
