@@ -50,6 +50,20 @@ Table: Private Adressbereiche und spezielle Netzwerke
 |169.254.0.0 bis 169.254.255.255 | 255.255.0.0 | 65536 | Link Local/APIPA = Standardbereich, wenn automatische Adresszuweisung fehlschlägt |
 |127.0.0.1 bis 127.255.255.254 | 255.0.0.0 | 16777216 | Loopback-Adresse für Kommunikation innerhalb eines Geräts |
 
+
+### Ports
+
+Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also einem Gerät) angekommen, muss noch geklärt werden, wohin das Paket innerhalb des Geräts gehört. Da auf einem Computer viele Programm gleichzeitig aktiv sind, muss entschied werden, für welches der Programme ein Paket gedacht ist. Dazu werden **Ports** genutzt. Ein Programm, welches Daten aus dem Netzwerk empfangen soll, nutzt dabei einen bestimmten Port. Kommt am Gerät ein Datenpaket an, das mit dem Port des Programms adressiert ist, wird das Paket an das entsprechende Programm geleitet und von diesem Verarbeitet. Zum Beispiel "lauscht" der SSH-Server standardmäßig auf Port 22 für eingehenden Datenverkehr. Wir haben diesen Port in [Lektion 4](04-remote-access.Rmd) manuell abgeändert.
+
+Einige Ports sind fest für bestimmte Programme definiert und sollten nicht von anderen Programmen oder manuell belegt werden. Andere Ports könne jedoch von Systemadministratoren frei genutzt werden. Die Portnummern reichen von 0 bis 65.535. Eine Auflistung aller Ports findet sich bei [Wikipedia](https://de.wikipedia.org/wiki/Liste_der_standardisierten_Ports)
+
+Ein Port kann auf einem Gerät offen oder geschlossen sein, z.B. kann eine Firewall die Kommunikation über einen Port blockieren. Außerdem muss auch ein Prozess hinter einem Port "hören", damit eine Kommunikation aufgebaut werden kann. 
+
+Um zu sehen, welche Prozesse auf welchen Ports hören kann der Befehl `netstat -tulp` ausgeführt werden. Vorher muss dafür das Paket *net-tools* installiert werden.
+
+## Firewall
+
+## Fail2Ban
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - 
