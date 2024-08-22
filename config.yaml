@@ -64,6 +64,7 @@ episodes:
 - 03-linux-grundlagen.Rmd
 - 04-remote-access.Rmd
 - 05-sicherheit-1.Rmd
+- 06-sicherheit-ii.Rmd
 
 # Information for Learners
 learners: 
