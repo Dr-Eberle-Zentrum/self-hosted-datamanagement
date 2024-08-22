@@ -289,6 +289,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-sicherheit-1.html">5. Sicherheit: Benutzer und Dateirechte</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -346,7 +358,7 @@
         
 <section id="aio-01-vorbesprechung"><p>Content from <a href="01-vorbesprechung.html">Vorbesprechung</a></p>
 <hr>
-<p>Last updated on 2024-08-20 |
+<p>Last updated on 2024-08-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/01-vorbesprechung.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
@@ -807,7 +819,7 @@ Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footno
 </ol>
 </div></section><section id="aio-02-hardware-betriebssystem"><p>Content from <a href="02-hardware-betriebssystem.html">Hardware und Betriebssystem</a></p>
 <hr>
-<p>Last updated on 2024-08-20 |
+<p>Last updated on 2024-08-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/02-hardware-betriebssystem.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
@@ -968,7 +980,7 @@ Intel Xeon E-2400 Serie</a></p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Die genauen Hardwareanforderungen sind (v.a. am Anfang des Projekts
 und ohne Vorkenntnisse) schwer abzuschätzen. Geeignete Lösungen können
@@ -1122,7 +1134,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-03-linux-grundlagen"><p>Content from <a href="03-linux-grundlagen.html">Linux Schnellstart</a></p>
 <hr>
-<p>Last updated on 2024-08-20 |
+<p>Last updated on 2024-08-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/03-linux-grundlagen.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
@@ -1388,7 +1400,7 @@ Sie den Webserver Apache installieren. Wie gehen Sie vor?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Der erste Schritt bei der Softwareverwaltung sollte immer die
 Aktualisierung der Paketquellen sein:
@@ -1527,10 +1539,10 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-04-remote-access"><p>Content from <a href="04-remote-access.html">Remote Access: das SSH-Protokoll</a></p>
 <hr>
-<p>Last updated on 2024-08-20 |
+<p>Last updated on 2024-08-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/04-remote-access.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1542,8 +1554,8 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li><p>Wie kann ein Computer aus der Ferne verwaltet werden, wenn er
-keinen Bildschirm hat?</p></li>
+<li><p>Wie kann ein Computer (ggf. aus der Ferne) verwaltet werden, auch
+wenn er keinen Bildschirm hat?</p></li>
 <li><p>Wie kann eine SSH-Verbindung sicher über unsichere Netzwerke
 hergestellt werden?</p></li>
 </ul>
@@ -1579,13 +1591,13 @@ genutzt).</p>
 Clientgerät (z.B. Ihrem Notebook) und einem Server (z.B. Ihrem Raspberry
 Pi) über ein (ggf. auch unsicheres) Netzwerk auf. Über diese Verbindung
 besteht in der Regel Zugriff auf die Kommandozeile des entfernten
-Geräts. Die Verbindung kann aber auch zum Übertragen anderer Daten
-genutzt werden. So können Daten übertragen werden (mit dem
-<code>scp</code>-Befehl), entfernte Dateisysteme lokal genutzt werden
-(per SSHFS, siehe <a href="https://de.wikipedia.org/wiki/SSHFS" class="external-link">Wikipedia</a>) oder die
+Geräts, womit dieses verwaltet werden kann.</p>
+<p>Die Verbindung kann aber auch zum Übertragen anderer Daten genutzt
+werden. So können Dateien übertragen werden (mit dem <a href="https://www.ionos.de/digitalguide/server/konfiguration/linux-scp-befehl/" class="external-link"><code>scp</code>-Befehl</a>),
+entfernte Dateisysteme lokal genutzt werden (per SSHFS, siehe <a href="https://de.wikipedia.org/wiki/SSHFS" class="external-link">Wikipedia</a>) oder die
 graphische Ausgabe eines entfernten Programms lokal dargestellt werden
-<a href="https://www.heise.de/tipps-tricks/SSH-Tunnel-nutzen-so-geht-s-4320041.html" class="external-link">siehe
-diesen Heise-Artikel</a>.</p>
+(<a href="https://www.heise.de/tipps-tricks/SSH-Tunnel-nutzen-so-geht-s-4320041.html" class="external-link">siehe
+diesen Heise-Artikel</a>).</p>
 <div id="protokoll" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1594,25 +1606,26 @@ diesen Heise-Artikel</a>.</p>
 <h3 class="callout-title">Protokoll<a class="anchor" aria-label="anchor" href="#protokoll"></a>
 </h3>
 <div class="callout-content">
-<p>Bei einem Protokoll handelt es sich um genau festgelegte technische
-Parameter für den Kommunikationsausstausch zwischen Computern. Ähnlich
-der Sprache und ihrer Grammatik, auf die sich zwei Menschen zum
-Kommunizieren einigen. Ein Protokoll hat einen genauen Einsatzzweck und
-eine klar definierte Funktionsweise. z.B. ist das HTTPS-Protokoll dafür
-gemacht, Daten zwischen einem Browser und einem Webserver verschlüssel
-mittels der TLS-Verschlüsselung zu übertragen.</p>
+<p>Bei einem Protokoll handelt es sich um eine Sammlung genau
+festgelegter technischer Parameter für den Kommunikationsaustausch
+zwischen Computern. Ähnlich der Sprache und ihrer Grammatik, auf die
+sich zwei Menschen zum Kommunizieren einigen. Ein Protokoll hat einen
+genauen Einsatzzweck und eine klar definierte Funktionsweise. z.B. ist
+das HTTPS-Protokoll dafür gemacht, Daten zwischen einem Browser und
+einem Webserver verschlüsselt mittels der TLS-Verschlüsselung zu
+übertragen. Mehr zum Thema findet sich bei <a href="https://www.studysmarter.de/schule/informatik/theoretische-informatik/netzwerkprotokolle/" class="external-link">StudySmarter</a></p>
 </div>
 </div>
 </div>
-<p>Das SSH-Protkoll nutzt dafür verschiedene Technologien zur
-Gewährleistung der sicheren Übertragung. Ähnlich einer <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/" class="external-link">HTTPS-Verbindung</a>
+<p>Das SSH-Protkoll nutzt verschiedene Technologien zur Gewährleistung
+der sicheren Übertragung. Ähnlich einer <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/" class="external-link">HTTPS-Verbindung</a>
 werden beim Verbindungsaufbau zunächst die Kommunikationsstandards
 zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys
 ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben.
 Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer
-symmetrischen Verschlüsselung (welche deutliche schneller ist, als die
-zuvor stattfindende asymetrische Verschlüsselung, siehe dazu auch die
-Ressourcen von Studyflix zur <a href="https://studyflix.de/informatik/symmetrische-verschlusselung-1610" class="external-link">symetrischen</a>
+symmetrischen Verschlüsselung aufgebaut (welche deutliche schneller ist,
+als die zuvor stattfindende asymetrische Verschlüsselung, siehe dazu
+auch die Ressourcen von Studyflix zur <a href="https://studyflix.de/informatik/symmetrische-verschlusselung-1610" class="external-link">symetrischen</a>
 und <a href="https://studyflix.de/informatik/asymmetrische-verschlusselung-1609" class="external-link">asymmetrischen</a>
 Verschlüsselung).</p>
 <div id="voraussetzung-für-die-ssh-verbindung" class="callout challenge">
@@ -1623,10 +1636,11 @@ Verschlüsselung).</p>
 <h3 class="callout-title">Voraussetzung für die SSH-Verbindung<a class="anchor" aria-label="anchor" href="#voraussetzung-f%C3%BCr-die-ssh-verbindung"></a>
 </h3>
 <div class="callout-content">
-<p>Sie haben wie in <a href="Sitzung%202">01-hardware-betriebssystem.Rmd</a> besprochen auf
-Ihrem Raspberry Pi das Raspberry Pi OS installiert. Nun wollen Sie eine
-SSH-Verbindung von Ihrem Notebook mit Ihrem Raspberry Pi herstellen. Was
-sind die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
+<p>Sie haben wie in <a href="02-hardware-betriebssystem.html">Sitzung
+2</a> besprochen auf Ihrem Raspberry Pi das Raspberry Pi OS installiert.
+Nun wollen Sie eine SSH-Verbindung von Ihrem Notebook mit Ihrem
+Raspberry Pi herstellen. Was sind die Bedingungen für eine erfolgreiche
+SSH-Verbindung?</p>
 </div>
 </div>
 </div>
@@ -1639,7 +1653,7 @@ sind die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein.
-Dazu müssen entweder Server und Client im Selben Netzwerk (z.B.
+Dazu müssen entweder Server und Client im selben Netzwerk (z.B.
 demselben Heimnetzwerk) sein oder der Server muss im Internet erreichbar
 sein.</p></li>
 <li><p>Software: Auf dem Raspberry Pi muss die SSH-Server-Software
@@ -1656,13 +1670,13 @@ zulassen</p></li>
 <li><p>Identifizierung: der Server muss für eine ordentliche Verbindung
 eindeutig identifizierbar sein. Dies geschieht durch sogenannte
 Host-Keys, die bei der erstmaligen Verbindung vom Server zum Client
-übertragen werden. Ändert sich der Host-Key (z.B. nach einer
-Neuinstallation oder weil ein bösartiger Akteur sich als Ihren Raspberry
-Pi ausgibt) und passt nicht mehr zum ursprünglichen, schlägt die
-Verbindung fehl. Erst wenn der neue Key akzeptiert wird ist eine
-Verbindung wieder möglich (gespeicherte Keys finden Sie in der Datei
-<em>know_hosts.conf</em> im Verzeichis <em>.ssh</em> in Ihrem
-persönlichen Ordner).</p></li>
+übertragen werden und manuell akzeptiert werden müssen. Ändert sich der
+Host-Key (z.B. nach einer Neuinstallation oder weil ein bösartiger
+Akteur sich als Ihren Raspberry Pi ausgibt) und passt nicht mehr zum
+ursprünglich übertragenen Key, schlägt die Verbindung fehl. Erst wenn
+der neue Key akzeptiert wird ist eine Verbindung wieder möglich
+(gespeicherte Keys finden Sie in der Datei <em>know_hosts.conf</em> im
+Verzeichis <em>.ssh</em> in Ihrem persönlichen Ordner).</p></li>
 </ol>
 </div>
 </div>
@@ -1674,12 +1688,12 @@ persönlichen Ordner).</p></li>
 <p>Wenn die Voraussetzungen stimmen (siehe <a href="#voraussetzung-f%C3%BCr-die-ssh-verbindung">Vorraussetzungen für die
 SSH-Verbindung</a>), kann eine einfache SSH-Verbindung mit folgendem
 Befehl aufgebaut werden: <code>ssh &lt;user&gt;@&lt;server&gt;</code>
-Dabei ist <user> der Username am entferten Gerät und <server> ist die
-Adresse des Servers. Die Adresse kann entweder in Form einer IP-Adresse
-(z.B. 192.168.178.10) oder, als Hostname (z.B. mein-cloudserver)
-angegeben werden. Die Variante mit dem Hostname funktioniert jedoch nur,
-wenn dieser im lokalen Netzwerk bekannt ist (z.B. in einem Heimnetzwerk
-im Router eingezeigt wird.)</server></user></p>
+Dabei ist <code>&lt;user&gt;</code> der Username am entferten Gerät und
+<code>&lt;server&gt;</code> ist die Adresse des Servers. Die Adresse
+kann entweder in Form einer IP-Adresse (z.B. 192.168.178.10) oder als
+Hostname (z.B. mein-cloudserver) angegeben werden. Die Variante mit dem
+Hostnamen funktioniert jedoch nur, wenn dieser im lokalen Netzwerk
+bekannt ist (z.B. in einem Heimnetzwerk im Router eingezeigt wird).</p>
 <div id="ssh-verbindung" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1702,10 +1716,10 @@ im Router eingezeigt wird.)</server></user></p>
 </h2>
 <hr class="half-width">
 <p>Die einfache SSH-Verbindung genügt zwar schon, um das entfernte
-System zu verwalten. Allerdings könnte eine angreifende Person
-versuchen, den Usernamen und das Passwort zu erraten und damit Zugriff
-auf den Server erlangen (leider sind Passwörter häufig nicht allzu
-kreativ erdacht). Um dies zu verhindern, kann die Verbindung zusätzlich
+System zu verwalten. Allerdings kann eine angreifende Person versuchen,
+den Usernamen und das Passwort zu erraten und damit Zugriff auf den
+Server erlangen (leider sind Passwörter häufig nicht allzu kreativ
+erdacht). Um dies zu verhindern, kann die Verbindung zusätzlich
 gesichert werden:</p>
 <ul>
 <li><p>am Client, indem statt Passwörtern kaum zu erratende Schlüssel
@@ -1713,17 +1727,18 @@ zur Anmeldung genutzt werden</p></li>
 <li><p>am Server, indem zu häufige Fehlanmeldungen zu einem Blockieren
 führen</p></li>
 </ul>
-<p>Die Anmeldung per Schlüssel erfolgt mit einem Schlüsselpaar. Ein
-solches Schlüsselpaar besteht aus einem privaten und einem öffentlichen
-Schlüssel. Während der öffentliche Schlüsse herausgegeben werden kann,
-muss der private Schlüssel privat bleiben und sollte das eigene Gerät
-niemals verlassen. Vereinfacht kann man sich das Konzept wie ein
-Vorhängeschloss und den dazugehörigen Schlüssel vorstellen. Das Schloss
-ist in dieser Analogie der öffentliche Schlüssel und wird in geöffnetem
-Zustand an den Server übergeben. Dieser “verschließt” damit die Tür zum
-SSH-Server. Zwar können alle sehen, dass Ihr (öffentliches) Schloss an
-der Tür hängt, aber nur Sie können mit Ihrem privaten Schlüssel die Tür
-wieder öffnen.</p>
+<p>Die Anmeldung per Schlüssel erfolgt mit einem
+<strong>Schlüsselpaar</strong>. Ein solches Schlüsselpaar besteht aus
+einem <strong>privaten</strong> und einem <strong>öffentlichen
+Schlüssel</strong>. Während der öffentliche Schlüsse herausgegeben
+werden kann, muss der private Schlüssel privat bleiben und sollte das
+<strong>eigene Gerät niemals verlassen</strong>. Vereinfacht kann man
+sich das Konzept wie ein Vorhängeschloss und den dazugehörigen Schlüssel
+vorstellen. Das Schloss ist in dieser Analogie der öffentliche Schlüssel
+und wird in geöffnetem Zustand an den Server übergeben. Dieser
+“verschließt” damit die Tür zum SSH-Server. Zwar können alle sehen, dass
+Ihr (öffentliches) Schloss an der Tür hängt, aber nur Sie können mit
+Ihrem privaten Schlüssel die Tür wieder öffnen.</p>
 <p>Aufgrund der komplexen krytpographischen Struktur der Schlüssel sind
 diese deutlich schwerer bis gar nicht zu erraten. Zusätzlich empfiehlt
 es sich, den privaten Schlüssel mit einer Passphrase vor unbfugtem
@@ -1740,9 +1755,9 @@ genutzt wird, ein zusätzliches Passwort eingegeben werden.</p>
 <p>Für eine sichere SSH-Verbindung empfiehlt es sich, auf Passwörter zu
 verzichten und sich stattdessen mit einem Schlüsselpaar zu
 authentifizieren.</p>
-<p>Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung etwas anders:
-<code>ssh &lt;user&gt;@&lt;server&gt; -i &lt;Pfad-zum-privaten-schlüssel&gt;</code>
-mit dem Befehlsparameter <em>-i</em> wird der der Pfad zum privaten
+<p>Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt:
+<code>ssh &lt;user&gt;@&lt;server&gt; -i &lt;Pfad-zum-privaten-schlüssel&gt;</code>.
+Mit dem Befehlsparameter <em>-i</em> wird der Pfad zum privaten
 Schlüssel am Client angegeben.</p>
 </div>
 </div>
@@ -1763,14 +1778,14 @@ Verfügung:</p>
 <li><p>RSA: weit verbreitet, kann mit sehr viel Rechenaufwand evtl.
 geknackt werden (siehe letzter Absatz <a href="https://www.onlinesicherheit.gv.at/Services/News/RSA-Verschluesselung-Sicherheit.html" class="external-link">dieses
 Artikels</a>). Als Schlüssellänge sollte 4096 bit gewählt
-werden</p></li>
+werden.</p></li>
 <li><p>ecdsa: ist ein neueres Verfahren, das aber kurze Schlüssel
-nutzt</p></li>
+nutzt.</p></li>
 <li><p>ed25519: ist ein neues Verfahren, das auf sog. elliptische Kurven
 setzt und als am sichersten gilt. Dieses Verfahren empfehle ich zu
 nutzen.</p></li>
 </ul>
-<p>Zur Wahl des Schlüsseltyps gibt es bei <a href="https://goteleport.com/blog/comparing-ssh-keys/#rsa-vs-dsa-vs-ecdsa-vs-eddsa" class="external-link">goteleport</a>
+<p>Zur Wahl des Schlüsseltyps gibt es bei <a href="https://goteleport.com/blog/comparing-ssh-keys/#rsa-vs-dsa-vs-ecdsa-vs-eddsa" class="external-link">goteleport.com</a>
 eine informative Vergleichstabelle.</p>
 <div id="wichitg" class="callout">
 <div class="callout-square">
@@ -1815,48 +1830,35 @@ unterschiedlich bewerkstelligt werden.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>Unter Windows muss das Programm scp genutzt werden, mit welchem über
 eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 übertragen werden können:</p>
 <p>Übertragung:
-<code>scp &lt;ffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p>
-<p>einfache SSH-Verbindung zum Server:
+<code>scp &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p>
+<p>SSH-Verbindung zum Server aufbauen:
 <code>ssh &lt;username&gt;@&lt;server&gt;</code></p>
 <p>Verzeichnis erstellen: <code>mkdir .ssh</code></p>
-<p>Datei für zugelassen Schlüssel erstellen:
+<p>Datei für zugelassenen Schlüssel erstellen:
 <code>touch .ssh/authorized_keys</code></p>
 <p>Öffentlichen Schlüssel in Datei kopieren:
 <code>cat Desktop/&lt;öffentlicher-schlüssel.pub&gt; &gt;&gt; .ssh/authorized_keys</code></p>
 <p>Überprüfung: <code>cat .ssh/authorized_keys</code></p>
 <p>SSH-Verbindung verlassen: <code>exit</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
-<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;schluessel&gt;</code></p>
-<ul>
-<li><p>Übertragung:
-<code>scp &lt;ffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p></li>
-<li><p>einfache SSH-Verbindung zum Server:
-<code>ssh &lt;username&gt;@&lt;server&gt;</code></p></li>
-<li><p>Verzeichnis erstellen: <code>mkdir .ssh</code></p></li>
-<li><p>Datei für zugelassen Schlüssel erstellen:
-<code>touch .ssh/authorized_keys</code></p></li>
-<li><p>Öffentlichen Schlüssel in Datei kopieren:
-<code>cat Desktop/&lt;öffentlicher-schlüssel.pub&gt; &gt;&gt; .ssh/authorized_keys</code></p></li>
-<li><p>Überprüfung: <code>cat .ssh/authorized_keys</code></p></li>
-<li><p>SSH-Verbindung verlassen: <code>exit</code></p></li>
-<li><p>SSH-Verbindung mit privatem Schlüssel testen:
-<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;schluessel&gt;</code></p></li>
-</ul>
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;privater-schlüssel&gt;</code></p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
-<ul>
-<li>ssh-copy-id</li>
-</ul>
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<p>Mit macOS kann das Programm <em>ssh-copy-id</em> genutzt werden:
+<code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
+<p>SSH-Verbindung mit privatem Schlüssel testen:
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh/&lt;privater-schlüssel&gt;</code></p>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
-<ul>
-<li>ssh-copy-id</li>
-</ul>
+<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<p>Mit Linux kann das Programm <em>ssh-copy-id</em> genutzt werden:
+<code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
+<p>SSH-Verbindung mit privatem Schlüssel testen:
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh/&lt;privater-schlüssel&gt;</code></p>
 </div>
 </div>
 </div>
@@ -1865,6 +1867,76 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 <a class="anchor" aria-label="anchor" href="#konfiguration-des-ssh-servers"></a>
 </h2>
 <hr class="half-width">
+<p>Um die Sicherheit des SSH-Servers weiter zu erhöhen, sollten einige
+Einstellungen am Server vorgenommen werden. Dies kann nach erfolgreicher
+SSH-Verbindung getan werden. Die Konfigurationsdatei für den SSH-Server
+findet sich unter <code>/etc/ssh/sshd_config</code> und kann mit dem
+<em>nano</em>-Editor bearbeitet werden.</p>
+<p>Folgende Änderungen sollten an der Konfigurationsdatei vorgenommen
+werden:</p>
+<ul>
+<li><p>Nur spezifischen Usern eine SSH-Verbindung erlauben (neue Zeile
+ergänzen): <code>AllowUsers &lt;username&gt;</code></p></li>
+<li><p>Anmeldung mit Passwort verbieten und nur per Schlüssel erlauben
+(vorhande Zeilen ändern):</p></li>
+</ul>
+<pre><code>PasswordAuthentication no
+PubkeyAuthentication yes
+KbdInteractiveAuthentication no
+UsePAM no</code></pre>
+<ul>
+<li><p>Standardport ändern: <code>#Port 22</code> ändern zu
+<code>Port &lt;eine Nummer größer 1024&gt;</code></p></li>
+<li><p>Root-User-Anmeldungen verbieten:
+<code>PermitRootLogin no</code></p></li>
+<li><p>Zeit für erfolgreiche Anmeldeversuche auf 30 Sekunden limitieren:
+<code>LoginGraceTime 30</code></p></li>
+<li><p>Leere Passwörter verbieten:
+<code>PermitEmptyPasswords no</code></p></li>
+<li><p>Abmeldung bei Inaktivität: <code>ClientAliveInterval 300</code>
+und <code>ClientAliveCountMax 0</code></p></li>
+</ul>
+<p>Nach Änderungen an der Konfiguration eines Programms muss dieses in
+der Regel <strong>neu gestartet</strong> werden, um die neue
+Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit dem
+Befehl <code>sudo systemctl restart sshd.service</code> (siehe dazu auch
+das <a href="#programme-mit-systemd-steuern">Callout zu systemd</a>)</p>
+<p>Weitere Anpassungen des SSH-Servers sind je nach eigenem
+Sicherheitsbedürfnis möglich. Z.B. finden sich bei <a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html" class="external-link">cyberciti.biz</a>
+einige weitere Möglichkeiten.</p>
+<p>Möchte man sich nun per SSH anmelden, müssen die vorgenommenen
+Änderungen berücksichtigt werden. V.a. muss die geänderte Portnummer
+angegeben werden:
+<code>ssh -p &lt;Portnummer&gt; -i &lt;Pfad-zum-privaten-Schlüssel&gt; &lt;user&gt;@&lt;server&gt;</code></p>
+<div id="programme-mit-systemd-steuern" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="programme-mit-systemd-steuern" class="callout-inner">
+<h3 class="callout-title">Programme mit systemd Steuern<a class="anchor" aria-label="anchor" href="#programme-mit-systemd-steuern"></a>
+</h3>
+<div class="callout-content">
+<p>Programme können unter Debian-basierten Systemen mit dem
+Systemd-Dienst gesteuert werden. Voraussetzung dafür ist, dass eine sog.
+Unit-Datei vorhanden ist (i.d.R. unter <code>/etc/systemd/system</code>
+zu finden). Die Dienste können v.a. gestartet, gestoppt, neugestartet
+und geprüft werden. Der Systemd-Dienst wird mit dem Befehl
+<code>systemctl</code> (kurz für systemcontrol) bedient:</p>
+<ul>
+<li><p>Programm starten:
+<code>sudo systemctl start &lt;Servicename&gt;</code></p></li>
+<li><p>Programm stoppen:
+<code>sudo systemctl stop &lt;Servicename&gt;</code></p></li>
+<li><p>Programm neustarten
+<code>sudo systemctl restart &lt;Servicename&gt;</code></p></li>
+<li><p>Status überprüfen:
+<code>sudo systemctl status &lt;Servicename&gt;</code></p></li>
+<li><p>Ein Programm zum Autostart hinzufügen:
+<code>sudo systemctl daemon-reload &amp;&amp; sudo systemctl enable &lt;Servicename&gt;</code></p></li>
+</ul>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1873,8 +1945,18 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li><p>das SSH-Protokoll erlaubt den Zugriff auf die Kommandozeile
+entfernter Computer</p></li>
+<li><p>zur Erhöhung der Sicherheit empfiehlt sich die Nutzung eines
+Schlüsselpaares anstatt eines Passworts</p></li>
+<li><p>zur Reduzierung der Angriffsfläche sollte die Konfiguration des
+SSH-Servers angepasst werden</p></li>
+<li><p>ein privater (SSH-)Schlüssel darf niemals das eigene Gerät
+verlassen</p></li>
+<li><p>der Aufbau der SSH-Verbindung geschieht wie folgt:
+<code>ssh -p &lt;Portnummer&gt; -i &lt;Pfad-zum-privaten-Schlüssel&gt; &lt;user&gt;@&lt;server&gt;</code></p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -1882,6 +1964,418 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</section></section><section id="aio-05-sicherheit-1"><p>Content from <a href="05-sicherheit-1.html">Sicherheit: Benutzer und Dateirechte</a></p>
+<hr>
+<p>Last updated on 2024-08-22 |
+
+        <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/05-sicherheit-1.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 135 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li><p>Wer darf was auf meinem System?</p></li>
+<li><p>Welche Benutzer gibt es unter Linux?</p></li>
+<li><p>Was sind Dateirechte?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li><p>Grundlagen der Benutzerverwaltung unter Linux</p></li>
+<li><p>Dateirechte verstehen und anpassen</p></li>
+<li><p>Befehle <code>chmod</code>, <code>chown</code>,
+<code>adduser</code>, <code>deluser</code> und <code>usermod</code>
+kennen lernen</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="benutzerverwaltung">Benutzerverwaltung<a class="anchor" aria-label="anchor" href="#benutzerverwaltung"></a>
+<a class="anchor" aria-label="anchor" href="#benutzerverwaltung"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="benutzerkategorien">Benutzerkategorien<a class="anchor" aria-label="anchor" href="#benutzerkategorien"></a>
+</h3>
+<p>Jeder User-Account in Linux besteht aus einem Loginnamen, einer
+User-ID, ggf. einem beschreibendem Namen und weiteren Metainformationen
+(z.B. Adresse, Telefonnummer etc). Auf einem üblichen Linux-System gibt
+es drei Typen von Benutzerkonten:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>root</strong>: der Root-Account ist der
+Systemadministrator und hat damit die meisten Rechte im System. Er ist
+vergleichbar mit dem “Administrator”-Konto in Windows. Die User-ID des
+root-Accounts ist immer die 1.</p></li>
+<li><p><strong>Standardaccount</strong>: bei der Installation des
+Raspberry Pi OS wurde bereits ein erster Standardaccount erstellt.
+Standardaccounts sind i.d.R. mit echten Personen in Verbindung zu
+bringen, haben ein Benutzerverzeichnis unter <code>/home/</code> und
+können sich mit einem Passwort am System anmelden. Der erste
+Standardbenutzer erhält die User-ID 1000. Für alle weiteren wird die ID
+jeweils um 1 erhöht. Ein Standardaccount kann administrative Rechte
+erhalten. Wurden ihm diese erteilt, können mit dem <a href="#sudo"><code>sudo</code>-Befehl</a> die eigenen Rechte eskaliert
+werden, d.h. Befehle mit administrativen Rechten ausgeführt
+werden.</p></li>
+<li><p><strong>Systemaccount</strong>: Auf einem frisch installierten
+Linuxsystem gibt es bereits zahlreiche Systemaccounts. Sie haben i.d.R.
+User-IDs <code>&lt;</code> 1000. Systemuser sind nicht mit echten
+Personen zu verbinden und können sich nicht interaktiv am System
+anmelden. Ein Systemaccount ist im Normalfall für eine explizite Aufgabe
+vorhanden. Z.B. ist der Account <em>www-data</em> für die Steuerung
+eines Webservers gedacht.</p></li>
+</ol>
+<p>Sämtliche Benutzeraccounts des Systems können der Datei
+<code>/etc/passwd</code> entnommen werden (z.B. öffnen mit
+<code>less /etc/passwd</code>).</p>
+<p>Möchte man einen neuen Account erstellen, nutzt man den Befehl
+<code>adduser</code>. Um z.B. den Account “Linus” hinzuzufügen lautet
+der Befehl wie folgt: <code>sudo adduser linus</code> Anschließend kann
+das Passwort sowie weitere Metainformationen des Accounts gesetzt
+werden. Es wird automatisch ein Homeverzeichnis für den User erstellt.
+Möchte man dies nicht, kann der Parameter <code>--no-create-home</code>
+dem Befehl angehängt werden.</p>
+</div>
+<div class="section level3">
+<h3 id="gruppen">Gruppen<a class="anchor" aria-label="anchor" href="#gruppen"></a>
+</h3>
+<p>Neben einzelnen Accounts gibt es auch Gruppen, um mehrere Accounts
+zusammen zu fassen. Standardmäßig ist jeder Account (System- und
+Standardaccounts) auch Mitglied in seiner eigenen Gruppe. So ist z.B.
+der Systemaccount <em>www-data</em> auch Mitglied in der Gruppe
+<em>www-data</em>. Ein Account hat dabei immer die Rechte, die ihm
+selbst erteilt wurden plus die Rechte, die den Gruppen erteilt wurden,
+in welchen er Mitglied ist. Wird ein Recht an einer Stelle verweigert,
+so hat dies Vorrang vor einer Erlaubnis an anderer Stelle.</p>
+<p>Um zu sehen in welchen Gruppen man Mitglied ist, kann der Befehl
+<code>id</code> genutzt werden. Der erste Standardbenutzer auf dem
+Raspberry Pi OS ist in mehreren Gruppen Mitglied. Um alle Gruppen und
+deren Mitglieder zu sehen kann die Datei <code>/etc/groups</code>
+geöffnet werden.</p>
+<p>Möchte man einen Account einer Account-Gruppe hinzufügen, nutzt man
+den <code>usermod</code>-Befehl (kurz für user modification):
+<code>sudo usermod -aG &lt;Gruppenname&gt; &lt;Username&gt;</code>
+Möchte man einem Account administrative Rechte erteilen, muss dieser der
+<em>sudo</em>-Gruppe hinzugefügt werden:
+<code>sudo usermod -aG sudo &lt;Username&gt;</code></p>
+</div>
+<div class="section level3">
+<h3 id="sudo">sudo<a class="anchor" aria-label="anchor" href="#sudo"></a>
+</h3>
+<p>Mit dem <code>sudo</code>-Befehl können die eigenen Benutzerrechte
+eskaliert werden. Das heißt, Befehle mit erhöhten, also administrativen,
+Rechten ausgeführt werden. Dazu muss lediglich das
+<code>sudo</code>-Kommando vor den Befehl gestellt werden. Um z.B. einen
+neuen Account zu erstellen, muss vor den entsprechenden Befehl das
+<em>sudo</em> gestellt werden:
+<code>sudo adduser &lt;username&gt;</code></p>
+<div id="der-sudo-befehl" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="der-sudo-befehl" class="callout-inner">
+<h3 class="callout-title">Der <code>sudo</code>-Befehl<a class="anchor" aria-label="anchor" href="#der-sudo-befehl"></a>
+</h3>
+<div class="callout-content">
+<p>Um Befehle mit erhöhten Rechten auszuführen muss das
+<code>sudo</code>-Kommando vor den Befehl gestellt werden, z.B.
+<code>sudo adduser &lt;username&gt;</code></p>
+</div>
+</div>
+</div>
+<p>Der <code>sudo</code>-Befehl wird auch genutzt, um zwischen Accounts
+zu wechseln oder Befehle mit den Rechten eines anderen Accounts
+auszuführen. Um z.B. in den <em>Root</em>-Account zu wechseln genügt das
+Kommando <code>sudo -i</code>. Anschließend befindet man sich auf der
+Kommandozeile des Root-Accounts und alle Befehle werden mit Root-Rechten
+ausgeführt. Dementsprechend sollte man hier Vorsicht walten lassen. Um
+wieder zur vorhergehenden Kommandozeile des Standardaccounts zu kommen
+wird die Root-Befehlszeile mit dem Befehl <code>exit</code>
+verlassen.</p>
+<p>Möchte man einen Befehl mit den Rechten eines anderen Accounts
+ausführen geschieht dies wie folgt:
+<code>sudo -u &lt;username&gt; &lt;Befehl&gt;</code> Um z.B. mit den
+Rechten des Accounts <em>www-data</em> die Datei <em>startpage.html</em>
+zu öffnen lautet der Befehl
+<code>sudo -u www-data nano startpage.html</code></p>
+<div class="section level4">
+<h4 id="passwortabfrage-bei-sudo-befehl">Passwortabfrage bei sudo-Befehl<a class="anchor" aria-label="anchor" href="#passwortabfrage-bei-sudo-befehl"></a>
+</h4>
+<p>Um zu verhindern, dass der sudo-Befehl ohne die Kenntnis des
+Passworts ausgeführt wird (z.B. wenn ein Angreifer einen Weg ins System
+gefunden hat und nun Zugriff auf den Account hat), sollte das System so
+konfiguriert werden, dass für den <code>sudo</code>-Befehl immer ein
+Passwort verlangt wird. Dieses wird nach erstmaliger Eingabe für die
+aktuelle Sitzung zwischengespeichert. Dazu muss die Datei
+<code>/etc/sudoers.d/010_&lt;username&gt;-nopasswd</code> mit dem
+<em>visudo</em>-Programm geöffnet werden:
+<code>sudo visudo /etc/sudoers.d/010_&lt;username&gt;-nopasswd</code>
+und wie folgt angepasst werden:</p>
+<p>aus</p>
+<pre><code>&lt;username&gt; ALL=(ALL) NOPASSWD: ALL</code></pre>
+<p>wird</p>
+<pre><code>&lt;username&gt; ALL=(ALL) PASSWD: ALL</code></pre>
+<p>Dabei muss <code>&lt;username&gt;</code> durch den eigenen Usernamen
+ersetzt werden. Siehe dazu auch die <a href="https://www.raspberrypi.com/documentation/computers/configuration.html#require-a-password-for-sudo-commands" class="external-link">offizielle
+Raspberry-Pi-Dokumentation</a>.</p>
+<div id="benutzerverwaltung-1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="benutzerverwaltung-1" class="callout-inner">
+<h3 class="callout-title">Benutzerverwaltung<a class="anchor" aria-label="anchor" href="#benutzerverwaltung-1"></a>
+</h3>
+<div class="callout-content">
+<p>Sie sind mit Ihrem Standardaccount am System angemeldet, dieser hat
+bereits administrative Rechte. Nun wollen Sie Ihrem System den neuen
+Account <em>Linus</em> hinzufügen. Dieser Account soll ebenfalls
+administrative Rechte erhalten. Wie lauten die korrekten Befehle?</p>
+<ol style="list-style-type: decimal">
+<li><p><code>sudo adduser linus</code> und
+<code>sudo visudo /etc/sudoers.d/010_pi-nopasswd</code></p></li>
+<li><p><code>adduser linus</code> und
+<code>usermod -aG linus sudo</code></p></li>
+<li><p><code>sudo adduser linus</code> und
+<code>sudo usermod -aG sudo linus</code></p></li>
+<li><p><code>sudo visudo linus</code> und
+<code>sudo usermod -aG www-data linus</code></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<ul>
+<li>Antwort 3 ist die richtige Lösung.</li>
+</ul>
+<p>Antwort 1 fügt zwar den User korrekt hinzu, aber der zweite Teil
+ändert allenfalls Eintellungen für den Account Pi.</p>
+<p>Bei Antwort 2 fehlt das <code>sudo</code>-Kommando vor den
+eigentlichen Befehlen und beim usermod-Befehl sind user und Gruppe
+vertauscht.</p>
+<p>Bei Antwort 4 macht der erste Teil gar keinen Sinn und der zweite ist
+zwar technisch korrekt, führt aber nicht zum gewollten Ziel.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="benutzerrechte">Benutzerrechte<a class="anchor" aria-label="anchor" href="#benutzerrechte"></a>
+</h3>
+<p>Jede Datei des Systems ist einem Besitzer und einer Gruppe
+zugeordnet. Darüber kann gesteuert werden, wer auf welche Dateien mit
+welchen Rechten zugreifen darf. Die genauen Rechte werden über den
+sogenannten <strong><em>mode</em></strong> gesteuert. Der <em>mode</em>
+gibt für jede Datei an, welche Rechte der Besitzer, die besitzende
+Gruppe und “andere Accounts” haben. Andere Accounts sind dabei alle
+anderen Accounts des Systems, auch Gastaccounts oder Systemaccounts.</p>
+<p>Mit dem Befehl <code>ls -l &lt;Dateipfad&gt;</code> können die
+Inhalte eines Verzeichnisses und deren Berechtigungen angezeigt werden.
+Ohne Pfadangabe wird das aktuelle Verzeichnis gewählt. Die Ausgabe des
+Befehls <code>ls -l /home/linus</code> könnte z.B. wie folgt
+aussehen:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">total</span> 4</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">drwxrwxr-x</span> 2 linus linus 4096 Aug 21 15:35 Ordner1</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 linus linus   15 Aug 21 15:34 testdatei.txt</span></code></pre>
+</div>
+<p>Dies ist wie folgt zu verstehen:</p>
+<ul>
+<li><p><span style="color:rgb(165,30,55)"><strong>d</strong></span>rwxrwxr-x = es
+handelt sich um ein Verzeichnis (d für directory, l für Link, - für
+Datei)</p></li>
+<li><p>d<span style="color:rgb(165,30,55)"><strong>rwx</strong></span>rwxr-x = der
+Besitzer hat Lese- Schreib -und Ausführberechtigungen</p></li>
+<li><p>drwx<span style="color:rgb(165,30,55)"><strong>rwx</strong></span>r-x = die
+besitzende Gruppe hat Lese- Schreib -und Ausführberechtigungen</p></li>
+<li><p>drwxrwx<span style="color:rgb(165,30,55)"><strong>r-x</strong></span> = alle anderen
+haben nur Lese- und Ausführberechtigungen</p></li>
+<li><p><span style="color:rgb(165,30,55)"><strong>linus</strong></span>
+linus = die Datei/das Verzeichnis gehört dem User
+<em>linus</em></p></li>
+<li><p>linus <span style="color:rgb(165,30,55)"><strong>linus</strong></span> = die
+Datei/das Verzeichnis gehört der Gruppe <em>linus</em></p></li>
+<li><p><span style="color:rgb(165,30,55)"><strong>4096</strong></span> =
+Dateigröße in Bytes</p></li>
+<li><p><span style="color:rgb(165,30,55)"><strong>Aug 21
+15:35</strong></span> = Änderungszeit</p></li>
+<li><p><span style="color:rgb(165,30,55)"><strong>Ordner1</strong></span> =
+Verzeichnis-/Dateiname</p></li>
+</ul>
+<p>Der ls-Befehl ist bei <a href="https://wiki.ubuntuusers.de/ls/" class="external-link">Ubuntuusers</a> auch ausführlich
+erklärt.</p>
+<p>Möchte man den Eigentümer einer Datei oder eines Verzeichnisses
+ändern, wird der Befehl <code>chown</code> genutzt (kurz für change
+ownership):
+<code>chown &lt;neuer besitzer&gt;:&lt;neue Grupppe&gt; &lt;Datei/Verzeichnisname&gt;</code>.
+Um z.B. die Datei <em>test.txt</em> dem User und der Gruppe
+<em>linus</em> zu übertragen lautet der Befehl wie folgt:
+<code>sudo chown linus:linus test.txt</code>. Soll ein gesamtes
+Verzeichnis übertragen werden, wird der Parameter <code>-R</code>
+(rekursiv) genutzt: <code>sudo chown -R linus:linus Ordner1</code></p>
+<p>Möchte man den <em>mode</em> ändern (also die Rechte für Besitzer und
+Gruppe), nutzt man den Befehl <code>chmod</code> (kurz für change mode):
+<code>sudo chmod &lt;Modus&gt; &lt;Datei/Verzeichnis&gt;</code> Der
+Modus setzt sich dabei stets aus drei Angaben zusammen:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Angabe für wen etwas geändert wird (Gruppe oder Account)</p>
+<ul>
+<li><p><code>u</code> = user</p></li>
+<li><p><code>g</code> = group</p></li>
+<li><p><code>o</code> other (=alle anderen)</p></li>
+</ul>
+</li>
+<li>
+<p>Angabe, ob ein Recht erteilt oder entzogen werden soll</p>
+<ul>
+<li><p><code>+</code> = Recht erteilen</p></li>
+<li><p><code>-</code> = Recht entziehen</p></li>
+</ul>
+</li>
+<li>
+<p>Angabe zum betroffene Recht.</p>
+<ul>
+<li><p><code>r</code> = read (Leseberechtigung)</p></li>
+<li><p><code>w</code> = write (Schreibbrechtigung)</p></li>
+<li><p><code>e</code> = execute (Ausführen von Dateien oder
+Verzeichnisinhalt von Ordnern anzeigen lassen)</p></li>
+</ul>
+</li>
+</ol>
+<p>Eine ausführliche Erklärung zu Dateirechten findet sich wieder bei <a href="https://wiki.ubuntuusers.de/Rechte/" class="external-link">Ubuntuusers</a></p>
+<div class="section level4">
+<h4 id="beispiel">Beispiel<a class="anchor" aria-label="anchor" href="#beispiel"></a>
+</h4>
+<p>Die Datei <em>test.txt</em> gehört dem User <em>linus</em> und der
+Gruppe <em>www-data</em>. Um nun dem User Lese- Schreib- und
+Ausführberechtigung zu erteilen, der Gruppe aber nur Leserechte, lauten
+die Befehle wie folgt: <code>sudo chmod u+rwx testdatei.txt</code> für
+die Userberechtigung und <code>sudo chmod g+r testdatei.txt</code> für
+die Gruppenberechtigung. Möchte man der Gruppe www-data wieder das
+Leserecht entziehen, lautet der Befehl wie folgt:
+<code>sudo chmod g-r testdatei.txt</code></p>
+<div id="dateiberechtigungen" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="dateiberechtigungen" class="callout-inner">
+<h3 class="callout-title">Dateiberechtigungen<a class="anchor" aria-label="anchor" href="#dateiberechtigungen"></a>
+</h3>
+<div class="callout-content">
+<p>Sie wollen mit Ihrem Standardaccount (dieser ist Mitglied der
+sudo-Gruppe) im Verzeichnis <code>/opt/</code> den neuen Ordner
+<code>webservice</code> erstellen. Der Ordner soll dem User
+<em>linus</em> und der Gruppe <em>www-data</em> gehören. Der User soll
+volle Rechte haben, die Gruppe soll lesen und ausführen dürfen, alle
+anderen sollen keine Rechte erhalten. Wie lauten die korrekten
+Befehle?</p>
+<ol style="list-style-type: decimal">
+<li><ul>
+<li><p><code>mkdir /opt/webservice</code></p></li>
+<li><p><code>chown linus:www-data /opt/webservice</code></p></li>
+<li><p><code>chmod 750</code></p></li>
+</ul></li>
+<li><ul>
+<li><p><code>sudo mkdir /opt/webservice</code></p></li>
+<li><p><code>sudo chown linus:www-data /opt/webservice</code></p></li>
+<li><p><code>sudo chmod u+rwx</code></p></li>
+<li><p><code>sudo chmod g+r</code></p></li>
+<li><p><code>sudo chmod o-rwx</code></p></li>
+</ul></li>
+<li><ul>
+<li><p><code>sudo touch /opt/webservice</code></p></li>
+<li><p><code>sudo chmod linus:www-data /opt/webservice</code></p></li>
+<li><p><code>sudo chown u+rwx</code></p></li>
+<li><p><code>sudo chown g+r</code></p></li>
+<li><p><code>sudo chown o-rwx</code></p></li>
+</ul></li>
+<li><ul>
+<li><p><code>sudo mkdir /opt/webservice</code></p></li>
+<li><p><code>sudo chown linus:www-data /opt/webservice</code></p></li>
+<li><p><code>chmod linus:+rwx</code></p></li>
+<li><p><code>chmod www-data:+r</code></p></li>
+<li><p><code>chmod others:-rwx</code></p></li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<ul>
+<li>Antwort 2 ist korrekt. Die drei <code>chmod</code>-Befehle könnten
+noch durch <code>sudo chmod 750</code> zusammengefasst werden, siehe
+dazu den <a href="https://wiki.ubuntuusers.de/Rechte/#Darstellungsarten" class="external-link">Ubuntuusers-Artikel
+zu Dateirechten</a>
+</li>
+</ul>
+<p>Antwort 1 schlägt fehl, da keine administrativen Rechte genutzt
+werden</p>
+<p>Antwort 3 erstellt eine Datei anstatt eines Verzeichnisses. Außerdem
+sind die Befehle <code>chmod</code> und <code>chown</code>
+vertauscht.</p>
+<p>In Antwort 4 ist der <code>chmod</code>-Befehl fehlerhaft</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li><p>der <em>root</em>-Account ist der Adminstrator des
+Systems</p></li>
+<li><p>Mitglieder der <em>sudo</em>-Gruppe haben administrative Rechte,
+welche sie mit dem <code>sudo</code>-Kommando nutzen können</p></li>
+<li><p>Dateien und Ordner sind immer einem Benutzer und einer Gruppe
+zugeordnet. Die Besitzverhältnisse können mit <code>chown</code>
+geändert werden.</p></li>
+<li><p>Dateien und Ordner haben einen <em>mode</em>, welcher die Rechte
+von Besitzer und besitzender Gruppe steuert, er kann mit
+<code>chmod</code> geändert werden</p></li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</div>
 </section></section>
 </div>
     </main>
@@ -1930,8 +2424,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/aio.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-08-20",
-  "datePublished": "2024-08-20"
+  "dateModified": "2024-08-22",
+  "datePublished": "2024-08-22"
 }
 
   </script><script>

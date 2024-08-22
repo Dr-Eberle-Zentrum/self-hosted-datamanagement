@@ -288,6 +288,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-sicherheit-1.html">5. Sicherheit: Benutzer und Dateirechte</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -383,8 +395,31 @@ Dabei erfolgt die Arbeit ohne Maus. Programmsteuerung, Dateioperationen
 und die Dateierstellung werden per Tastatur erledigt.</p></li>
 </ul></section><section id="04-remote-access"><h2 class="section-heading"><a href="04-remote-access.html">Remote Access: das SSH-Protokoll</a></h2>
 <hr class="half-width">
-<ul><li>
-</li></ul></section>
+<ul>
+<li><p>das SSH-Protokoll erlaubt den Zugriff auf die Kommandozeile
+entfernter Computer</p></li>
+<li><p>zur Erhöhung der Sicherheit empfiehlt sich die Nutzung eines
+Schlüsselpaares anstatt eines Passworts</p></li>
+<li><p>zur Reduzierung der Angriffsfläche sollte die Konfiguration des
+SSH-Servers angepasst werden</p></li>
+<li><p>ein privater (SSH-)Schlüssel darf niemals das eigene Gerät
+verlassen</p></li>
+<li><p>der Aufbau der SSH-Verbindung geschieht wie folgt:
+<code>ssh -p &lt;Portnummer&gt; -i &lt;Pfad-zum-privaten-Schlüssel&gt; &lt;user&gt;@&lt;server&gt;</code></p></li>
+</ul></section><section id="05-sicherheit-1"><h2 class="section-heading"><a href="05-sicherheit-1.html">Sicherheit: Benutzer und Dateirechte</a></h2>
+<hr class="half-width">
+<ul>
+<li><p>der <em>root</em>-Account ist der Adminstrator des
+Systems</p></li>
+<li><p>Mitglieder der <em>sudo</em>-Gruppe haben administrative Rechte,
+welche sie mit dem <code>sudo</code>-Kommando nutzen können</p></li>
+<li><p>Dateien und Ordner sind immer einem Benutzer und einer Gruppe
+zugeordnet. Die Besitzverhältnisse können mit <code>chown</code>
+geändert werden.</p></li>
+<li><p>Dateien und Ordner haben einen <em>mode</em>, welcher die Rechte
+von Besitzer und besitzender Gruppe steuert, er kann mit
+<code>chmod</code> geändert werden</p></li>
+</ul></section>
 </div>
     </main>
 </div>
@@ -432,8 +467,8 @@ und die Dateierstellung werden per Tastatur erledigt.</p></li>
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/key-points.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/key-points.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-08-20",
-  "datePublished": "2024-08-20"
+  "dateModified": "2024-08-22",
+  "datePublished": "2024-08-22"
 }
 
   </script><script>

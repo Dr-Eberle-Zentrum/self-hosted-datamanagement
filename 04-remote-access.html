@@ -118,11 +118,11 @@
   Self-hosted Data Management
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 97%" class="percentage">
-    97%
+<aside class="col-md-12 lesson-progress"><div style="width: 60%" class="percentage">
+    60%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 97%" aria-valuenow="97" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 60%" aria-valuenow="60" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -252,6 +252,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-sicherheit-1.html">5. Sicherheit: Benutzer und Dateirechte</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -295,7 +304,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="03-linux-grundlagen.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="05-sicherheit-1.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -303,14 +312,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Linux Schnellstart
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="05-sicherheit-1.html" rel="next">
+          Next: Sicherheit: Benutzer...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Remote Access: das SSH-Protokoll</h1>
-        <p>Last updated on 2024-08-20 |
+        <p>Last updated on 2024-08-22 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/04-remote-access.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -329,8 +338,8 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li><p>Wie kann ein Computer aus der Ferne verwaltet werden, wenn er
-keinen Bildschirm hat?</p></li>
+<ul><li><p>Wie kann ein Computer (ggf. aus der Ferne) verwaltet werden, auch
+wenn er keinen Bildschirm hat?</p></li>
 <li><p>Wie kann eine SSH-Verbindung sicher über unsichere Netzwerke
 hergestellt werden?</p></li>
 </ul></div>
@@ -361,13 +370,13 @@ genutzt).</p>
 Clientgerät (z.B. Ihrem Notebook) und einem Server (z.B. Ihrem Raspberry
 Pi) über ein (ggf. auch unsicheres) Netzwerk auf. Über diese Verbindung
 besteht in der Regel Zugriff auf die Kommandozeile des entfernten
-Geräts. Die Verbindung kann aber auch zum Übertragen anderer Daten
-genutzt werden. So können Daten übertragen werden (mit dem
-<code>scp</code>-Befehl), entfernte Dateisysteme lokal genutzt werden
-(per SSHFS, siehe <a href="https://de.wikipedia.org/wiki/SSHFS" class="external-link">Wikipedia</a>) oder die
+Geräts, womit dieses verwaltet werden kann.</p>
+<p>Die Verbindung kann aber auch zum Übertragen anderer Daten genutzt
+werden. So können Dateien übertragen werden (mit dem <a href="https://www.ionos.de/digitalguide/server/konfiguration/linux-scp-befehl/" class="external-link"><code>scp</code>-Befehl</a>),
+entfernte Dateisysteme lokal genutzt werden (per SSHFS, siehe <a href="https://de.wikipedia.org/wiki/SSHFS" class="external-link">Wikipedia</a>) oder die
 graphische Ausgabe eines entfernten Programms lokal dargestellt werden
-<a href="https://www.heise.de/tipps-tricks/SSH-Tunnel-nutzen-so-geht-s-4320041.html" class="external-link">siehe
-diesen Heise-Artikel</a>.</p>
+(<a href="https://www.heise.de/tipps-tricks/SSH-Tunnel-nutzen-so-geht-s-4320041.html" class="external-link">siehe
+diesen Heise-Artikel</a>).</p>
 <div id="protokoll" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -376,25 +385,26 @@ diesen Heise-Artikel</a>.</p>
 <h3 class="callout-title">Protokoll<a class="anchor" aria-label="anchor" href="#protokoll"></a>
 </h3>
 <div class="callout-content">
-<p>Bei einem Protokoll handelt es sich um genau festgelegte technische
-Parameter für den Kommunikationsausstausch zwischen Computern. Ähnlich
-der Sprache und ihrer Grammatik, auf die sich zwei Menschen zum
-Kommunizieren einigen. Ein Protokoll hat einen genauen Einsatzzweck und
-eine klar definierte Funktionsweise. z.B. ist das HTTPS-Protokoll dafür
-gemacht, Daten zwischen einem Browser und einem Webserver verschlüssel
-mittels der TLS-Verschlüsselung zu übertragen.</p>
+<p>Bei einem Protokoll handelt es sich um eine Sammlung genau
+festgelegter technischer Parameter für den Kommunikationsaustausch
+zwischen Computern. Ähnlich der Sprache und ihrer Grammatik, auf die
+sich zwei Menschen zum Kommunizieren einigen. Ein Protokoll hat einen
+genauen Einsatzzweck und eine klar definierte Funktionsweise. z.B. ist
+das HTTPS-Protokoll dafür gemacht, Daten zwischen einem Browser und
+einem Webserver verschlüsselt mittels der TLS-Verschlüsselung zu
+übertragen. Mehr zum Thema findet sich bei <a href="https://www.studysmarter.de/schule/informatik/theoretische-informatik/netzwerkprotokolle/" class="external-link">StudySmarter</a></p>
 </div>
 </div>
 </div>
-<p>Das SSH-Protkoll nutzt dafür verschiedene Technologien zur
-Gewährleistung der sicheren Übertragung. Ähnlich einer <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/" class="external-link">HTTPS-Verbindung</a>
+<p>Das SSH-Protkoll nutzt verschiedene Technologien zur Gewährleistung
+der sicheren Übertragung. Ähnlich einer <a href="https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/" class="external-link">HTTPS-Verbindung</a>
 werden beim Verbindungsaufbau zunächst die Kommunikationsstandards
 zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys
 ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben.
 Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer
-symmetrischen Verschlüsselung (welche deutliche schneller ist, als die
-zuvor stattfindende asymetrische Verschlüsselung, siehe dazu auch die
-Ressourcen von Studyflix zur <a href="https://studyflix.de/informatik/symmetrische-verschlusselung-1610" class="external-link">symetrischen</a>
+symmetrischen Verschlüsselung aufgebaut (welche deutliche schneller ist,
+als die zuvor stattfindende asymetrische Verschlüsselung, siehe dazu
+auch die Ressourcen von Studyflix zur <a href="https://studyflix.de/informatik/symmetrische-verschlusselung-1610" class="external-link">symetrischen</a>
 und <a href="https://studyflix.de/informatik/asymmetrische-verschlusselung-1609" class="external-link">asymmetrischen</a>
 Verschlüsselung).</p>
 <div id="voraussetzung-für-die-ssh-verbindung" class="callout challenge">
@@ -405,10 +415,11 @@ Verschlüsselung).</p>
 <h3 class="callout-title">Voraussetzung für die SSH-Verbindung<a class="anchor" aria-label="anchor" href="#voraussetzung-f%C3%BCr-die-ssh-verbindung"></a>
 </h3>
 <div class="callout-content">
-<p>Sie haben wie in <a href="Sitzung%202">01-hardware-betriebssystem.Rmd</a> besprochen auf
-Ihrem Raspberry Pi das Raspberry Pi OS installiert. Nun wollen Sie eine
-SSH-Verbindung von Ihrem Notebook mit Ihrem Raspberry Pi herstellen. Was
-sind die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
+<p>Sie haben wie in <a href="02-hardware-betriebssystem.html">Sitzung
+2</a> besprochen auf Ihrem Raspberry Pi das Raspberry Pi OS installiert.
+Nun wollen Sie eine SSH-Verbindung von Ihrem Notebook mit Ihrem
+Raspberry Pi herstellen. Was sind die Bedingungen für eine erfolgreiche
+SSH-Verbindung?</p>
 </div>
 </div>
 </div>
@@ -420,7 +431,7 @@ sind die Bedingungen für eine erfolgreiche SSH-Verbindung?</p>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein.
-Dazu müssen entweder Server und Client im Selben Netzwerk (z.B.
+Dazu müssen entweder Server und Client im selben Netzwerk (z.B.
 demselben Heimnetzwerk) sein oder der Server muss im Internet erreichbar
 sein.</p></li>
 <li><p>Software: Auf dem Raspberry Pi muss die SSH-Server-Software
@@ -437,13 +448,13 @@ zulassen</p></li>
 <li><p>Identifizierung: der Server muss für eine ordentliche Verbindung
 eindeutig identifizierbar sein. Dies geschieht durch sogenannte
 Host-Keys, die bei der erstmaligen Verbindung vom Server zum Client
-übertragen werden. Ändert sich der Host-Key (z.B. nach einer
-Neuinstallation oder weil ein bösartiger Akteur sich als Ihren Raspberry
-Pi ausgibt) und passt nicht mehr zum ursprünglichen, schlägt die
-Verbindung fehl. Erst wenn der neue Key akzeptiert wird ist eine
-Verbindung wieder möglich (gespeicherte Keys finden Sie in der Datei
-<em>know_hosts.conf</em> im Verzeichis <em>.ssh</em> in Ihrem
-persönlichen Ordner).</p></li>
+übertragen werden und manuell akzeptiert werden müssen. Ändert sich der
+Host-Key (z.B. nach einer Neuinstallation oder weil ein bösartiger
+Akteur sich als Ihren Raspberry Pi ausgibt) und passt nicht mehr zum
+ursprünglich übertragenen Key, schlägt die Verbindung fehl. Erst wenn
+der neue Key akzeptiert wird ist eine Verbindung wieder möglich
+(gespeicherte Keys finden Sie in der Datei <em>know_hosts.conf</em> im
+Verzeichis <em>.ssh</em> in Ihrem persönlichen Ordner).</p></li>
 </ol></div>
 </div>
 </div>
@@ -453,12 +464,12 @@ persönlichen Ordner).</p></li>
 <p>Wenn die Voraussetzungen stimmen (siehe <a href="#voraussetzung-f%C3%BCr-die-ssh-verbindung">Vorraussetzungen für die
 SSH-Verbindung</a>), kann eine einfache SSH-Verbindung mit folgendem
 Befehl aufgebaut werden: <code>ssh &lt;user&gt;@&lt;server&gt;</code>
-Dabei ist <user> der Username am entferten Gerät und <server> ist die
-Adresse des Servers. Die Adresse kann entweder in Form einer IP-Adresse
-(z.B. 192.168.178.10) oder, als Hostname (z.B. mein-cloudserver)
-angegeben werden. Die Variante mit dem Hostname funktioniert jedoch nur,
-wenn dieser im lokalen Netzwerk bekannt ist (z.B. in einem Heimnetzwerk
-im Router eingezeigt wird.)</server></user></p>
+Dabei ist <code>&lt;user&gt;</code> der Username am entferten Gerät und
+<code>&lt;server&gt;</code> ist die Adresse des Servers. Die Adresse
+kann entweder in Form einer IP-Adresse (z.B. 192.168.178.10) oder als
+Hostname (z.B. mein-cloudserver) angegeben werden. Die Variante mit dem
+Hostnamen funktioniert jedoch nur, wenn dieser im lokalen Netzwerk
+bekannt ist (z.B. in einem Heimnetzwerk im Router eingezeigt wird).</p>
 <div id="ssh-verbindung" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -477,26 +488,27 @@ im Router eingezeigt wird.)</server></user></p>
 </section><section><h2 class="section-heading" id="schlüssel-authtenfikation">Schlüssel-Authtenfikation<a class="anchor" aria-label="anchor" href="#schl%C3%BCssel-authtenfikation"></a>
 <a class="anchor" aria-label="anchor" href="#schl%C3%BCssel-authtenfikation"></a></h2>
 <hr class="half-width"><p>Die einfache SSH-Verbindung genügt zwar schon, um das entfernte
-System zu verwalten. Allerdings könnte eine angreifende Person
-versuchen, den Usernamen und das Passwort zu erraten und damit Zugriff
-auf den Server erlangen (leider sind Passwörter häufig nicht allzu
-kreativ erdacht). Um dies zu verhindern, kann die Verbindung zusätzlich
+System zu verwalten. Allerdings kann eine angreifende Person versuchen,
+den Usernamen und das Passwort zu erraten und damit Zugriff auf den
+Server erlangen (leider sind Passwörter häufig nicht allzu kreativ
+erdacht). Um dies zu verhindern, kann die Verbindung zusätzlich
 gesichert werden:</p>
 <ul><li><p>am Client, indem statt Passwörtern kaum zu erratende Schlüssel
 zur Anmeldung genutzt werden</p></li>
 <li><p>am Server, indem zu häufige Fehlanmeldungen zu einem Blockieren
 führen</p></li>
-</ul><p>Die Anmeldung per Schlüssel erfolgt mit einem Schlüsselpaar. Ein
-solches Schlüsselpaar besteht aus einem privaten und einem öffentlichen
-Schlüssel. Während der öffentliche Schlüsse herausgegeben werden kann,
-muss der private Schlüssel privat bleiben und sollte das eigene Gerät
-niemals verlassen. Vereinfacht kann man sich das Konzept wie ein
-Vorhängeschloss und den dazugehörigen Schlüssel vorstellen. Das Schloss
-ist in dieser Analogie der öffentliche Schlüssel und wird in geöffnetem
-Zustand an den Server übergeben. Dieser “verschließt” damit die Tür zum
-SSH-Server. Zwar können alle sehen, dass Ihr (öffentliches) Schloss an
-der Tür hängt, aber nur Sie können mit Ihrem privaten Schlüssel die Tür
-wieder öffnen.</p>
+</ul><p>Die Anmeldung per Schlüssel erfolgt mit einem
+<strong>Schlüsselpaar</strong>. Ein solches Schlüsselpaar besteht aus
+einem <strong>privaten</strong> und einem <strong>öffentlichen
+Schlüssel</strong>. Während der öffentliche Schlüsse herausgegeben
+werden kann, muss der private Schlüssel privat bleiben und sollte das
+<strong>eigene Gerät niemals verlassen</strong>. Vereinfacht kann man
+sich das Konzept wie ein Vorhängeschloss und den dazugehörigen Schlüssel
+vorstellen. Das Schloss ist in dieser Analogie der öffentliche Schlüssel
+und wird in geöffnetem Zustand an den Server übergeben. Dieser
+“verschließt” damit die Tür zum SSH-Server. Zwar können alle sehen, dass
+Ihr (öffentliches) Schloss an der Tür hängt, aber nur Sie können mit
+Ihrem privaten Schlüssel die Tür wieder öffnen.</p>
 <p>Aufgrund der komplexen krytpographischen Struktur der Schlüssel sind
 diese deutlich schwerer bis gar nicht zu erraten. Zusätzlich empfiehlt
 es sich, den privaten Schlüssel mit einer Passphrase vor unbfugtem
@@ -513,9 +525,9 @@ genutzt wird, ein zusätzliches Passwort eingegeben werden.</p>
 <p>Für eine sichere SSH-Verbindung empfiehlt es sich, auf Passwörter zu
 verzichten und sich stattdessen mit einem Schlüsselpaar zu
 authentifizieren.</p>
-<p>Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung etwas anders:
-<code>ssh &lt;user&gt;@&lt;server&gt; -i &lt;Pfad-zum-privaten-schlüssel&gt;</code>
-mit dem Befehlsparameter <em>-i</em> wird der der Pfad zum privaten
+<p>Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt:
+<code>ssh &lt;user&gt;@&lt;server&gt; -i &lt;Pfad-zum-privaten-schlüssel&gt;</code>.
+Mit dem Befehlsparameter <em>-i</em> wird der Pfad zum privaten
 Schlüssel am Client angegeben.</p>
 </div>
 </div>
@@ -534,13 +546,13 @@ Verfügung:</p>
 <ul><li><p>RSA: weit verbreitet, kann mit sehr viel Rechenaufwand evtl.
 geknackt werden (siehe letzter Absatz <a href="https://www.onlinesicherheit.gv.at/Services/News/RSA-Verschluesselung-Sicherheit.html" class="external-link">dieses
 Artikels</a>). Als Schlüssellänge sollte 4096 bit gewählt
-werden</p></li>
+werden.</p></li>
 <li><p>ecdsa: ist ein neueres Verfahren, das aber kurze Schlüssel
-nutzt</p></li>
+nutzt.</p></li>
 <li><p>ed25519: ist ein neues Verfahren, das auf sog. elliptische Kurven
 setzt und als am sichersten gilt. Dieses Verfahren empfehle ich zu
 nutzen.</p></li>
-</ul><p>Zur Wahl des Schlüsseltyps gibt es bei <a href="https://goteleport.com/blog/comparing-ssh-keys/#rsa-vs-dsa-vs-ecdsa-vs-eddsa" class="external-link">goteleport</a>
+</ul><p>Zur Wahl des Schlüsseltyps gibt es bei <a href="https://goteleport.com/blog/comparing-ssh-keys/#rsa-vs-dsa-vs-ecdsa-vs-eddsa" class="external-link">goteleport.com</a>
 eine informative Vergleichstabelle.</p>
 <div id="wichitg" class="callout">
 <div class="callout-square">
@@ -584,49 +596,106 @@ unterschiedlich bewerkstelligt werden.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>Unter Windows muss das Programm scp genutzt werden, mit welchem über
 eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 übertragen werden können:</p>
 <p>Übertragung:
-<code>scp &lt;ffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p>
-<p>einfache SSH-Verbindung zum Server:
+<code>scp &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p>
+<p>SSH-Verbindung zum Server aufbauen:
 <code>ssh &lt;username&gt;@&lt;server&gt;</code></p>
 <p>Verzeichnis erstellen: <code>mkdir .ssh</code></p>
-<p>Datei für zugelassen Schlüssel erstellen:
+<p>Datei für zugelassenen Schlüssel erstellen:
 <code>touch .ssh/authorized_keys</code></p>
 <p>Öffentlichen Schlüssel in Datei kopieren:
 <code>cat Desktop/&lt;öffentlicher-schlüssel.pub&gt; &gt;&gt; .ssh/authorized_keys</code></p>
 <p>Überprüfung: <code>cat .ssh/authorized_keys</code></p>
 <p>SSH-Verbindung verlassen: <code>exit</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
-<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;schluessel&gt;</code></p>
-<ul><li><p>Übertragung:
-<code>scp &lt;ffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;:/home/&lt;username&gt;/Desktop</code></p></li>
-<li><p>einfache SSH-Verbindung zum Server:
-<code>ssh &lt;username&gt;@&lt;server&gt;</code></p></li>
-<li><p>Verzeichnis erstellen: <code>mkdir .ssh</code></p></li>
-<li><p>Datei für zugelassen Schlüssel erstellen:
-<code>touch .ssh/authorized_keys</code></p></li>
-<li><p>Öffentlichen Schlüssel in Datei kopieren:
-<code>cat Desktop/&lt;öffentlicher-schlüssel.pub&gt; &gt;&gt; .ssh/authorized_keys</code></p></li>
-<li><p>Überprüfung: <code>cat .ssh/authorized_keys</code></p></li>
-<li><p>SSH-Verbindung verlassen: <code>exit</code></p></li>
-<li><p>SSH-Verbindung mit privatem Schlüssel testen:
-<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;schluessel&gt;</code></p></li>
-</ul></div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
-<ul><li>ssh-copy-id</li>
-</ul></div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
-<ul><li>ssh-copy-id</li>
-</ul></div>
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;privater-schlüssel&gt;</code></p>
+</div>
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<p>Mit macOS kann das Programm <em>ssh-copy-id</em> genutzt werden:
+<code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
+<p>SSH-Verbindung mit privatem Schlüssel testen:
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh/&lt;privater-schlüssel&gt;</code></p>
+</div>
+<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<p>Mit Linux kann das Programm <em>ssh-copy-id</em> genutzt werden:
+<code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
+<p>SSH-Verbindung mit privatem Schlüssel testen:
+<code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh/&lt;privater-schlüssel&gt;</code></p>
+</div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="konfiguration-des-ssh-servers">Konfiguration des SSH-Servers<a class="anchor" aria-label="anchor" href="#konfiguration-des-ssh-servers"></a>
 <a class="anchor" aria-label="anchor" href="#konfiguration-des-ssh-servers"></a></h2>
-<hr class="half-width"><div id="keypoints1" class="callout keypoints">
+<hr class="half-width"><p>Um die Sicherheit des SSH-Servers weiter zu erhöhen, sollten einige
+Einstellungen am Server vorgenommen werden. Dies kann nach erfolgreicher
+SSH-Verbindung getan werden. Die Konfigurationsdatei für den SSH-Server
+findet sich unter <code>/etc/ssh/sshd_config</code> und kann mit dem
+<em>nano</em>-Editor bearbeitet werden.</p>
+<p>Folgende Änderungen sollten an der Konfigurationsdatei vorgenommen
+werden:</p>
+<ul><li><p>Nur spezifischen Usern eine SSH-Verbindung erlauben (neue Zeile
+ergänzen): <code>AllowUsers &lt;username&gt;</code></p></li>
+<li><p>Anmeldung mit Passwort verbieten und nur per Schlüssel erlauben
+(vorhande Zeilen ändern):</p></li>
+</ul><pre><code>PasswordAuthentication no
+PubkeyAuthentication yes
+KbdInteractiveAuthentication no
+UsePAM no</code></pre>
+<ul><li><p>Standardport ändern: <code>#Port 22</code> ändern zu
+<code>Port &lt;eine Nummer größer 1024&gt;</code></p></li>
+<li><p>Root-User-Anmeldungen verbieten:
+<code>PermitRootLogin no</code></p></li>
+<li><p>Zeit für erfolgreiche Anmeldeversuche auf 30 Sekunden limitieren:
+<code>LoginGraceTime 30</code></p></li>
+<li><p>Leere Passwörter verbieten:
+<code>PermitEmptyPasswords no</code></p></li>
+<li><p>Abmeldung bei Inaktivität: <code>ClientAliveInterval 300</code>
+und <code>ClientAliveCountMax 0</code></p></li>
+</ul><p>Nach Änderungen an der Konfiguration eines Programms muss dieses in
+der Regel <strong>neu gestartet</strong> werden, um die neue
+Konfiguration zu übernehmen. Dies geschieht für den SSH-Server mit dem
+Befehl <code>sudo systemctl restart sshd.service</code> (siehe dazu auch
+das <a href="#programme-mit-systemd-steuern">Callout zu systemd</a>)</p>
+<p>Weitere Anpassungen des SSH-Servers sind je nach eigenem
+Sicherheitsbedürfnis möglich. Z.B. finden sich bei <a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html" class="external-link">cyberciti.biz</a>
+einige weitere Möglichkeiten.</p>
+<p>Möchte man sich nun per SSH anmelden, müssen die vorgenommenen
+Änderungen berücksichtigt werden. V.a. muss die geänderte Portnummer
+angegeben werden:
+<code>ssh -p &lt;Portnummer&gt; -i &lt;Pfad-zum-privaten-Schlüssel&gt; &lt;user&gt;@&lt;server&gt;</code></p>
+<div id="programme-mit-systemd-steuern" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="programme-mit-systemd-steuern" class="callout-inner">
+<h3 class="callout-title">Programme mit systemd Steuern<a class="anchor" aria-label="anchor" href="#programme-mit-systemd-steuern"></a>
+</h3>
+<div class="callout-content">
+<p>Programme können unter Debian-basierten Systemen mit dem
+Systemd-Dienst gesteuert werden. Voraussetzung dafür ist, dass eine sog.
+Unit-Datei vorhanden ist (i.d.R. unter <code>/etc/systemd/system</code>
+zu finden). Die Dienste können v.a. gestartet, gestoppt, neugestartet
+und geprüft werden. Der Systemd-Dienst wird mit dem Befehl
+<code>systemctl</code> (kurz für systemcontrol) bedient:</p>
+<ul><li><p>Programm starten:
+<code>sudo systemctl start &lt;Servicename&gt;</code></p></li>
+<li><p>Programm stoppen:
+<code>sudo systemctl stop &lt;Servicename&gt;</code></p></li>
+<li><p>Programm neustarten
+<code>sudo systemctl restart &lt;Servicename&gt;</code></p></li>
+<li><p>Status überprüfen:
+<code>sudo systemctl status &lt;Servicename&gt;</code></p></li>
+<li><p>Ein Programm zum Autostart hinzufügen:
+<code>sudo systemctl daemon-reload &amp;&amp; sudo systemctl enable &lt;Servicename&gt;</code></p></li>
+</ul></div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -634,8 +703,17 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>
-</li></ul></div>
+<ul><li><p>das SSH-Protokoll erlaubt den Zugriff auf die Kommandozeile
+entfernter Computer</p></li>
+<li><p>zur Erhöhung der Sicherheit empfiehlt sich die Nutzung eines
+Schlüsselpaares anstatt eines Passworts</p></li>
+<li><p>zur Reduzierung der Angriffsfläche sollte die Konfiguration des
+SSH-Servers angepasst werden</p></li>
+<li><p>ein privater (SSH-)Schlüssel darf niemals das eigene Gerät
+verlassen</p></li>
+<li><p>der Aufbau der SSH-Verbindung geschieht wie folgt:
+<code>ssh -p &lt;Portnummer&gt; -i &lt;Pfad-zum-privaten-Schlüssel&gt; &lt;user&gt;@&lt;server&gt;</code></p></li>
+</ul></div>
 </div>
 </div>
 <!--
@@ -645,7 +723,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="03-linux-grundlagen.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="05-sicherheit-1.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -653,8 +731,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Linux Schnellstart
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="05-sicherheit-1.html" rel="next">
+          Next: Sicherheit: Benutzer...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -700,8 +778,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/04-remote-access.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/04-remote-access.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-08-20",
-  "datePublished": "2024-08-20"
+  "dateModified": "2024-08-22",
+  "datePublished": "2024-08-22"
 }
 
   </script><script>
