@@ -103,7 +103,7 @@ Bei Antwort 4 macht der erste Teil gar keinen Sinn und der zweite ist zwar techn
 :::
 ::::::
 
-### Benutzerrechte
+## Dateirechte
 
 Jede Datei des Systems ist einem Besitzer und einer Gruppe zugeordnet. Darüber kann gesteuert werden, wer auf welche Dateien mit welchen Rechten zugreifen darf. Die genauen Rechte werden über den sogenannten ***mode*** gesteuert. Der *mode* gibt für jede Datei an, welche Rechte der Besitzer, die besitzende Gruppe und "andere Accounts" haben. Andere Accounts sind dabei alle anderen Accounts des Systems, auch Gastaccounts oder Systemaccounts.
 
