@@ -367,47 +367,50 @@
 <section><h2 class="section-heading" id="netzwerkkommunikation">Netzwerkkommunikation<a class="anchor" aria-label="anchor" href="#netzwerkkommunikation"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="osi-referenz-modell">OSI-Referenz-Modell<a class="anchor" aria-label="anchor" href="#osi-referenz-modell"></a></h3>
-<p>Das OSI-Referenz-Modell wird genutzt um Kommunikationsabläufe in
-Computernetzwerken zu definieren. Das Modell hat 7 Schichten. Dabei ist
-die Schicht 1 die unterste Schicht (Bitübertragunsschicht) der
-Kommunikation und legt z.B. fest, wie ein Kabel und seine Stecker
-aufgebaut sind. Die oberste Schicht (Anwendungsschicht) ist dagegen die
-komplexeste und steuert die Kommunukation zwischen einem Programm und
-dem Netzwerk, z.B. wird mit HTTP definiert, wie Ressourcen von einem
-Webserver zu einem Browser transportiert werden.</p>
-<p>Jeder der sieben Schichten sind bestimmte Protokolle zugeordnet und
-bei der Kommunikation laufen die zu übertragenden Daten beim Sender von
-der obersten Schicht zur untersten und beim Empänger von der untersten
-zurück zur obersten Schicht. Auf jeder Schicht werden den eigentlichen
-Daten Steuerungsinformation hinzugefügt, z.B. die IP-Adresse des
-Empfängers, bzw. extrahiert und verarbeitet, z.B. als Information zur
-Adressierung genutzt.</p>
-<p>Eine ausführliche Erklärung inkl. Video findet sich bei <a href="https://studyflix.de/informatik/osi-modell-5524" class="external-link">Studyflix</a>.</p>
+<p>Um allgemeine Leitlinien für Hersteller von Hard- und Software zu
+etablieren, wurde das OSI-Referenz-Modell entwickelt, welches die
+Kommunikationsabläufe in Computernetzwerken definiert. Gemäß dem Modell
+läuft ein Datenpaket beim Sender durch sieben Kommunikationsschichten
+und beim Empfänger wieder durch die selben Schichten, allerdings in
+umgekehrter Reihenfolge. Jede dieser Schichten hat klar definierte
+Aufgaben und spezifische Protokolle. Ein Datenpaket wird dabei in einer
+Schicht verarbeitet, z.B. in der obersten Schicht
+(<em>Anwendungsschicht</em>) per HTTP abgerufen und dann an die nächste
+Schicht übergeben. Dort werden weitere Schritte unternommen. Z.B. könnte
+das jetzt fertig geschnürte HTTP-Paket zu einem HTTPS-Paket
+verschlüsselt werden. Am untersten Ende (auf der
+<em>Bitübertragungsschicht</em>) wird schließlich nur noch festgelegt,
+wie der Strom über die Leitung fließt.</p>
+<p>Da auf jeder Schicht beim Sender weitere Informationen zum Datenpaket
+hinzugefügt werden (z.B. eine Veschlüsselung oder die IP-Adresse des
+Empfängers) wird das Datenpaket immer größer (sog. Overhead). Beim
+Empfänger wird das Paket wieder Schritt für Schritt “ausgepackt”.</p>
+<p>Eine ausführliche Erklärung zum OSI-Modell inkl. Video findet sich
+bei <a href="https://studyflix.de/informatik/osi-modell-5524" class="external-link">Studyflix</a>.</p>
 </div>
 <div class="section level3">
 <h3 id="ip-basierte-netzwerke">IP-basierte Netzwerke<a class="anchor" aria-label="anchor" href="#ip-basierte-netzwerke"></a></h3>
-<p>In standardmäßigen Computernetzwerken wird heutzutage das Internet
-Protokoll (IP) genutzt. Dieses ist auf der Schicht drei des
-OSI-Referenz-Modells angesiedelt. Es baut aber auf den Standards der
-Schicht 2 auf. Wichtig ist, dass auf Schicht für jedes im Netzwerk
-kommunizierende Gerät eine eindeutige Hardwareadresse, die MAC-Adresse,
-definiert wird. Diese ist für jedes Netzwerkinterface eindeutig, d.h.
-der Raspberry Pi hat für die LAN-Schnittstelle und für das WLAN-Modul
-jeweils eine eigene MAC-Adresse. In der Schicht 3 wird nun das Internet
-Protokoll genutzt, um die Daten zwischen den Kommunikationspartnern zu
-verteilen. D.h. hier findet die Adressierung und Wegfindung zwischen
-Netzwerken und innerhalb eines Netzwerks statt. Mittels des Internet
-Protokolls werden Netzwerke definiert. Für die Definition eines
-Netzwerks wird zunächst die Subnetzmaskte benötigt, welche die Größe des
-Netzwerks (also die maximale Anzahl an Geräten im Netzwerk) definiert.
-Sodann wird mit der ersten IP-Adresse des Subnetzbereichs das Netzwerk
-selbst adressiert und mit der letzten Adresse wird der sogenannte
-Broadcast definiert, der ein Datenpaket an alle IP-Adressen des
-Netzwerks weiterleitet. Einzelne Geräte bekommen nun innerhalb dieses
-Bereichs eine IP-Adresse sowie ein Standardgateway zugewiesen. Das
-Standardgateway definiert die Adresse, an welche Datenpakete geschickt
-werden, welche nicht im selben Netzwerk zu finden sind (z.B.
-Datenpakete, die ins Internet geroutet werden sollen).</p>
+<p>Um Kommunikationspartner im Netzwerk zu identifizieren, besitzt jedes
+Netzwerkfähige Gerät (genauer gesagt: jedes Netzwerinterface) eine
+Hardwareadresse: die <strong>MAC-Adresse</strong>. Die MAC-Adresse ist
+auf Schicht 2 des OSI-Modells definiert. Um nun zu definieren, wo sich
+diese MAC-Adresse im Netzwerk befindet, werden in Schicht 3 des
+OSI-Modells <strong>IP-Adressen</strong> eingeführt. Mit IP-Adressen
+werden zunächst logische Netzwerksegmente definiert. Dabei wird jedes
+Netzwerk mit einer IP-Adresse beschrieben. Diese Netzwerkadresse ist der
+Startpunkt des Netzwerkes (z.B. <code>192.168.178.0</code>). Mit der
+Subnetzmaske wird die Anzahl an möglichen Adressen innerhalb des
+Netzwerks festlegt (z.B. <code>255.255.255.0</code> oder in Kurzform
+<code>/24</code> für ein Netzwerk mit max. 254 Geräten). Innerhalb eines
+Netzwerks werden einzelne Geräte durch eine IP-Adresse definiert (z.B.
+192.168.178.25). Wandert das Gerät in ein anderes Netzwerksegment erhält
+es eine andere IP-Adresse.</p>
+<p>Um eine Kommunikation zwischen verschiedenen Netzwerken (z.B. einem
+Heimnetzwerk mit der Adresse 192.168.178.0 und der Subnetzmaske
+255.255.255.0 und dem Internet) zu ermöglichen, wird ein Standardgateway
+benötigt. Dies ist i.d.R. die IP-Adresse des Routers. An diesen werden
+alle Pakete geschickt, die keine Adresse im lokalen Netzwerk haben, und
+werden dann z.B. ins Internet weiter geleitet.</p>
 <p>Es werden unterschiedliche Typen von Netzwerken unterschieden:
 Private Netzwerke und öffentliche Netzwerke. Private Netzwerke sind
 nicht öffentlich erreichbar und sind durch Router und Firewalls von
@@ -446,45 +449,204 @@ Adresszuweisung fehlschlägt</td>
 <h3 id="ports">Ports<a class="anchor" aria-label="anchor" href="#ports"></a></h3>
 <p>Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also
 einem Gerät) angekommen, muss noch geklärt werden, wohin das Paket
-innerhalb des Geräts gehört. Da auf einem Computer viele Programm
-gleichzeitig aktiv sind, muss entschied werden, für welches der
+innerhalb des Geräts gehört. Da auf einem Computer viele Programme
+gleichzeitig aktiv sind, muss entschieden werden, für welches der
 Programme ein Paket gedacht ist. Dazu werden <strong>Ports</strong>
 genutzt. Ein Programm, welches Daten aus dem Netzwerk empfangen soll,
 nutzt dabei einen bestimmten Port. Kommt am Gerät ein Datenpaket an, das
 mit dem Port des Programms adressiert ist, wird das Paket an das
-entsprechende Programm geleitet und von diesem Verarbeitet. Zum Beispiel
+entsprechende Programm geleitet und von diesem verarbeitet. Zum Beispiel
 “lauscht” der SSH-Server standardmäßig auf Port 22 für eingehenden
 Datenverkehr. Wir haben diesen Port in <a href="04-remote-access.html">Lektion 4</a> manuell abgeändert.</p>
 <p>Einige Ports sind fest für bestimmte Programme definiert und sollten
 nicht von anderen Programmen oder manuell belegt werden. Andere Ports
-könne jedoch von Systemadministratoren frei genutzt werden. Die
+können jedoch von Systemadministratoren frei genutzt werden. Die
 Portnummern reichen von 0 bis 65.535. Eine Auflistung aller Ports findet
-sich bei <a href="https://de.wikipedia.org/wiki/Liste_der_standardisierten_Ports" class="external-link">Wikipedia</a></p>
+sich bei <a href="https://de.wikipedia.org/wiki/Liste_der_standardisierten_Ports" class="external-link">Wikipedia</a>.</p>
 <p>Ein Port kann auf einem Gerät offen oder geschlossen sein, z.B. kann
 eine Firewall die Kommunikation über einen Port blockieren. Außerdem
-muss auch ein Prozess hinter einem Port “hören”, damit eine
-Kommunikation aufgebaut werden kann.</p>
-<p>Um zu sehen, welche Prozesse auf welchen Ports hören kann der Befehl
+muss ein Prozess hinter einem Port “hören”, damit eine Kommunikation
+aufgebaut werden kann.</p>
+<p>Um zu sehen, welche Prozesse auf welchen Ports hören, kann der Befehl
 <code>netstat -tulp</code> ausgeführt werden. Vorher muss dafür das
 Paket <em>net-tools</em> installiert werden.</p>
 </div>
 </section><section><h2 class="section-heading" id="firewall">Firewall<a class="anchor" aria-label="anchor" href="#firewall"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="fail2ban">Fail2Ban<a class="anchor" aria-label="anchor" href="#fail2ban"></a></h2>
-<hr class="half-width"><div id="keypoints1" class="callout keypoints">
+<hr class="half-width"><p>Um Kommunikation in einem Netzwerk zu kontrollieren, werden Firewalls
+eingesetzt. Zu unterscheiden ist hierbei zwischen <em>Hardware- und
+Desktopfirewalls.</em> Eine Hardware- oder auch externe Firewall ist in
+der Regel ein dediziertes Gerät, welches primär unterschiedliche
+Netzwerke trennt. In einfacher Form kommt ein Heimrouter wie eine
+Fritz.Box dieser Aufgabe nach. Denn der Router trennt mit seiner
+Firewall das Internet vom Heimnetz und verhindert dadurch, dass aus dem
+Internet auf Geräte im Heimnetzwerk zugegriffen werden kann. In
+komplexeren Netzwerken (z.B. in Unternehmen) werden professionellere
+Geräte eingesetzt, welche mehr Funktionalität bieten.</p>
+<p>Eine Desktop- oder auch personal firewall dagegen ist meistens in
+Form von Software auf einem Gerät installiert. Unter Microsoft Windows
+wäre dies die Windows Defender Firewall, die den PC vor Zugriffen aus
+einem angeschlossenen Netzwerk schützt. Unter Linux kann dafür die
+<strong>uncomplicated firewall</strong> (kurz: UFW) genutzt werden.</p>
+<div class="section level3">
+<h3 id="funktionsweise">Funktionsweise<a class="anchor" aria-label="anchor" href="#funktionsweise"></a></h3>
+<p>Vereinfacht kann die Funktionsweise einer Firewall in mehrere
+Bereiche unterteilt werden. Dabei unterstützt nicht jede Firewall alle
+dieser Funktionen.</p>
+<ul><li><p>Paketfilter: filtert nach Adressen der Datenpakete (IP-Adressen,
+MAC-Adressen, Ports, URLs) -&gt; <strong>Wer darf
+wohin?</strong></p></li>
+<li><p>Content/Proxy/Deep Packet-Filter: filtert nach dem Inhalt und
+kann so spezifische Inhalte blockieren. Z.B. kann Malware erkannt werden
+-&gt; <strong>Was darf unterwegs sein?</strong></p></li>
+<li><p>Kombinierte Filter: durch die Kombination verschiedener Kriterien
+wie Uhrzeit, Herkunft der Anfrage, Ziel der Anfrage oder die Häufigkeit
+der Anfrage kann Datenverkehr blockiert oder erlaubt werden -&gt;
+<strong>wie darf etwas unterwegs sein?</strong></p></li>
+<li><p>Geoblocking: häufig bieten Firewalls auch die Möglichkeit,
+Anfragen aus bestimmten Ländern zu blockieren. Allerdings können
+Angreifer solche Blockaden umgehen, indem sie Ihre Anfragen über Server
+in nicht blockierten Ländern leiten. Dennoch kann ein Geoblocking
+bisweilen massenhafte und wenig zielgerichtete Angriffsversuche
+unterbinden. -&gt; <strong>Woher darf etwas kommen?</strong></p></li>
+</ul><p>Ist ein Filterkriterium erfüllt, wird eine Aktion ausgeführt. Wird
+ein Paket <strong>verworfen</strong> (drop oder deny), wird es schlicht
+nicht weitergeleitet. Der Absender erhält darüber keine Auskunft. Wird
+ein Paket <strong>zurückgewiesen</strong> (deny oder reject) wird das
+Paket ebenfalls nicht weitergeleitet, der Absender wird allerdings
+direkt über den Kommunikationsabbruch informiert. Wird das Paket
+<strong>aktezptiert</strong> wird es an die Zieladresse
+weitergeleitet.</p>
+</div>
+<div class="section level3">
+<h3 id="allgemeine-tips-zur-firewall">Allgemeine Tips zur Firewall<a class="anchor" aria-label="anchor" href="#allgemeine-tips-zur-firewall"></a></h3>
+<ul><li><p>die Firewall sollte immer aktiv sein</p></li>
+<li><p>standardmäßig sollten eingehende Verbindungen blockiert
+werden</p></li>
+<li><p>eingehende Verbindungen sollten nur für einzelne Ports und
+Anwendungen geöffnet werden</p></li>
+<li><p>Sicherheit durch alternative Ports (wie beim SSH-Server) bringt
+nur ein wenig (siehe dazu den Wikipedia-Artikel zu <a href="https://de.wikipedia.org/wiki/Security_through_obscurity" class="external-link">Security
+through obscurity</a>)</p></li>
+<li><p>ein im Netzwerk exponiertes Programm (inkl. dem Betriebssystem)
+muss immer aktuell gehalten werden</p></li>
+<li><p>die Kommunikation sollte über verschlüsselte Protokolle
+stattfinden (TLS, SSH, HTTPS…)</p></li>
+<li><p>für noch mehr Sicherheit kann gesorgt werden, wenn auch der
+ausgehende Datenverkehr gefiltert wird und nur explizit notwendige
+Anfragen, z.B. für Softwareupdates, zugelassen werden aber Anfragen ins
+lokale Netzwerk unterbunden werden. Siehe dazu ein <a href="https://www.linux-tips-and-tricks.de/en/raspberry/430-secure-raspberry-pi-against-internet-attacks-and-disable-attacks-into-the-local-network-with-a-firewall-using-iptables" class="external-link">Beispiel</a>
+mit der IP-Tables-Firewall</p></li>
+<li><p>Für Fortgeschrittene: mittels Port-knocking kann die Firewall nur
+kurzzeitig und explizit geöffnet werden und nach dem Ende der
+Kommunikation wieder geschlossen werden. Siehe dazu z.B. <a href="https://www.linuxbabe.com/security/secure-ssh-service-port-knocking-debian-ubuntu" class="external-link">dieses
+Tutorial</a> im Netz.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="umsetzung-am-raspberry-pi">Umsetzung am Raspberry Pi<a class="anchor" aria-label="anchor" href="#umsetzung-am-raspberry-pi"></a></h3>
+<ul><li><p>Installation: <code>sudo apt-get install ufw</code></p></li>
+<li><p>Regel hinzufügen: <code>sudo ufw allow &lt;Portnummer&gt;</code>
+oder <code>sudo ufw deny &lt;Portnummer&gt;</code></p></li>
+<li><p>Standardregel für eingehenden Verkehr:
+<code>sudo ufw default deny incoming</code></p></li>
+<li><p>Standardregel für ausgehenden Verkehr:
+<code>sudo ufw default allow outgoing</code></p></li>
+<li><p>Zugriff auf SSH-Port nur aus dem lokalen Netzwerk zulassen
+(Netzwerkadresse anpassen!):
+<code>sudo ufw allow from 192.168.178.0/25 to any port 22</code></p></li>
+<li><p>aktivieren: <code>sudo ufw enable</code></p></li>
+<li><p>Status anzeigen lassen: <code>sudo ufw status</code></p></li>
+<li><p>Status mit Nummer anzeigen lassen:
+<code>sudo ufw status numbered</code></p></li>
+<li><p>Regel löschen:
+<code>sudo ufw delete &lt;Nummer-der-Regel&gt;</code></p></li>
+</ul><p>Im Netz finden sich zahlreiche Anleitungen für die UFW.
+Empfehlenswert finde ich die Anleitungen von <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04-de" class="external-link">DigitalOcean</a>
+und <a href="https://pimylifeup.com/raspberry-pi-ufw/" class="external-link">PiMyLifeUp</a></p>
+</div>
+</section><section><h2 class="section-heading" id="fail2ban">Fail2Ban<a class="anchor" aria-label="anchor" href="#fail2ban"></a></h2>
+<hr class="half-width"><p>Nachdem in der (uncomplicated) Firewall ein Port geöffnet wurde, wird
+die Kommunikation mit dem hinter dem Port wartenden Dienst aufgebaut.
+Jedoch ist es empfehlenswert diese Kommunikation weiterhin im Blick zu
+behalten.</p>
+<p>Für einfache Szenarien kann das Programm <strong>Fail2Ban</strong>
+genutzt werden, um unerwünschte Eindringversuche zu erkennen und zu
+blockieren. Ein typischer Angriffsversuch, welcher mit Fail2Ban
+abgefangen werden kann, ist eine Brute-Force-Attacke, bei welcher durch
+massenhafte Anfragen versucht wird, Benutzername und Passwort zu
+erraten. Die dabei unweigerlich zahlreich auftretenden Fehlversuche
+werden in einer Protokolldatei im System notiert. Durch die Überwachung
+dieser Protokolldatei (auch als Logdatei bezeichnet) kann Fail2Ban die
+Absenderadresse der massenhaften Loginversuche erkennen und blockieren,
+indem die Adresse der Firewall als zu blockierende Adresse mitgeteilt
+wird.</p>
+<p>Zu Fail2Ban gibt es im Netz verschiedne Anleitungen. Z.B. im
+offiziellen <a href="https://www.raspberrypi.com/documentation/computers/configuration.html#block-suspicious-activity-with-fail2ban" class="external-link">Raspberry
+Pi Handbuch</a> oder wieder bei <a href="https://pimylifeup.com/raspberry-pi-fail2ban/" class="external-link">PiMyLifeUp</a>.</p>
+<div class="section level3">
+<h3 id="umsetzung-am-raspberry-pi-1">Umsetzung am Raspberry Pi:<a class="anchor" aria-label="anchor" href="#umsetzung-am-raspberry-pi-1"></a></h3>
+<ul><li><p>Installation: <code>sudo apt-get install fail2ban</code></p></li>
+<li><p>Aktivierung:
+<code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code></p></li>
+<li>
+<p>Beispielkonfiguration der Standardparameter mittels
+<code>sudo nano /etc/fail2ban/jail.local</code></p>
+<ul><li><p>Standard Sperrzeit: <code>bantime = 20m</code></p></li>
+<li><p>Standardanzahl möglicher Fehlversuche:
+<code>maxretry = 3</code></p></li>
+<li><p>Standardzeit für “maxretry”: <code>findtime = 10m</code></p></li>
+</ul></li>
+<li>
+<p>Zu überwachende Services/Ports werden am Ende der Datei
+<code>/etc/fail2ban/jail.local</code> mit <code>[&lt;Name&gt;]</code>
+definiert und mit Detaileinstellungen konfiguriert:</p>
+<ul><li><p>Aktivierung: <code>enabled = true</code></p></li>
+<li><p>Angabe des Ports:
+<code>port = &lt;Portnummer des Services</code></p></li>
+<li><p>Angabe der zu überwachenden Logdatei:
+<code>logpath = &lt;Pfad zur Logdatei&gt;</code></p></li>
+<li><p>Angabe des Filters, mit dem die Logdatei geprüft wird:
+<code>filter = &lt;Name der Datei im Verzeichnis /etc/fail2ban/filter.d/&gt;</code></p></li>
+</ul></li>
+<li><p>Beispiel für den SSH-Server:</p></li>
+</ul><div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#Standardeinstellungen vornehmen</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">bantime</span> = 60m </span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">findtime</span> = 15m</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">maxretry</span> = 3 </span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co"># Im Bereich [sshd]</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="ex">[sshd]</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="ex">enabeld</span> = true</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="ex">port</span> = <span class="op">&lt;</span>ssh-port<span class="op">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="ex">logpath</span> = %<span class="er">(</span><span class="ex">sshd_log</span><span class="kw">)</span><span class="ex">s</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="ex">backend</span> = systemd</span></code></pre>
+</div>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>
-</li></ul></div>
+<ul><li><p>Computer kommunizieren im Netzwerk nach Standards, das
+OSI-Schichten-Modell stellt einen Leitrahmen für diese Standards
+dar</p></li>
+<li><p>Versendete Daten im Netzwerk haben immer einen Absender- und
+einen Empfänger (in Form von MAC-Adresse, Netzwerk-ID, IP-Adresse und
+Port)</p></li>
+<li><p>Mit einer Firewall können Ports geöffnet und geschlossen
+werden</p></li>
+<li><p>Mit Fail2Ban können fehlerhafte Loginversuche festgestellt und
+blockiert werden</p></li>
+</ul></div>
 </div>
 </div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="05-sicherheit-1.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
