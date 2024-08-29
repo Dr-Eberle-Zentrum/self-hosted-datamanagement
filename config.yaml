@@ -65,6 +65,8 @@ episodes:
 - 04-remote-access.Rmd
 - 05-sicherheit-1.Rmd
 - 06-sicherheit-ii.Rmd
+- 07-installationsvorbereitung-1.Rmd
+- 08-installationsvorbereitung-2.Rmd
 
 # Information for Learners
 learners: 
