@@ -118,11 +118,11 @@
   Self-hosted Data Management
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 83%" class="percentage">
-    83%
+<aside class="col-md-12 lesson-progress"><div style="width: 62%" class="percentage">
+    62%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 83%" aria-valuenow="83" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 62%" aria-valuenow="62" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -270,6 +270,24 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-installationsvorbereitung-1.html">7. Installationsvorbereitung 1</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-installationsvorbereitung-2.html">8. Installationsvorbereitung 2</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -313,7 +331,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="05-sicherheit-1.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="07-installationsvorbereitung-1.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -321,14 +339,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Sicherheit: Benutzer
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="07-installationsvorbereitung-1.html" rel="next">
+          Next: Installationsvorbere...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Sicherheit: Firewall und Fail2Ban</h1>
-        <p>Last updated on 2024-08-27 |
+        <p>Last updated on 2024-08-29 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/06-sicherheit-ii.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -444,7 +462,47 @@ Adresszuweisung fehlschlägt</td>
 <td align="left">255.0.0.0</td>
 <td align="left">16777216</td>
 <td>Loopback-Adresse für Kommunikation innerhalb eines Geräts</td>
-</tr></tbody></table></div>
+</tr></tbody></table><div id="ip-adressen" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="ip-adressen" class="callout-inner">
+<h3 class="callout-title">IP-Adressen</h3>
+<div class="callout-content">
+<p>Werden zentrale Dienste betrieben oder genutzt, muss man sich auch
+mit dem zugrunde liegenden Netzwerk befassen. Informieren Sie sich
+deshalb über Ihr Netzwerk:</p>
+<ul><li><p>Welche IP-Adresse hat Ihr Computer?</p></li>
+<li><p>Wie lautet die Subnetzmaske?</p></li>
+<li><p>Welche IP-Adressen können Geräte in Ihrem Netzwerk
+erhalten?</p></li>
+<li><p>Welche IP-Adressen hat Ihr Router?</p></li>
+</ul></div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Typische Adressen könnten wie folgt lauten:</p>
+<ul><li><p>IP-Adresse: 192.168.178.25</p></li>
+<li><p>Subnetzmaske: 255.255.255.0</p></li>
+<li><p>Daraus folgt der Adressbereich 192.168.178.1 bis 192.168.178.254
+(die erste Adresse ist als Netzwerkadresse und die letzte als sogenannte
+Broadcastadresse reserviert und nicht für Geräte verfügbar).</p></li>
+<li><p>Router geben sich meistens selbst die erste Adresse im Netzwerk,
+in diesem Beispiel also 192.168.178.1. Zusätzlich erhält der Router auch
+eine IP-Adresse im Netzwerk des Internetanbieters. Erst dadurch, dass
+der Router in beiden Netzwerken eine Adresse hat, kann er auch
+Datenpakete zwischen den Netzwerken verteilen.</p></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="ports">Ports<a class="anchor" aria-label="anchor" href="#ports"></a></h3>
 <p>Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also
@@ -622,6 +680,46 @@ definiert und mit Detaileinstellungen konfiguriert:</p>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="ex">logpath</span> = %<span class="er">(</span><span class="ex">sshd_log</span><span class="kw">)</span><span class="ex">s</span></span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="ex">backend</span> = systemd</span></code></pre>
 </div>
+<div id="netzwerksicherheit" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="netzwerksicherheit" class="callout-inner">
+<h3 class="callout-title">Netzwerksicherheit</h3>
+<div class="callout-content">
+<p>Sie sollen für Ihre Arbeitsgruppe einen kleinen Server mit diversen
+Diensten betreiben (z.B. einen Cloudserver). Wie gewährleisten Sie die
+Netzwerksicherheit, um unbefugten Zugriff auf den Server zu
+verhindern?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Einige wichtige und grundlegende Maßnahmen können sein:</p>
+<ul><li><p>Firewall auf dem Server aktivieren</p></li>
+<li><p>Eingehende Verbindungen blockieren</p></li>
+<li><p>nur einzelne Ports für die notwendigen Dienste und nur innerhalb
+des lokalen Netzwerkes freigeben</p></li>
+<li><p>Mit Fail2Ban oder vergleichbaren Tools fehlerhafte Loginversuche
+überwachen</p></li>
+<li><p>Regelmäßige Wartung: Sowohl der Server als auch alle anderen
+Netzwerkkomponenten (Router, Switche etc) müssen stets mit aktueller
+Soft- und oder Firmware ausgestattet werden.</p></li>
+<li><p>der SSH-Serverdienst sollte entsprechend <a href="03-remote-access.html">Kapitel 4</a> konfiguriert werden</p></li>
+<li><p>Noch mehr Sicherheit erhalten Sie durch eine
+Netzwerksegmentierung: sie trennen das Netzwerk in mehrere logische
+Bereiche auf, zwischen denen ein Router mit Firewall
+vermittelt.</p></li>
+</ul></div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -650,7 +748,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="05-sicherheit-1.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="07-installationsvorbereitung-1.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -658,8 +756,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Sicherheit: Benutzer
         </a>
-        <a class="chapter-link float-end" href="index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="07-installationsvorbereitung-1.html" rel="next">
+          Next: Installationsvorbere...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -705,8 +803,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/06-sicherheit-ii.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/06-sicherheit-ii.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-08-27",
-  "datePublished": "2024-08-27"
+  "dateModified": "2024-08-29",
+  "datePublished": "2024-08-29"
 }
 
   </script><script>
