@@ -52,6 +52,31 @@ Table: Private Adressbereiche und spezielle Netzwerke
 |169.254.0.0 bis 169.254.255.255 | 255.255.0.0 | 65536 | Link Local/APIPA = Standardbereich, wenn automatische Adresszuweisung fehlschlägt |
 |127.0.0.1 bis 127.255.255.254 | 255.0.0.0 | 16777216 | Loopback-Adresse für Kommunikation innerhalb eines Geräts |
 
+:::::: challenge
+### IP-Adressen
+Werden zentrale Dienste betrieben oder genutzt, muss man sich auch mit dem zugrunde liegenden Netzwerk befassen. Informieren Sie sich deshalb über Ihr Netzwerk:
+
+- Welche IP-Adresse hat Ihr Computer?
+
+- Wie lautet die Subnetzmaske?
+
+- Welche IP-Adressen können Geräte in Ihrem Netzwerk erhalten?
+
+- Welche IP-Adressen hat Ihr Router?
+
+::: solution
+Typische Adressen könnten wie folgt lauten:
+
+- IP-Adresse: 192.168.178.25
+
+- Subnetzmaske: 255.255.255.0
+
+- Daraus folgt der Adressbereich 192.168.178.1 bis 192.168.178.254 (die erste Adresse ist als Netzwerkadresse und die letzte als sogenannte Broadcastadresse reserviert und nicht für Geräte verfügbar).
+
+- Router geben sich meistens selbst die erste Adresse im Netzwerk, in diesem Beispiel also 192.168.178.1. Zusätzlich erhält der Router auch eine IP-Adresse im Netzwerk des Internetanbieters. Erst dadurch, dass der Router in beiden Netzwerken eine Adresse hat, kann er auch Datenpakete zwischen den Netzwerken verteilen.
+:::
+::::::
+
 ### Ports
 
 Ist ein Datenpaket innerhalb eines IP-Netzwerks an einem Host (also einem Gerät) angekommen, muss noch geklärt werden, wohin das Paket innerhalb des Geräts gehört. Da auf einem Computer viele Programme gleichzeitig aktiv sind, muss entschieden werden, für welches der Programme ein Paket gedacht ist. Dazu werden **Ports** genutzt. Ein Programm, welches Daten aus dem Netzwerk empfangen soll, nutzt dabei einen bestimmten Port. Kommt am Gerät ein Datenpaket an, das mit dem Port des Programms adressiert ist, wird das Paket an das entsprechende Programm geleitet und von diesem verarbeitet. Zum Beispiel "lauscht" der SSH-Server standardmäßig auf Port 22 für eingehenden Datenverkehr. Wir haben diesen Port in [Lektion 4](04-remote-access.Rmd) manuell abgeändert.
@@ -168,6 +193,30 @@ port = <ssh-port>
 logpath = %(sshd_log)s
 backend = systemd
 ```
+
+:::::: challenge
+### Netzwerksicherheit
+Sie sollen für Ihre Arbeitsgruppe einen kleinen Server mit diversen Diensten betreiben (z.B. einen Cloudserver). Wie gewährleisten Sie die Netzwerksicherheit, um unbefugten Zugriff auf den Server zu verhindern?
+
+:::solution
+Einige wichtige und grundlegende Maßnahmen können sein:
+
+- Firewall auf dem Server aktivieren
+
+- Eingehende Verbindungen blockieren
+
+- nur einzelne Ports für die notwendigen Dienste und nur innerhalb des lokalen Netzwerkes freigeben
+
+- Mit Fail2Ban oder vergleichbaren Tools fehlerhafte Loginversuche überwachen
+
+- Regelmäßige Wartung: Sowohl der Server als auch alle anderen Netzwerkkomponenten (Router, Switche etc) müssen stets mit aktueller Soft- und oder Firmware ausgestattet werden.
+
+- der SSH-Serverdienst sollte entsprechend [Kapitel 4](03-remote-access.Rmd) konfiguriert werden
+
+- Noch mehr Sicherheit erhalten Sie durch eine Netzwerksegmentierung: sie trennen das Netzwerk in mehrere logische Bereiche auf, zwischen denen ein Router mit Firewall vermittelt.
+:::
+::::::
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Computer kommunizieren im Netzwerk nach Standards, das OSI-Schichten-Modell stellt einen Leitrahmen für diese Standards dar
