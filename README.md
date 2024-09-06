@@ -6,4 +6,4 @@ Die **fertigen Inhalte** werden [hier publiziert](https://dr-eberle-zentrum.gith
 
 Der Kurs wird Sie durch die Installation und Konfiguration eines linuxbasierten Servers zum Dateimanagement führen. Hierbei wird als Hardware der [Minicomputer Raspberry Pi](https://www.raspberrypi.com) eingesetzt, als [Betriebssystem Raspberry Pi OS](https://www.raspberrypi.com/software/) und als Software [Nextcloud](https://www.nextcloud.com)
 
-Für die Erstellung der Kursseite wurde mit dem [Carpentries Workbench][workbench] gearbeitet.
+Für die Erstellung der Kursseite wurde mit dem [Carpentries Workbench](https://carpentries.github.io/sandpaper-docs/) gearbeitet.

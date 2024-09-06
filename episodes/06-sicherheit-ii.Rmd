@@ -211,7 +211,7 @@ Einige wichtige und grundlegende Maßnahmen können sein:
 
 - Regelmäßige Wartung: Sowohl der Server als auch alle anderen Netzwerkkomponenten (Router, Switche etc) müssen stets mit aktueller Soft- und oder Firmware ausgestattet werden.
 
-- der SSH-Serverdienst sollte entsprechend [Kapitel 4](03-remote-access.Rmd) konfiguriert werden
+- der SSH-Serverdienst sollte entsprechend [Kapitel 4](04-remote-access.Rmd) konfiguriert werden
 
 - Noch mehr Sicherheit erhalten Sie durch eine Netzwerksegmentierung: sie trennen das Netzwerk in mehrere logische Bereiche auf, zwischen denen ein Router mit Firewall vermittelt.
 :::
