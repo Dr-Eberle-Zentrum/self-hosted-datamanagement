@@ -376,9 +376,9 @@ Heimnetzwerk?</p></li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li><p>Router: Schnittstelle zwischen Internet und Heimnetz</p></li>
-<li><p>DDNS: dynamische IP-Adressen mit fixen Domainnamen</p></li>
-<li><p>Portweiterleitungen einrichten</p></li>
+<ul><li><p>Portweiterleitungen am Router einrichten</p></li>
+<li><p>DDNS: eigene URL trotz dynamischer IP-Adressen</p></li>
+<li><p>Webserver im Heimnetzwerk betreiben</p></li>
 </ul></div>
 </div>
 </div>
@@ -389,93 +389,262 @@ Heimnetzwerk?</p></li>
 ist er mit einem Router verbunden. Dieser Router ist mit dem Netzwerk
 des Internetanbieters verbunden, welches wiederum eine Verbindung “ins
 Internet” hat. Das folgende Schaubild zeigt den aktuellen Aufbau:</p>
-<figure><img src="08_network-setup.png" alt="Diese Abbilung zeigt den Aufbau eines Heimnetzwerks. Zu sehen sind ein Computer mit der IP-Adresse 192.168.178.26. Dieser ist mit einem Router mit der IP-Adresse 192.168.178.1 verbunden. Am Router ist ein Raspberry Pi angeschlossen, dieser hat die IP-Adresse 192.168.178.25. Der Router ist mit dem Internet verbunden und hat die externe IP-Adresse 93.236.170.179" class="figure mx-auto d-block"><div class="figcaption">Netzwerksetup im Heimnetzwerk</div>
-</figure><div id="externe-erreichbarkeit-1" class="callout discussion">
+<figure><img src="fig/08_network-setup.png" alt="Diese Abbilung zeigt den Aufbau eines Heimnetzwerks. Zu sehen sind ein Computer mit der IP-Adresse 192.168.178.26. Dieser ist mit einem Router mit der IP-Adresse 192.168.178.1 verbunden. Am Router ist ein Raspberry Pi angeschlossen, dieser hat die IP-Adresse 192.168.178.25. Der Router ist mit dem Internet verbunden und hat die externe IP-Adresse 93.236.170.179" class="figure mx-auto d-block"><div class="figcaption">Netzwerksetup im Heimnetzwerk</div>
+</figure><div id="externe-erreichbarkeit-1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="externe-erreichbarkeit-1" class="callout-inner">
 <h3 class="callout-title">Externe Erreichbarkeit</h3>
 <div class="callout-content">
 <p>Sie kennen nun das aktuelle Netzwerksetup. Ihr Raspberry Pi hat auch
-eine Internetverbindung und mit Ihrem PC können Sie z.B. per SSH auf
-Ihren Raspberry Pi zugreifen. Aber wie ist der Raspberry Pi aus dem
-Internet erreichbar?</p>
+eine Internetverbindung und mit Ihrem PC können Sie per SSH auf Ihren
+Raspberry Pi zugreifen. Aber wie ist der Raspberry Pi aus dem Internet
+erreichbar?</p>
 <ol style="list-style-type: decimal"><li><p>Unter 192.168.178.25</p></li>
 <li><p>Unter 93.236.170.179</p></li>
 <li><p>Er ist gar nicht erreichbar</p></li>
-<li><p>Unter 192.168.178.1 :::solution</p></li>
-</ol><ul><li>Antwort 3 ist die richtige</li>
+<li><p>Unter 192.168.178.1</p></li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ul><li>Antwort 3 ist die richtige</li>
 </ul><p>Da der Router aktuell keine Anfragen von außen nach innen durchlässt,
-ist das Heimnetzwerk nicht aus dem Internet erreichbar. Der Router
-selbst ist dagegen unter der Adresse 93.236.170.179 erreichbar, wird
-aber aus Sicherheitsgründen nicht auf Anfragen antworten.</p>
+ist das Heimnetzwerk nicht aus dem Internet erreichbar. Würde der Router
+Anfragen durchlassen, wären sämtlich Geräte im Heimnetzwerk im Internet
+exponiert und gefährdet. Der Router selbst ist dagegen unter der Adresse
+93.236.170.179 erreichbar, wird aber aus Sicherheitsgründen nicht auf
+Anfragen antworten.</p>
 </div>
 </div>
 </div>
-<p>::::::</p>
+</div>
 <div class="section level3">
 <h3 id="portweiterleitung">Portweiterleitung<a class="anchor" aria-label="anchor" href="#portweiterleitung"></a></h3>
-<p>Damit der Router Anfragen aus dem Internet annimmt und an ein Gerät
-im Heimnetz weiterleitet, muss dem Router mitgeteilt werden, welche Art
-von Anfragen (auf welchem Port) er annehmen soll und an welches Gerät
-(welche MAC-Adresse) diese weitergeleitet werden sollen. Die
-entsprechenden Einstellungen variieren von Gerät zu Gerät. Häufig heißen
-die entsprechenden Funktionen <em>Portforwarding</em>,
-<em>Portweiterleitungen</em> oder <em>Freigaben</em>. Nicht jeder Router
-unterstützt diese Funktionalität. Insbesondere die günstigen Heimrouter,
-die Internetprovider zur Verfügung stellen sind hier häufig in Ihrer
-Funktionalität eingeschränkt.</p>
-<figure><img src="fig/08_fritzbox-portweiterleitung-komplett.png" alt="Portweiterleitung unter Fritz.OS auf einem Fritz.Box-Router der Firma AVM einrichten" class="figure mx-auto d-block"><div class="figcaption">Portweiterleitung unter Fritz.OS auf einem
+<p>Damit der Router bestimmte Anfragen aus dem Internet annimmt und an
+ein bestimmtes Gerät im Heimnetzwerk weiterleitet, muss dem Router
+mitgeteilt werden, welche Art von Anfragen (auf welchem Port) er
+annehmen soll und an welches Gerät (welche MAC-Adresse) diese
+weitergeleitet werden sollen. Die entsprechenden Einstellungen variieren
+von Gerät zu Gerät. Häufig heißen die entsprechenden Funktionen
+<em>Portforwarding</em>, <em>Portweiterleitungen</em> oder
+<em>Freigaben</em>. Nicht jeder Router unterstützt diese Funktionalität.
+Insbesondere die günstigen Heimrouter, die Internetprovider kostenlos
+zur Verfügung stellen sind hier häufig in Ihrer Funktionalität
+eingeschränkt.</p>
+<figure><img src="fig/08_fritzbox-portweiterleitung-komplett.png" class="figure mx-auto d-block"><div class="figcaption">Portweiterleitung unter Fritz.OS auf einem
 Fritz.Box-Router der Firma AVM einrichten</div>
 </figure><p>Zu beachten ist auch, dass manche Internetanbieter das
-DS-Lite-Verfahren nutzen. Dabei teilt sich der eigene Router ein
-Netzwerk (und damit eine öffentliche IP-Adresse) mit anderen Kunden des
-Internetanbieters. Das macht es (nahezu) unmöglich, den Router aus dem
-Internet zu erreichen. Eine Abbhilfe kann hier das IPv6-Protokoll sein,
-da hier nicht der Router die öffentliche IP-Adresse erhält, sondern
-jedes einzelne Gerät eine weltweit einzigartige IPv6-Adresse hat und
-somit direkt im Internet erreichbar sein kann.</p>
+DS-Lite-Verfahren (Dual Stack Lite) nutzen. Dabei teilt sich der eigene
+Router ein Netzwerk (und damit eine öffentliche IP-Adresse) mit anderen
+Kunden des Internetanbieters. Das macht es (nahezu) unmöglich, den
+Router aus dem Internet zu erreichen. Eine Abbhilfe kann hier das
+IPv6-Protokoll sein, da hier nicht der Router die öffentliche IP-Adresse
+erhält, sondern jedes einzelne Gerät eine weltweit einzigartige
+IPv6-Adresse hat und somit direkt im Internet erreichbar sein kann.</p>
 </div>
 <div class="section level3">
 <h3 id="ddns-dynamic-domain-name-system">DDNS: Dynamic domain name system<a class="anchor" aria-label="anchor" href="#ddns-dynamic-domain-name-system"></a></h3>
-<p>Auch wenn die Portweiterleitung erfolgreich ist und der Router
-anfragen aus dem Internet annimmt und an den Raspberry Pi weiterleitet,
-so ist der Router (und damit der Raspberry Pi) noch immer unter seiner
-IP-Adresse erreichbar. Diese ist jedoch schwer zu merken und ändert sich
-für Privatkunden in der Regel auch einmal täglich aufgrund einer
-nächtlichen Zwangstrennung durch den Internetanbieter. Wer einen Dienst
-(in unserem Fall den Nextcloud-Server) stets unter derselben Adresse
-erreichen will, kann dazu auf das dynamic domain name system (kurz:
-<strong>DDNS</strong>) zurück greifen.</p>
-<p>DDNS funktioniert unter zuhilfenahme eines externen Dienstleisters.
+<p>Der Router nimmt nun anfragen aus dem Internet an und leitet diese an
+den Raspberry Pi weiter. Der Router (und damit der Raspberry Pi) ist
+aber bislang nur unter seiner IP-Adresse erreichbar. Diese ist jedoch
+schwer zu merken und ändert sich für Privatkunden in Deutschland in der
+Regel einmal täglich aufgrund einer nächtlichen Zwangstrennung durch den
+Internetanbieter. Wer einen Dienst (hier ein Nextcloud-Server) stets
+unter derselben Adresse und einer URL erreichen will, kann dazu auf das
+dynamic domain name system (kurz: <strong>DDNS</strong>) zurück
+greifen.</p>
+<p>DDNS funktioniert unter Zuhilfenahme eines externen Dienstleisters.
 Bei diesem wird eine (Sub)Domain beantragt, z.B.
-<em>server.dns-anbieter.de</em>. Auf dem Raspberry Pi kann nun das
-Programm <strong>DDClient</strong> installiert werden. Dieses wiederum
-frägt regelmäßig einen Internetseite an und lässt sich von dieser die
-eigene öffentliche IP-Adresse mitteilen. Dadurch erfährt DDClient, unter
-welcher Adresse der Raspberry Pi erreichbar ist und ob sie sich geändert
-hat. Diese Adresse schickt DDClient nun an den DDNS-Anbieter, bei
-welchem die eigene Domain beantragt wurde. Dieser wiederum trägt die
-IP-Adresse in seinem DNS (DNS ist eine Art Telefonbuch des Internets, in
-welchem IP-Adresse in Domainnamen übersetzt werden) ein. Dadurch wird
-ein Computer, der die Adresse <em>server.dns-anbieter.de</em> ansteuert,
-vom DDNS-Anbieter die tagesaktuelle öffentliche IP-Adresse des
-Heimnetzwerks erhalten und kann seine Anfrage dann dorthin schicken.</p>
+<em>server.dns-anbieter.de</em>. Auf dem Raspberry Pi kann das Programm
+<strong>DDClient</strong> installiert werden. Dieses kontaktiert
+regelmäßig eine Internetseite und erhält von dieser die eigene
+öffentliche IP-Adresse als Echo zurück. Dadurch erfährt DDClient, unter
+welcher IP-Adresse der Raspberry Pi erreichbar ist und ob diese sich
+geändert hat. Diese IP-Adresse schickt DDClient an den DDNS-Anbieter,
+bei welchem die eigene Domain beantragt wurde. Dieser Anbieter wiederum
+trägt die IP-Adresse in seinem DNS ein.</p>
+<div id="dns" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="dns" class="callout-inner">
+<h3 class="callout-title">DNS</h3>
+<div class="callout-content">
+<p><strong>DNS</strong> kann als Telefonbuch des Internets verstanden
+werden, in welchem IP-Adressen in Domainnamen übersetzt werden, z.B.
+wird die IP-Adresse 49.13.55.174. in <a href="https://wikipedia.de" class="external-link">wikipedia.de</a> übersetzt. Mehr zum Thema
+DNS findet sich z.B. beim <a href="https://www.elektronik-kompendium.de/sites/net/0901141.htm" class="external-link">Elektronikkompendium</a>.</p>
+</div>
+</div>
+</div>
+<p>Ruft ein Computer die Adresse <em>server.dns-anbieter.de</em> auf,
+wird im DNS des DDNS-Anbieters die tagesaktuelle öffentliche IP-Adresse
+des Heimnetzwerks ausgelesen und übermittelt. Dadurch wird die Anfrage
+an die richtige IP-Adresse geschickt.</p>
 <p>Es gibt verschiedene Anbieter für DDNS-Dienste. Gut geeignet sind
-z.B. <a href="www.noip.com">No-IP</a> oder <a href="https://www.ddnss.de/" class="external-link">DDNSS</a>. Auch viele Heimrouter bieten
-über den Hersteller eine Möglichkeit für DDNS (z.B. AVM mit
+z.B. <a href="https://noip.com" class="external-link">No-IP</a> oder <a href="https://www.ddnss.de/" class="external-link">DDNSS</a>. Auch viele Heimrouter bieten
+über den Hersteller eine Möglichkeit für DDNS an (z.B. AVM mit
 Fritz.Box-Routern).</p>
 </div>
 <div class="section level3">
 <h3 id="umsetzung-ddns-am-raspberry-pi">Umsetzung DDNS am Raspberry Pi<a class="anchor" aria-label="anchor" href="#umsetzung-ddns-am-raspberry-pi"></a></h3>
+<p>Für die Implementierung des DDNS-Verfahrens am Raspberry Pi wird wie
+folgt vorgegangen:</p>
+<ul><li><p>Account bei einem DDNS-Anbieter registrieren</p></li>
+<li><p>Im Falle von <em>No-IP</em> muss im <a href="https://noip.com" class="external-link">Webportal</a> des Anbieters ein Benutzername
+festgelegt werden</p></li>
+<li><p>Beim gewählten Anbieter muss ein Domainname reserviert werden
+(A-Record für IPv4 oder AAAA-Record für IPv6)</p></li>
+<li>
+<p>ddclient auf dem Raspberry Pi installieren und konfigurieren:
+<code>sudo apt-get install ddclient</code></p>
+<ul><li><p>Im Anschließenden Dialog wird im Falle von No-IP <em>no-ip</em>
+gewählt, ansonsten <em>anderer</em></p></li>
+<li><p>als Benutzername und Passwort werden die Zugangsdaten des
+DDNS-Anbieters eingetragen</p></li>
+<li><p>als <em>IP-Adressen-Ermittlungsmethode</em> wird
+<em>Web-basierter IP-Ermittlungsdienst</em> gewählt</p></li>
+<li><p>der zu aktualisierende Rechner ist der beim DDNS-Anbieter
+reservierte Domainnamen</p></li>
+</ul></li>
+</ul><figure><img src="fig/08_ddclient01.png" alt="Konfigurationsdialog von DDClient. Es stehen mehrere DDNS-Anbieter zur Auswahl. Hervorgehoben ist no-ip.com" class="figure mx-auto d-block"><div class="figcaption">DDClient konfigurieren 1: Anbieter
+auswählen</div>
+</figure><figure><img src="fig/08_ddclient02.png" alt="Konfigurationsdialog von DDClient: festlegen der IP-Ermittlungsmethode, hervorgehoben ist die Option web-basierter IP-Ermittlungsdienst" class="figure mx-auto d-block"><div class="figcaption">DDClient konfigurieren 2:
+Ermittlungsmehode</div>
+</figure><figure><img src="fig/08_ddclient03.png" alt="Konfigurationsdialog von DDClient: eingabe des Domainnamens, als Platzhalter ist server.ddns-anbieter.de zu sehen" class="figure mx-auto d-block"><div class="figcaption">DDClient konfigurieren 3: Domainname</div>
+</figure><p>Nach der Installation sollte die <strong>Konfigurationsdatei</strong>
+überprüft und ggf. angepasst werden:
+<code>sudo nano /etc/ddclient.conf</code>. Je nach DDNS-Anbieter sieht
+die Konfigurationsdatei unterschiedlich aus.</p>
+<ul><li>DDNSS.de:</li>
+</ul><div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#für ddnss.de</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
 </div>
-</section><section><h2 class="section-heading" id="apache-webserver-installieren">Apache Webserver installieren<a class="anchor" aria-label="anchor" href="#apache-webserver-installieren"></a></h2>
-<hr class="half-width"><div class="section level3">
-<h3 id="installation-und-verzeichnisse">Installation und Verzeichnisse<a class="anchor" aria-label="anchor" href="#installation-und-verzeichnisse"></a></h3>
+<ul><li>NO-IP:</li>
+</ul><div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#NO-IP.com</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
+</div>
+<div id="externe-erreichbarkeit-2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="externe-erreichbarkeit-2" class="callout-inner">
+<h3 class="callout-title">Externe Erreichbarkeit</h3>
+<div class="callout-content">
+<p>Sie haben die Portweiterleitung am Router und die DDNS-Konfiguration
+am Raspberry Pi abgeschlossen. Wie ist der Raspberry Pi nun aus dem
+Internet erreichbar?</p>
+<ol style="list-style-type: decimal"><li><p>Unter 192.168.178.25</p></li>
+<li><p>Unter 93.236.170.179</p></li>
+<li><p>Er ist nach wie vor nicht erreichbar</p></li>
+<li><p>Unter server.ddns-anbieter.de</p></li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<ul><li>Antwort 3 ist die richtige</li>
+</ul><p>Zwar ist das Heimnetzwerk nun unter der DDNS-Domain (im Beispiel
+server.ddns-anbieter.de) erreichbar, der Router lässt Anfragen von Außen
+nach Innen durch und leitet sie auch an den Raspberry Pi weiter. Dessen
+<strong>Firewall</strong> blockiert aber aktuell noch alle Verbindungen
+außer der SSH-Verbindung, weshalb die Anfrage wieder nicht ans Ziel
+gelangt.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
+<h3 id="firewall-anpassen">Firewall anpassen<a class="anchor" aria-label="anchor" href="#firewall-anpassen"></a></h3>
+<p>Um Zugriffe auf Ressourcen des Raspberry Pi zu erlauben (z.B. HTTP
+und HTTPS-Verkehr für einen Webserver), muss dessen Firewall angepasst
+werden. Um zu testen, ob die Kommunikation grundlegend funktioniert,
+wird zunächst der Port 80 für unverschlüsselten HTTP-Datenverkehr
+geöffnet, sowohl als Portweiterleitung am Router, als auch in der
+Firewall des Raspberry Pi. Am Raspberry Pi wird dazu der UFW-Befehl
+genutzt: <code>sudo ufw allow 80</code></p>
+</div>
+</section><section><h2 class="section-heading" id="apache-webserver-installieren">Apache Webserver installieren<a class="anchor" aria-label="anchor" href="#apache-webserver-installieren"></a></h2>
+<hr class="half-width"><p>Noch wird am Raspberry Pi kein Dienst auf Anfragen mit Port 80
+reagieren. Um die Kommunikation zu testen wird der Webserver
+<em>Apache2</em> installiert, der auch im weiteren Projektverlauf
+genutzt wird: <code>sudo apt-get install apache2</code></p>
+<div class="section level3">
+<h3 id="installation-und-verzeichnisse">Installation und Verzeichnisse<a class="anchor" aria-label="anchor" href="#installation-und-verzeichnisse"></a></h3>
+<p>Nach der Installation sind bereits einige Konfigurationsverzeichnisse
+vorhanden:</p>
+<ul><li><p>Virtual-Host-Konfiguration: für jede Internetseite, die der
+Apache-Webserver ausliefern soll, wird eine Konfigurationsdatei unter
+<code>/etc/apache2/sites-available</code> erstellt. Zu Beginn befindet
+sich dort bereits die Apache-Standard-Konfigurationsdatei, welche zum
+testen genügt.</p></li>
+<li><p>Website-Daten: die Dateien (z.B. die HTML-Dokumente) der Website
+selbst liegen im sogenannten <em>Document-Root</em>, welches
+Standardmäßig unter <code>/var/www/html/</code>zu finden ist, aber für
+jede Internetseite individuell angepasst werden kann (in der
+Virtual-Host-Konfigurationsdatei).</p></li>
+<li><p>Log-Dateien: Log-Dateien des Apache-Webservers finden sich
+meistens unter <code>/var/log/apache2/</code>. Der Pfad kann aber in der
+Virtual-Host-Datei angepasst werden.</p></li>
+</ul></div>
+<div class="section level3">
 <h3 id="test-der-externen-erreichbarkeit">Test der externen Erreichbarkeit<a class="anchor" aria-label="anchor" href="#test-der-externen-erreichbarkeit"></a></h3>
+<p>Da der Apache-Webserver nach der Installation bereits eine
+Standardwebsite zu Verfügung stellt, kann die Erreichbarkeit des
+Webserver direkt getestet werden. Dabei empfiehlt es sich, den Test
+Stück um Stück zu eskalieren:</p>
+<ul><li><ol style="list-style-type: decimal"><li>Stufe: Erreichbarkeit vom Raspberry Pi selbst testen: in der
+Kommandozeile mit <code>curl localhost</code> (als Antwort wird ein
+HTML-Dokument auf der Kommandozeile ausgegeben) oder mit verbundenem
+Bildschirm im Browser durch Eingabe von localhost in der Adresszeile.
+Funktioniert Stufe 1, ist gewährleistet, dass der Apache-Webserver
+funktionert.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal"><li>Stufe: Erreichbarkeit im Heimnetzwerk: Lokale IP-Adresse des
+Raspberry Pi (im Beispiel die 192.168.178.25) in der Adresszeile des
+Browsers am PC/Notebook eingeben. Es sollte die Apache Standardseite
+zurück geliefert werden. Funktioniert Stufe 2, ist gewährleistet, dass
+der Zugriff auf den Webserver nicht von der Raspberry Pi Firewall
+blockiert wird (zunmindest nicht aus dem Heimnetzwerk heraus).</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal"><li>Stufe: Erreichbarkeit im Internet: gewählte DDNS-Domain (im Beispiel
+server.ddns-anbieter.de) am Smartphone ohne WLAN-Verbindung aufrufen. Es
+solte dasselbe Ergebnis wie in Stufe 2 erreicht werden. Funktioniert
+auch Stufe 3, ist gewährleistet, dass sowohl die DDNS-Konfiguration
+funktioniert, als auch die Portweiterleitung.</li>
+</ol></li>
+</ul><p>Schlägt eine der Stufen fehl, muss zuerst nach dem Fehler gesucht
+werden. Vermutlich liegt es an einer Fehlerhaften Konfiguration der
+Firewall, der Portweiterleitung oder von DDClient.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -483,8 +652,15 @@ Fritz.Box-Routern).</p>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>
-</li></ul></div>
+<ul><li><p>Um den Raspberry Pi aus dem Internet zu erreichen müssen mehrere
+Schritte unternommen werden.</p></li>
+<li><p>es muss eine DDNS-Domain reserveriert werden und ein DDNS-Dienst
+auf dem Raspberry Pi konfiguriert werden.</p></li>
+<li><p>es muss eine Portweiterleitung auf dem Router des Heimnetzwerks
+eingerichtet werden. Dies muss vom Internetanbieter unterstützt
+werden.</p></li>
+<li><p>die Firewall des Raspberry Pi muss angepasst werden.</p></li>
+</ul></div>
 </div>
 </div>
 <!--
