@@ -86,7 +86,7 @@ Auf jeden Fall hat Mark jedoch seine informationelle Selbstbestimmung aufgegeben
 
 ### Informationelle Selbstbestimmtheit
 
-Unter dem Begriff *informationelle Selbstbestimmtheit* wird verstanden, dass Personen selbst über ihre Daten bestimmen können. Das [Bundesverfassungsgericht](http://www.bverfg.de/e/rs19831215_1bvr020983.html) hat dazu bereits 1983 geurteilt:
+Unter dem Begriff *informationelle Selbstbestimmtheit* wird verstanden, dass Personen selbst über ihre Daten bestimmen können. Das [Bundesverfassungsgericht](https://www.bverfg.de/e/rs19831215_1bvr020983.html) hat dazu bereits 1983 geurteilt:
 
 > "Das Grundrecht gewährleistet insoweit die Befugnis des Einzelnen, grundsätzlich selbst über die Preisgabe und Verwendung seiner persönlichen Daten zu bestimmen."
 
@@ -143,11 +143,11 @@ Noch mehr Informationen zum Thema finden Sie bei Interesse unter anderem bei den
 
 - J. Caspar, Wir Datensklaven - Wege aus der digitalen Ausbeutung, (Berlin 2023)
 
-- [Digitalcourage](http://www.digitalcourage.org)
+- [Digitalcourage](https://www.digitalcourage.org)
 
-- [Netzpolitik](http://www.netzpolitik.org)
+- [Netzpolitik](https://www.netzpolitik.org)
 
-- [ChaosComputerClub](http://www.ccc.de) und [Streams des CCC](https://media.ccc.de/)
+- [ChaosComputerClub](https://www.ccc.de) und [Streams des CCC](https://media.ccc.de/)
 
 ## Ziele und Inhalte des Kurses
 
