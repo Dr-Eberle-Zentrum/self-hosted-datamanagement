@@ -292,6 +292,7 @@
 <li><a href="#datenbank">Datenbank</a></li>
 <li><a href="#softwaredownload">Softwaredownload</a></li>
 <li><a href="#website-grundkonfiguration">Website Grundkonfiguration</a></li>
+<li><a href="#abschlie%C3%9Fende-schritte">Abschließende Schritte</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -400,8 +401,8 @@ stellen</p></li>
 <hr class="half-width"><p>Für das korrekte Funktionieren benötigen die meisten Programme dritte
 Programme, auf deren Funktionen sie zugreifen. Im Falle von
 Webanwendungen wie Nextcloud sind das vor allem ein Webserver (Apache2
-in unserem Fall), ein Datenbankmanagementsystem (siehe <a href="#Datenbank">Datenbank</a>) und die verschiedene Module der
-PHP-Skriptsprache.</p>
+in unserem Fall), ein Datenbankmanagementsystem (siehe <a href="09-installationsvorbereitung-3.Rmd/#Datenbank">Datenbank</a>) und
+verschiedene Module der Skriptsprache PHP.</p>
 <p>Dem <a href="https://docs.nextcloud.com/server/latest/admin_manual/" class="external-link">Nextcloud-Handbuch</a>
 kann entnommen werden, dass einige PHP-Module benötigt werden, einige
 weitere je nach Einsatzzweck empfohlen sind. Die <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/example_ubuntu.html" class="external-link">Beispielinstallation
@@ -428,9 +429,9 @@ sich entweder PostgreSQL oder MariaDB. In diesem Kurs wird
 MySQL ist, können alle für MySQL gültigen Befehle auch für MariaDB
 genutzt werden.</p>
 <p>Die Installation von MariaDB ist bereits mit den Abhängigkeiten
-erfolgt. Falls nicht, lautet der Befehle:
+erfolgt. Falls nicht, lautet der Befehl:
 <code>sudo apt-get install mariadb-server</code></p>
-<p>Um sich mit dem Datenbankmanagementsystem MariaDB zu verwenden, kann
+<p>Um sich mit dem Datenbankmanagementsystem MariaDB zu verbinden, kann
 entweder der Befehl <code>mariadb</code> oder dessen Alias
 <code>mysql</code> genutzt werden.</p>
 <div class="section level3">
@@ -438,15 +439,17 @@ entweder der Befehl <code>mariadb</code> oder dessen Alias
 <p>Um unautorisierten Zugriff auf Datenbanken zu verhindern, stellt
 MariaDB <a href="https://mariadb.com/kb/en/authentication-plugins/" class="external-link">unterschiedliche
 Möglichkeiten</a> zur Anmeldung am DBMS bereit. Die einfachste ist dabei
-die Möglichkeit, einen auf dem Betriebssystem vorhandenen User zu
-nutzen. Standardmäßig hat der Root-Account des Betriebssystem auch
-Root-Rechte in MariaDB. Daraus folgt, dass bei einer Anmeldung mit dem
+die Möglichkeit, einen auf dem Betriebssystem vorhandenen User zu nutzen
+(<a href="https://mariadb.com/kb/en/authentication-plugin-unix-socket/" class="external-link">Unix-Socket-Plugin</a>).
+Standardmäßig hat der Root-Account des Betriebssystems auch Root-Rechte
+in MariaDB. Daraus folgt, dass bei einer Anmeldung mit dem
 Linux-Root-Account auch Root-Rechte in MariaDB erhalten werden:
-<code>sudo mariadb</code> Möchte man sich dagegen mit einem User
-anmelden, der im DBMS gespeichert ist, muss dies explizit mit dem
-Parameter <code>-u &lt;username&gt;</code> angegeben werden:
-<code>mysql -u &lt;username&gt;</code> Hat der angegebene User nicht die
-nötigen Rechte im DBMS, schlägt die Anmeldung fehl.</p>
+<code>sudo mariadb</code>. Möchte man sich dagegen mit einem User
+anmelden, der im DBMS gespeichert ist (<a href="https://mariadb.com/kb/en/authentication-plugin-mysql_native_password/" class="external-link">mysql_native_paassword-Plugin</a>),
+muss dies explizit mit dem Parameter <code>-u &lt;username&gt;</code>
+angegeben werden: <code>mysql -u &lt;username&gt;</code> Hat der
+angegebene User nicht die nötigen Rechte im DBMS, schlägt die Anmeldung
+fehl.</p>
 <p>Um einen User zum DBMS hinzuzufügen, wird wie folgt vorgegangen:</p>
 <ul><li><p>mit Root-Rechten anmelden: <code>sudo mysql</code></p></li>
 <li><p>User erstellen, welcher sich per Passwort am lokalen DBMS
@@ -461,10 +464,10 @@ anmelden kann:
 <h3 id="datenbank-erstellen">Datenbank erstellen<a class="anchor" aria-label="anchor" href="#datenbank-erstellen"></a></h3>
 <p>Um eine neue Datenbank zu erstellen wird der Befehl
 <code>create database</code> innerhalb der interaktiven
-MariaDB-Kommandozeile genutzt. Anschließend kann mit dem
+MariaDB-Kommandozeile genutzt. Anschließend können mit dem
 <code>GRANT</code>-Befehl einem User Schreib- und Leserechte für die
 Datenbank erteilt werden.</p>
-<p>Es gilt als <em>Best-Practise</em> für jeden Webservice einen eigenen
+<p>Es gilt als <em>Best-Practice</em> für jeden Webservice einen eigenen
 User zu erstellen, welcher nur diejenigen Rechte erhält, die unbedingt
 nötig sind, um den Service zu betreiben. Auf jeden Fall sollte kein
 Webservice mit Root-Rechten auf das DBMS zugreifen.</p>
@@ -482,10 +485,10 @@ notwendigen Rechte erteilt:</p>
 </div>
 <p><code>&lt;username&gt;</code>, <code>&lt;password&gt;</code> und
 <code>&lt;datenbankname&gt;</code> sind jeweils durch eigene Werte zu
-ersetzten.</p>
+ersetzen.</p>
 <p>Siehe dazu auch das <a href="https://docs.nextcloud.com/server/stable/admin_manual/installation/example_ubuntu.html" class="external-link">Handbuch</a></p>
-<p>Anschließend sollte der Login und der Zugriff auf erstellte Datenbank
-getestet werden:
+<p>Anschließend sollte der Login und der Zugriff auf die erstellte
+Datenbank getestet werden:
 <code>mysql -u &lt;username&gt; -p &lt;datenbankname&gt;</code></p>
 </div>
 </section><section><h2 class="section-heading" id="softwaredownload">Softwaredownload<a class="anchor" aria-label="anchor" href="#softwaredownload"></a></h2>
@@ -504,7 +507,7 @@ sha256sum -c latest.tar.bz2.sha256 &lt; latest.tar.bz2</code></pre>
 <div class="callout-content">
 <p>Um die Korrektheit eines Downloads zu überprüfen, kann dessen
 Hashwert überprüft werden. Ein Hashwert ist ein Wert, der durch einen
-Algorithmus aus einer Datei abgeleitet. Wird die Datei verändert,
+Algorithmus aus einer Datei abgeleitet wird. Wird die Datei verändert,
 verändert sich auch der Hashwert. Dadurch kann überprüft werden, ob eine
 heruntergeladene Datei noch immer der Datei entspricht, die ursprünglich
 zur Verfügung gestellt wurde oder ob die Datei auf dem Weg abgefangen
@@ -541,27 +544,25 @@ der Website kopiert werden (standardmäßig
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<ul><li><p>der tar-Befehl entpackt das heruntergeladene und komprimierte
-Archiv (<em>latest.tar.bz2</em>) in das Verzeichnis
-<code>/var/www</code></p></li>
-<li><p>der chown-Befehl überträgt das entpackte Verzeichnis dem User und
-der Gruppe www-data. Dies ist wichtig, damit der Webserver später auf
-die Dateien zugreifen kann.</p></li>
-</ul></div>
+<p>Der tar-Befehl entpackt das heruntergeladene und komprimierte Archiv
+(<em>latest.tar.bz2</em>) in das Verzeichnis <code>/var/www</code></p>
+<p>Der chown-Befehl überträgt das entpackte Verzeichnis dem User und der
+Gruppe www-data. Dies ist wichtig, damit der Webserver später auf die
+Dateien zugreifen kann.</p>
+</div>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="website-grundkonfiguration">Website Grundkonfiguration<a class="anchor" aria-label="anchor" href="#website-grundkonfiguration"></a></h2>
 <hr class="half-width"><p>Nach dem Download der Dateien müssen diese als Website durch den
-Webserver ausgeliefert werden. Dazu muss für Apache2 eine neue
+Webserver bereit gestellt werden. Dazu muss für Apache2 eine neue
 Konfigurationsdatei für die Website erstellt werden:
 <code>sudo nano /etc/apache2/sites-available/nextcloud.conf</code></p>
-<p>In einer ersten sehr einfachen Version kann diese wie folgt aussehen
-(nicht vergessen, den ServerName mit der eigenen Adresse zu
-ersetzen):</p>
+<p>In einer ersten sehr einfachen Version kann diese wie folgt
+aussehen:</p>
 <pre class="apacheconf"><code>&lt;VirtualHost *:80&gt;
   DocumentRoot /var/www/nextcloud/
-  ServerName  your.server.com #eigene DDNS-Domain eintragen
+  ServerName  server.ddns-provider.de
 
   &lt;Directory /var/www/nextcloud/&gt;
     Require all granted
@@ -581,9 +582,8 @@ ersetzen):</p>
 <h3 class="callout-title">Apache-Konfiguration</h3>
 <div class="callout-content">
 <p>Schauen Sie sich den oben gezeigten Code der
-Apache-Konfigurationsdatei an. Können Sie sich vorstellen, was die
-Einstellung verursacht? Welche Einstellungen müssen Sie ggf. an Ihr
-Setup anpassen?</p>
+Apache-Konfigurationsdatei an. Können Sie die Einstellungen verstehen?
+Welche Einstellungen müssen Sie an Ihr Setup anpassen?</p>
 </div>
 </div>
 </div>
@@ -599,13 +599,13 @@ Möglichkeiten zur Konfiguration bieten. Um alle Möglichkeiten zu kennen
 und zu verstehen, wäre ein eigener Kurs nötig. Idealerweise stellen die
 Hersteller des zu installierenden Webservices eigene Informationen zur
 Konfiguration bereit, da je nach Service unterschiedliche
-Konfigurationen nötig sind. Die wichtigsten Parameter in obigem
+Konfigurationen nötig sind. Die wichtigsten Parameter im obigem
 Code-Beispiel sind:</p>
-<ul><li><p>DocumentRoot: Stammverzeichnis, in welchem sich die Website-Daten
-befinden.</p></li>
-<li><p>ServerName: Webadresse, unter der die Website erreichbar sein
-soll</p></li>
-</ul><p>Alle anderen Optionen können dem <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html" class="external-link">Handbuch</a>
+<p>DocumentRoot: Stammverzeichnis, in welchem sich die Website-Daten
+befinden.</p>
+<p>ServerName: Webadresse, unter der die Website erreichbar sein
+soll</p>
+<p>Die anderen Optionen können dem <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html" class="external-link">Handbuch</a>
 entnommen werden.</p>
 </div>
 </div>
@@ -616,18 +616,22 @@ werden, dass diese aktiviert werden soll:
 <code>sudo a2ensite nextcloud.conf</code> Anschließend befindet sich im
 Verzeichnis <code>/etc/apache2/sites-enabled/</code> ein Link auf die
 Datei <code>/etc/apache2/sites-available/nextcloud.conf</code></p>
-<p>Der Apache-Webserver kann durch Module in seiner Funktion erweiterter
+<p>Der Apache-Webserver kann durch Module in seiner Funktion erweitert
 werden. Diese müssen aktiviert werden, damit sie verfügbar sind. Für
 Nextcloud sollten die Module <em>mod_rewrite</em>, <em>mod_headers</em>,
 <em>mod_env</em>, <em>mod_dir</em> und <em>mod_mime</em> aktiviert
 werden: <code>sudo a2enmod rewrite headers env dir mime</code></p>
 <p>Anschließend muss Apache2 neugestartet werden:
 <code>sudo systemctl restart apache2.service</code></p>
-<p>Nun muss eine (leere) Konfigurationsdatei für Nextcloud erstellt
-werden: <code>sudo touch /var/www/nextcloud/config/config.php</code></p>
+</section><section><h2 class="section-heading" id="abschließende-schritte">Abschließende Schritte<a class="anchor" aria-label="anchor" href="#abschlie%C3%9Fende-schritte"></a></h2>
+<hr class="half-width"><p>Vor der Installation von Nextcloud muss eine (leere)
+Konfigurationsdatei für Nextcloud erstellt werden:
+<code>sudo touch /var/www/nextcloud/config/config.php</code></p>
+<div class="section level3">
+<h3 id="datenverzeichnis">Datenverzeichnis<a class="anchor" aria-label="anchor" href="#datenverzeichnis"></a></h3>
 <p>Um die Dateien, die später in Nextcloud gespeichert werden sollen,
 nicht auf dem Hauptlaufwerk des Raspberry Pis (der SD-Karte) zu
-speichern, wird auf dem externen Speicher (siehe <a href="#id_07-installationsvorbereitung-1.html">Episode 7:
+speichern, wird auf dem externen Speicher (siehe <a href="07-installationsvorbereitung-1.html">Episode 7:
 Installationsvorbereitung 1</a>) ein Verzeichnis erstellt:
 <code>sudo mkdir /mnt/data/ncdata</code></p>
 <p>Zu Letzt muss sicher gestellt werden, dass der Webserver die nötigen
@@ -636,7 +640,7 @@ Zugriffsrechte auf das Document-Root und das Datenverzeichnis hat:</p>
 <li><p><code>sudo chown -R www-data:www-data /mnt/data/ncdata</code></p></li>
 </ul><p>Steuert man nun seine beim DDNS-Provider gewählte Domain im Browser
 an, erreicht man den Nextcloud-Installationsassistenten. Bevor dieser
-gestartet wird, sind aber noch andere Schritte notwendig.</p>
+gestartet wird, sind aber noch weitere Schritte notwendig.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -657,6 +661,7 @@ durch Apache zur Verfügung gestellt werden</p></li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="08-installationsvorbereitung-2.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
