@@ -118,11 +118,11 @@
   Self-hosted Data Management
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 90%" class="percentage">
-    90%
+<aside class="col-md-12 lesson-progress"><div style="width: 82%" class="percentage">
+    82%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 90%" aria-valuenow="90" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 82%" aria-valuenow="82" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -304,6 +304,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush12">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading12">
+        <a href="11-konfiguration.html">11. Installation und Konfiguration</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -347,7 +356,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/09-installationsvorbereitung-3.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/11-konfiguration.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -355,14 +364,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Installationsvorbere
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/11-konfiguration.html" rel="next">
+          Next: Installation und...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Installationsvorbereitung 4</h1>
-        <p>Last updated on 2024-09-12 |
+        <p>Last updated on 2024-09-13 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/10-installationsvorbereitung-4.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -384,7 +393,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li><p>Ist die aktuelle Verbindung zu meiner Cloud sicher?</p></li>
-<li><p>Wie kann ich Apache besser konfigurieren?</p></li>
+<li><p>Wie kann ich Apache sicherer konfigurieren?</p></li>
 </ul></div>
 </div>
 </div>
@@ -392,7 +401,8 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li><p>TLS-Zertifikate mit Letsencrypt und Certbot</p></li>
+<ul><li><p>Grundlagen der HTTPS-Verbindung verstehen</p></li>
+<li><p>TLS-Zertifikate mit Letsencrypt und Certbot</p></li>
 <li><p>Sicherheitsoptimierungen für Websites mit Apache</p></li>
 </ul></div>
 </div>
@@ -418,12 +428,13 @@ Internetseiten. Dass Sie eine HTTPS-Verbindung zu einer Seite aufgebaut
 haben, erkennen Sie in der Adresszeile Ihres Browsers anhand eines
 Schlosssymbols, bei besonders starken Zertifikaten ggf. zusätzlich auch
 anhand einer grünen Markierung (siehe die folgende Abbildung).</p>
-<figure><img src="../fig/10-https-browser.png" alt="Browseradresszeile mit der Adresse https://uni-tuebingen.de. Durch ein Schlosssymbol wird die https-Verbindung dargestellt." class="figure mx-auto d-block"><div class="figcaption">HTTPS-Verbindung im Browser</div>
+<figure><img src="../fig/10-https-browser.png" alt="Browseradresszeile mit der Adresse https://uni-tuebingen.de. Durch ein Schlosssymbol wird die https-Verbindung dargestellt." class="figure mx-auto d-block"><div class="figcaption">HTTPS-Verbindung im Browser. das Schloss zeigt
+eine verschlüsselte HTTPS-Verbindung an</div>
 </figure><p>Die Grundlage des TLS-Protokolls stellen Zertifikate dar, die die
 Authentizität der Website bestätigen.</p>
 <p>Dazu ein nicht technisches Vergleichsbeispiel: Sie wollen bei einem
-Geschäftsvorgang die Identität einer Person überprüfen. Zeigt Ihnen die
-Person einen selbst ausgestellten Ausweis, werden Sie diesem
+Geschäftsvorgang die Identität des Gegenübers überprüfen. Zeigt Ihnen
+die Person einen selbst ausgestellten Ausweis, werden Sie diesem
 Personalausweis nicht vertrauen. Zeigt die Person jedoch einen Ausweis,
 der von einer Behörde ausgestellt wurde, welcher Sie vertrauen, können
 Sie auch dem vorgelegten Ausweis vertrauen.</p>
@@ -438,11 +449,11 @@ kann, muss dieses genau wie beim Personalausweis von einer zentralen
 Stelle ausgestellt werden. Diese zentralen Stellen (als
 <em>Zertifizierungsstellen</em> oder im Englischen als <em>Certificate
 Authority</em> bezeichnet) können auf Anfrage ein Zertifikat ausstellen,
-sofern die Identität des Anfragenden gewährleistet ist.</p>
+sofern die Identität der anfragenden Stelle gewährleistet ist.</p>
 <p>Gleichzeitig besitzt die Zertifizierungsstelle selbst ein Zertifikat,
 dass deren Identität bestätigt. Dieses Zertifizierungsstellenzertifikat
 wiederum ist vom Hersteller Ihres Betriebssystems auf Ihrem PC
-hinterlegt und als vertrauenswürdig eingestuft worden. Überprüft der
+hinterlegt und als vertrauenswürdig eingestuft worden. Überprüft Ihr
 Browser nun das Zertifikat der Website, stellt er zunächst fest, dass
 das präsentierte Zertifikat von einer Zertifizierungsstelle ausgestellt
 wurde, welcher er vertraut. Außerdem wird überprüft, ob die aufgerufene
@@ -454,28 +465,30 @@ Sie ernst nehmen, da es auf einen Betrugsversuch hindeuten kann, in
 welchem eine angreifende Person sich für die Website ausgibt, die Sie
 eigentlich aufrufen wollten (z.B. die Seite Ihres Online-Bankings).</p>
 <figure><img src="../fig/10_https-browser-unsecure.png" alt='Browserfenster, dass eine unsichere https-Verbindung zeigt, welche mit einer Warnung angezeigt wird: "Warnung: Mögliches Sicherheitsrisiko erkannt"' class="figure mx-auto d-block"><div class="figcaption">Fehlgeschlagene HTTPS-Verbindung im Browser mit
-Sicherheitswarnung</div>
+Sicherheitswarnung: die Verbindung schläg fehl, da die aufgerufne
+Adresse (134.2.5.1) nicht der Adresse im Zertifikat entspricht
+(ersichtlich nach Klick auf den Erweitert-Button)</div>
 </figure></div>
 <div class="section level3">
 <h3 id="tls-verschlüsselung-einrichten">TLS-Verschlüsselung einrichten<a class="anchor" aria-label="anchor" href="#tls-verschl%C3%BCsselung-einrichten"></a></h3>
 <p>Um die eigene Website per HTTPS erreichen zu können, muss der
 Raspberry Pi ein Zertifikat von einer Zertifizierungsstelle erhalten,
 die von allen Computern anerkannt ist. Während dies früher nur gegen
-Bezahlung möglich war, existiert seit einigen Jahren mit <a href="https://letsencrypt.org/" class="external-link">Letsencrypt</a> ein Anbieter, der
-kostenlose Zertifikate zur Verfügung stellt. Diese sind jedoch nur drei
-Monate gültig und müssen dann verlängert werden.</p>
+Bezahlung möglich war, existiert seit einigen Jahren mit <a href="https://letsencrypt.org/" class="external-link">Letsencrypt</a> ein gemeinnütziger
+Anbieter, der kostenlose Zertifikate zur Verfügung stellt. Diese sind
+jedoch nur drei Monate gültig und müssen dann verlängert werden.</p>
 <p>Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt
 nachweisen, dass man die Eigentümerschaft über die Domain, für welche
 das Zertifikat angefragt wird, hat. Das heißt: wenn Sie für die Adresse
-server.ddns-provider.de ein Zertifikat erhalten wollen, müssen Sie
-nachweisen, dass sie den Webserver, der die Seite
-server.ddns-provider.de ausliefert, verwalten. Diesen Nachweis erbringen
-Sie nicht manuell, sondern mit Hilfe des Programms
+<em>server.ddns-provider.de</em> ein Zertifikat erhalten wollen, müssen
+Sie nachweisen, dass sie den Webserver, der die Seite
+<em>server.ddns-provider.de</em> ausliefert, verwalten. Diesen Nachweis
+erbringen Sie nicht manuell, sondern mit Hilfe des Programms
 <strong>Certbot</strong>. Mit diesem Programm werden automatisiert
 einige Informationen zwischen Ihrem Webserver und den Servern von
 Letsencrypt ausgetauscht, anhand deren die Eigentümerrschaft
 nachgewiesen werden kann. Anschließend wird das Zertifikat ausgestellt
-und kann dann in den Einstellungen der Website integriert werden.</p>
+und kann in den Einstellungen der Website integriert werden.</p>
 <div class="section level4">
 <h4 id="zertifikat-erhalten">Zertifikat erhalten:<a class="anchor" aria-label="anchor" href="#zertifikat-erhalten"></a></h4>
 <ul><li>
@@ -497,7 +510,8 @@ Internet erreichbar ist (vgl. <a href="08-installationsvorbereitung-2.html#Test%
 (Achtung: eigene Domain einsetzen)</p></li>
 <li><p>Wenn der Test erfolgreich war, kann die Zertifikatsausstellung
 durchgeführt werden:
-<code>sudo certbot --certonly -d &lt;server.ddns-provider.de&gt;</code></p></li>
+<code>sudo certbot --certonly -d &lt;server.ddns-provider.de&gt;</code>
+(Achtung: eigene Domain einsetzen)</p></li>
 </ul></div>
 <div class="section level4">
 <h4 id="system-von-http-auf-https-umstellen">System von HTTP auf HTTPS umstellen:<a class="anchor" aria-label="anchor" href="#system-von-http-auf-https-umstellen"></a></h4>
@@ -586,7 +600,7 @@ Sie, ob unter dem Pfad
 <li><p>Ist die Portweiterleitung in Ihrem Router richtig
 eingestellt?</p></li>
 <li><p>Funktioniert DDClient?
-(<code>sudo systemctl status ddlient</code> und
+(<code>sudo systemctl status ddlcient</code> und
 <code>sudo ddclient --query</code>)</p></li>
 <li><p>Hat Ihr DDNS-Provider die richtige IP-Adresse für Ihre Domain
 eingetragen? Melden Sie sich dazu im Webportal Ihres DDNS-Providers
@@ -600,8 +614,8 @@ an.</p></li>
 <div class="callout-content">
 <ul><li><p>Unverschlüsselte HTTP-Verbindungen müssen vermieden
 werden.</p></li>
-<li><p>Für verschlüsselte HTTPS-Verbindungen muss ein TLS-Zertifikat
-erhalten werden.</p></li>
+<li><p>Für verschlüsselte HTTPS-Verbindungen wird ein TLS-Zertifikat
+benötigt.</p></li>
 <li><p>Mit Certbot können kostenlose Zertifikate von Letsencrypt
 erhalten werden.</p></li>
 <li><p>Für eine HTTPS-Verbindung müssen die Konfiguration des
@@ -618,7 +632,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/09-installationsvorbereitung-3.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/11-konfiguration.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -626,8 +640,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Installationsvorbere
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/11-konfiguration.html" rel="next">
+          Next: Installation und...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -673,8 +687,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/10-installationsvorbereitung-4.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/10-installationsvorbereitung-4.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-09-12",
-  "datePublished": "2024-09-12"
+  "dateModified": "2024-09-13",
+  "datePublished": "2024-09-13"
 }
 
   </script><script>
