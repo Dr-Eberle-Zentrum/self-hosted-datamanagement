@@ -8,11 +8,13 @@ exercises: 90
 
 - Ist die aktuelle Verbindung zu meiner Cloud sicher?
 
-- Wie kann ich Apache besser konfigurieren?
+- Wie kann ich Apache sicherer konfigurieren?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
+
+- Grundlagen der HTTPS-Verbindung verstehen
 
 - TLS-Zertifikate mit Letsencrypt und Certbot
 
@@ -28,25 +30,25 @@ Aktuell erreichen wir den Webserver, welcher uns die Website für Nextcloud ausl
 
 Um das Auslesen der Verbindung und damit das Abfangen sämtlicher Kommunikation zu unterbinden, muss die Verbindung verschlüsselt werden. Um eine HTTP-Verbindung zu verschlüsseln wird diese durch das TLS-Protokoll zu einer HTTP**S**-Verbindung erweitert. HTTPS ist heute glücklicherweise der Standard bei den meisten Internetseiten. Dass Sie eine HTTPS-Verbindung zu einer Seite aufgebaut haben, erkennen Sie in der Adresszeile Ihres Browsers anhand eines Schlosssymbols, bei besonders starken Zertifikaten ggf. zusätzlich auch anhand einer grünen Markierung (siehe die folgende Abbildung).
 
-![HTTPS-Verbindung im Browser](fig/10-https-browser.png){alt='Browseradresszeile mit der Adresse https://uni-tuebingen.de. Durch ein Schlosssymbol wird die https-Verbindung dargestellt.'}
+![HTTPS-Verbindung im Browser. das Schloss zeigt eine verschlüsselte HTTPS-Verbindung an](fig/10-https-browser.png){alt='Browseradresszeile mit der Adresse https://uni-tuebingen.de. Durch ein Schlosssymbol wird die https-Verbindung dargestellt.'}
 
 Die Grundlage des TLS-Protokolls stellen Zertifikate dar, die die Authentizität der Website bestätigen. 
 
-Dazu ein nicht technisches Vergleichsbeispiel: Sie wollen bei einem Geschäftsvorgang die Identität einer Person überprüfen. Zeigt Ihnen die Person einen selbst ausgestellten Ausweis, werden Sie diesem Personalausweis nicht vertrauen. Zeigt die Person jedoch einen Ausweis, der von einer Behörde ausgestellt wurde, welcher Sie vertrauen, können Sie auch dem vorgelegten Ausweis vertrauen.
+Dazu ein nicht technisches Vergleichsbeispiel: Sie wollen bei einem Geschäftsvorgang die Identität des Gegenübers überprüfen. Zeigt Ihnen die Person einen selbst ausgestellten Ausweis, werden Sie diesem Personalausweis nicht vertrauen. Zeigt die Person jedoch einen Ausweis, der von einer Behörde ausgestellt wurde, welcher Sie vertrauen, können Sie auch dem vorgelegten Ausweis vertrauen.
 
-Übertragen auf die HTTPS-Verbindung sieht es wie folgt aus: Ein Website-Betreiber kann sich selbst ein TLS-Zertifikat ausstellen (unter Linux z.B. mit dem Programm *OpenSSL*) und dieses einem anfragendem Webbrowser oder sonstigem Client präsentieren. Allerdings kann einem solchen selbst ausgestellten Zertifikat nicht von Dritten vertraut werden. Der Browser wird die Verbindung als unsicher ablehnen und eine Warnmeldung zeigen. Damit ein Client dem Zertifikat vertrauen kann, muss dieses genau wie beim Personalausweis von einer zentralen Stelle ausgestellt werden. Diese zentralen Stellen (als *Zertifizierungsstellen* oder im Englischen als *Certificate Authority* bezeichnet) können auf Anfrage ein Zertifikat ausstellen, sofern die Identität des Anfragenden gewährleistet ist. 
+Übertragen auf die HTTPS-Verbindung sieht es wie folgt aus: Ein Website-Betreiber kann sich selbst ein TLS-Zertifikat ausstellen (unter Linux z.B. mit dem Programm *OpenSSL*) und dieses einem anfragendem Webbrowser oder sonstigem Client präsentieren. Allerdings kann einem solchen selbst ausgestellten Zertifikat nicht von Dritten vertraut werden. Der Browser wird die Verbindung als unsicher ablehnen und eine Warnmeldung zeigen. Damit ein Client dem Zertifikat vertrauen kann, muss dieses genau wie beim Personalausweis von einer zentralen Stelle ausgestellt werden. Diese zentralen Stellen (als *Zertifizierungsstellen* oder im Englischen als *Certificate Authority* bezeichnet) können auf Anfrage ein Zertifikat ausstellen, sofern die Identität der anfragenden Stelle gewährleistet ist. 
 
-Gleichzeitig besitzt die Zertifizierungsstelle selbst ein Zertifikat, dass deren Identität bestätigt. Dieses Zertifizierungsstellenzertifikat wiederum ist vom Hersteller Ihres Betriebssystems auf Ihrem PC hinterlegt und als vertrauenswürdig eingestuft worden. Überprüft der Browser nun das Zertifikat der Website, stellt er zunächst fest, dass das präsentierte Zertifikat von einer Zertifizierungsstelle ausgestellt wurde, welcher er vertraut. Außerdem wird überprüft, ob die aufgerufene Adresse auch der im Zertifikat hinterlegten Adresse entspricht.
+Gleichzeitig besitzt die Zertifizierungsstelle selbst ein Zertifikat, dass deren Identität bestätigt. Dieses Zertifizierungsstellenzertifikat wiederum ist vom Hersteller Ihres Betriebssystems auf Ihrem PC hinterlegt und als vertrauenswürdig eingestuft worden. Überprüft Ihr Browser nun das Zertifikat der Website, stellt er zunächst fest, dass das präsentierte Zertifikat von einer Zertifizierungsstelle ausgestellt wurde, welcher er vertraut. Außerdem wird überprüft, ob die aufgerufene Adresse auch der im Zertifikat hinterlegten Adresse entspricht.
 
 Rufen Sie eine Website auf, die ein falsches Zertifikat präsentiert (z.B. für die falsche Adresse, ein abgelaufenes oder selbst ausgestelltes Zertifikat), erhalten Sie eine Warnmeldung. Diese sollten Sie ernst nehmen, da es auf einen Betrugsversuch hindeuten kann, in welchem eine angreifende Person sich für die Website ausgibt, die Sie eigentlich aufrufen wollten (z.B. die Seite Ihres Online-Bankings).
 
-![Fehlgeschlagene HTTPS-Verbindung im Browser mit Sicherheitswarnung](fig/10_https-browser-unsecure.png){alt='Browserfenster, dass eine unsichere https-Verbindung zeigt, welche mit einer Warnung angezeigt wird: "Warnung: Mögliches Sicherheitsrisiko erkannt"'}
+![Fehlgeschlagene HTTPS-Verbindung im Browser mit Sicherheitswarnung: die Verbindung schläg fehl, da die aufgerufne Adresse (134.2.5.1) nicht der Adresse im Zertifikat entspricht (ersichtlich nach Klick auf den Erweitert-Button)](fig/10_https-browser-unsecure.png){alt='Browserfenster, dass eine unsichere https-Verbindung zeigt, welche mit einer Warnung angezeigt wird: "Warnung: Mögliches Sicherheitsrisiko erkannt"'}
 
 ### TLS-Verschlüsselung einrichten
 
-Um die eigene Website per HTTPS erreichen zu können, muss der Raspberry Pi ein Zertifikat von einer Zertifizierungsstelle erhalten, die von allen Computern anerkannt ist. Während dies früher nur gegen Bezahlung möglich war, existiert seit einigen Jahren mit [Letsencrypt](https://letsencrypt.org/) ein Anbieter, der kostenlose Zertifikate zur Verfügung stellt. Diese sind jedoch nur drei Monate gültig und müssen dann verlängert werden.
+Um die eigene Website per HTTPS erreichen zu können, muss der Raspberry Pi ein Zertifikat von einer Zertifizierungsstelle erhalten, die von allen Computern anerkannt ist. Während dies früher nur gegen Bezahlung möglich war, existiert seit einigen Jahren mit [Letsencrypt](https://letsencrypt.org/) ein gemeinnütziger Anbieter, der kostenlose Zertifikate zur Verfügung stellt. Diese sind jedoch nur drei Monate gültig und müssen dann verlängert werden.
 
-Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt nachweisen, dass man die Eigentümerschaft über die Domain, für welche das Zertifikat angefragt wird, hat. Das heißt: wenn Sie für die Adresse server.ddns-provider.de ein Zertifikat erhalten wollen, müssen Sie nachweisen, dass sie den Webserver, der die Seite server.ddns-provider.de ausliefert, verwalten. Diesen Nachweis erbringen Sie nicht manuell, sondern mit Hilfe des Programms **Certbot**. Mit diesem Programm werden automatisiert einige Informationen zwischen Ihrem Webserver und den Servern von Letsencrypt ausgetauscht, anhand deren die Eigentümerrschaft nachgewiesen werden kann. Anschließend wird das Zertifikat ausgestellt und kann dann in den Einstellungen der Website integriert werden.
+Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt nachweisen, dass man die Eigentümerschaft über die Domain, für welche das Zertifikat angefragt wird, hat. Das heißt: wenn Sie für die Adresse *server.ddns-provider.de* ein Zertifikat erhalten wollen, müssen Sie nachweisen, dass sie den Webserver, der die Seite *server.ddns-provider.de* ausliefert, verwalten. Diesen Nachweis erbringen Sie nicht manuell, sondern mit Hilfe des Programms **Certbot**. Mit diesem Programm werden automatisiert einige Informationen zwischen Ihrem Webserver und den Servern von Letsencrypt ausgetauscht, anhand deren die Eigentümerrschaft nachgewiesen werden kann. Anschließend wird das Zertifikat ausgestellt und kann in den Einstellungen der Website integriert werden.
 
 #### Zertifikat erhalten:
 
@@ -66,7 +68,7 @@ Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt nachweise
 
 - Zertifikatsausstellung testen: `sudo certbot certonly --apache -d <server.ddns-provider.de> --dry-run` (Achtung: eigene Domain einsetzen)
 
-- Wenn der Test erfolgreich war, kann die Zertifikatsausstellung durchgeführt werden: `sudo certbot --certonly -d <server.ddns-provider.de>`
+- Wenn der Test erfolgreich war, kann die Zertifikatsausstellung durchgeführt werden: `sudo certbot --certonly -d <server.ddns-provider.de>` (Achtung: eigene Domain einsetzen)
 
 #### System von HTTP auf HTTPS umstellen:
 
@@ -132,7 +134,7 @@ Sollte die HTTPS-Verbindung nicht erfolgreich sein, müssen Sie sich auf die Feh
 
 - Ist die Portweiterleitung in Ihrem Router richtig eingestellt?
 
-- Funktioniert DDClient? (`sudo systemctl status ddlient` und `sudo ddclient --query`)
+- Funktioniert DDClient? (`sudo systemctl status ddlcient` und `sudo ddclient --query`)
 
 - Hat Ihr DDNS-Provider die richtige IP-Adresse für Ihre Domain eingetragen? Melden Sie sich dazu im Webportal Ihres DDNS-Providers an.
 
@@ -140,7 +142,7 @@ Sollte die HTTPS-Verbindung nicht erfolgreich sein, müssen Sie sich auf die Feh
 
 - Unverschlüsselte HTTP-Verbindungen müssen vermieden werden.
 
-- Für verschlüsselte HTTPS-Verbindungen muss ein TLS-Zertifikat erhalten werden.
+- Für verschlüsselte HTTPS-Verbindungen wird ein TLS-Zertifikat benötigt.
 
 - Mit Certbot können kostenlose Zertifikate von Letsencrypt erhalten werden.
 
