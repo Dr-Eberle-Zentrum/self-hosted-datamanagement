@@ -373,7 +373,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Installation und Konfiguration</h1>
-        <p>Last updated on 2024-09-13 |
+        <p>Last updated on 2024-09-16 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/11-konfiguration.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,7 +419,7 @@ Dazu ruft man die eigen Domain im Webbrowser auf. Dort sollte der
 Nextcloudinstallationsassistent erreicht werden.</p>
 <p>Im Assistenten muss ein Adminstrator-Konto für Nextcloud mit Username
 und Passwort angelegt werden. Es müssen außerdem die Zugangsdaten für
-die in <a href="09-installationsvorbereitung.html">Lektion 9</a>
+die in <a href="09-installationsvorbereitung-3.html">Lektion 9</a>
 erstellte Datenbank eingegeben werden. Da auch das Datenverzeichnis in
 einem angepassten Pfad auf dem externen Speicher liegen soll (z.B.
 <code>/mnt/data/ncdata</code>), muss auch der Standardpfad für das
@@ -437,29 +437,141 @@ auch unterschiedliche.</p>
 <code>/var/www/nextcloud/config/config.php</code></p></li>
 </ul><div class="section level3">
 <h3 id="weboberfläche">Weboberfläche<a class="anchor" aria-label="anchor" href="#weboberfl%C3%A4che"></a></h3>
+<p>Meldet man sich in der Weboberfläche mit dem bei der Installation
+erstellten Administrator-Account an, können in den
+Verwaltungseinstellungen (Erreichbar im Kontextmenü bei Klick auf das
+User-Icon in der rechten oberen Ecke) verschiedene administratitive
+Tätigkeiten vorgenommen werden, sowie Fehlermeldungen und Systemberichte
+eingesehen werden.</p>
+<figure><img src="fig/11_Konfiguration_web.png" alt='Screenshot, welcher die Weboberfläche eines Nextcloud-Servers zeigt. Zu sehen ist darauf das geöffnete Kontextmenü nach Klick auf das Usericon. Der Maus-Cursor zeigt auf den Punkt "Verwaltungseinstellungen' class="figure mx-auto d-block"><div class="figcaption">Verwaltungseinstellungen in der Weboberfläche
+öffnen</div>
+</figure><p>In der Übersicht der Verwaltungseinstellungen werden Warnmeldungen
+und Installationsprobleme angezeigt. Diese Warn- und Fehlermeldungen
+sollten direkt nach der Installation ausführlich untersucht und behoben
+werden. Dabei hilft meistens schon die Fehlermeldung als solches, das
+Handbuch oder eine Internetrecherche weiter.</p>
+<p>Ebensfalls wird in der Übersicht die aktuelle Version angezeigt und
+auf evtl. vorhandene Aktualisierungen hingewiesen.</p>
+<figure><img src="fig/11_Konfguration_%C3%9Cbersicht.png" alt='Screeshot der die Übersicht der Verwaltungseinstellungen zeigt. Zu sehen sind die Punkte "Sicherheits- und Einrichtungswarnungen", "Version" und "Aktualisieren"' class="figure mx-auto d-block"><div class="figcaption">Übersicht der Verwaltungseinstellungen</div>
+</figure><p>Sind alle Installationsfehler behoben, können die Grundeinstellungen
+betrachtet werden. Da Nextcloud im Hintergrund regelmäßig verschiedene
+Aufgaben durchführt (z.B. Dateiscans, Prüfung auf Aktualsierungen oder
+Papierkorbleerungen), muss ein Tool für das Ausführen dieser Aufgaben
+festgelegt werden. Hierfür wird <em>cron</em> empfohlen. Mit
+<em>cron</em> können auf Linuxsystemen Aufgaben (sog. Cron-Jobs)
+definiert und zu bestimmten Zeitpunkten ausgeführt werden. Dafür muss
+ein Eintrag in der Crontabelle des Users angelegt werden, welcher die
+Aufgabe ausführen soll. Für die Erstellung des Cronjobs für Nextcloud,
+wird die Crontabelle des www-data-Users mit dem Befehl
+<code>sudo crontab -u www-data -e</code> bearbeitet und folgender
+Eintrag ergänzt:
+<code>*/5  *  *  *  * php -f /var/www/nextcloud/cron.php</code> Siehe
+dazu auch das <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron" class="external-link">Handbuch</a></p>
+<p>Als weiterer Punkt der Grundeinstellungen empfiehlt es sich, einen
+E-Mail-Server zu definieren, über welchen der Nextcloud-Server
+Benachrichtungen verschicken kann. Dazu müssen die Zugangsdaten eines
+Postausgangsservers (SMTP) angegeben werden. Für E-Mailadressen der
+Universität Tübingen lassen sich die Einstellungen im <a href="https://faq.zdv.uni-tuebingen.de/otrs/public.pl?Action=PublicFAQZoom;ItemID=29" class="external-link">Wiki
+des ZDV</a> nachlesen. Zu beachten ist, dass die Zugangsdaten im
+Klartext in der Nextcloud-Konfigurationsdatei
+(<code>/var/www/nextcloud/config/config.php</code>) stehen.</p>
 </div>
 <div class="section level3">
 <h3 id="occ-tool">OCC-Tool<a class="anchor" aria-label="anchor" href="#occ-tool"></a></h3>
+<p>Zwar kann in der Weboberfläche schon einiges eingestellt werden,
+häufig müssen Operationen aber über die Kommmandozeile erledigt werden.
+Dafür steht das Nextcloudintegrierte Programm <em>occ</em> zu Verfügung.
+Die Nutzung des Programms ist <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html" class="external-link">Handbuch</a>
+ausführlich beschrieben. In unserem Setup kann es wie folgt aufgerufen
+werden:
+<code>sudo -u www-data php /var/www/nextcloud/occ &lt;occ-Befehl&gt;</code>
+Dabei steht eine Vielzahl an Befehlen zur Verfügung, die im Handbuch
+beschrieben sind. Um z.B. ein Update zu starten lautet der Befehl
+<code>sudo -u www-data php /var/www/nextcloud/occ upgrade</code>
+(Details siehe <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html#command-line-upgrade-label" class="external-link">hier</a>).
+Häufig müssen nach einem Upgrade auch <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html#database-add-indices-label" class="external-link">Einträge
+in der Datenbank</a> angepasst werden:
+<code>sudo -u www-data php /var/www/nextcloud/occ db:add-missing-indices</code></p>
 </div>
 <div class="section level3">
 <h3 id="konfigurationsdatei">Konfigurationsdatei<a class="anchor" aria-label="anchor" href="#konfigurationsdatei"></a></h3>
+<p>Eine Weitere Möglichkeit der Konfiguration stellt die
+Konfigurationsdatei <code>/var/www/nextcloud/config/config.php</code>
+dar. Diese kann mit dem nano-Editor direkt bearbeitet werden. Allerdings
+ist hierbei stets auf die korrekte PHP-Syntax zu achten. Wird das
+OCC-Tool genutzt, kümmert sich dieses um die Änderung der
+Konfigurationsdatei. Allerdings sind nicht alle Konfigurationswerte
+durch eigene occ-Befehle umsetztbar, weshalb die occ-Befehle dann etwas
+komplex werden und das direkte Editieren der Datei einfacher
+erscheint.</p>
 </div>
 </section><section><h2 class="section-heading" id="caching">Caching<a class="anchor" aria-label="anchor" href="#caching"></a></h2>
-<hr class="half-width"><div id="keypoints1" class="callout keypoints">
+<hr class="half-width"><p>Bei jedem Aufruf der Nextcloud-Website werden im Hintergrund Prozesse
+gestartet (z.B. Skripte ausgeführt) und Dateien prozessiert und
+bereitgestellt. Um das Laden der Seite zu beschleunigen ist es
+empfehlenswert einen Caching-Dienst zu nutzten. Dieser speichert einmal
+bereitsgestellte Dateien oder Skripte für einen gewissen Zeitraum
+zwischen, wodurch diese bei erneutem Abruf schneller zur Verfügung
+stehen.</p>
+<p>Nextcloud bietet unterschiedliche Caching-Implementationen an. Je
+nachdem, wie groß der eigene Server ist, werden unterschiedliche <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html" class="external-link">Lösungen
+empfohlen</a>. Im Kurs nutzen wir die Lösung für <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html#organizations-with-single-server" class="external-link">Organisationen
+mit einzelnem Server</a>.</p>
+<div class="section level3">
+<h3 id="umsetzung">Umsetzung:<a class="anchor" aria-label="anchor" href="#umsetzung"></a></h3>
+<ul><li><p>Caching-Dienst Redis und dessen PHP-Erweiterungen installieren:
+<code>sudo apt install redis-server php-redis php-apcu</code></p></li>
+<li><p>Nextloud-Konfigurationsdatei ergänzen:</p></li>
+</ul><div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PHP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode php" tabindex="0"><code class="sourceCode php"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="st">'memcache.local'</span> =&gt; <span class="st">'\OC\Memcache\APCu'</span><span class="ot">,</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="st">'memcache.distributed'</span> =&gt; <span class="st">'\OC\Memcache\Redis'</span><span class="ot">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="st">'memcache.locking'</span> =&gt; <span class="st">'\OC\Memcache\Redis'</span><span class="ot">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>’redis’ =&gt; [</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  ’host’ =&gt; ’<span class="op">/</span><span class="kw">var</span><span class="op">/</span>run<span class="op">/</span>redis<span class="op">/</span>redis<span class="op">-</span>server<span class="op">.</span>sock’<span class="ot">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  ’port’ =&gt; <span class="dv">0</span><span class="ot">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  ’timeout’ =&gt; <span class="fl">0.0</span><span class="ot">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>]<span class="ot">,</span></span></code></pre>
+</div>
+<ul><li>Redis Konfigurationsdatei anpassen:
+<code>sudo nano /etc/redis/redis.conf</code>
+</li>
+</ul><pre><code>#[...]
+port 0
+#[...]
+unixsocket /var/run/redis/redis-server.sock
+unixsocketperm 770</code></pre>
+<ul><li>PHP anpassen: In <code>/etc/php/8.2/cli/php.ini</code> und
+<code>/etc/php/8.2/apache2/php.ini</code> folgende Angabe ergänzen:</li>
+</ul><pre><code><span><span class="va">apc.enable_cli</span><span class="op">=</span><span class="fl">1</span></span></code></pre>
+<ul><li><p>Berechtigungen für UNIX-Socket-Datei anpassen:
+<code>usermod -a -G redis www-data</code></p></li>
+<li><p>Dienste neu starten:
+<code>systemctl restart apache2 &amp;&amp; systemctl restart redis-server</code></p></li>
+</ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>
-</li></ul></div>
+<ul><li><p>Die Installation von Nextcloud kann im Webbrowser
+erfolgen</p></li>
+<li><p>Im Anschluss an die Installation muss das System auf Fehler
+überprüft werden</p></li>
+<li><p>Die Konfiguration des Servers kann im Browser, mit dem
+occ-Programm oder mit der Konfigurationsdatei erfolgen</p></li>
+<li><p>Für eine bessere Leistung empfiehlt sich die Implementierung
+eines Caching-Dienstes</p></li>
+</ul></div>
 </div>
 </div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="10-installationsvorbereitung-4.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -518,8 +630,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/11-konfiguration.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/11-konfiguration.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-09-13",
-  "datePublished": "2024-09-13"
+  "dateModified": "2024-09-16",
+  "datePublished": "2024-09-16"
 }
 
   </script><script>
