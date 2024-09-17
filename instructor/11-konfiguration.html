@@ -118,11 +118,11 @@
   Self-hosted Data Management
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 91%" class="percentage">
-    91%
+<aside class="col-md-12 lesson-progress"><div style="width: 83%" class="percentage">
+    83%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 91%" aria-valuenow="91" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 83%" aria-valuenow="83" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -315,6 +315,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush13">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading13">
+        <a href="12-backup.html">12. Backup</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -358,7 +367,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/10-installationsvorbereitung-4.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/12-backup.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -366,8 +375,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Installationsvorbere
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/12-backup.html" rel="next">
+          Next: Backup...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -396,7 +405,7 @@
 <h3 class="card-title">Questions</h3>
 <ul><li><p>Wie installiere ich Nextcloud?</p></li>
 <li><p>Wie kann ich die Installation anpassen?</p></li>
-<li><p>Welche Optimierungen gibt es?</p></li>
+<li><p>Wie kann die Leistung optimiert werden?</p></li>
 </ul></div>
 </div>
 </div>
@@ -414,25 +423,26 @@
 </div>
 </div>
 <section><h2 class="section-heading" id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a></h2>
-<hr class="half-width"><p>Nachdem in den vorhrgehenden Lektionen die Installationsdateien
-heruntergeladen und druch Apache über eine HTTPS-Verbindung zur
+<hr class="half-width"><p>Nachdem in den vorhergehenden Lektionen die Installationsdateien
+heruntergeladen und jetzt durch Apache über eine HTTPS-Verbindung zur
 Verfügung gestellt werden, kann die eigentliche Installation beginnen.
-Dazu ruft man die eigen Domain im Webbrowser auf. Dort sollte der
-Nextcloudinstallationsassistent erreicht werden.</p>
-<p>Im Assistenten muss ein Adminstrator-Konto für Nextcloud mit Username
-und Passwort angelegt werden. Es müssen außerdem die Zugangsdaten für
-die in <a href="09-installationsvorbereitung-3.html">Lektion 9</a>
-erstellte Datenbank eingegeben werden. Da auch das Datenverzeichnis in
-einem angepassten Pfad auf dem externen Speicher liegen soll (z.B.
-<code>/mnt/data/ncdata</code>), muss auch der Standardpfad für das
-Datenverzeichnis angepasst werden.</p>
-<p>Mehr zum Installationsassistenten findet sich auch im <a href="https://docs.nextcloud.com/server/stable/admin_manual/installation/installation_wizard.html" class="external-link">Handbuch</a>.</p>
+Dazu ruft man die eigene Domain im Webbrowser auf. Dort wird der
+Installationsassistent von Nextcloud (“Installation wizard”)
+erreicht.</p>
+<p>Im Assistenten muss ein <strong>Adminstrator-Konto</strong> für
+Nextcloud mit Username und Passwort angelegt werden. Es müssen außerdem
+die Zugangsdaten für die in <a href="09-installationsvorbereitung-3.html">Lektion 9</a> erstellte
+<strong>Datenbank</strong> eingegeben werden. Da auch das
+<strong>Datenverzeichnis</strong> in einem angepassten Pfad auf dem
+externen Speicher liegen soll (z.B. <code>/mnt/data/ncdata</code>), muss
+auch der Standardpfad für das Datenverzeichnis angepasst werden.</p>
+<p>Mehr zum Installationsassistenten findet sich im <a href="https://docs.nextcloud.com/server/stable/admin_manual/installation/installation_wizard.html" class="external-link">Handbuch</a>.</p>
 </section><section><h2 class="section-heading" id="konfiguration">Konfiguration<a class="anchor" aria-label="anchor" href="#konfiguration"></a></h2>
-<hr class="half-width"><p>Nach der Installation kann und sollte Nextcloud weiter konfiguriert
-werden, um das System zu optimieren und seinen Bedürfnissen anzupassen.
-Dafür bietet Nextcloud drei unterschiedliche Möglichkeiten an, die
-teilweise dieselben Konfigurationsmöglichkeiten anbieten, teilweise aber
-auch unterschiedliche.</p>
+<hr class="half-width"><p>Nach der Installation kann und sollte die Nextcloudinstanz weiter
+konfiguriert werden, um das System zu optimieren und seinen Bedürfnissen
+anzupassen. Dafür bietet Nextcloud drei unterschiedliche Möglichkeiten
+an, die teilweise dieselben Konfigurationsmöglichkeiten anbieten,
+teilweise aber auch unterschiedliche.</p>
 <ul><li><p>Konfiguration über die Weboberfläche</p></li>
 <li><p>Konfiguration auf der Kommandozeile mit dem OCC-Tool</p></li>
 <li><p>Konfiguration in der Datei
@@ -441,10 +451,9 @@ auch unterschiedliche.</p>
 <h3 id="weboberfläche">Weboberfläche<a class="anchor" aria-label="anchor" href="#weboberfl%C3%A4che"></a></h3>
 <p>Meldet man sich in der Weboberfläche mit dem bei der Installation
 erstellten Administrator-Account an, können in den
-Verwaltungseinstellungen (Erreichbar im Kontextmenü bei Klick auf das
-User-Icon in der rechten oberen Ecke) verschiedene administratitive
-Tätigkeiten vorgenommen werden, sowie Fehlermeldungen und Systemberichte
-eingesehen werden.</p>
+Verwaltungseinstellungen (erreichbar bei Klick auf das User-Icon in der
+rechten oberen Ecke) verschiedene administrative Tätigkeiten vorgenommen
+werden, sowie Fehlermeldungen und Systemberichte eingesehen werden.</p>
 <figure><img src="../fig/11_Konfiguration_web.png" alt='Screenshot, welcher die Weboberfläche eines Nextcloud-Servers zeigt. Zu sehen ist darauf das geöffnete Kontextmenü nach Klick auf das Usericon. Der Maus-Cursor zeigt auf den Punkt "Verwaltungseinstellungen' class="figure mx-auto d-block"><div class="figcaption">Verwaltungseinstellungen in der Weboberfläche
 öffnen</div>
 </figure><p>In der Übersicht der Verwaltungseinstellungen werden Warnmeldungen
@@ -454,19 +463,20 @@ werden. Dabei hilft meistens schon die Fehlermeldung als solches, das
 Handbuch oder eine Internetrecherche weiter.</p>
 <p>Ebensfalls wird in der Übersicht die aktuelle Version angezeigt und
 auf evtl. vorhandene Aktualisierungen hingewiesen.</p>
-<figure><img src="../fig/11_Konfguration_%C3%9Cbersicht.png" alt='Screeshot der die Übersicht der Verwaltungseinstellungen zeigt. Zu sehen sind die Punkte "Sicherheits- und Einrichtungswarnungen", "Version" und "Aktualisieren"' class="figure mx-auto d-block"><div class="figcaption">Übersicht der Verwaltungseinstellungen</div>
-</figure><p>Sind alle Installationsfehler behoben, können die Grundeinstellungen
-betrachtet werden. Da Nextcloud im Hintergrund regelmäßig verschiedene
-Aufgaben durchführt (z.B. Dateiscans, Prüfung auf Aktualsierungen oder
-Papierkorbleerungen), muss ein Tool für das Ausführen dieser Aufgaben
-festgelegt werden. Hierfür wird <em>cron</em> empfohlen. Mit
-<em>cron</em> können auf Linuxsystemen Aufgaben (sog. Cron-Jobs)
-definiert und zu bestimmten Zeitpunkten ausgeführt werden. Dafür muss
-ein Eintrag in der Crontabelle des Users angelegt werden, welcher die
-Aufgabe ausführen soll. Für die Erstellung des Cronjobs für Nextcloud,
-wird die Crontabelle des www-data-Users mit dem Befehl
-<code>sudo crontab -u www-data -e</code> bearbeitet und folgender
-Eintrag ergänzt:
+<figure><img src="../fig/11_Konfguration_%C3%9Cbersicht.png" alt='Screeshot der die Übersicht der Verwaltungseinstellungen zeigt. Zu sehen sind die Punkte "Sicherheits- und Einrichtungswarnungen", "Version" und "Aktualisieren"' class="figure mx-auto d-block"><div class="figcaption">Übersicht der Verwaltungseinstellungen mit
+Warnmeldungen und Aktualisierungsinformationen</div>
+</figure><p>Sind alle Installationsfehler behoben, kann der Reiter
+<em>Grundeinstellungen</em> betrachtet werden. Da Nextcloud im
+Hintergrund regelmäßig verschiedene Aufgaben durchführt (z.B.
+Dateiscans, Prüfung auf Aktualsierungen oder Papierkorbleerungen), muss
+ein Tool für das Ausführen dieser Aufgaben festgelegt werden. Hierfür
+wird <em>cron</em> empfohlen. Mit <em>cron</em> können auf Linuxsystemen
+Aufgaben (sog. Cron-Jobs) definiert und zu bestimmten Zeitpunkten
+ausgeführt werden. Dafür muss ein Eintrag in der Crontabelle des Users
+angelegt werden, welcher die Aufgabe ausführen soll. Für die Erstellung
+des Cronjobs für Nextcloud, wird die Crontabelle des www-data-Users mit
+dem Befehl <code>sudo crontab -u www-data -e</code> bearbeitet und
+folgender Eintrag ergänzt:
 <code>*/5  *  *  *  * php -f /var/www/nextcloud/cron.php</code> Siehe
 dazu auch das <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/background_jobs_configuration.html#cron" class="external-link">Handbuch</a></p>
 <p>Als weiterer Punkt der Grundeinstellungen empfiehlt es sich, einen
@@ -479,16 +489,16 @@ Klartext in der Nextcloud-Konfigurationsdatei
 (<code>/var/www/nextcloud/config/config.php</code>) stehen.</p>
 </div>
 <div class="section level3">
-<h3 id="occ-tool">OCC-Tool<a class="anchor" aria-label="anchor" href="#occ-tool"></a></h3>
+<h3 id="occ-tool">occ-Tool<a class="anchor" aria-label="anchor" href="#occ-tool"></a></h3>
 <p>Zwar kann in der Weboberfläche schon einiges eingestellt werden,
 häufig müssen Operationen aber über die Kommmandozeile erledigt werden.
-Dafür steht das Nextcloudintegrierte Programm <em>occ</em> zu Verfügung.
-Die Nutzung des Programms ist <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html" class="external-link">Handbuch</a>
+Dafür steht das nextcloudintegrierte Programm <em>occ</em> zur
+Verfügung. Die Nutzung des Programms ist im <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html" class="external-link">Handbuch</a>
 ausführlich beschrieben. In unserem Setup kann es wie folgt aufgerufen
 werden:
 <code>sudo -u www-data php /var/www/nextcloud/occ &lt;occ-Befehl&gt;</code>
 Dabei steht eine Vielzahl an Befehlen zur Verfügung, die im Handbuch
-beschrieben sind. Um z.B. ein Update zu starten lautet der Befehl
+beschrieben sind. Um z.B. ein Upgrade zu starten lautet der Befehl
 <code>sudo -u www-data php /var/www/nextcloud/occ upgrade</code>
 (Details siehe <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html#command-line-upgrade-label" class="external-link">hier</a>).
 Häufig müssen nach einem Upgrade auch <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/occ_command.html#database-add-indices-label" class="external-link">Einträge
@@ -501,20 +511,19 @@ in der Datenbank</a> angepasst werden:
 Konfigurationsdatei <code>/var/www/nextcloud/config/config.php</code>
 dar. Diese kann mit dem nano-Editor direkt bearbeitet werden. Allerdings
 ist hierbei stets auf die korrekte PHP-Syntax zu achten. Wird das
-OCC-Tool genutzt, kümmert sich dieses um die Änderung der
+occ-Tool genutzt, kümmert sich dieses um die Änderung der
 Konfigurationsdatei. Allerdings sind nicht alle Konfigurationswerte
-durch eigene occ-Befehle umsetztbar, weshalb die occ-Befehle dann etwas
-komplex werden und das direkte Editieren der Datei einfacher
-erscheint.</p>
+durch eigene occ-Befehle implementiert, weshalb die occ-Befehle für
+manche Anpassungen komplex werden und das direkte Editieren der Datei
+einfacher erscheint.</p>
 </div>
 </section><section><h2 class="section-heading" id="caching">Caching<a class="anchor" aria-label="anchor" href="#caching"></a></h2>
 <hr class="half-width"><p>Bei jedem Aufruf der Nextcloud-Website werden im Hintergrund Prozesse
-gestartet (z.B. Skripte ausgeführt) und Dateien prozessiert und
-bereitgestellt. Um das Laden der Seite zu beschleunigen ist es
-empfehlenswert einen Caching-Dienst zu nutzten. Dieser speichert einmal
-bereitsgestellte Dateien oder Skripte für einen gewissen Zeitraum
-zwischen, wodurch diese bei erneutem Abruf schneller zur Verfügung
-stehen.</p>
+gestartet (z.B. Skripte ausgeführt) und Dateien bereitgestellt. Um das
+Laden der Seite zu beschleunigen, ist es empfehlenswert einen
+Caching-Dienst zu nutzten. Dieser speichert einmal bereitgestellte
+Dateien oder Skripte für einen gewissen Zeitraum zwischen, wodurch diese
+bei erneutem Abruf schneller zur Verfügung stehen.</p>
 <p>Nextcloud bietet unterschiedliche Caching-Implementationen an. Je
 nachdem, wie groß der eigene Server ist, werden unterschiedliche <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html" class="external-link">Lösungen
 empfohlen</a>. Im Kurs nutzen wir die Lösung für <a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html#organizations-with-single-server" class="external-link">Organisationen
@@ -523,7 +532,8 @@ mit einzelnem Server</a>.</p>
 <h3 id="umsetzung">Umsetzung:<a class="anchor" aria-label="anchor" href="#umsetzung"></a></h3>
 <ul><li><p>Caching-Dienst Redis und dessen PHP-Erweiterungen installieren:
 <code>sudo apt install redis-server php-redis php-apcu</code></p></li>
-<li><p>Nextloud-Konfigurationsdatei ergänzen:</p></li>
+<li><p>Nextloud-Konfigurationsdatei ergänzen:
+<code>sudo nano /var/www/nextcloud/config/config.php</code></p></li>
 </ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PHP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -577,7 +587,7 @@ any links that you are not going to use.
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/10-installationsvorbereitung-4.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/12-backup.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -585,8 +595,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Installationsvorbere
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/12-backup.html" rel="next">
+          Next: Backup...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
