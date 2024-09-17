@@ -70,6 +70,7 @@ episodes:
 - 09-installationsvorbereitung-3.Rmd
 - 10-installationsvorbereitung-4.Rmd
 - 11-konfiguration.Rmd
+- 12-backup.Rmd
 
 # Information for Learners
 learners: 
