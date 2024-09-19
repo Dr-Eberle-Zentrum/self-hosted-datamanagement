@@ -118,11 +118,11 @@
   Self-hosted Data Management
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 92%" class="percentage">
-    92%
+<aside class="col-md-12 lesson-progress"><div style="width: 85%" class="percentage">
+    85%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 92%" aria-valuenow="92" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 85%" aria-valuenow="85" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -296,7 +296,7 @@
 <div class="accordion accordion-flush" id="accordionFlush12">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading12">
-        <a href="11-konfiguration.html">11. Installation und Konfiguration</a>
+        <a href="11-konfiguration-1.html">11. Installation und Konfiguration</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -322,6 +322,15 @@
 <li><a href="#restore">Restore</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush14">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading14">
+        <a href="13-konfiguration-2.html">13. Konfiguration 2</a>
+    </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -368,23 +377,23 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/11-konfiguration.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/11-konfiguration-1.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/13-konfiguration-2.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/11-konfiguration.html" rel="prev">
+        <a class="chapter-link" href="../instructor/11-konfiguration-1.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Installation und
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/13-konfiguration-2.html" rel="next">
+          Next: Konfiguration 2...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Backup</h1>
-        <p>Last updated on 2024-09-17 |
+        <p>Last updated on 2024-09-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/12-backup.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -415,7 +424,7 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li><p>Ein paar Grundlagen zum Thema Backup lernen</p></li>
+<ul><li><p>Grundlagen zum Thema Backup lernen</p></li>
 <li><p>Anwendung der Grundlagen auf das eigene System</p></li>
 <li><p>Erstellen und ausführen von Skripten</p></li>
 <li><p>Cronjobs zur automatischen Skriptausführung nutzen</p></li>
@@ -426,7 +435,7 @@
 </div>
 <section><h2 class="section-heading" id="grundlagen">Grundlagen<a class="anchor" aria-label="anchor" href="#grundlagen"></a></h2>
 <hr class="half-width"><p>Bereits in <a href="07-installationsvorbereitung-1.html">Kapitel
-7</a> wurde auf die Notwendigkeit eines Backup eingegangen und die
+7</a> wurde auf die Notwendigkeit eines Backups eingegangen und die
 gesamte Festplatte (bzw. SD-Karte) gesichert. Dadurch besteht eine
 Möglichkeit, jederzeit den Stand zum Zeitpunkt von Kapitel 7
 wiederherzustellen. Auch jetzt ist es empfehlenswert, ein Backup des
@@ -472,9 +481,9 @@ Sicherungszeit eine Vollsicherung durchgeführt. Anschließend wird jeden
 Tag eine Sicherung erstellt, welche alle seit der letzten Vollsicherung
 geänderten oder neu erstellten Daten enthält. Der Vorteil dieser
 Variante besteht darin, dass bei einer Wiederherstellung nur die letzte
-Vollsicherung und die letzte differentielle Sicherung benötigt wird. Der
-Nachteil liegt wie bei der Vollsicherung darin, dass nach wie vor ein
-großer Speicherplatzbedarf besteht und die Daten dupliziert
+Vollsicherung und die letzte differentielle Sicherung benötigt werden.
+Der Nachteil liegt wie bei der Vollsicherung darin, dass nach wie vor
+ein großer Speicherplatzbedarf besteht und die Daten dupliziert
 vorliegen.</p>
 <figure><img src="../fig/12_differentiell.png" alt="Diagramm, welches für jeden Wochentag einen Wert für den Speicherbedarf der differentiellen Sicherung in TB anzeigt. Montags werden 4 TB benötigt. Dienstags wird nur 1 TB für neue Daten benötigt. Jede weitere Sicherung benötigt jeweils den Bedarf des Vortags plus neu hinzugekommen Daten. Am Wochenende beträgt der Bedarf 4,7 TB" class="figure mx-auto d-block"><div class="figcaption">Speicherbedarf einer täglichen differentiellen
 Sicherung im Wochenverlauf</div>
@@ -496,25 +505,28 @@ Zwischensicherungen nur solange aufgehoben werden, bis eine neue
 Vollsicherung erstellt wurde. Möchte man jedoch gewährleisten, auch auf
 einen Datenstand von vor 6 Monaten zurück gehen zu können, sollten die
 Sicherungen länger aufgehoben werden. Z.B. könnte dann eine monatliche
-Vollsicherung für in jeweils sechs Versionen aufgewahrt werden. Wird
-eine siebte Version erstellt, wird die älteste gelöscht.</p>
+Vollsicherung in jeweils sechs Versionen aufbewahrt werden. Wird eine
+siebte Version erstellt, wird die älteste gelöscht.</p>
 <p>Ein bekanntes Schema zur Versionierung von Sicherungen ist das
 Generationenprinzip (auch als Großvater-Vater-Sohn-Prinzip bezeichnet).
-Bei diesem Prinzip werden täglich Backups erstellt. Diese werden werden
-eine Woche lang aufbewahrt. Am Wochenende werden die täglichen Versionen
-zu einem Wochenbackup zusammengefasst. Die wöchentlichen Backups werden
-für einen Monat aufbewahrt und nach einem Monat zu einer Monatssicherung
+Bei diesem Prinzip werden täglich Backups erstellt. Diese werden eine
+Woche lang aufbewahrt. Anschließend werden die täglichen Versionen zu
+einem Wochenbackup zusammengefasst. Die wöchentlichen Backups werden für
+einen Monat aufbewahrt und nach einem Monat zu einer Monatssicherung
 zusammen gefasst. Diese monatlichen Sicherungen werden für 12 Monate
 aufbewahrt. Dadurch bestehen für die letzten sieben Tage jeweils
 tägliche Versionen, für den letzten Monat wöchentliche Versionen und für
 das letzte Jahr noch monatliche Versionen. Graphisch ist dieses
 Verfahren <a href="https://images.vogel.de/infodienste/smimagedata/1/4/1/6/5/9/53.jpg" class="external-link">hier</a>
 dargestellt.</p>
+</div>
+<div class="section level3">
+<h3 id="wo-muss-gesichert-werden">Wo muss gesichert werden?<a class="anchor" aria-label="anchor" href="#wo-muss-gesichert-werden"></a></h3>
 <p>Ist geklärt, was und wie gesichert werden soll, muss noch geklärt
 werden, wo gespeichert werden soll. Grundlegend sollten Sicherungen
 nicht auf demselben physischen Datenträger wie die Originaldaten
 gespeichert werden. Die <strong>3-2-1-Regel</strong> gilt als ein guter
-Richtwert: 3 Kopien an 2 unterschiedlichen Medien, 1 Offsite-Kopie.
+Richtwert: 3 Kopien auf 2 unterschiedlichen Medien, 1 Offsite-Kopie.
 Speichert man auf unterschiedlichen Medien, hat man mehr Felxibilität
 bei der Wiederherstellung. Die Offsite-Kopie an einem anderen Ort wird
 wichtig, wenn am ursprünglichen Serverstandort ein größerer Schaden
@@ -557,7 +569,7 @@ sichern: 1. das Konfigurationsverzeichnis unter
 <code>/var/www/nextcloud/config</code>, 2. das Datenverzeichnis, z.B.
 unter <code>/mnt/data/ncdata</code>, 3. der Theme-Folder unter
 <code>/var/www/nextcloud/themes</code> (nur wichtig wenn eigene Themes
-genutzt werden) und 4. die Nextcloud-Datenbank des MariaDB-Server.</p>
+genutzt werden) und 4. die Nextcloud-Datenbank des MariaDB-Servers.</p>
 <p>Sinnvollerweise wird man eine inkrementelle Sicherung wählen, um Zeit
 und Speicherplatz zu sparen. Während das Handbuch zwar die einzelnen
 manuellen Schritte aufzeigt (Maintanance-Modus aktivieren, Ordner mit
@@ -566,14 +578,14 @@ denen Nextcloud gesichert werden kann. Z.B. <a href="https://www.c-rieger.de/bac
 <a href="https://www.youtube.com/watch?v=7ZayfpZsgk0" class="external-link">Duplicati</a> oder
 die Nextcloud-integrierte <a href="https://apps.nextcloud.com/apps/backup" class="external-link">Backup-App</a>. Eine
 weitere Möglichkeit besteht im schreiben eines eigenen Skripts (eines
-Mini-Programms), welches dann leicht an die eigenen Bedürfnisse
-angepasst werden kann.</p>
+Mini-Programms), welches leicht an die eigenen Bedürfnisse angepasst
+werden kann.</p>
 <p>Die Sicherungen können zunächst auf einer zweiten Festplatte, die am
 Raspberry Pi eingebunden ist, gespeichert werden. Mehr Unabhängigkeit
 vom Hauptsystem erhält man, wenn man die Sicherung über das Netzwerk auf
 einem zweiten Gerät speichert. Das kann z.B. per <a href="https://wiki.ubuntuusers.de/Samba_Server/" class="external-link">Netzlaufwerk im
 Heimnetz</a> geschehen oder per SSH auf entfernte Rechner (<a href="https://medium.com/@techfocuspro/raspberry-pi-remote-backup-ensuring-your-datas-safety-4b50848f4817" class="external-link">medium.com</a>
-oder <a href="https://bioslevel.com/article/backing-up-to-a-remote-server-with-ssh-and-rsync/" class="external-link">bioslevel.com</a>.</p>
+oder <a href="https://bioslevel.com/article/backing-up-to-a-remote-server-with-ssh-and-rsync/" class="external-link">bioslevel.com</a>).</p>
 </div>
 </div>
 </div>
@@ -592,8 +604,8 @@ ein sogenanntes Bash-Skript. Dieses wird immer mit der Shebang
 bezeichneten Syntax in der ersten Zeile eingeleitet:
 <code>#!/bin/bash</code></p>
 <p>Anschließend können Befehle wie auf der Kommandozeile geschrieben
-werden. Anschließend muss das Skript gespeichert und mit
-<code>sudo chmod ug+x</code> ausführbar gemacht werden.</p>
+werden, das Skript gespeichert und mit <code>sudo chmod ug+x</code>
+ausführbar gemacht werden.</p>
 <p>Beispiel:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -743,17 +755,17 @@ essentiellen Befehle, die ausgeführt werden?</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Von oben nach unten macht das Skript folgendes:</p>
-<p>es werden Variablen für die Backupquelle, das Backupziel definiert
-und die aktuelle Zeit definiert</p>
-<p>es werden leere Verzeichnisse im Backupziel erstellte, sofern diese
-noch nicht vorhanden sind</p>
-<p>es werden Links auf die aktuelle Backupversion erstellt</p>
-<p>Nextcloud wird mit dem occ-Tool in den maintanace-Modus versetzt</p>
-<p>mit rsync werden die Datenverezeichnisse gesichert</p>
-<p>mit mysqldump wird die Datenbank gesichert</p>
-<p>mit dem occ-Tool wird der maintanance-Modus wieder verlassen</p>
+<p>Es werden Variablen für die Backupquelle, das Backupziel und die
+aktuelle Zeit definiert.</p>
+<p>Es werden leere Verzeichnisse im Backupziel erstellt, sofern diese
+noch nicht vorhanden sind.</p>
+<p>Es werden Links auf die aktuelle Backupversion erstellt.</p>
+<p>Nextcloud wird mit dem occ-Tool in den maintanace-Modus versetzt.</p>
+<p>Mit rsync werden die Datenverzeichnisse gesichert.</p>
+<p>Mit mysqldump wird die Datenbank gesichert.</p>
+<p>Mit dem occ-Tool wird der maintanance-Modus wieder verlassen.</p>
 <p>mit dem find-Befehl werden Sicherungsversionen, die älter als 21 Tage
-sind, gelöscht</p>
+sind, gelöscht.</p>
 </div>
 </div>
 </div>
@@ -768,12 +780,13 @@ root-Rechten ausgeführt): <code>sudo ./skript.sh</code></p>
 <p>Ist der manuelle Test erfolgreich verlaufen, kann das Skript mittels
 Cron automatisch zu bestimmten Zeiten ausgeführt werden. Wie im
 vorherigen Kapitel zur Nextcloud-Konfiguration erwähnt, ist Cron ein
-Programm, mit welchem Befehle zu bestimmten Zeiten automatische
+Programm, mit welchem Befehle zu bestimmten Zeiten automatisch
 ausgeführt werden. Diese Befehle werden in der Crontabelle gespeichert.
 Jeder User des Betriebssystems hat eine eigene Crontabelle. Soll ein
 Befehl mit Root-Rechten ausgeführt werden, muss der Befehl in die
-Crontabelle des root-Account eingetragen werden, für Befehle die durch
-den www-data-User ausgeführt werden sollen in dessen Cron-Tabelle.</p>
+Crontabelle des root-Accounts eingetragen werden, Befehle die durch den
+www-data-User ausgeführt werden sollen, gehören in dessen
+Cron-Tabelle.</p>
 <p>Die Crontabelle eines Users kann wie folgt angezeigt werden:
 <code>sudo crontab -u &lt;username&gt; -l</code> Um die Tabelle zu
 ändern lautet der Befehl wie folgt:
@@ -782,7 +795,7 @@ den www-data-User ausgeführt werden sollen in dessen Cron-Tabelle.</p>
 sind wie folgt aufgebaut: Zeitangabe für die Ausführung und
 auszuführender Befehl. Die Zeitangaben erfolgt dabei in fünf einzelnen
 Einheiten: 1. Angabe der Minute (0-59), 2. Angabe der Stunde (0-23), 3.
-Angabe des Tages (1-31), Angabe des Monats (1-12) und Angabe des
+Angabe des Tages (1-31), 4. Angabe des Monats (1-12) und 5. Angabe des
 Wochentages (0-7).</p>
 <p>Beispiel: um das Skript backup.sh im Verzeichnis
 <code>/home/administrator/</code> jeden Montag um 14:30 auszuführen
@@ -829,17 +842,17 @@ any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/11-konfiguration.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/11-konfiguration-1.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/13-konfiguration-2.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/11-konfiguration.html" rel="prev">
+        <a class="chapter-link" href="../instructor/11-konfiguration-1.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Installation und
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/13-konfiguration-2.html" rel="next">
+          Next: Konfiguration 2...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -885,8 +898,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/12-backup.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/12-backup.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-09-17",
-  "datePublished": "2024-09-17"
+  "dateModified": "2024-09-19",
+  "datePublished": "2024-09-19"
 }
 
   </script><script>
