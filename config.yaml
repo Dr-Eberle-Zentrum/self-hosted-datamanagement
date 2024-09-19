@@ -58,7 +58,7 @@ contact: 'david.kirschenheuter@uni-tuebingen.de'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-vorbesprechung.Rmd
 - 02-hardware-betriebssystem.Rmd
 - 03-linux-grundlagen.Rmd
@@ -69,17 +69,17 @@ episodes:
 - 08-installationsvorbereitung-2.Rmd
 - 09-installationsvorbereitung-3.Rmd
 - 10-installationsvorbereitung-4.Rmd
-- 11-konfiguration.Rmd
+- 11-konfiguration-1.Rmd
 - 12-backup.Rmd
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
