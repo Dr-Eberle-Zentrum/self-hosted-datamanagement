@@ -1,48 +1,18 @@
 ---
-title: Setup
+title: Startseite
 ---
 
-Grundvoraussettzungen
+## Voraussetzungen
 
-## Data Sets
+Um am Kurs teilnehmen zu können, müssen Sie an der Universität Tübingen immatrikuliert sein und sich über das ALMA-System zum Kurs angemeldet haben.
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
+:::callout
+Sie sind nicht an der Universität Tübingen immatrikuliert? 
 
-## Software Setup
+Kein Problem. Sie können die Materialien zum Selbststudium nutzen und so dennoch einiges lernen.
+:::
 
-::::::::::::::::::::::::::::::::::::::: discussion
+Um den Kursinhalten folgen zu können, sollten Sie Interesse an Computertechnik, Systemadministration, Kommandozeile und Linux haben. Vorkenntnisse in diesen Bereichen sind nicht nötig (aber hilfreich).
 
-### Details
-
-Auf Ihrem Endgerät wird nur wenig spezifische Software benötigt
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### Windows
-
-Über die Kommandozeile oder das Programm PuTTY
-
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### MacOS
-
-Über die Kommandozeile
-
-::::::::::::::::::::::::
-
-
-:::::::::::::::: spoiler
-
-### Linux
-
-Über die Kommandozeile
-
-::::::::::::::::::::::::
+Die hier veröffentlichten Materialien sollen Ihnen als Selbstlernmaterial dienen. Wesentlicher Bestandteil des Kurses sind jedoch die praktischen Live-Übungen.
 
