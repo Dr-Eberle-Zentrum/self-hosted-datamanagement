@@ -1,5 +1,5 @@
 ---
-title: 'Metainformationen'
+title: 'Zusatzinformationen'
 ---
 
 ## Glossar
