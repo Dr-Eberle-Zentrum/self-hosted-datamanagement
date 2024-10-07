@@ -22,36 +22,6 @@ exercises: 90
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Allgemeine Informationen
-
-::: callout
-### Ihr Dozent
-David Kirschenheuter, M.A.
-
-Digital Humanities Center, Universität Tübingen
-
-**Kontakt:**
-
-- david.kirschenheuter@uni-tuebingen.de
-
-- Keplerstraße 2, 72074 Tübingen
-
-- 07071-29-73633
-
-- Raum 141
-:::
-
-::: callout
-### Kursräume und Materialien
-
-- **[ILIAS-Kursraum:][ilias]** hier werden u. A. Tests durchgeführt und es gibt ein internes Diskussionsforum.
-
-- **[Github][github]:** hier finden Sie alle Selbstlernmaterialien. Diese dienen als Vorbereitung auf die Tests in ILIAS und die praktischen Sitzungen im Seminarraum.
-
-- **[Seminarraum](https://alma.uni-tuebingen.de:443/alma/pages/startFlow.xhtml?_flowId=showRoomDetail-flow&roomId=44&roomType=3&context=showRoomDetail&navigationPosition=organisation,searchroom):** Im Seminarraum 036 in der Keplerstraße 2 finden die wöchentlichen praktischen Sitzungen statt. Die Teilnahme daran ist optional aber sehr zu empfehlen. Während der Sitzungen können Sie an der Umsetzung des Projekts arbeiten und Fragen diskutieren. Außerdem gibt es anlassbezogen Input durch den Dozenten.
-
-:::
-
 ## Thematische Einleitung
 
 ### Datenmanagement im wissenschaftlichen Kontext
@@ -263,15 +233,17 @@ Um die prkatische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen 
 
   - wöchentliche Bearbeitung der Lernmaterialien
 
-  - wöchentlicher Test auf [ILIAS][ilias]
+  <!-- wöchentlicher Test auf [ILIAS][ilias] -->
+  
+  - Abgabe von fünf Protokollen im Laufe des Vorlesungszeit
   
   - selbstständige Konfiguration eines Cloud-Servers
   
   - Verfassen eines Abschlussberichts (ca. 3-4 Seiten)
   
-- Der Workload beträgt entsprechend 3 ECTS ca. 90 Stunden im Semester. Davon entfallen ca. 21 Stunden auf die Präsenzsitzungen, 9 Stunden auf den Abschlussbericht und 60 Stunden auf die Vor- und Nachbereitung der Sitzungen. D.h. pro Woche müssen Sie während der Vorlesungszeit durchschnittlich mit ca. 4,3 Stunden Arbeitszeit zusätzlich zu den Präsenzsitzungen einplanen.
+- Der Workload beträgt entsprechend 3 ECTS ca. 90 Stunden im Semester. Davon entfallen ca. 21 Stunden auf die Präsenzsitzungen, 9 Stunden auf den Abschlussbericht und 60 Stunden auf die Vor- und Nachbereitung der Sitzungen inkl. den Protokollen. D.h. pro Woche müssen Sie während der Vorlesungszeit durchschnittlich ca. 4,3 Stunden Arbeitszeit zusätzlich zu den Präsenzsitzungen einplanen.
 
-**Weiter geht es in der ersten Sitzung.**
+**Mehr Informationen folgen in der ersten Präsenzsitzung.**
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
