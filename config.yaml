@@ -93,5 +93,4 @@ profiles:
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-carpentry_description: 'Die eigene Nextcloud mit dem Raspberry Pi: Self-hosted Data
-  Management'
+#carpentry_description: 'Die eigene Nextcloud mit dem Raspberry Pi: Self-hosted Data Management'
