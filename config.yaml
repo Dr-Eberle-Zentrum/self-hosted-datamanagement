@@ -8,7 +8,10 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-carpentry: 'lc'
+#carpentry: 'lc'#
+carpentry: 'UT'
+carpentry_description: 'Universität Tübingen'
+varnish: Dr-Eberle-Zentrum/varnish
 
 # Overall title for pages.
 title: 'Self-hosted Data Management'
