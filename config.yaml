@@ -8,9 +8,12 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-#carpentry: 'lc'#
+# carpentry: 'lc'#
 carpentry: 'UT'
 carpentry_description: 'Universität Tübingen'
+lang: de # prepare for translation integration into sandpaper
+
+# UT-specific style
 varnish: Dr-Eberle-Zentrum/varnish
 
 # Overall title for pages.
