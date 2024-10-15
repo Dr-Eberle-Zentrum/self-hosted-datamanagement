@@ -32,15 +32,15 @@ Mehr zum Thema FDM finden Sie z.B. [hier](https://uni-tuebingen.de/de/240762), [
 
 Um während der aktiven Forschungsarbeit seine Daten strukturiert und zugänglich speichern zu können und mit anderen Projektteilnehmenden kollaborieren zu können, sind online Dateispeicherung und online Dateibearbeitung essentiell.
 
-Häufig werden hierfür die Angebote großer Tech-Konzerne aus den USA genutzt. Es gibt aber auch die Möglichkeit solche Lösungen selbst zu betreiben. Dadurch ist der Datenschutz gewährleistet, da keine Daten außerhalb der EU gespeichert werden. Außerdem ist man unabhängig von den vermeintlich günstigen Angeboten der Tech-Konzerne.
+Häufig werden hierfür die Angebote großer Tech-Konzerne aus dem Ausland genutzt. Es gibt aber auch die Möglichkeit solche Lösungen selbst zu betreiben. Dadurch ist der Datenschutz gewährleistet, da keine Daten außerhalb der EU gespeichert werden. Außerdem ist man unabhängig von den vermeintlich günstigen Angeboten der Tech-Konzerne.
 
-Die Probleme, die eine solche Abhängigkeit auch im privaten Alltag herbeiführt, erfahren Sie in der folgenden Aufgabe. 
+Die Probleme, die eine solche Abhängigkeit auch im privaten Alltag herbeiführen, erfahren Sie in der folgenden Aufgabe. 
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ### Aufgabe 1: Mark und sein Sohn
 
-- Lesen Sie den folgenden Artikel: [Cloud-Speicher von Google](https://www.spiegel.de/netzwelt/netzpolitik/google-vater-fotografiert-genitalbereich-von-krankem-kleinkind-und-der-aerger-beginnt-a-b0703d5e-7109-4271-bfa7-af07b551e105)
+- Lesen Sie den folgenden Artikel: [SPIEGEL: Autoupload in die Google-Cloud](https://www.spiegel.de/netzwelt/netzpolitik/google-vater-fotografiert-genitalbereich-von-krankem-kleinkind-und-der-aerger-beginnt-a-b0703d5e-7109-4271-bfa7-af07b551e105)
 
 - Welche grundlegenden Probleme führten zu Marks Situation?
 
