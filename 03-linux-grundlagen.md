@@ -82,7 +82,7 @@ Externe Laufwerke und Wechselmedien werden standardmäßig in den Verzeichnisse 
 
 ### Weitere Quellen
 
-Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei [Ubuntusers](https://wiki.ubuntuusers.de/Verzeichnisstruktur/) oder bei der Tuxacademy im Handbuch zur [Linux-Essentials-Zertifizierung](https://www.tuxcademy.org/product/lxes/) auf den Seiten 146-154.
+Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei [Ubuntuusers](https://wiki.ubuntuusers.de/Verzeichnisstruktur/) oder bei der Tuxacademy im Handbuch zur [Linux-Essentials-Zertifizierung](https://www.tuxcademy.org/product/lxes/) auf den Seiten 146-154.
 
 ## Paketverwaltung
 Programme (oder auch Pakete, Packages, Software oder Apps) werden in Linux i.d.R. durch eine zentrale Paketverwaltung ähnlich einem App-Store auf dem Smartphone installiert. Da auch Android auf dem Linux-Kernel aufbaut, sind die Prozesse zur Softwareverwaltung im Raspberry Pi OS vergleichbar mit den Prozessen, die im Hintergrund ablaufen, wenn man auf dem Smartphone eine App installiert und aktualisiert.
@@ -91,23 +91,23 @@ Programme (oder auch Pakete, Packages, Software oder Apps) werden in Linux i.d.R
 
 Zur Installation verfügbare Software wird unter Linux in Paketrepositorien (oder auch Paketkatalogen oder Paketquellen) aufgelistet und verfügbar gemacht. Ein Repositorium wird i.d.R. vom Hersteller des Betriebssystems zur Verfügung gestellt und ähnelt in der Funktion dem Google-Play-Store auf einem Android-Smartphone.
 
-Die in den Repositorien des OS-Herstellers beinhaltete Software sind in kompatibel mit dem Betriebssystem und je nach konkretem "Unterkatalog" auch getetest. Allerdings handelt es sich nicht immer um die neueste Version, da neue Versionen aufgrund der Tests und Abhängigkeiten zu anderer Software erst zeitverzögert in die Kataloge aufgenommen wird.
+Die in den Repositorien des OS-Herstellers beinhaltete Software ist kompatibel mit dem Betriebssystem und, je nach konkretem "Unterkatalog", auch getestet. Allerdings handelt es sich nicht immer um die neueste Version eines Programms. Denn neue Versionen werden aufgrund der Tests und Abhängigkeiten zu anderer Software erst zeitverzögert in die Kataloge aufgenommen.
 
-Bevor Software Software installiert werden kann, muss das Betriebssytem die aktuelle Version des Katalogs herunterladen. Dies erfolgt auf der Kommandozeile mit dem Befehl `sudo apt-get update` oder `sudo apt update`. Möchte man anschließend ein Programm installieren, muss der Name des entsprechenden Pakets bekannt sein. Die Installation erfoglt dann mit `sudo apt-get install <Paketname>`. 
+Bevor Software Software installiert werden kann, muss das Betriebssystem die aktuelle Version des Katalogs herunterladen. Dies erfolgt auf der Kommandozeile mit dem Befehl `sudo apt-get update` oder `sudo apt update`. Möchte man anschließend ein Programm installieren, muss der Name des entsprechenden Pakets bekannt sein. Die Installation erfolgt mit `sudo apt-get install <Paketname>`. 
 
-Der Vorteil der zentralen Paketverwaltung ist, dass in den Repositorien stetst festgehalten ist, welche Version eines Programms die aktuelle ist. Druch den Abgleich der Versionen aller installierter Programme mit dem Repositorium kann die Paketverwaltung so schnell ermitteln, für welche Programme es Aktualisierungen gibt. Um diese dann zu installieren, muss der Befehl `sudo apt-get upgrade` ausgeführt werden.
+Der Vorteil der zentralen Paketverwaltung ist, dass in den Repositorien stets festgehalten ist, welche Version eines Programms die aktuelle ist. Durch den Abgleich der Versionen aller installierter Programme mit dem Repositorium kann die Paketverwaltung schnell ermitteln, für welche Programme es Aktualisierungen gibt. Um diese zu installieren, muss der Befehl `sudo apt-get upgrade` ausgeführt werden.
 
 #### Fremdquellen
 
-Ist den Paketquellen des OS-Herstellers nicht die nötige Software enthalten, können auch Fremdquellen zum System hinzugefügt werden. Hierbei handelt es sich um Paketkataloge, die nicht vom OS-Hersteller (oder der Community) überprüft wurden. Deshalb besteht hier stets die Gefahr, dass die enthaltende Softwar das System beschädigt oder es sich um Malware handelt. Es gibt jedoch immer wieder Fälle, bei welchen solche Fremdquellen nötig sind. Wie diese dem System hinzugefügt werden können, ist z.B. [hier](https://linuxize.com/post/how-to-add-apt-repository-in-ubuntu/) für die Ubuntu-Distribution geschildert und kann so auch für das Raspberry Pi OS übernommen werden.
+Ist in den Paketquellen des OS-Herstellers nicht die nötige Software enthalten, können auch Fremdquellen zum System hinzugefügt werden. Hierbei handelt es sich um Paketkataloge, die nicht vom OS-Hersteller (oder der Community) überprüft wurden. Deshalb besteht hier stets die Gefahr, dass die enthaltende Software das System beschädigt oder es sich um Malware handelt. Es gibt jedoch immer wieder Fälle, bei welchen solche Fremdquellen nötig sind. Wie diese dem System hinzugefügt werden können, ist z.B. [hier](https://linuxize.com/post/how-to-add-apt-repository-in-ubuntu/) für die Ubuntu-Distribution geschildert und kann so auch für das Raspberry Pi OS übernommen werden.
 
 #### Weitere Befehle
 
-Weiter wichtige Befehle für die Paketverwaltung sind z.B.
+Weitere wichtige Befehle für die Paketverwaltung sind z.B.
 
 - `sudo apt-get autoremove <Paketname>`: entfernt Abhängigkeiten von Programmen, die selbst nicht mehr installiert sind. Dadurch wird das System aufgeräumt.
 
-- `sudo apt list --upgradeable`: zeigt aktualsierbare Programm an
+- `sudo apt list --upgradeable`: zeigt aktualisierbare Programme an
 
 - `sudo apt-get remove <Paketname>`: entfernt ein Paket, nicht jedoch dessen Konfigurationsdateien
 
@@ -115,22 +115,22 @@ Weiter wichtige Befehle für die Paketverwaltung sind z.B.
 
 #### Stolpersteine bei der Paketverwaltung
 
-- Abhängigkeitsprobleme: v.a. bei der manuellen Installation von Paketen oder der Nutzung von Fremdquellen besteht die Möglichkeit, dass ein Programm ein anderes Programm als Abhängigkeit benötigt. Diese Abhängigkeit ist aber nicht in den Paketquellen enthalten. Dadurch kommt es zu einem nicht automatisch auflösbaren Abhängigkeitsproblem. Mögliche Maßnahmen sind die manuelle Installation der Abhängigkeiten (die aber weiter Abhängigkeiten haben können) oder der Downgrade auf eine kompatible Version.
+- Abhängigkeitsprobleme: v.a. bei der manuellen Installation von Paketen oder der Nutzung von Fremdquellen besteht die Möglichkeit, dass ein Programm ein anderes Programm als Abhängigkeit benötigt. Diese Abhängigkeit ist aber nicht in den Paketquellen enthalten. Dadurch kommt es zu einem nicht automatisch auflösbaren Abhängigkeitsproblem. Mögliche Maßnahmen sind die manuelle Installation der Abhängigkeiten (die aber weitere Abhängigkeiten haben können) oder der Downgrade auf eine kompatible Version.
 
-- Paketname: häufig sind die Paketnamen für eine Programm nicht eindeutig. Um den genauen Namen für die Installation zu finden, können die Programmkataloge durchsucht werden: `sudo apt-cache search <Suchbegriff>`. Alternativ kann natürlich auch im Internet nach dem genauen Namen eines Pakets gesucht werden.
+- Paketname: häufig sind die Paketnamen für ein Programm nicht eindeutig. Um den genauen Namen für die Installation zu finden, können die Programmkataloge durchsucht werden: `sudo apt-cache search <Suchbegriff>`. Alternativ kann natürlich auch im Internet nach dem genauen Namen eines Pakets gesucht werden.
 
 ::::::challenge
 
 ### Webserver
 
-Sie möchten auf Ihrem Linux-Server eine Website hosten. Dazu wollen Sie den Webserver Apache installieren. Wie gehen Sie vor?
+Sie möchten auf Ihrem Linux-Server eine Website betreiben. Dazu wollen Sie den Webserver *Apache* installieren. Wie gehen Sie vor?
 
 :::solution
 Der erste Schritt bei der Softwareverwaltung sollte immer die Aktualisierung der Paketquellen sein: `sudo apt-get update`.
 
-Auch kann es nicht schaden, das System auf den aktuellen Stand zu bringen, bevor neue Software installiert wird: `sudo apt-get upgrade`.
+Anschließend wird das System auf den aktuellen Stand gebracht: `sudo apt-get upgrade`.
 
-Dann müssen Sie herausfinden, wie das Paket, das den Apache-Webserver für das Raspberry Pi OS liefert, heißt. Das können Sie mit einer Internetrecherche oder dem Befehl `sudo apt-cache search apache` tun.
+Nun müssen Sie herausfinden, wie das Paket, das den Apache-Webserver für das Raspberry Pi OS liefert, heißt. Das können Sie mit einer Internetrecherche oder dem Befehl `sudo apt-cache search apache` tun.
 
 Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem Befehl `sudo apt-get install <Paketname>` installieren.
 :::
@@ -157,13 +157,13 @@ Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem Befehl `sudo a
 
 - Verzeichnis wechseln: `cd <Pfadangabe>`, z.B. `cd /home/david/Dokumente`
 
--in das eigene Home-Verzeichnis wechseln: `cd`
+- in das eigene Home-Verzeichnis wechseln: `cd`
 
 - Eine Ebene nach oben gehen: `cd ..`
 
 - Zwei Ebenen nach oben gehen: `cd ../..`
 
-- Aktuelle Positin im Dateisystem anzeigen: `pwd`
+- Aktuelle Position im Dateisystem anzeigen: `pwd`
 
 - Verzeichnisinhalt anzeigen lassen: `ls` oder mit mehr Informationen `ls -l`
 
@@ -175,7 +175,7 @@ Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem Befehl `sudo a
 
 - Inhalt einer Textdatei ausgeben: `cat <Datename>`
 
-- Oberste oder letze 10 Zeilen einer Datei anzeigen lassen: `head <Dateiname>` und `tail <Dateiname>`
+- Oberste oder letzte 10 Zeilen einer Datei anzeigen lassen: `head <Dateiname>` und `tail <Dateiname>`
 
 - Datei kopieren/verschieben/löschen:
 
@@ -210,7 +210,7 @@ Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B. **nano** und **
 
 - Raspberry Pi OS ist das Linux-Betriebssystem unserer Wahl
 
-- Das Dateisystem unter Linux besteht aus einem einzigen Verzeichnisbaum. "/" ist dabei die obersterte Ebene
+- Das Dateisystem unter Linux besteht aus einem einzigen Verzeichnisbaum. "/" ist dabei die oberste Ebene
 
 - Software wird unter Linux zentral verwaltet. Die Verwaltung erfolgt bei der Debian-Familie mit den Programmen *apt-get* oder *apt*
 
