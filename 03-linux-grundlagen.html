@@ -393,7 +393,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Linux Schnellstart</h1>
-        <p>Zuletzt aktualisiert am 2024-10-22 |
+        <p>Zuletzt aktualisiert am 2024-10-25 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/03-linux-grundlagen.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -529,7 +529,7 @@ einzuhängen, z.B. im Home-Verzeichnis eines Users.</p>
 </div>
 <div class="section level3">
 <h3 id="weitere-quellen">Weitere Quellen<a class="anchor" aria-label="anchor" href="#weitere-quellen"></a></h3>
-<p>Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei <a href="https://wiki.ubuntuusers.de/Verzeichnisstruktur/" class="external-link">Ubuntusers</a>
+<p>Mehr zur Verzeichnisstruktur von Linux findet sich z.B. bei <a href="https://wiki.ubuntuusers.de/Verzeichnisstruktur/" class="external-link">Ubuntuusers</a>
 oder bei der Tuxacademy im Handbuch zur <a href="https://www.tuxcademy.org/product/lxes/" class="external-link">Linux-Essentials-Zertifizierung</a>
 auf den Seiten 146-154.</p>
 </div>
@@ -547,33 +547,33 @@ Paketrepositorien (oder auch Paketkatalogen oder Paketquellen)
 aufgelistet und verfügbar gemacht. Ein Repositorium wird i.d.R. vom
 Hersteller des Betriebssystems zur Verfügung gestellt und ähnelt in der
 Funktion dem Google-Play-Store auf einem Android-Smartphone.</p>
-<p>Die in den Repositorien des OS-Herstellers beinhaltete Software sind
-in kompatibel mit dem Betriebssystem und je nach konkretem
-“Unterkatalog” auch getetest. Allerdings handelt es sich nicht immer um
-die neueste Version, da neue Versionen aufgrund der Tests und
-Abhängigkeiten zu anderer Software erst zeitverzögert in die Kataloge
-aufgenommen wird.</p>
+<p>Die in den Repositorien des OS-Herstellers beinhaltete Software ist
+kompatibel mit dem Betriebssystem und, je nach konkretem “Unterkatalog”,
+auch getestet. Allerdings handelt es sich nicht immer um die neueste
+Version eines Programms. Denn neue Versionen werden aufgrund der Tests
+und Abhängigkeiten zu anderer Software erst zeitverzögert in die
+Kataloge aufgenommen.</p>
 <p>Bevor Software Software installiert werden kann, muss das
-Betriebssytem die aktuelle Version des Katalogs herunterladen. Dies
+Betriebssystem die aktuelle Version des Katalogs herunterladen. Dies
 erfolgt auf der Kommandozeile mit dem Befehl
 <code>sudo apt-get update</code> oder <code>sudo apt update</code>.
 Möchte man anschließend ein Programm installieren, muss der Name des
-entsprechenden Pakets bekannt sein. Die Installation erfoglt dann mit
+entsprechenden Pakets bekannt sein. Die Installation erfolgt mit
 <code>sudo apt-get install &lt;Paketname&gt;</code>.</p>
 <p>Der Vorteil der zentralen Paketverwaltung ist, dass in den
-Repositorien stetst festgehalten ist, welche Version eines Programms die
-aktuelle ist. Druch den Abgleich der Versionen aller installierter
-Programme mit dem Repositorium kann die Paketverwaltung so schnell
-ermitteln, für welche Programme es Aktualisierungen gibt. Um diese dann
-zu installieren, muss der Befehl <code>sudo apt-get upgrade</code>
+Repositorien stets festgehalten ist, welche Version eines Programms die
+aktuelle ist. Durch den Abgleich der Versionen aller installierter
+Programme mit dem Repositorium kann die Paketverwaltung schnell
+ermitteln, für welche Programme es Aktualisierungen gibt. Um diese zu
+installieren, muss der Befehl <code>sudo apt-get upgrade</code>
 ausgeführt werden.</p>
 <div class="section level4">
 <h4 id="fremdquellen">Fremdquellen<a class="anchor" aria-label="anchor" href="#fremdquellen"></a></h4>
-<p>Ist den Paketquellen des OS-Herstellers nicht die nötige Software
+<p>Ist in den Paketquellen des OS-Herstellers nicht die nötige Software
 enthalten, können auch Fremdquellen zum System hinzugefügt werden.
 Hierbei handelt es sich um Paketkataloge, die nicht vom OS-Hersteller
 (oder der Community) überprüft wurden. Deshalb besteht hier stets die
-Gefahr, dass die enthaltende Softwar das System beschädigt oder es sich
+Gefahr, dass die enthaltende Software das System beschädigt oder es sich
 um Malware handelt. Es gibt jedoch immer wieder Fälle, bei welchen
 solche Fremdquellen nötig sind. Wie diese dem System hinzugefügt werden
 können, ist z.B. <a href="https://linuxize.com/post/how-to-add-apt-repository-in-ubuntu/" class="external-link">hier</a>
@@ -582,12 +582,12 @@ Raspberry Pi OS übernommen werden.</p>
 </div>
 <div class="section level4">
 <h4 id="weitere-befehle">Weitere Befehle<a class="anchor" aria-label="anchor" href="#weitere-befehle"></a></h4>
-<p>Weiter wichtige Befehle für die Paketverwaltung sind z.B.</p>
+<p>Weitere wichtige Befehle für die Paketverwaltung sind z.B.</p>
 <ul><li><p><code>sudo apt-get autoremove &lt;Paketname&gt;</code>: entfernt
 Abhängigkeiten von Programmen, die selbst nicht mehr installiert sind.
 Dadurch wird das System aufgeräumt.</p></li>
-<li><p><code>sudo apt list --upgradeable</code>: zeigt aktualsierbare
-Programm an</p></li>
+<li><p><code>sudo apt list --upgradeable</code>: zeigt aktualisierbare
+Programme an</p></li>
 <li><p><code>sudo apt-get remove &lt;Paketname&gt;</code>: entfernt ein
 Paket, nicht jedoch dessen Konfigurationsdateien</p></li>
 <li><p><code>sudo apt-get purge &lt;Paketname&gt;</code>: entfernt ein
@@ -601,9 +601,9 @@ ein Programm ein anderes Programm als Abhängigkeit benötigt. Diese
 Abhängigkeit ist aber nicht in den Paketquellen enthalten. Dadurch kommt
 es zu einem nicht automatisch auflösbaren Abhängigkeitsproblem. Mögliche
 Maßnahmen sind die manuelle Installation der Abhängigkeiten (die aber
-weiter Abhängigkeiten haben können) oder der Downgrade auf eine
+weitere Abhängigkeiten haben können) oder der Downgrade auf eine
 kompatible Version.</p></li>
-<li><p>Paketname: häufig sind die Paketnamen für eine Programm nicht
+<li><p>Paketname: häufig sind die Paketnamen für ein Programm nicht
 eindeutig. Um den genauen Namen für die Installation zu finden, können
 die Programmkataloge durchsucht werden:
 <code>sudo apt-cache search &lt;Suchbegriff&gt;</code>. Alternativ kann
@@ -616,8 +616,9 @@ werden.</p></li>
 <div id="webserver" class="callout-inner">
 <h3 class="callout-title">Webserver</h3>
 <div class="callout-content">
-<p>Sie möchten auf Ihrem Linux-Server eine Website hosten. Dazu wollen
-Sie den Webserver Apache installieren. Wie gehen Sie vor?</p>
+<p>Sie möchten auf Ihrem Linux-Server eine Website betreiben. Dazu
+wollen Sie den Webserver <em>Apache</em> installieren. Wie gehen Sie
+vor?</p>
 </div>
 </div>
 </div>
@@ -631,10 +632,9 @@ Sie den Webserver Apache installieren. Wie gehen Sie vor?</p>
 <p>Der erste Schritt bei der Softwareverwaltung sollte immer die
 Aktualisierung der Paketquellen sein:
 <code>sudo apt-get update</code>.</p>
-<p>Auch kann es nicht schaden, das System auf den aktuellen Stand zu
-bringen, bevor neue Software installiert wird:
+<p>Anschließend wird das System auf den aktuellen Stand gebracht:
 <code>sudo apt-get upgrade</code>.</p>
-<p>Dann müssen Sie herausfinden, wie das Paket, das den Apache-Webserver
+<p>Nun müssen Sie herausfinden, wie das Paket, das den Apache-Webserver
 für das Raspberry Pi OS liefert, heißt. Das können Sie mit einer
 Internetrecherche oder dem Befehl
 <code>sudo apt-cache search apache</code> tun.</p>
@@ -664,13 +664,12 @@ Mausklick</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="mit-der-kommandozeile-im-dateisystem-navigieren">Mit der Kommandozeile im Dateisystem navigieren<a class="anchor" aria-label="anchor" href="#mit-der-kommandozeile-im-dateisystem-navigieren"></a></h3>
-<ul><li>Verzeichnis wechseln: <code>cd &lt;Pfadangabe&gt;</code>, z.B.
-<code>cd /home/david/Dokumente</code>
-</li>
-</ul><p>-in das eigene Home-Verzeichnis wechseln: <code>cd</code></p>
-<ul><li><p>Eine Ebene nach oben gehen: <code>cd ..</code></p></li>
+<ul><li><p>Verzeichnis wechseln: <code>cd &lt;Pfadangabe&gt;</code>, z.B.
+<code>cd /home/david/Dokumente</code></p></li>
+<li><p>in das eigene Home-Verzeichnis wechseln: <code>cd</code></p></li>
+<li><p>Eine Ebene nach oben gehen: <code>cd ..</code></p></li>
 <li><p>Zwei Ebenen nach oben gehen: <code>cd ../..</code></p></li>
-<li><p>Aktuelle Positin im Dateisystem anzeigen:
+<li><p>Aktuelle Position im Dateisystem anzeigen:
 <code>pwd</code></p></li>
 <li><p>Verzeichnisinhalt anzeigen lassen: <code>ls</code> oder mit mehr
 Informationen <code>ls -l</code></p></li>
@@ -683,7 +682,7 @@ Informationen <code>ls -l</code></p></li>
 <code>mkdir &lt;Dateipfad&gt;/&lt;Neuer-Ordner&gt;</code></p></li>
 <li><p>Inhalt einer Textdatei ausgeben:
 <code>cat &lt;Datename&gt;</code></p></li>
-<li><p>Oberste oder letze 10 Zeilen einer Datei anzeigen lassen:
+<li><p>Oberste oder letzte 10 Zeilen einer Datei anzeigen lassen:
 <code>head &lt;Dateiname&gt;</code> und
 <code>tail &lt;Dateiname&gt;</code></p></li>
 <li>
@@ -726,7 +725,7 @@ Zeilennummer eingeben</p></li>
 <ul><li><p>Raspberry Pi OS ist das Linux-Betriebssystem unserer
 Wahl</p></li>
 <li><p>Das Dateisystem unter Linux besteht aus einem einzigen
-Verzeichnisbaum. “/” ist dabei die obersterte Ebene</p></li>
+Verzeichnisbaum. “/” ist dabei die oberste Ebene</p></li>
 <li><p>Software wird unter Linux zentral verwaltet. Die Verwaltung
 erfolgt bei der Debian-Familie mit den Programmen <em>apt-get</em> oder
 <em>apt</em></p></li>
@@ -799,8 +798,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/03-linux-grundlagen.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/03-linux-grundlagen.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2024-10-22",
-  "datePublished": "2024-10-22"
+  "dateModified": "2024-10-25",
+  "datePublished": "2024-10-25"
 }
 
   </script><script>
