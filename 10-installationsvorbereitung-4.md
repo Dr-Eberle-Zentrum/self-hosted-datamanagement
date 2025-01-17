@@ -68,7 +68,7 @@ Um ein solches Zertifikat zu erhalten, muss man gegenüber Letsencrypt nachweise
 
 - Zertifikatsausstellung testen: `sudo certbot certonly --apache -d <server.ddns-provider.de> --dry-run` (Achtung: eigene Domain einsetzen)
 
-- Wenn der Test erfolgreich war, kann die Zertifikatsausstellung durchgeführt werden: `sudo certbot --certonly -d <server.ddns-provider.de>` (Achtung: eigene Domain einsetzen)
+- Wenn der Test erfolgreich war, kann die Zertifikatsausstellung durchgeführt werden: `sudo certbot certonly --apache -d <server.ddns-provider.de>` (Achtung: eigene Domain einsetzen)
 
 #### System von HTTP auf HTTPS umstellen:
 
@@ -115,6 +115,8 @@ Include /etc/letsencrypt/options-ssl-apache.conf
 Schauen Sie sich auch diese Apache-Konfigurationsdatei genau an und überlegen Sie sich, was die Einstellungen bewirken und welche Optionen Sie an Ihr Setup anpassen sollten.
 
 ::::::
+
+- SSL-Modul in Apache aktivieren: `sudo a2enmod ssl`
 
 - Wie nach jeder Änderung an den Konfigurationsdateien muss Apache neugestartet werden: `sudo systemctl restart apache2.service`
 
