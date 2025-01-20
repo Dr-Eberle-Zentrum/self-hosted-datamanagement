@@ -109,7 +109,7 @@ apc.enable_cli=1
 
 - Berechtigungen für UNIX-Socket-Datei anpassen: `usermod -a -G redis www-data`
 
-- Dienste neu starten: `systemctl restart apache2 && systemctl restart redis-server`
+- Dienste neu starten: `sudo systemctl restart apache2 && sudo systemctl restart redis-server`
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
