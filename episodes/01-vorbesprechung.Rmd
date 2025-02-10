@@ -221,7 +221,7 @@ Die Wochen laufen i.d.R. wie folgt ab:
 
 ### Gruppenarbeit
 
-Um die prkatische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen gebildet. Nutzen Sie diese Gruppen, um Fragen zu klären, das praktische Vorgehen gemeinsam zu planen und bei Problemen gemeinsam nach Lösungen zu suchen.
+Um die praktische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen gebildet. Nutzen Sie diese Gruppen, um Fragen zu klären, das praktische Vorgehen gemeinsam zu planen und bei Problemen gemeinsam nach Lösungen zu suchen.
 
 ### Leistungsnachweis
 
