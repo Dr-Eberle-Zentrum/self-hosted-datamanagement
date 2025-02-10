@@ -39,7 +39,9 @@ Bei einem Protokoll handelt es sich um eine Sammlung genau festgelegter technisc
 
 :::
 
-Das SSH-Protkoll nutzt verschiedene Technologien zur Gewährleistung der sicheren Übertragung. Ähnlich einer [HTTPS-Verbindung](https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/) werden beim Verbindungsaufbau zunächst die Kommunikationsstandards zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben. Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer symmetrischen Verschlüsselung aufgebaut (welche deutliche schneller ist, als die zuvor stattfindende asymetrische Verschlüsselung, siehe dazu auch die Ressourcen von Studyflix zur [symetrischen](https://studyflix.de/informatik/symmetrische-verschlusselung-1610) und [asymmetrischen](https://studyflix.de/informatik/asymmetrische-verschlusselung-1609) Verschlüsselung).
+Das SSH-Protkoll nutzt verschiedene Technologien zur Gewährleistung der sicheren Übertragung. Ähnlich einer [HTTPS-Verbindung](https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/) werden beim Verbindungsaufbau zunächst die Kommunikationsstandards zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben. Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer symmetrischen Verschlüsselung aufgebaut (welche deutlich schneller ist, als die zuvor stattfindende asymmetrische Verschlüsselung, siehe dazu auch die Ressourcen von Studyflix zur [symmetrischen](https://studyflix.de/informatik/symmetrische-verschlusselung-1610) und [asymmetrischen](https://studyflix.de/informatik/asymmetrische-verschlusselung-1609) Verschlüsselung).
+
+Mehr zur Funktionsweise des SSH-Protkolls können Sie im Netz finden, z.B. bei [IP-Insider](https://www.ip-insider.de/was-ist-secure-shell-ssh-ssh-1-ssh-2-openssh-a-691217/).
 
 :::: challenge
 
@@ -92,6 +94,8 @@ Aufgrund der komplexen krytpographischen Struktur der Schlüssel sind diese deut
 Für eine sichere SSH-Verbindung empfiehlt es sich, auf Passwörter zu verzichten und sich stattdessen mit einem Schlüsselpaar zu authentifizieren.
 
 Ist ein Schlüsselpaar erzeugt, erfolgt die Verbindung wie folgt: `ssh <user>@<server> -i <Pfad-zum-privaten-schlüssel>`. Mit dem Befehlsparameter *-i* wird der Pfad zum privaten Schlüssel am Client angegeben.
+
+Mehr zur Schlüsselauthenfikation finden Sie z.B. bei [ManageEngine](https://www.manageengine.com/key-manager/information-center/what-is-ssh-key-management.html) (hier v.a. die ersten drei Absätze).
 
 :::
 
