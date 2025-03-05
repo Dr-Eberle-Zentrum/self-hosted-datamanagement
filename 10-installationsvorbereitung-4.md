@@ -130,7 +130,7 @@ Sollte die HTTPS-Verbindung nicht erfolgreich sein, müssen Sie sich auf die Feh
 
 - Ist der Raspberry Pi via localhost und im Heimnetzwerk unter seiner IP-Adresse über Port 443 erreichbar?
 
-- Läuft der Apache-Webserver? Überprüfen Sie dessen Status mit `sudo systemctl status apache2.service`. Evtl. werden Ihnen hier bereits Fehlermeldungen angezeigt. Sie können außerdem die Apache-Log-Dateien unter `/var/log/apache2/` inspizieren
+- Läuft der Apache-Webserver? Überprüfen Sie dessen Status mit `sudo systemctl status apache2.service`. Evtl. werden Ihnen hier bereits Fehlermeldungen angezeigt. Sie können außerdem die Apache-Log-Dateien unter `/var/log/apache2/` und das komplette Journal mit `sudo journalctl -xeu apache2` untersuchen.
 
 - Wurde das TLS-Zertifikat ordnungsgemäß ausgestellt? Überprüfen Sie, ob unter dem Pfad `/etc/letsencrypt/live/<server.ddns-provider.de>/ die Dateien *fullchain.pem* und *privkey.pem* vorhanden sind.
 

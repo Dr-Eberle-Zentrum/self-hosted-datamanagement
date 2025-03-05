@@ -75,7 +75,7 @@ Wenn die Voraussetzungen stimmen (siehe [Vorraussetzungen für die SSH-Verbindun
 
 :::
 
-## Schlüssel-Authtenfikation
+## Schlüsselauthentifikation
 
 Die einfache SSH-Verbindung genügt zwar schon, um das entfernte System zu verwalten. Allerdings kann eine angreifende Person versuchen, den Usernamen und das Passwort zu erraten und damit Zugriff auf den Server erlangen (leider sind Passwörter häufig nicht allzu kreativ erdacht). Um dies zu verhindern, kann die Verbindung zusätzlich gesichert werden:
 
