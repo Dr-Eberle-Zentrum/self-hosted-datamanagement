@@ -107,10 +107,10 @@ Um seinen Nextcloud-Server sicher zu betreiben können weitere Schritte unternom
 
 Grundlegend ist es wichtig, sein gesamtes System stets aktuell zu halten, sich regelmäßig über Änderungen auf dem Laufenden zu halten und neue Sicherheitsempfehlungen umzusetzen.
 
-Um zum Beispiel den Apache-Webserver weiter abzusichern, gibt es im Internet viele Ratschläge. z.B. bei [Apache selbst](https://httpd.apache.org/docs/2.4/misc/security_tips.html), bei [tecmint.com](https://www.tecmint.com/apache-security-tips/) oder [geekflare.com](https://geekflare.com/apache-web-server-hardening-security/). Dabei sollte stets auf die Aktualität und Zuverlässigkeit der Tips geachtet werden. Außerdem muss die Kompatibilität mit dem Nextcloud-Server getestet werden.
+Um zum Beispiel den **Apache-Webserver** weiter abzusichern, gibt es im Internet viele Ratschläge. z.B. bei [Apache selbst](https://httpd.apache.org/docs/2.4/misc/security_tips.html), bei [tecmint.com](https://www.tecmint.com/apache-security-tips/) oder [geekflare.com](https://geekflare.com/apache-web-server-hardening-security/). Dabei sollte stets auf die Aktualität und Zuverlässigkeit der Tipps geachtet werden. Außerdem muss die Kompatibilität mit dem Nextcloud-Server getestet werden.
 
 ### Zufallszahlen mit `/dev/urandom/`
-Unter den im Handbuch genannten Sicherheitsempfehlungen kann recht schnell der Zugriff für PHP auf `/dev/random` gewährleistet werden. Dadurch werden besser Zufallszahlen berechnet, z.B. für Passwörter. Dazu müssen die PHP.ini-Dateien (`/etc/php/8.2/cli/php.ini` und `/etc/php/8.2/apache2/php.ini`) bearbeitet werden und folgende Zeile ergänzt werden:
+Unter den im Handbuch genannten Sicherheitsempfehlungen kann recht schnell der Zugriff für PHP auf `/dev/random` gewährleistet werden. Dadurch werden bessere Zufallszahlen berechnet, z.B. für Passwörter. Dazu müssen die PHP.ini-Dateien (`/etc/php/8.2/cli/php.ini` und `/etc/php/8.2/apache2/php.ini`) bearbeitet werden und folgende Zeile ergänzt werden:
 
 ```
 open_basedir /var/www/nextcloud/:/dev/urandom/:<Pfad-zum-Datenverzeichnis, z.B. /mnt/data/ncdata/>

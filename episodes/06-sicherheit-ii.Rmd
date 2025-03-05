@@ -135,7 +135,7 @@ Ist ein Filterkriterium erfüllt, wird eine Aktion ausgeführt. Wird ein Paket *
 
 - Standardregel für ausgehenden Verkehr: `sudo ufw default allow outgoing`
 
-- Zugriff auf SSH-Port nur aus dem lokalen Netzwerk zulassen (Netzwerkadresse anpassen!): `sudo ufw allow from 192.168.178.0/25 to any port 22`
+- Zugriff auf SSH-Port nur aus dem lokalen Netzwerk zulassen (Netzwerkadresse anpassen!): `sudo ufw allow from 192.168.178.0/24 to any port 22`
 
 - aktivieren: `sudo ufw enable`
 

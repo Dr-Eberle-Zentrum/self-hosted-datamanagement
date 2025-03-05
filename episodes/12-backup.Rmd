@@ -257,11 +257,11 @@ mit dem find-Befehl werden Sicherungsversionen, die älter als 21 Tage sind, gel
 
 Hat man ein Skript erstellt, sollte dieses manuell getestet werden, indem es auf der Kommandozeile aufgerufen wird: `./skript.sh` Benötigen die Befehle im Skript sudo-Rechte, muss das Skript auch mit sudo-Rechten ausegführt werden (ACHTUNG: dann werden alle Befehle mit root-Rechten ausgeführt): `sudo ./skript.sh`
 
-Ist der manuelle Test erfolgreich verlaufen, kann das Skript mittels Cron automatisch zu bestimmten Zeiten ausgeführt werden. Wie im vorherigen Kapitel zur Nextcloud-Konfiguration erwähnt, ist Cron ein Programm, mit welchem Befehle zu bestimmten Zeiten automatisch ausgeführt werden. Diese Befehle werden in der Crontabelle gespeichert. Jeder User des Betriebssystems hat eine eigene Crontabelle. Soll ein Befehl mit Root-Rechten ausgeführt werden, muss der Befehl in die Crontabelle des root-Accounts eingetragen werden, Befehle die durch den www-data-User ausgeführt werden sollen, gehören in dessen Cron-Tabelle.
+Ist der manuelle Test erfolgreich verlaufen, kann das Skript mittels Cron automatisch zu bestimmten Zeiten ausgeführt werden. Wie im vorherigen Kapitel zur Nextcloud-Konfiguration erwähnt, ist Cron ein Programm, mit welchem Befehle zu bestimmten Zeiten automatisch ausgeführt werden. Diese Befehle werden in der Crontabelle gespeichert. Jeder User des Betriebssystems hat eine eigene Crontabelle. Soll ein Befehl mit Root-Rechten ausgeführt werden, muss der Befehl in die Crontabelle des root-Accounts eingetragen werden, Befehle, die durch den www-data-User ausgeführt werden sollen, gehören in dessen Cron-Tabelle.
 
 Die Crontabelle eines Users kann wie folgt angezeigt werden: `sudo crontab -u <username> -l` Um die Tabelle zu ändern lautet der Befehl wie folgt: `sudo crontab -u <username> -e` 
 
-Die Einträge für jeden Cron-Job (also jeden auszuführenden Befehl) sind wie folgt aufgebaut: Zeitangabe für die Ausführung und auszuführender Befehl. Die Zeitangaben erfolgt dabei in fünf einzelnen Einheiten: 1. Angabe der Minute (0-59), 2. Angabe der Stunde (0-23), 3. Angabe des Tages (1-31), 4. Angabe des Monats (1-12) und 5. Angabe des Wochentages (0-7).
+Die Einträge für jeden Cron-Job (also jeden auszuführenden Befehl) sind wie folgt aufgebaut: Zeitangabe für die Ausführung und auszuführender Befehl. Die Zeitangabe erfolgt dabei in fünf einzelnen Einheiten: 1. Angabe der Minute (0-59), 2. Angabe der Stunde (0-23), 3. Angabe des Tages (1-31), 4. Angabe des Monats (1-12) und 5. Angabe des Wochentages (0-7). Mehr zu cron findet sich z.B. [Ubuntuusers](https://wiki.ubuntuusers.de/Cron/).
 
 Beispiel: um das Skript backup.sh im Verzeichnis `/home/administrator/` jeden Montag um 14:30 auszuführen lautet der Eintrag wie folgt:
 
@@ -270,6 +270,10 @@ Beispiel: um das Skript backup.sh im Verzeichnis `/home/administrator/` jeden Mo
 ```
 
 Ist der Cronjob erstellt, muss überprüft werden, ob das Skript zur eingestellten Zeit tatsächlich läuft und das gewünschte Ergebnis liefert.
+
+:::callout
+**ACHTUNG:** Das Backupskript wird mit root-Rechten ausgeführt. Deshalb muss die Datei selbst vor Änderungen durch andere User geschützt werden. Sonst könnten nicht berechtigte User das Skript ändern und Befehle mit root-Rechten ausführen lassen (z.B. sich selbst zur sudo-Gruppe hinzufügen). Deshalb darf das Skript nur durch den root-User geändert werden: `sudo chown root:root /home/administrator/backup.sh` und `sudo chmod 700 /home/administrator/backup.sh`
+:::
 
 ## Restore
 

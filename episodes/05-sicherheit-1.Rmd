@@ -154,7 +154,7 @@ Möchte man den *mode* ändern (also die Rechte für Besitzer und Gruppe), nutzt
     
     - `-` = Recht entziehen
     
-3. Angabe zum betroffene Recht.
+3. Angabe zum betroffenen Recht.
 
     - `r` = read (Leseberechtigung)
     
@@ -230,7 +230,7 @@ In Antwort 4 ist der `chmod`-Befehl fehlerhaft
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- der *root*-Account ist der Adminstrator des Systems 
+- der *root*-Account ist der Administrator des Systems 
 
 - Mitglieder der *sudo*-Gruppe haben administrative Rechte, welche sie mit dem `sudo`-Kommando nutzen können
 

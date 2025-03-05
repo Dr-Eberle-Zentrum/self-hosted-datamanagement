@@ -84,10 +84,10 @@ Nextcloud bietet unterschiedliche Caching-Implementationen an. Je nachdem, wie g
 'memcache.local' => '\OC\Memcache\APCu',
 'memcache.distributed' => '\OC\Memcache\Redis',
 'memcache.locking' => '\OC\Memcache\Redis',
-’redis’ => [
-  ’host’ => ’/var/run/redis/redis-server.sock’,
-  ’port’ => 0,
-  ’timeout’ => 0.0,
+'redis' => [
+  'host' => '/var/run/redis/redis-server.sock',
+  'port' => 0,
+  'timeout' => 0.0,
 ],
 ```
 
