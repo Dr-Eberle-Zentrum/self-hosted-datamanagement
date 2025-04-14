@@ -233,9 +233,9 @@ Um die praktische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen 
 
   - wöchentliche Bearbeitung der Lernmaterialien
 
-  <!-- wöchentlicher Test auf [ILIAS][ilias] -->
+  - wöchentlicher Test auf [ILIAS][ilias]
   
-  - Abgabe von fünf Protokollen im Laufe des Vorlesungszeit
+  <!-- - Abgabe von fünf Protokollen im Laufe des Vorlesungszeit -->
   
   - selbstständige Konfiguration eines Cloud-Servers
   
