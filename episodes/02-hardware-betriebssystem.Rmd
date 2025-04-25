@@ -26,13 +26,13 @@ exercises: 90
 # Die Hard- und Software
 
 ## Hardware
-Zu Beginn der meisten IT-Projekte steht die Frage, wo diese Projekte umgesetzt werden sollen. Dabei gibt es heutzutage unterschiedliche Möglichkeiten. Abgesehen von Tests auf lokalen Endgeräten wie PC oder Notebook, werden für viele Projekte spezialisierte Geräte genutzt. Vor allem für Firmen, Rechenzentren und andere Hochleistungsszenarien werden Computer mit spezialisierter Hardware wie Prozessoren, Festplatten oder Arbeitsspeichern eingesetzt, die für diese anspruchsvollen Aufgaben geeignet sind und häufig nicht mit Hardware vergleichbar ist, die in PCs verbaut wird.
+Zu Beginn der meisten IT-Projekte steht die Frage, wo diese Projekte umgesetzt werden sollen. Dabei gibt es heutzutage unterschiedliche Möglichkeiten. Abgesehen von Tests auf lokalen Endgeräten wie PC oder Notebook, werden für viele Projekte spezialisierte Geräte genutzt. Vor allem für Firmen, Rechenzentren und andere Hochleistungsszenarien werden Computer mit **spezialisierter Hardware** (Prozessoren, Festplatten, Arbeitsspeicher oder RAID-Controller) eingesetzt, die für diese anspruchsvollen Aufgaben geeignet ist und häufig nicht mit Endanwender-Hardware vergleichbar ist.
 
-Neben eigener Hardware besteht heute auch die Möglichkeit, seine Projekte auf fremder Hardware umzusetzen. Diese fremde Hardware befindet sich in einem entfernten Rechenzentrum ("der Cloud") und ist über das Internet erreich- und steuerbar. Häufig wird die Hardware dabei virtualisiert, d.h. das z.B. die Leistung eines echten Prozessors mithilfe von Software für mehrere virtuelle Computer zur Verfügung gestellt wird.
+Neben eigener Hardware besteht heute auch die Möglichkeit, seine Projekte auf fremder Hardware umzusetzen. Diese fremde Hardware befindet sich in einem **entfernten Rechenzentrum ("der Cloud")** und ist über das Internet erreich- und steuerbar. Häufig wird die Hardware dabei virtualisiert, d.h. dass z.B. die Leistung eines echten Prozessors mithilfe von Software für mehrere virtuelle Computer zur Verfügung gestellt wird.
 
-Für dezentrale Projekte können sogenannte Embedded Devices genutzt werden. Hierbei handelt es sich häufig um Spezialanfertigungen für genau einen Einsatzzweck, z.B. als Kassensystem oder Waage im Supermarkt oder als Informationsdisplay im öffentlichen Raum. Für diese Geräte werden auch spezielle Betriebssysteme und Software eingesetzt.
+Für dezentrale Projekte können sogenannte **Embedded Devices** genutzt werden. Hierbei handelt es sich häufig um Spezialanfertigungen für genau einen Einsatzzweck, z.B. als Kassensystem oder Waage im Supermarkt oder als Informationsdisplay im öffentlichen Raum. Für diese Geräte werden auch spezielle Betriebssysteme und Software eingesetzt.
 
-Für kleinere Projekte wie Heimanwender können normale PCs genutzt werden. Passender für Projekte mit wenig Leistungsanspruch (und im Heimanwenderbereich ist das i.d.R. der Fall) sind Mini-PCs, bei denen sämtliche oder die meisten Bauteile (Prozessor, Arbeitsspeicher, Datenspeicher und externe Schnittstellen wie Netzwerk und USB) auf einer Platine verbaut sind. Diese sogenannten Systems-on-a-Chip (SoC) haben den Vorteil, dass sie besonders energiesparsam sind, wenig Platz benötigen, keinen oder kaum Lärm verursachen und im Vergleich mit herkömmlichen PCs oder gar professionellen Servern deutlich günstiger sind.
+Für kleinere Projekte wie Heimanwender können normale PCs genutzt werden. Passender für Projekte mit wenig Leistungsanspruch (und im Heimanwenderbereich ist das i.d.R. der Fall) sind Mini-PCs, bei denen sämtliche oder die meisten Bauteile (Prozessor, Arbeitsspeicher, Datenspeicher und externe Schnittstellen wie Netzwerk und USB) auf einer Platine verbaut sind. Diese sogenannten **Systems-on-a-Chip (SoC)** haben den Vorteil, dass sie besonders energiesparsam sind, wenig Platz benötigen, keinen oder kaum Lärm verursachen und im Vergleich mit herkömmlichen PCs oder gar professionellen Servern deutlich günstiger sind.
 
 ## Server vs. Client
 Bezogen auf ihre Funktion innerhalb eines Computernetzwerks werden Geräte unterschiedlich bezeichnet:
@@ -43,13 +43,13 @@ Klassisches Endgerät wie PC, Notebook oder Smartphone. Hat keine zentralen Aufg
 
 2. Server
 
-Übernimmt als Kommunikationsknotenpunkt zentrale Aufgaben im Netzwerk. Je nach Leistungsbedarf wird spezialisierte Hochleistungshardware, normale PCs oder SoCs genutzt. Fällt ein Server aus, fehlt damit i.d.R. eine zentrale Funktion im Netzwerk. Je nachdem welche Aufgaben der Server hat, kann dies zum vollständigen versagen des Netzwerks führen oder nur zur nicht Erreichbarkeit eines Dienstes (z.B. einer Website).
+Übernimmt als Kommunikationsknotenpunkt zentrale Aufgaben im Netzwerk. Je nach Leistungsbedarf werden spezialisierte Hochleistungshardware, normale PCs oder SoCs genutzt. Fällt ein Server aus, fehlt damit i.d.R. eine zentrale Funktion im Netzwerk. Je nachdem welche Aufgaben der Server hat, kann dies zum vollständigen versagen des Netzwerks führen oder nur zum Ausfall eines Dienstes (z.B. einer Website).
 
 ## Software
 
 Unter Software kann all das verstanden werden, was nicht angefasst werden kann. Also sämtlicher Programmcode, der auf einem Computer installiert ist. Dazu gehört sowohl das Betriebssystem, die Boot-Umgebung (welche das Betriebssystem lädt) aber auch alle anderen Programme wie Treiber, eine Firewall, ein Office-Programm oder ein Webserver-Programm.
 
-Möchte man ein bestimmtes IT-Projekt umsetzen und hat die Hardware besorgt, gilt es auch die richtige Software auszuwählen. Hierbei ist zu beachten, dass Hard- und Software miteinander kompatibel sein müssen. Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor (siehe auch diesen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Prozessorarchitektur). 
+Möchte man ein bestimmtes IT-Projekt umsetzen und hat die Hardware besorgt, gilt es auch die richtige Software auszuwählen. Hierbei ist zu beachten, dass Hard- und Software miteinander kompatibel sein müssen. Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor (siehe auch diesen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Prozessorarchitektur)). 
 
 Abhängig von den Programmen, die man nutzen möchte, kann das passende Betriebssystem gewählt werden. Für viele Serveranwendungen, wie die in diesem Kurs genutzte Software [Nextcloud][nextcloud], werden Linux-Betriebssysteme empfohlen. In vielen Fällen werden für die Funktion des Hauptprogramms (in unserem Fall Nextcloud) weitere Programme benötigt. Das sind häufig ein [Datenbankmanagementsystem](https://de.wikipedia.org/wiki/Datenbank#Komponenten_eines_Datenbanksystems) wie Mysql oder MariaDB, die Skriptsprache PHP, und ein Webserver wie [Apache2](https://httpd.apache.org/). In dieser Kombination spricht man auch von einem LAMP-Stack (**L**inux, **A**pache, **M**ysql/**M**ariaDB und **P**HP).
 
@@ -83,7 +83,7 @@ Im Folgenden werden die Schritte zur praktischen Umsetzung erklärt. Diese könn
 
 Für unser Projekt nutzen wir als Hardware den Raspberry Pi 4 oder 5. Als Betriebssystem installieren wir das offizielle Betriebssystem des Herstellers: [Raspberry Pi OS 64-Bit][raspberrypios]. Dabei handelt es sich um ein Linux-Betriebssystem aus der Reihe der Debian-Linux-Systeme. Damit ist unser System sehr ähnlich zu den Linux-Betriebssystemen Debian, Ubuntu oder Linux Mint.
 
-Grundlegend können auf einem Raspberry Pi unterschiedliche Betriebssystem installiert werden. Sie müssen jedoch mit dem ARM-Prozessor kompatibel sein. Möglich sind z.B. Ubuntu, Windows, viele Linux-Distribution oder Spezialanwendungen wie [LibreElec](https://libreelec.tv/) als Medienstreaming-Server.
+Grundlegend können auf einem Raspberry Pi unterschiedliche Betriebssysteme installiert werden. Sie müssen jedoch mit dem ARM-Prozessor kompatibel sein. Möglich sind z.B. Ubuntu, Windows, viele Linux-Distribution oder Spezialanwendungen wie [LibreElec](https://libreelec.tv/) als Medienstreaming-Server.
 
 Für die Installation des Betriebssystems wird vom Hersteller der Hardware das Programm [Raspberry Pi Imager](https://www.raspberrypi.com/software/) zur Verfügung gestellt. Dieses wird auf dem eigenen (Windows, Linux)-PC oder Mac installiert. Anschließend kann damit das Betriebssystem auf die SD-Karte oder Festplatte des Raspberry Pi geschrieben werden.
 
@@ -91,13 +91,13 @@ Für die Installation des Betriebssystems wird vom Hersteller der Hardware das P
 
 1. Betriebssystem auswählen: Rapsberry Pi OS 64 Bit
 
-![Raspberry Pi Imager mit ausgewähltem Betriebssystem (hier in der 32 Bit-Variante).](fig/02_imager_write.png){alt='Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 32 Bit ausgewählt ist'}
+![Raspberry Pi Imager mit ausgewähltem Betriebssystem (hier Raspberry Pi OS in der 64 Bit-Variante).](fig/02_imager_write.png){alt='Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 64 Bit ausgewählt ist'}
 
 2. Speicher auswählen: die SD-Karte muss im PC eingesteckt sein und nun ausgewählt werden.
 
 3. Über das Zahnradsymbol die erweiterten Einstellungen öffnen
 
-![Erweiterte Einstellungen des Raspberry Pi Imager](fig/02_imager_settings.png){alt='Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 32 Bit ausgewählt ist'}
+![Erweiterte Einstellungen des Raspberry Pi Imager](fig/02_imager_settings.png){alt='Fenster mit den erweiterten Einstellungen des Raspberry Pi Imager.'}
 
 4. Folgende Optionen einstellen:
 
@@ -119,7 +119,7 @@ Für die Installation des Betriebssystems wird vom Hersteller der Hardware das P
 
 1. Gehäuse öffnen (Pfeile am Deckel beachten)
 
-2. Raspberry Pi Board auf die Zapfen des Gehäuses setzen
+2. Raspberry Pi Board auf die Zapfen des Gehäuses setzen (bei manchen Gehäusen müssen die Zapfen mit einem Messer ausgedünnt werden)
 
 3. Wenn noch nicht geschehen: Kühlkörper aufkleben
 
