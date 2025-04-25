@@ -857,7 +857,7 @@ Haltung die Welt retten können, (Bielefeld 2024)<a href="#fnref1" class="footno
 </ol>
 </div></section><section id="aio-02-hardware-betriebssystem"><p>Content from <a href="02-hardware-betriebssystem.html">Hardware und Betriebssystem</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-04-14 |
+<p>Zuletzt aktualisiert am 2025-04-25 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/02-hardware-betriebssystem.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -905,32 +905,33 @@ umgesetzt werden sollen. Dabei gibt es heutzutage unterschiedliche
 Möglichkeiten. Abgesehen von Tests auf lokalen Endgeräten wie PC oder
 Notebook, werden für viele Projekte spezialisierte Geräte genutzt. Vor
 allem für Firmen, Rechenzentren und andere Hochleistungsszenarien werden
-Computer mit spezialisierter Hardware wie Prozessoren, Festplatten oder
-Arbeitsspeichern eingesetzt, die für diese anspruchsvollen Aufgaben
-geeignet sind und häufig nicht mit Hardware vergleichbar ist, die in PCs
-verbaut wird.</p>
+Computer mit <strong>spezialisierter Hardware</strong> (Prozessoren,
+Festplatten, Arbeitsspeicher oder RAID-Controller) eingesetzt, die für
+diese anspruchsvollen Aufgaben geeignet ist und häufig nicht mit
+Endanwender-Hardware vergleichbar ist.</p>
 <p>Neben eigener Hardware besteht heute auch die Möglichkeit, seine
 Projekte auf fremder Hardware umzusetzen. Diese fremde Hardware befindet
-sich in einem entfernten Rechenzentrum (“der Cloud”) und ist über das
-Internet erreich- und steuerbar. Häufig wird die Hardware dabei
-virtualisiert, d.h. das z.B. die Leistung eines echten Prozessors
-mithilfe von Software für mehrere virtuelle Computer zur Verfügung
-gestellt wird.</p>
-<p>Für dezentrale Projekte können sogenannte Embedded Devices genutzt
-werden. Hierbei handelt es sich häufig um Spezialanfertigungen für genau
-einen Einsatzzweck, z.B. als Kassensystem oder Waage im Supermarkt oder
-als Informationsdisplay im öffentlichen Raum. Für diese Geräte werden
-auch spezielle Betriebssysteme und Software eingesetzt.</p>
+sich in einem <strong>entfernten Rechenzentrum (“der Cloud”)</strong>
+und ist über das Internet erreich- und steuerbar. Häufig wird die
+Hardware dabei virtualisiert, d.h. dass z.B. die Leistung eines echten
+Prozessors mithilfe von Software für mehrere virtuelle Computer zur
+Verfügung gestellt wird.</p>
+<p>Für dezentrale Projekte können sogenannte <strong>Embedded
+Devices</strong> genutzt werden. Hierbei handelt es sich häufig um
+Spezialanfertigungen für genau einen Einsatzzweck, z.B. als Kassensystem
+oder Waage im Supermarkt oder als Informationsdisplay im öffentlichen
+Raum. Für diese Geräte werden auch spezielle Betriebssysteme und
+Software eingesetzt.</p>
 <p>Für kleinere Projekte wie Heimanwender können normale PCs genutzt
 werden. Passender für Projekte mit wenig Leistungsanspruch (und im
 Heimanwenderbereich ist das i.d.R. der Fall) sind Mini-PCs, bei denen
 sämtliche oder die meisten Bauteile (Prozessor, Arbeitsspeicher,
 Datenspeicher und externe Schnittstellen wie Netzwerk und USB) auf einer
-Platine verbaut sind. Diese sogenannten Systems-on-a-Chip (SoC) haben
-den Vorteil, dass sie besonders energiesparsam sind, wenig Platz
-benötigen, keinen oder kaum Lärm verursachen und im Vergleich mit
-herkömmlichen PCs oder gar professionellen Servern deutlich günstiger
-sind.</p>
+Platine verbaut sind. Diese sogenannten <strong>Systems-on-a-Chip
+(SoC)</strong> haben den Vorteil, dass sie besonders energiesparsam
+sind, wenig Platz benötigen, keinen oder kaum Lärm verursachen und im
+Vergleich mit herkömmlichen PCs oder gar professionellen Servern
+deutlich günstiger sind.</p>
 </div>
 <div class="section level2">
 <h2 id="server-vs--client">Server vs. Client<a class="anchor" aria-label="anchor" href="#server-vs--client"></a>
@@ -947,12 +948,12 @@ nicht betroffen.</p>
 <li>Server</li>
 </ol>
 <p>Übernimmt als Kommunikationsknotenpunkt zentrale Aufgaben im
-Netzwerk. Je nach Leistungsbedarf wird spezialisierte
+Netzwerk. Je nach Leistungsbedarf werden spezialisierte
 Hochleistungshardware, normale PCs oder SoCs genutzt. Fällt ein Server
 aus, fehlt damit i.d.R. eine zentrale Funktion im Netzwerk. Je nachdem
 welche Aufgaben der Server hat, kann dies zum vollständigen versagen des
-Netzwerks führen oder nur zur nicht Erreichbarkeit eines Dienstes (z.B.
-einer Website).</p>
+Netzwerks führen oder nur zum Ausfall eines Dienstes (z.B. einer
+Website).</p>
 </div>
 <div class="section level2">
 <h2 id="software">Software<a class="anchor" aria-label="anchor" href="#software"></a>
@@ -967,7 +968,7 @@ Webserver-Programm.</p>
 besorgt, gilt es auch die richtige Software auszuwählen. Hierbei ist zu
 beachten, dass Hard- und Software miteinander kompatibel sein müssen.
 Z.B. unterstützt nicht jedes Betriebssystem jede Art von Prozessor
-(siehe auch diesen <a href="https://de.wikipedia.org/wiki/Prozessorarchitektur" class="external-link">Wikipedia-Artikel</a>.</p>
+(siehe auch diesen <a href="https://de.wikipedia.org/wiki/Prozessorarchitektur" class="external-link">Wikipedia-Artikel</a>).</p>
 <p>Abhängig von den Programmen, die man nutzen möchte, kann das passende
 Betriebssystem gewählt werden. Für viele Serveranwendungen, wie die in
 diesem Kurs genutzte Software <a href="https://nextcloud.com" class="external-link">Nextcloud</a>, werden Linux-Betriebssysteme
@@ -1046,7 +1047,7 @@ Pi OS 64-Bit</a>. Dabei handelt es sich um ein Linux-Betriebssystem aus
 der Reihe der Debian-Linux-Systeme. Damit ist unser System sehr ähnlich
 zu den Linux-Betriebssystemen Debian, Ubuntu oder Linux Mint.</p>
 <p>Grundlegend können auf einem Raspberry Pi unterschiedliche
-Betriebssystem installiert werden. Sie müssen jedoch mit dem
+Betriebssysteme installiert werden. Sie müssen jedoch mit dem
 ARM-Prozessor kompatibel sein. Möglich sind z.B. Ubuntu, Windows, viele
 Linux-Distribution oder Spezialanwendungen wie <a href="https://libreelec.tv/" class="external-link">LibreElec</a> als
 Medienstreaming-Server.</p>
@@ -1061,15 +1062,15 @@ SD-Karte oder Festplatte des Raspberry Pi geschrieben werden.</p>
 <ol style="list-style-type: decimal">
 <li>Betriebssystem auswählen: Rapsberry Pi OS 64 Bit</li>
 </ol>
-<figure><img src="fig/02_imager_write.png" alt="Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 32 Bit ausgewählt ist" class="figure mx-auto d-block"><div class="figcaption">Raspberry Pi Imager mit ausgewähltem
-Betriebssystem (hier in der 32 Bit-Variante).</div>
+<figure><img src="fig/02_imager_write.png" alt="Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 64 Bit ausgewählt ist" class="figure mx-auto d-block"><div class="figcaption">Raspberry Pi Imager mit ausgewähltem
+Betriebssystem (hier Raspberry Pi OS in der 64 Bit-Variante).</div>
 </figure><ol start="2" style="list-style-type: decimal">
 <li><p>Speicher auswählen: die SD-Karte muss im PC eingesteckt sein und
 nun ausgewählt werden.</p></li>
 <li><p>Über das Zahnradsymbol die erweiterten Einstellungen
 öffnen</p></li>
 </ol>
-<figure><img src="fig/02_imager_settings.png" alt="Startbildschirm des Raspberry Pi Imager. Es ist zu sehen, dass als Betriebssystem das Raspberry Pi OS 32 Bit ausgewählt ist" class="figure mx-auto d-block"><div class="figcaption">Erweiterte Einstellungen des Raspberry Pi
+<figure><img src="fig/02_imager_settings.png" alt="Fenster mit den erweiterten Einstellungen des Raspberry Pi Imager." class="figure mx-auto d-block"><div class="figcaption">Erweiterte Einstellungen des Raspberry Pi
 Imager</div>
 </figure><ol start="4" style="list-style-type: decimal">
 <li>
@@ -1095,7 +1096,9 @@ schreiben</p></li>
 </h2>
 <ol style="list-style-type: decimal">
 <li><p>Gehäuse öffnen (Pfeile am Deckel beachten)</p></li>
-<li><p>Raspberry Pi Board auf die Zapfen des Gehäuses setzen</p></li>
+<li><p>Raspberry Pi Board auf die Zapfen des Gehäuses setzen (bei
+manchen Gehäusen müssen die Zapfen mit einem Messer ausgedünnt
+werden)</p></li>
 <li><p>Wenn noch nicht geschehen: Kühlkörper aufkleben</p></li>
 <li><p>Gehäuse schließen und falls vorhanden zuvor den Lüfter
 einsetzen</p></li>
@@ -1169,7 +1172,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-03-linux-grundlagen"><p>Content from <a href="03-linux-grundlagen.html">Linux Schnellstart</a></p>
 <hr>
-<p>Zuletzt aktualisiert am 2025-04-14 |
+<p>Zuletzt aktualisiert am 2025-04-25 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/03-linux-grundlagen.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1232,27 +1235,28 @@ Distribution Timeline</a> auf Wikipedia.</p>
 <p>Das Raspberry Pi OS wird von der Raspberry Pi Ltd. entwickelt. Es ist
 speziell auf die Hardware des Raspberry Pis angepasst, ressourcensparend
 und basiert auf der Debian-Distribution. Deshalb sind Anleitungen für
-Debian-Linux-Systeme häufig auch für das Raspberry Pi OS passend.</p>
+Linux-Systeme aus der Debian-Familie (Debian, Ubuntu, Mint u.v.a.)
+häufig auch für das Raspberry Pi OS passend.</p>
 </section><section><h2 class="section-heading" id="linux-schnellstart">Linux Schnellstart:<a class="anchor" aria-label="anchor" href="#linux-schnellstart"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
 <h3 id="dateisystem">Dateisystem<a class="anchor" aria-label="anchor" href="#dateisystem"></a>
 </h3>
-<p>Das Linux-Dateisystem ist für alles Linux-Distributionen
-weitestgehend einheitlich. Die oberste Hierarchie-Ebene ist dabei immer
-das Verzeichnis <code>/</code> (Slash). Dieses ist vergleichbar mit dem
+<p>Das Linux-Dateisystem ist für alle Linux-Distributionen weitestgehend
+einheitlich. Die oberste Hierarchie-Ebene ist dabei immer das
+Verzeichnis <code>/</code> (Slash). Dieses ist vergleichbar mit dem
 “C:”-Laufwerk unter Windows.</p>
 <p>Weitere wichtige Verzeichnisse sind:</p>
 <ul>
 <li>die Benutzerverzeichnisse unter
 <code>/home/&lt;username&gt;/</code>, z.B.
-<code>/home/david/</code>
+<code>/home/linus/</code>
 </li>
 </ul>
 <p>Hier liegen die Dateien, Dokumente und Konfigurationen der User.
-Schreib- und Leserechte haben nur die jeweiligen Benutzer und die
-Administratoren. Die Verzeichnisse sind mit dem Pfad
+Schreib- und Leserechte haben nur die jeweiligen User und Personen mit
+administrativen Rechten. Die Verzeichnisse sind mit dem Pfad
 <code>C:\Users\&lt;username&gt;\</code> unter Windows vergleichbar.</p>
 <ul>
 <li>Die Systemverzeichnisse (z.B. <code>/etc/</code>,
@@ -1262,7 +1266,7 @@ Administratoren. Die Verzeichnisse sind mit dem Pfad
 <p>Diese Verzeichnisse beinhalten Systemdaten, z.B. Programme,
 Programmbibliotheken, temporäre Dateien, Log-Dateien oder systemweite
 Konfigurationen. Deshalb haben in diesen Verzeichnissen i.d.R. nur
-Administratoren Schreibrechte.</p>
+Personen mit administrativen Rechten Schreibrechte.</p>
 <p>Im Vergleich mit dem Dateisystem von Windows fällt auf, dass es unter
 Linux nur einen Verzeichnisbaum für alle Dateien, Festplatten und
 Laufwerke gibt. Auch zusätzliche Festplatten oder externe Datenträger
@@ -1274,7 +1278,7 @@ Verzeichnisbaumes verfügbar gemacht werden (“eingehängt” oder
 Laufwerke stets ihre eigene unabhängige Verzeichnishierarchie, was die
 Verwaltung von Festplatten weniger flexibel macht.</p>
 <figure><img src="fig/03_Filesystem.png" alt="Die Abbildung zeigt nebeneinander drei Verzeichnisbäume. Je einen für die Betriebssystem Linux, Mac und Windows. Dabei wird insbesondere die unterschiedliche Art der Einhängung von zusätzlichen Datenträgern wie Festplatten oder USB-Sticks hervorgehoben." class="figure mx-auto d-block"><div class="figcaption">Vergleich der Dateisysteme von Linux, Mac und
-Windows</div>
+Windows (Quelle: <a href="https://itoss.org/faq/filesystem-hierarchy-standard/" class="external-link uri">https://itoss.org/faq/filesystem-hierarchy-standard/</a>)</div>
 </figure><div class="section level4">
 <h4 id="systemweite-konfigurationen-in-etc">Systemweite Konfigurationen in <code>/etc/</code>
 <a class="anchor" aria-label="anchor" href="#systemweite-konfigurationen-in-etc"></a>
@@ -1285,7 +1289,7 @@ Viele Programme haben hier eigene Unterordner (z.B.
 <code>/etc/apache2</code> für die Konfiguration des Apache-Webservers).
 Möchte man die Konfiguration eines Programms systemweit ändern, ist das
 <code>/etc/</code> Verzeichnis i.d.R. ein guter Startpunkt.
-Schreibrechte haben hier nur Administratoren.</p>
+Schreibrechte haben hier nur Personen mit administrativen Rechten.</p>
 </div>
 <div class="section level4">
 <h4 id="programmverzeichnnisse-bin-sbin-usrbin-usrsbin">Programmverzeichnnisse: <code>/bin/</code>, <code>/sbin/</code>,
@@ -1296,8 +1300,8 @@ Schreibrechte haben hier nur Administratoren.</p>
 <li><p><code>/bin/</code>: Essentielle Systemprogramme (Start, Restore,
 Basisprogramm des Betriebssystems)</p></li>
 <li><p><code>/usr/bin/</code>: ergänzende Systemprogramme</p></li>
-<li><p><code>/sbin/</code> und <code>/usr/sbin/</code>: nur für
-Administratoren nutzbare Programme</p></li>
+<li><p><code>/sbin/</code> und <code>/usr/sbin/</code>: nur für Personen
+mit administrativen Rechten nutzbare Programme</p></li>
 </ul>
 </div>
 <div class="section level4">
@@ -1314,7 +1318,7 @@ werden i.d.R. im <code>/var/</code>-Verzeichnis gespeichert.</p>
 </h4>
 <p>Externe Laufwerke und Wechselmedien werden standardmäßig in den
 Verzeichnisse <code>/mnt/</code> und <code>/media/</code> eingebunden.
-Dies ist allerdings kein zwingende Vorgabe und häufig gibt es gute
+Dies ist allerdings keine zwingende Vorgabe und häufig gibt es gute
 Gründe eine Festplatte an einer anderen Stelle des Verzeichnisbaumes
 einzuhängen, z.B. im Home-Verzeichnis eines Users.</p>
 </div>
@@ -1382,9 +1386,9 @@ Raspberry Pi OS übernommen werden.</p>
 </h4>
 <p>Weitere wichtige Befehle für die Paketverwaltung sind z.B.</p>
 <ul>
-<li><p><code>sudo apt-get autoremove &lt;Paketname&gt;</code>: entfernt
-Abhängigkeiten von Programmen, die selbst nicht mehr installiert sind.
-Dadurch wird das System aufgeräumt.</p></li>
+<li><p><code>sudo apt-get autoremove</code>: entfernt Abhängigkeiten von
+Programmen, die selbst nicht mehr installiert sind. Dadurch wird das
+System aufgeräumt.</p></li>
 <li><p><code>sudo apt list --upgradeable</code>: zeigt aktualisierbare
 Programme an</p></li>
 <li><p><code>sudo apt-get remove &lt;Paketname&gt;</code>: entfernt ein
@@ -1430,7 +1434,7 @@ vor?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Der erste Schritt bei der Softwareverwaltung sollte immer die
 Aktualisierung der Paketquellen sein:
@@ -1457,6 +1461,8 @@ installieren.</p>
 <h3 id="grundlegende-bedienung">Grundlegende Bedienung<a class="anchor" aria-label="anchor" href="#grundlegende-bedienung"></a>
 </h3>
 <ul>
+<li><p><em>ENTER-Taste</em> nach Eingabe eines Befehls wird dieser mit
+der ENTER-Taste ausgeführt</p></li>
 <li><p><em>Pfeiltasten</em> hoch/runter: durch bisherige Befehle
 blättern und diese wieder aufrufen</p></li>
 <li><p><em>Tab-Taste:</em> Autovervollständigung von Pfaden und
@@ -1494,7 +1500,7 @@ Informationen <code>ls -l</code></p></li>
 <li><p>Verzeichnis anlegen:
 <code>mkdir &lt;Dateipfad&gt;/&lt;Neuer-Ordner&gt;</code></p></li>
 <li><p>Inhalt einer Textdatei ausgeben:
-<code>cat &lt;Datename&gt;</code></p></li>
+<code>cat &lt;Dateiname&gt;</code></p></li>
 <li><p>Oberste oder letzte 10 Zeilen einer Datei anzeigen lassen:
 <code>head &lt;Dateiname&gt;</code> und
 <code>tail &lt;Dateiname&gt;</code></p></li>
@@ -1506,7 +1512,7 @@ Informationen <code>ls -l</code></p></li>
 <li><p>Move:
 <code>mv &lt;Quelldatei&gt; &lt;Zeildatei&gt;</code></p></li>
 <li><p>remove: <code>rm &lt;Dateiname&gt;</code> oder remove recursive:
-`rm -r <verzeichnispfad></verzeichnispfad></p></li>
+<code>rm -r &lt;Verzeichnispfad&gt;</code></p></li>
 </ul>
 </li>
 </ul>
@@ -1517,7 +1523,9 @@ Informationen <code>ls -l</code></p></li>
 <p>Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B.
 <strong>nano</strong> und <strong>vim</strong>, wobei nano der
 einsteigerfreundlichere Editor ist. Deshalb arbeiten wir im Kurs mit dem
-nano-Editor.</p>
+nano-Editor. Wer dennoch mit dem Vim-Editor arbeiten möchte, kann sich
+z.B. <a href="https://www.youtube.com/playlist?list=PLT98CRl2KxKHy4A5N70jMRYAROzzC2a6x" class="external-link">dieses
+Tutorial</a> anschauen</p>
 <ul>
 <li><p>Datei im Nano-Editor öffnen:
 <code>nano &lt;Dateipfad&gt;/&lt;Dateiname&gt;</code></p></li>
@@ -1849,7 +1857,7 @@ unterschiedlich bewerkstelligt werden.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>Unter Windows muss das Programm scp genutzt werden, mit welchem über
 eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 übertragen werden können:</p>
@@ -1867,13 +1875,13 @@ eine SSH-Verbindung Dateien (in diesem Fall der öffentliche Schlüssel)
 <p>SSH-Verbindung mit privatem Schlüssel testen:
 <code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh\&lt;privater-schlüssel&gt;</code></p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Mit macOS kann das Programm <em>ssh-copy-id</em> genutzt werden:
 <code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
 <code>ssh &lt;username&gt;@&lt;server&gt; -i .ssh/&lt;privater-schlüssel&gt;</code></p>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
 <p>Mit Linux kann das Programm <em>ssh-copy-id</em> genutzt werden:
 <code>ssh-copy-id -i &lt;öffentlicher-schlüssel.pub&gt; &lt;username&gt;@&lt;server&gt;</code></p>
 <p>SSH-Verbindung mit privatem Schlüssel testen:
@@ -2173,7 +2181,7 @@ administrative Rechte erhalten. Wie lauten die korrekten Befehle?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>Antwort 3 ist die richtige Lösung.</li>
@@ -2339,7 +2347,7 @@ Befehle?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul>
 <li>Antwort 2 ist korrekt. Die drei <code>chmod</code>-Befehle könnten
@@ -2552,7 +2560,7 @@ erhalten?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Typische Adressen könnten wie folgt lauten:</p>
 <ul>
@@ -2789,7 +2797,7 @@ verhindern?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Einige wichtige und grundlegende Maßnahmen können sein:</p>
 <ul>
@@ -3078,7 +3086,7 @@ Ihnen für das Raspberry Pi Projekt am sinnvollsten?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Für den Raspberry Pi gibt es ein von der Community betriebens
 Projekt: <a href="https://nextcloudpi.com/" class="external-link">NextcloudPi</a>. Damit kann
@@ -3253,7 +3261,7 @@ erreichbar?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Antwort 3 ist die richtige</li>
@@ -3424,7 +3432,7 @@ Internet erreichbar?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul>
 <li>Antwort 3 ist die richtige</li>
@@ -4541,7 +4549,7 @@ eine Nextcloud-Instanz zu sichern. Wo speichern Sie die Sicherungen?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Das <a href="https://docs.nextcloud.com/server/stable/admin_manual/maintenance/backup.html" class="external-link">Handbuch</a>
 listet die grundlegenden Schritte auf, um den Nextcloud-Server zu
@@ -4736,7 +4744,7 @@ essentiellen Befehle, die ausgeführt werden?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Von oben nach unten macht das Skript folgendes:</p>
 <p>Es werden Variablen für die Backupquelle, das Backupziel und die
@@ -5181,8 +5189,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/aio.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/aio.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2025-04-22",
-  "datePublished": "2025-04-22"
+  "dateModified": "2025-04-25",
+  "datePublished": "2025-04-25"
 }
 
   </script><script>

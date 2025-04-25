@@ -393,7 +393,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Linux Schnellstart</h1>
-        <p>Zuletzt aktualisiert am 2025-04-14 |
+        <p>Zuletzt aktualisiert am 2025-04-25 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/03-linux-grundlagen.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -453,22 +453,23 @@ Distribution Timeline</a> auf Wikipedia.</p>
 <p>Das Raspberry Pi OS wird von der Raspberry Pi Ltd. entwickelt. Es ist
 speziell auf die Hardware des Raspberry Pis angepasst, ressourcensparend
 und basiert auf der Debian-Distribution. Deshalb sind Anleitungen für
-Debian-Linux-Systeme häufig auch für das Raspberry Pi OS passend.</p>
+Linux-Systeme aus der Debian-Familie (Debian, Ubuntu, Mint u.v.a.)
+häufig auch für das Raspberry Pi OS passend.</p>
 </section><section><h2 class="section-heading" id="linux-schnellstart">Linux Schnellstart:<a class="anchor" aria-label="anchor" href="#linux-schnellstart"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="dateisystem">Dateisystem<a class="anchor" aria-label="anchor" href="#dateisystem"></a></h3>
-<p>Das Linux-Dateisystem ist für alles Linux-Distributionen
-weitestgehend einheitlich. Die oberste Hierarchie-Ebene ist dabei immer
-das Verzeichnis <code>/</code> (Slash). Dieses ist vergleichbar mit dem
+<p>Das Linux-Dateisystem ist für alle Linux-Distributionen weitestgehend
+einheitlich. Die oberste Hierarchie-Ebene ist dabei immer das
+Verzeichnis <code>/</code> (Slash). Dieses ist vergleichbar mit dem
 “C:”-Laufwerk unter Windows.</p>
 <p>Weitere wichtige Verzeichnisse sind:</p>
 <ul><li>die Benutzerverzeichnisse unter
 <code>/home/&lt;username&gt;/</code>, z.B.
-<code>/home/david/</code>
+<code>/home/linus/</code>
 </li>
 </ul><p>Hier liegen die Dateien, Dokumente und Konfigurationen der User.
-Schreib- und Leserechte haben nur die jeweiligen Benutzer und die
-Administratoren. Die Verzeichnisse sind mit dem Pfad
+Schreib- und Leserechte haben nur die jeweiligen User und Personen mit
+administrativen Rechten. Die Verzeichnisse sind mit dem Pfad
 <code>C:\Users\&lt;username&gt;\</code> unter Windows vergleichbar.</p>
 <ul><li>Die Systemverzeichnisse (z.B. <code>/etc/</code>,
 <code>/var/</code>, <code>/mnt/</code>, <code>/lib/</code>,
@@ -476,7 +477,7 @@ Administratoren. Die Verzeichnisse sind mit dem Pfad
 </ul><p>Diese Verzeichnisse beinhalten Systemdaten, z.B. Programme,
 Programmbibliotheken, temporäre Dateien, Log-Dateien oder systemweite
 Konfigurationen. Deshalb haben in diesen Verzeichnissen i.d.R. nur
-Administratoren Schreibrechte.</p>
+Personen mit administrativen Rechten Schreibrechte.</p>
 <p>Im Vergleich mit dem Dateisystem von Windows fällt auf, dass es unter
 Linux nur einen Verzeichnisbaum für alle Dateien, Festplatten und
 Laufwerke gibt. Auch zusätzliche Festplatten oder externe Datenträger
@@ -488,7 +489,7 @@ Verzeichnisbaumes verfügbar gemacht werden (“eingehängt” oder
 Laufwerke stets ihre eigene unabhängige Verzeichnishierarchie, was die
 Verwaltung von Festplatten weniger flexibel macht.</p>
 <figure><img src="fig/03_Filesystem.png" alt="Die Abbildung zeigt nebeneinander drei Verzeichnisbäume. Je einen für die Betriebssystem Linux, Mac und Windows. Dabei wird insbesondere die unterschiedliche Art der Einhängung von zusätzlichen Datenträgern wie Festplatten oder USB-Sticks hervorgehoben." class="figure mx-auto d-block"><div class="figcaption">Vergleich der Dateisysteme von Linux, Mac und
-Windows</div>
+Windows (Quelle: <a href="https://itoss.org/faq/filesystem-hierarchy-standard/" class="external-link uri">https://itoss.org/faq/filesystem-hierarchy-standard/</a>)</div>
 </figure><div class="section level4">
 <h4 id="systemweite-konfigurationen-in-etc">Systemweite Konfigurationen in <code>/etc/</code>
 <a class="anchor" aria-label="anchor" href="#systemweite-konfigurationen-in-etc"></a></h4>
@@ -498,7 +499,7 @@ Viele Programme haben hier eigene Unterordner (z.B.
 <code>/etc/apache2</code> für die Konfiguration des Apache-Webservers).
 Möchte man die Konfiguration eines Programms systemweit ändern, ist das
 <code>/etc/</code> Verzeichnis i.d.R. ein guter Startpunkt.
-Schreibrechte haben hier nur Administratoren.</p>
+Schreibrechte haben hier nur Personen mit administrativen Rechten.</p>
 </div>
 <div class="section level4">
 <h4 id="programmverzeichnnisse-bin-sbin-usrbin-usrsbin">Programmverzeichnnisse: <code>/bin/</code>, <code>/sbin/</code>,
@@ -507,8 +508,8 @@ Schreibrechte haben hier nur Administratoren.</p>
 <ul><li><p><code>/bin/</code>: Essentielle Systemprogramme (Start, Restore,
 Basisprogramm des Betriebssystems)</p></li>
 <li><p><code>/usr/bin/</code>: ergänzende Systemprogramme</p></li>
-<li><p><code>/sbin/</code> und <code>/usr/sbin/</code>: nur für
-Administratoren nutzbare Programme</p></li>
+<li><p><code>/sbin/</code> und <code>/usr/sbin/</code>: nur für Personen
+mit administrativen Rechten nutzbare Programme</p></li>
 </ul></div>
 <div class="section level4">
 <h4 id="dynamische-programmdateien-var">Dynamische Programmdateien: <code>/var/</code>
@@ -522,7 +523,7 @@ werden i.d.R. im <code>/var/</code>-Verzeichnis gespeichert.</p>
 <a class="anchor" aria-label="anchor" href="#einh%C3%A4ngepunkte-mnt-und-media"></a></h4>
 <p>Externe Laufwerke und Wechselmedien werden standardmäßig in den
 Verzeichnisse <code>/mnt/</code> und <code>/media/</code> eingebunden.
-Dies ist allerdings kein zwingende Vorgabe und häufig gibt es gute
+Dies ist allerdings keine zwingende Vorgabe und häufig gibt es gute
 Gründe eine Festplatte an einer anderen Stelle des Verzeichnisbaumes
 einzuhängen, z.B. im Home-Verzeichnis eines Users.</p>
 </div>
@@ -583,9 +584,9 @@ Raspberry Pi OS übernommen werden.</p>
 <div class="section level4">
 <h4 id="weitere-befehle">Weitere Befehle<a class="anchor" aria-label="anchor" href="#weitere-befehle"></a></h4>
 <p>Weitere wichtige Befehle für die Paketverwaltung sind z.B.</p>
-<ul><li><p><code>sudo apt-get autoremove &lt;Paketname&gt;</code>: entfernt
-Abhängigkeiten von Programmen, die selbst nicht mehr installiert sind.
-Dadurch wird das System aufgeräumt.</p></li>
+<ul><li><p><code>sudo apt-get autoremove</code>: entfernt Abhängigkeiten von
+Programmen, die selbst nicht mehr installiert sind. Dadurch wird das
+System aufgeräumt.</p></li>
 <li><p><code>sudo apt list --upgradeable</code>: zeigt aktualisierbare
 Programme an</p></li>
 <li><p><code>sudo apt-get remove &lt;Paketname&gt;</code>: entfernt ein
@@ -627,7 +628,7 @@ vor?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Der erste Schritt bei der Softwareverwaltung sollte immer die
 Aktualisierung der Paketquellen sein:
@@ -650,7 +651,9 @@ installieren.</p>
 </section><section><h2 class="section-heading" id="kommandozeile">Kommandozeile<a class="anchor" aria-label="anchor" href="#kommandozeile"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="grundlegende-bedienung">Grundlegende Bedienung<a class="anchor" aria-label="anchor" href="#grundlegende-bedienung"></a></h3>
-<ul><li><p><em>Pfeiltasten</em> hoch/runter: durch bisherige Befehle
+<ul><li><p><em>ENTER-Taste</em> nach Eingabe eines Befehls wird dieser mit
+der ENTER-Taste ausgeführt</p></li>
+<li><p><em>Pfeiltasten</em> hoch/runter: durch bisherige Befehle
 blättern und diese wieder aufrufen</p></li>
 <li><p><em>Tab-Taste:</em> Autovervollständigung von Pfaden und
 Befehlen. Erste Buchstaben eines Pfades tippen, dann TAB-Taste für die
@@ -681,7 +684,7 @@ Informationen <code>ls -l</code></p></li>
 <li><p>Verzeichnis anlegen:
 <code>mkdir &lt;Dateipfad&gt;/&lt;Neuer-Ordner&gt;</code></p></li>
 <li><p>Inhalt einer Textdatei ausgeben:
-<code>cat &lt;Datename&gt;</code></p></li>
+<code>cat &lt;Dateiname&gt;</code></p></li>
 <li><p>Oberste oder letzte 10 Zeilen einer Datei anzeigen lassen:
 <code>head &lt;Dateiname&gt;</code> und
 <code>tail &lt;Dateiname&gt;</code></p></li>
@@ -692,7 +695,7 @@ Informationen <code>ls -l</code></p></li>
 <li><p>Move:
 <code>mv &lt;Quelldatei&gt; &lt;Zeildatei&gt;</code></p></li>
 <li><p>remove: <code>rm &lt;Dateiname&gt;</code> oder remove recursive:
-`rm -r <verzeichnispfad></verzeichnispfad></p></li>
+<code>rm -r &lt;Verzeichnispfad&gt;</code></p></li>
 </ul></li>
 </ul></div>
 <div class="section level3">
@@ -700,7 +703,9 @@ Informationen <code>ls -l</code></p></li>
 <p>Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B.
 <strong>nano</strong> und <strong>vim</strong>, wobei nano der
 einsteigerfreundlichere Editor ist. Deshalb arbeiten wir im Kurs mit dem
-nano-Editor.</p>
+nano-Editor. Wer dennoch mit dem Vim-Editor arbeiten möchte, kann sich
+z.B. <a href="https://www.youtube.com/playlist?list=PLT98CRl2KxKHy4A5N70jMRYAROzzC2a6x" class="external-link">dieses
+Tutorial</a> anschauen</p>
 <ul><li><p>Datei im Nano-Editor öffnen:
 <code>nano &lt;Dateipfad&gt;/&lt;Dateiname&gt;</code></p></li>
 <li><p>Navigation erfolgt ohne Maus, nur mit den Pfeiltasten
@@ -798,8 +803,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/03-linux-grundlagen.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/03-linux-grundlagen.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2025-04-14",
-  "datePublished": "2025-04-22"
+  "dateModified": "2025-04-25",
+  "datePublished": "2025-04-25"
 }
 
   </script><script>
