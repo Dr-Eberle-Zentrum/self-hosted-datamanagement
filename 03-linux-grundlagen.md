@@ -38,31 +38,31 @@ Beim Raspberry Pi OS handelt es sich um eine **Linux-Distribution**. Da das Kern
 
 Einen Eindruck über die Fülle an unterschiedlichen Distributionen gibt die [Linux Distribution Timeline](https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg) auf Wikipedia.
 
-Das Raspberry Pi OS wird von der Raspberry Pi Ltd. entwickelt. Es ist speziell auf die Hardware des Raspberry Pis angepasst, ressourcensparend und basiert auf der Debian-Distribution. Deshalb sind Anleitungen für Debian-Linux-Systeme häufig auch für das Raspberry Pi OS passend.
+Das Raspberry Pi OS wird von der Raspberry Pi Ltd. entwickelt. Es ist speziell auf die Hardware des Raspberry Pis angepasst, ressourcensparend und basiert auf der Debian-Distribution. Deshalb sind Anleitungen für Linux-Systeme aus der Debian-Familie (Debian, Ubuntu, Mint u.v.a.) häufig auch für das Raspberry Pi OS passend.
 
 ## Linux Schnellstart:
 
 ### Dateisystem
 
-Das Linux-Dateisystem ist für alles Linux-Distributionen weitestgehend einheitlich. Die oberste Hierarchie-Ebene ist dabei immer das Verzeichnis `/` (Slash). Dieses ist vergleichbar mit dem "C:"-Laufwerk unter Windows.
+Das Linux-Dateisystem ist für alle Linux-Distributionen weitestgehend einheitlich. Die oberste Hierarchie-Ebene ist dabei immer das Verzeichnis `/` (Slash). Dieses ist vergleichbar mit dem "C:"-Laufwerk unter Windows.
 
 Weitere wichtige Verzeichnisse sind:
 
-- die Benutzerverzeichnisse unter `/home/<username>/`, z.B. `/home/david/`
+- die Benutzerverzeichnisse unter `/home/<username>/`, z.B. `/home/linus/`
 
-Hier liegen die Dateien, Dokumente und Konfigurationen der User. Schreib- und Leserechte haben nur die jeweiligen Benutzer und die Administratoren. Die Verzeichnisse sind mit dem Pfad `C:\Users\<username>\` unter Windows vergleichbar.
+Hier liegen die Dateien, Dokumente und Konfigurationen der User. Schreib- und Leserechte haben nur die jeweiligen User und Personen mit administrativen Rechten. Die Verzeichnisse sind mit dem Pfad `C:\Users\<username>\` unter Windows vergleichbar.
 
 - Die Systemverzeichnisse (z.B. `/etc/`, `/var/`, `/mnt/`, `/lib/`, `/bin/`, `/sys/`)
 
-Diese Verzeichnisse beinhalten Systemdaten, z.B. Programme, Programmbibliotheken, temporäre Dateien, Log-Dateien oder systemweite Konfigurationen. Deshalb haben in diesen Verzeichnissen i.d.R. nur Administratoren Schreibrechte.
+Diese Verzeichnisse beinhalten Systemdaten, z.B. Programme, Programmbibliotheken, temporäre Dateien, Log-Dateien oder systemweite Konfigurationen. Deshalb haben in diesen Verzeichnissen i.d.R. nur Personen mit administrativen Rechten Schreibrechte.
 
 Im Vergleich mit dem Dateisystem von Windows fällt auf, dass es unter Linux nur einen Verzeichnisbaum für alle Dateien, Festplatten und Laufwerke gibt. Auch zusätzliche Festplatten oder externe Datenträger werden in Linux-Systemen zunächst durch eine Gerätedatei im Verzeichnis `/dev/` identifiziert und können dann über sogenannte Einhängepunkte oder Mountpoints an einer beliebigen Stelle des Verzeichnisbaumes verfügbar gemacht werden ("eingehängt" oder "gemountet" werden). Unter Windows haben zusätzliche Datenträger und Laufwerke stets ihre eigene unabhängige Verzeichnishierarchie, was die Verwaltung von Festplatten weniger flexibel macht.
 
-![Vergleich der Dateisysteme von Linux, Mac und Windows](fig/03_Filesystem.png){alt='Die Abbildung zeigt nebeneinander drei Verzeichnisbäume. Je einen für die Betriebssystem Linux, Mac und Windows. Dabei wird insbesondere die unterschiedliche Art der Einhängung von zusätzlichen Datenträgern wie Festplatten oder USB-Sticks hervorgehoben.'}
+![Vergleich der Dateisysteme von Linux, Mac und Windows (Quelle: https://itoss.org/faq/filesystem-hierarchy-standard/)](fig/03_Filesystem.png){alt='Die Abbildung zeigt nebeneinander drei Verzeichnisbäume. Je einen für die Betriebssystem Linux, Mac und Windows. Dabei wird insbesondere die unterschiedliche Art der Einhängung von zusätzlichen Datenträgern wie Festplatten oder USB-Sticks hervorgehoben.'}
 
 #### Systemweite Konfigurationen in `/etc/`
 
-Das Verzeichnis `/etc/` enthält zahlreiche Konfigurationsdateien für die systemweite Verwaltung von Programmen. Viele Programme haben hier eigene Unterordner (z.B. `/etc/apache2` für die Konfiguration des Apache-Webservers). Möchte man die Konfiguration eines Programms systemweit ändern, ist das `/etc/` Verzeichnis i.d.R. ein guter Startpunkt. Schreibrechte haben hier nur Administratoren.
+Das Verzeichnis `/etc/` enthält zahlreiche Konfigurationsdateien für die systemweite Verwaltung von Programmen. Viele Programme haben hier eigene Unterordner (z.B. `/etc/apache2` für die Konfiguration des Apache-Webservers). Möchte man die Konfiguration eines Programms systemweit ändern, ist das `/etc/` Verzeichnis i.d.R. ein guter Startpunkt. Schreibrechte haben hier nur Personen mit administrativen Rechten.
 
 #### Programmverzeichnnisse: `/bin/`, `/sbin/`, `/usr/bin/` `/usr/sbin/`
 
@@ -70,7 +70,7 @@ Das Verzeichnis `/etc/` enthält zahlreiche Konfigurationsdateien für die syste
 
 - `/usr/bin/`: ergänzende Systemprogramme
 
-- `/sbin/` und `/usr/sbin/`: nur für Administratoren nutzbare Programme
+- `/sbin/` und `/usr/sbin/`: nur für Personen mit administrativen Rechten nutzbare Programme
 
 #### Dynamische Programmdateien: `/var/`
 
@@ -78,7 +78,7 @@ Das Betriebssystem erzeugt ständig neue Dateien, z.B. werden in den Log-Dateien
 
 #### Einhängepunkte `/mnt/` und `/media/`
 
-Externe Laufwerke und Wechselmedien werden standardmäßig in den Verzeichnisse `/mnt/` und `/media/` eingebunden. Dies ist allerdings kein zwingende Vorgabe und häufig gibt es gute Gründe eine Festplatte an einer anderen Stelle des Verzeichnisbaumes einzuhängen, z.B. im Home-Verzeichnis eines Users.
+Externe Laufwerke und Wechselmedien werden standardmäßig in den Verzeichnisse `/mnt/` und `/media/` eingebunden. Dies ist allerdings keine zwingende Vorgabe und häufig gibt es gute Gründe eine Festplatte an einer anderen Stelle des Verzeichnisbaumes einzuhängen, z.B. im Home-Verzeichnis eines Users.
 
 ### Weitere Quellen
 
@@ -105,7 +105,7 @@ Ist in den Paketquellen des OS-Herstellers nicht die nötige Software enthalten,
 
 Weitere wichtige Befehle für die Paketverwaltung sind z.B.
 
-- `sudo apt-get autoremove <Paketname>`: entfernt Abhängigkeiten von Programmen, die selbst nicht mehr installiert sind. Dadurch wird das System aufgeräumt.
+- `sudo apt-get autoremove`: entfernt Abhängigkeiten von Programmen, die selbst nicht mehr installiert sind. Dadurch wird das System aufgeräumt.
 
 - `sudo apt list --upgradeable`: zeigt aktualisierbare Programme an
 
@@ -141,6 +141,8 @@ Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem Befehl `sudo a
 
 ### Grundlegende Bedienung
 
+- *ENTER-Taste* nach Eingabe eines Befehls wird dieser mit der ENTER-Taste ausgeführt
+
 - *Pfeiltasten* hoch/runter: durch bisherige Befehle blättern und diese wieder aufrufen
 
 - *Tab-Taste:* Autovervollständigung von Pfaden und Befehlen. Erste Buchstaben eines Pfades tippen, dann TAB-Taste für die Autovervollständigung oder anzeigen von Optionen.
@@ -173,7 +175,7 @@ Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem Befehl `sudo a
 
 - Verzeichnis anlegen: `mkdir <Dateipfad>/<Neuer-Ordner>`
 
-- Inhalt einer Textdatei ausgeben: `cat <Datename>`
+- Inhalt einer Textdatei ausgeben: `cat <Dateiname>`
 
 - Oberste oder letzte 10 Zeilen einer Datei anzeigen lassen: `head <Dateiname>` und `tail <Dateiname>`
 
@@ -183,11 +185,11 @@ Wenn Sie wissen, wie das Paket lautet, können Sie dieses mit dem Befehl `sudo a
     
     - Move: `mv <Quelldatei> <Zeildatei>`
     
-    - remove: `rm <Dateiname>` oder remove recursive: `rm -r <Verzeichnispfad>
+    - remove: `rm <Dateiname>` oder remove recursive: `rm -r <Verzeichnispfad>`
 
 ### Textdateien bearbeiten: Nano-Editor
 
-Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B. **nano** und **vim**, wobei nano der einsteigerfreundlichere Editor ist. Deshalb arbeiten wir im Kurs mit dem nano-Editor.
+Es gibt viele Texteditoren für Linux. Weit verbreitet sind z.B. **nano** und **vim**, wobei nano der einsteigerfreundlichere Editor ist. Deshalb arbeiten wir im Kurs mit dem nano-Editor. Wer dennoch mit dem Vim-Editor arbeiten möchte, kann sich z.B. [dieses Tutorial](https://www.youtube.com/playlist?list=PLT98CRl2KxKHy4A5N70jMRYAROzzC2a6x) anschauen
 
 - Datei im Nano-Editor öffnen: `nano <Dateipfad>/<Dateiname>`
 
