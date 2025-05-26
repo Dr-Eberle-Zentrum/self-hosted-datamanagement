@@ -192,6 +192,7 @@ enabeld = true
 port = <ssh-port>
 logpath = %(sshd_log)s
 backend = systemd
+filter = sshd
 ```
 
 :::::: challenge
