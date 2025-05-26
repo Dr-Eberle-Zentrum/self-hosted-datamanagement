@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Sicherheit: Firewall und Fail2Ban</h1>
-        <p>Zuletzt aktualisiert am 2025-04-14 |
+        <p>Zuletzt aktualisiert am 2025-05-26 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/06-sicherheit-ii.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -532,7 +532,7 @@ erhalten?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Typische Adressen könnten wie folgt lauten:</p>
 <ul><li><p>IP-Adresse: 192.168.178.25</p></li>
@@ -725,7 +725,8 @@ definiert und mit Detaileinstellungen konfiguriert:</p>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="ex">enabeld</span> = true</span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="ex">port</span> = <span class="op">&lt;</span>ssh-port<span class="op">&gt;</span></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="ex">logpath</span> = %<span class="er">(</span><span class="ex">sshd_log</span><span class="kw">)</span><span class="ex">s</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="ex">backend</span> = systemd</span></code></pre>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="ex">backend</span> = systemd</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="ex">filter</span> = sshd</span></code></pre>
 </div>
 <div id="netzwerksicherheit" class="callout challenge">
 <div class="callout-square">
@@ -746,7 +747,7 @@ verhindern?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Einige wichtige und grundlegende Maßnahmen können sein:</p>
 <ul><li><p>Firewall auf dem Server aktivieren</p></li>
@@ -850,8 +851,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/06-sicherheit-ii.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/instructor/06-sicherheit-ii.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2025-04-14",
-  "datePublished": "2025-05-20"
+  "dateModified": "2025-05-26",
+  "datePublished": "2025-05-26"
 }
 
   </script><script>
