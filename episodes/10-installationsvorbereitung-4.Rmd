@@ -120,6 +120,10 @@ Schauen Sie sich auch diese Apache-Konfigurationsdatei genau an und überlegen S
 
 - Wie nach jeder Änderung an den Konfigurationsdateien muss Apache neugestartet werden: `sudo systemctl restart apache2.service`
 
+::::::challenge
+Sie wollen nun über das verschlüsselte HTTPS-Protokoll mit Port 443 auf Ihren Server zugreifen. Was müssen Sie noch zusätzlich tun, damit dies funktioniert?
+::::::
+
 - Steuern Sie nun Ihre Website im Browser an, erreichen Sie den Nextcloudinstallationsassistenten über eine verschlüsselte HTTPS-Verbindung, erkennbar am Schlosssymbol in der Adresszeile.
 
 - Überprüfen Sie die Stärke Ihrer HTTPS-Verbindung mit [SSLLabs](https://www.ssllabs.com/ssltest/). Dort tragen Sie Ihre Adresse ein, setzen aber den Haken bei "Do not show the results on the boards". Sie sollten ein A+-Ergebnis erhalten. Schauen Sie sich aber auch die Details des Berichts an. Evtl. sind dort noch Schwachstellen gelistet, die Sie verbessern können.

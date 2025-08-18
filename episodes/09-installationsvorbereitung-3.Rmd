@@ -99,7 +99,7 @@ sha256sum -c latest.tar.bz2.sha256 < latest.tar.bz2
 
 Um die Korrektheit eines Downloads zu überprüfen, kann dessen Hashwert überprüft werden. Ein Hashwert ist ein Wert, der durch einen Algorithmus aus einer Datei abgeleitet wird. Wird die Datei verändert, verändert sich auch der Hashwert. Dadurch kann überprüft werden, ob eine heruntergeladene Datei noch immer der Datei entspricht, die ursprünglich zur Verfügung gestellt wurde oder ob die Datei auf dem Weg abgefangen und verändert wurde.
 
-Mehr zu Hashwerten findet sich z.B. in diesen beiden YouTube-Videos: [1](https://www.youtube.com/watch?v=VmVFe5gr_5A) und [2](https://www.youtube.com/watch?v=shs0KM3wKv8)
+Mehr zu Hashwerten findet sich z.B. in diesen beiden YouTube-Videos: [Video 1](https://www.youtube.com/watch?v=VmVFe5gr_5A) und [Video 2](https://www.youtube.com/watch?v=shs0KM3wKv8)
 :::
 
 Nach dem Download muss die Software entpackt und in das Document-Root der Website kopiert werden (standardmäßig `/var/www/<servicename>`).
