@@ -1,0 +1,96 @@
+#------------------------------------------------------------
+# Values for this lesson.
+#------------------------------------------------------------
+
+# Which carpentry is this (swc, dc, lc, or cp)?
+# swc: Software Carpentry
+# dc: Data Carpentry
+# lc: Library Carpentry
+# cp: Carpentries (to use for instructor training for instance)
+# incubator: The Carpentries Incubator
+# carpentry: 'lc'#
+carpentry: 'UT'
+carpentry_description: 'Universität Tübingen'
+lang: de # prepare for translation integration into sandpaper
+
+# UT-specific style
+varnish: Dr-Eberle-Zentrum/varnish
+
+# Overall title for pages.
+title: 'Self-hosted Data Management'
+
+# Date the lesson was created (YYYY-MM-DD, this is empty by default)
+created: '2024-08-02'
+
+# Comma-separated list of keywords for the lesson
+keywords: 'Datamanagement, Raspberry Pi, Nextcloud, Self-hosted'
+
+# Life cycle stage of the lesson
+# possible values: pre-alpha, alpha, beta, stable
+life_cycle: 'beta'
+
+# License of the lesson materials (recommended CC-BY 4.0)
+license: 'CC-BY 4.0'
+
+# Link to the source repository for this lesson
+source: 'https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement'
+
+# Default branch of your lesson
+branch: 'main'
+
+# Who to contact if there are any issues
+contact: 'david.kirschenheuter@uni-tuebingen.de'
+
+# Navigation ------------------------------------------------
+#
+# Use the following menu items to specify the order of
+# individual pages in each dropdown section. Leave blank to
+# include all pages in the folder.
+#
+# Example -------------
+#
+# episodes:
+# - introduction.md
+# - first-steps.md
+#
+# learners:
+# - setup.md
+#
+# instructors:
+# - instructor-notes.md
+#
+# profiles:
+# - one-learner.md
+# - another-learner.md
+
+# Order of episodes in your lesson
+episodes:
+- 01-vorbesprechung.Rmd
+- 02-hardware-betriebssystem.Rmd
+- 03-linux-grundlagen.Rmd
+- 04-remote-access.Rmd
+- 05-sicherheit-1.Rmd
+- 06-sicherheit-ii.Rmd
+- 07-installationsvorbereitung-1.Rmd
+- 08-installationsvorbereitung-2.Rmd
+- 09-installationsvorbereitung-3.Rmd
+- 10-installationsvorbereitung-4.Rmd
+- 11-konfiguration-1.Rmd
+- 12-backup.Rmd
+- 13-konfiguration-2.Rmd
+
+# Information for Learners
+learners:
+
+# Information for Instructors
+instructors:
+
+# Learner Profiles
+profiles:
+
+# Customisation ---------------------------------------------
+#
+# This space below is where custom yaml items (e.g. pinning
+# sandpaper and varnish versions) should live
+
+#carpentry_description: 'Die eigene Nextcloud mit dem Raspberry Pi: Self-hosted Data Management'
