@@ -233,13 +233,13 @@ Um die praktische Umsetzung des Projekts zu erleichtern, werden im Kurs Gruppen 
 
   - wöchentliche Bearbeitung der Lernmaterialien
 
-  - wöchentlicher Test auf [ILIAS][ilias]
+  - erfolgreiche Teilnahme an 3 Vertiefungsgesprächen
   
   <!-- - Abgabe von fünf Protokollen im Laufe des Vorlesungszeit -->
   
   - selbstständige Konfiguration eines Cloud-Servers
   
-  - Verfassen eines Abschlussberichts (ca. 3-4 Seiten)
+  - Verfassen eines Abschlussberichts (ca. 2-3 Seiten + Anhang)
   
 - Der Workload beträgt entsprechend 3 ECTS ca. 90 Stunden im Semester. Davon entfallen ca. 21 Stunden auf die Präsenzsitzungen, 9 Stunden auf den Abschlussbericht und 60 Stunden auf die Vor- und Nachbereitung der Sitzungen inkl. den Protokollen. D.h. pro Woche müssen Sie während der Vorlesungszeit durchschnittlich ca. 4,3 Stunden Arbeitszeit zusätzlich zu den Präsenzsitzungen einplanen.
 

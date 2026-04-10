@@ -6,10 +6,11 @@ title: Startseite
 
 Um am Kurs teilnehmen zu können, müssen Sie an der Universität Tübingen immatrikuliert sein und sich über das ALMA-System zum Kurs angemeldet haben.
 
-:::callout
+::: callout
 Sie sind nicht an der Universität Tübingen immatrikuliert? 
 
 Kein Problem. Sie können die Materialien zum Selbststudium nutzen und so dennoch einiges lernen.
+
 :::
 
 Um den Kursinhalten folgen zu können, sollten Sie Interesse an Computertechnik, Systemadministration, Kommandozeile und Linux haben. Vorkenntnisse in diesen Bereichen sind nicht nötig (aber hilfreich).
@@ -19,7 +20,9 @@ Die hier veröffentlichten Materialien sollen Ihnen als Selbstlernmaterial diene
 ## Allgemeine Informationen
 
 ::: callout
+
 ### Ihr Dozent
+
 David Kirschenheuter, M.A.
 
 Digital Humanities Center, Universität Tübingen
@@ -33,9 +36,11 @@ Digital Humanities Center, Universität Tübingen
 - 07071-29-73633
 
 - Raum 141
+
 :::
 
 ::: callout
+
 ### Kursräume und Materialien
 
 - **[ILIAS-Kursraum:][ilias]** hier werden u. A. Tests durchgeführt und es gibt ein internes Diskussionsforum.
