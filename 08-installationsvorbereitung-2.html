@@ -278,7 +278,7 @@
       </button>
     </div><!--/div.accordion-header-->
 
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#externe-erreichbarkeit">Externe Erreichbarkeit</a></li>
 <li><a href="#apache-webserver-installieren">Apache Webserver installieren</a></li>
@@ -460,7 +460,7 @@ erreichbar?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li>Antwort 3 ist die richtige</li>
 </ul><p>Da der Router aktuell keine Anfragen von außen nach innen durchlässt,
@@ -576,24 +576,24 @@ die Konfigurationsdatei unterschiedlich aus.</p>
 </ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#für ddnss.de</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="co">#für ddnss.de</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="va">protocol</span><span class="op">=</span>dyndns2</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>https://api.ipify.org/ </span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="va">server</span><span class="op">=</span>ddnss.de</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a><span class="va">login</span><span class="op">=&lt;</span>DDNSSLoginName<span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a><span class="va">password</span><span class="op">=</span><span class="st">'&lt;Passwort&gt;'</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a><span class="op">&lt;</span>domainname<span class="op">&gt;</span>.ddnss.de</span></code></pre>
 </div>
 <ul><li>NO-IP:</li>
 </ul><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#NO-IP.com</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="co">#NO-IP.com</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="va">protocol</span><span class="op">=</span>noip</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="va">use</span><span class="op">=</span>web, <span class="va">web</span><span class="op">=</span>http://ip1.dynupdate.no-ip.com/</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a><span class="va">login</span><span class="op">=&lt;</span>noip-username<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="va">password</span><span class="op">=</span>’<span class="op">&lt;</span>noip-passwort<span class="op">&gt;</span>’</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="op">&lt;</span>noip-Domainname<span class="op">&gt;</span></span></code></pre>
 </div>
 <div id="externe-erreichbarkeit-2" class="callout challenge">
 <div class="callout-square">
@@ -618,7 +618,7 @@ Internet erreichbar?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul><li>Antwort 3 ist die richtige</li>
 </ul><p>Zwar ist das Heimnetzwerk nun unter der DDNS-Domain (im Beispiel
@@ -755,7 +755,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/0.20.0" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -778,7 +778,7 @@ any links that you are not going to use.
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/08-installationsvorbereitung-2.html",
   "dateCreated": "2024-08-02",
   "dateModified": "2026-03-31",
-  "datePublished": "2026-04-14"
+  "datePublished": "2026-04-17"
 }
 
   </script><script>
