@@ -19,6 +19,6 @@
 "episodes/13-konfiguration-2.Rmd" "6b75358ba20d02162753dbb7014430e7" "site/built/13-konfiguration-2.md" "2026-03-31"
 "instructors/instructor-notes.md" "b6a5a055a482c5762f4835c42cbb2316" "site/built/instructor-notes.md" "2026-03-31"
 "learners/reference.md" "c7ebc8848cf33914bfe4fb2ee02eb51a" "site/built/reference.md" "2026-03-31"
-"learners/setup.md" "b5dc6ecf0ccea8befa208547e7a22e20" "site/built/setup.md" "2026-04-24"
+"learners/setup.md" "4187004defb89a352fe236cf6fa6a7b3" "site/built/setup.md" "2026-04-24"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2026-03-31"
 "renv/profiles/lesson-requirements/renv.lock" "8ad2bceda2bb024f5c584fbbe2b43fbe" "site/built/renv.lock" "2026-03-31"
