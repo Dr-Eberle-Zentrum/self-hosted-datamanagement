@@ -50,3 +50,12 @@ Digital Humanities Center, Universität Tübingen
 - **[Seminarraum](https://alma.uni-tuebingen.de:443/alma/pages/startFlow.xhtml?_flowId=showRoomDetail-flow&roomId=44&roomType=3&context=showRoomDetail&navigationPosition=organisation,searchroom):** Im Seminarraum 036 in der Keplerstraße 2 finden die wöchentlichen praktischen Sitzungen statt. Die Teilnahme daran ist optional aber sehr zu empfehlen. Während der Sitzungen können Sie an der Umsetzung des Projekts arbeiten und Fragen diskutieren. Außerdem gibt es anlassbezogen Input durch den Dozenten.
 
 :::
+
+::: callout
+
+### Zugriff auf den Computerpool
+
+Der Zugriff auf den virtuellen Computerpool ist nur mit einer VPN-Verbindung möglich. Dazu muss die Wireguard-Konfigurationsdatei aus [ILIAS-Kursraum:][ilias] heruntergeladen werden und mit einem wireguardkompatiblem Client geöffnent werden.
+
+Unter Windows kann der offizielle [Wireguar-Client](https://www.wireguard.com/install/) genutzt werden. Unter Ubuntu und anderen Linux-Debianderviaten kann das Paket *network-manager-gnome* installiert werden, um die Wireguard-Konfigurationsdatei anschließend über die Systemsteuerungsapp zu importieren (Einstellungen -> Netzwerk -> +-Symbol bei VPN -> aus Datei importieren).
+:::
