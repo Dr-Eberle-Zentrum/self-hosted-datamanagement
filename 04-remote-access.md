@@ -39,7 +39,7 @@ Bei einem Protokoll handelt es sich um eine Sammlung genau festgelegter technisc
 
 :::
 
-Das SSH-Protkoll nutzt verschiedene Technologien zur Gewährleistung der sicheren Übertragung. Ähnlich einer [HTTPS-Verbindung](https://tiptopsecurity.com/how-does-https-work-rsa-encryption-explained/) werden beim Verbindungsaufbau zunächst die Kommunikationsstandards zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben. Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer symmetrischen Verschlüsselung aufgebaut (welche deutlich schneller ist, als die zuvor stattfindende asymmetrische Verschlüsselung, siehe dazu auch die Ressourcen von Studyflix zur [symmetrischen](https://studyflix.de/informatik/symmetrische-verschlusselung-1610) und [asymmetrischen](https://studyflix.de/informatik/asymmetrische-verschlusselung-1609) Verschlüsselung).
+Das SSH-Protkoll nutzt verschiedene Technologien zur Gewährleistung der sicheren Übertragung. Ähnlich einer [HTTPS-Verbindung](https://www.elektronik-kompendium.de/sites/net/1811281.htm) werden beim Verbindungsaufbau zunächst die Kommunikationsstandards zwischen Client und Server ausgehandelt, dann werden sog. Session-Keys ausgetauscht, welche nur für die aktuelle Verbindung Gültigkeit haben. Mit diesen Session-Keys wird die eigentliche Verbindung in Form einer symmetrischen Verschlüsselung aufgebaut (welche deutlich schneller ist, als die zuvor stattfindende asymmetrische Verschlüsselung, siehe dazu auch die Ressourcen von Studyflix zur [symmetrischen](https://studyflix.de/informatik/symmetrische-verschlusselung-1610) und [asymmetrischen](https://studyflix.de/informatik/asymmetrische-verschlusselung-1609) Verschlüsselung).
 
 Mehr zur Funktionsweise des SSH-Protkolls können Sie im Netz finden, z.B. bei [IP-Insider](https://www.ip-insider.de/was-ist-secure-shell-ssh-ssh-1-ssh-2-openssh-a-691217/).
 
@@ -52,7 +52,7 @@ Sie haben wie in [Sitzung 2](02-hardware-betriebssystem.Rmd) besprochen auf Ihre
 :::solution
 1. Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein. Dazu müssen entweder Server und Client im selben Netzwerk (z.B. demselben Heimnetzwerk) sein oder der Server muss im Internet erreichbar sein.
 
-2. Software: Auf dem Raspberry Pi muss die SSH-Server-Software installiert sein (das **Paket openssh-server**) und auf dem Client ein SSH-Client-Programm (das  OpenSSH-Client-Programm für die Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann auch das graphische Programm [Putty](https://putty.org/) installiert werden).
+2. Software: Auf dem Raspberry Pi muss die SSH-Server-Software installiert sein (das **Paket openssh-server**) und auf dem Client ein SSH-Client-Programm (das  OpenSSH-Client-Programm für die Kommandozeile ist i.d.R. auf allen PCs installiert. Für Windows kann auch das graphische Programm [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/) installiert werden).
 
 3. Berechtigungen: die Anmeldung am entfernten Server ist nur möglich, wenn Sie die Berechtigungen haben. Sie benötigen also einen Account auf dem Raspberry Pi OS und dessen Passwort.
 
