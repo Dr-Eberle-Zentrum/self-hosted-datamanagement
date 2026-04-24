@@ -51,11 +51,3 @@ Digital Humanities Center, Universität Tübingen
 
 :::
 
-::: callout
-
-### Zugriff auf den Computerpool
-
-Der Zugriff auf den virtuellen Computerpool ist nur mit einer VPN-Verbindung möglich. Dazu muss die Wireguard-Konfigurationsdatei aus [ILIAS-Kursraum:][ilias] heruntergeladen werden und mit einem wireguardkompatiblem Client geöffnent werden.
-
-Unter Windows kann der offizielle [Wireguar-Client](https://www.wireguard.com/install/) genutzt werden. Unter Ubuntu und anderen Linux-Debianderviaten kann das Paket *network-manager-gnome* installiert werden, um die Wireguard-Konfigurationsdatei anschließend über die Systemsteuerungsapp zu importieren (Einstellungen -> Netzwerk -> +-Symbol bei VPN -> aus Datei importieren).
-:::
