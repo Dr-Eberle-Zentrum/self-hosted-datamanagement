@@ -67,6 +67,10 @@ Sie haben wie in [Sitzung 2](02-hardware-betriebssystem.Rmd) besprochen auf Ihre
 
 Wenn die Voraussetzungen stimmen (siehe [Vorraussetzungen für die SSH-Verbindung](#voraussetzung-für-die-ssh-verbindung)), kann eine einfache SSH-Verbindung mit folgendem Befehl aufgebaut werden: `ssh <user>@<server>` Dabei ist `<user>` der Username am entferten Gerät und `<server>` ist die Adresse des Servers. Die Adresse kann entweder in Form einer IP-Adresse (z.B. 192.168.178.10) oder als Hostname (z.B. mein-cloudserver) angegeben werden. Die Variante mit dem Hostnamen funktioniert jedoch nur, wenn dieser im lokalen Netzwerk bekannt ist (z.B. in einem Heimnetzwerk im Router eingezeigt wird).
 
+Beim **erstmaligen Verbindungsaufbau** mit einem Server, muss dessen Host-Key akzeptiert werden. Mit dem Host-Key authentisiert (d.h. weist sich aus) sich der Server gegenüber dem Client. Durch die Überprüfung des Host-Keys kann festgestellt werden, ob der Server, mit dem eine Verbindung aufgebaut werden soll, auch der korrekte Server ist und nicht etwa die eigene SSH-Anfrage von schädlichen Akteuren umgelenkt wurde. Diese Überprüfung erfolgt durch den Abgleich des Fingerabdrucks des Host-Keys. Dazu muss Serverseitig der Befehl `ssh-genkey -lf /etc/ssh/<key.pub>` (dabei den Namen des zu überprüfenden Schlüssels angeben).
+
+Wird ein Host-Key akzeptiert, speichert der openSSH-Client diesen Key in der Datei "known_hosts.conf" im Verzeichnis *.ssh* ab. Ändert sich der Key des Servers, muss der neue Key akzeptiert werden (vgl. auch [Vorraussetzungen für die SSH-Verbindung](#voraussetzung-für-die-ssh-verbindung)).
+
 ::: callout
 
 ### SSH-Verbindung
