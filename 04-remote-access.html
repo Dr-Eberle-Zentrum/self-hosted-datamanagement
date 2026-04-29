@@ -392,7 +392,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Remote Access: das SSH-Protokoll</h1>
-        <p>Zuletzt aktualisiert am 2026-04-24 |
+        <p>Zuletzt aktualisiert am 2026-04-29 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/self-hosted-datamanagement/edit/main/episodes/04-remote-access.Rmd" class="external-link">Diese Seite bearbeiten <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -502,7 +502,7 @@ SSH-Verbindung?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Zeige mir die Lösung </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Netzwerkverbindung: der Server muss im Netzwerk erreichbar sein.
 Dazu müssen entweder Server und Client im selben Netzwerk (z.B.
@@ -544,6 +544,21 @@ kann entweder in Form einer IP-Adresse (z.B. 192.168.178.10) oder als
 Hostname (z.B. mein-cloudserver) angegeben werden. Die Variante mit dem
 Hostnamen funktioniert jedoch nur, wenn dieser im lokalen Netzwerk
 bekannt ist (z.B. in einem Heimnetzwerk im Router eingezeigt wird).</p>
+<p>Beim <strong>erstmaligen Verbindungsaufbau</strong> mit einem Server,
+muss dessen Host-Key akzeptiert werden. Mit dem Host-Key authentisiert
+(d.h. weist sich aus) sich der Server gegenüber dem Client. Durch die
+Überprüfung des Host-Keys kann festgestellt werden, ob der Server, mit
+dem eine Verbindung aufgebaut werden soll, auch der korrekte Server ist
+und nicht etwa die eigene SSH-Anfrage von schädlichen Akteuren umgelenkt
+wurde. Diese Überprüfung erfolgt durch den Abgleich des Fingerabdrucks
+des Host-Keys. Dazu muss Serverseitig der Befehl
+<code>ssh-genkey -lf /etc/ssh/&lt;key.pub&gt;</code> (dabei den Namen
+des zu überprüfenden Schlüssels angeben).</p>
+<p>Wird ein Host-Key akzeptiert, speichert der openSSH-Client diesen Key
+in der Datei “known_hosts.conf” im Verzeichnis <em>.ssh</em> ab. Ändert
+sich der Key des Servers, muss der neue Key akzeptiert werden (vgl. auch
+<a href="#voraussetzung-f%C3%BCr-die-ssh-verbindung">Vorraussetzungen für die
+SSH-Verbindung</a>).</p>
 <div id="ssh-verbindung" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -852,8 +867,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/04-remote-access.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/self-hosted-datamanagement/04-remote-access.html",
   "dateCreated": "2024-08-02",
-  "dateModified": "2026-04-24",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-04-29",
+  "datePublished": "2026-04-29"
 }
 
   </script><script>
