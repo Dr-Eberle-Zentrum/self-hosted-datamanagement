@@ -82,7 +82,7 @@ Damit der externer Datenträger vom Betriebssystem verwendet werden kann, muss d
 
 - Im folgenden interaktiven Dialog von fdisk wird mit `g` eine GPT-Partitionstabelle erstellt, mit `n` eine neue Partition und mit `w` werden die Änderungen auf den Datenträger geschrieben
 
-- Auf der neuen Partition ein (linuxkompatibles ext4-)Dateisystem erstellen: `sudo mkfs.ext4 /dev/sda` (Pfade wieder anpassen)
+- Auf der neuen Partition ein (linuxkompatibles ext4-)Dateisystem erstellen: `sudo mkfs.ext4 /dev/sda1` (Pfade wieder anpassen)
 
 - Mountpoint (Einhängepunkt für den Datenträger) erstellen: `sudo mkdir /mnt/data` (Pfad ggf. nach eigenen Wünschen anpassen)
 
