@@ -524,7 +524,8 @@ Hilfestellung. Die wesentlichen Punkte sind:</p>
 <ul><li><p>Ausreichend Speicherplatz für alle parallel laufenden Uploads im
 Verzeichnis <code>/tmp/</code></p></li>
 <li><p>PHP.ini-Dateien (<code>/etc/php/8.5/cli/php.ini</code> und
-<code>/etc/php/8.5/apache2/php.ini</code>) bearbeiten:</p></li>
+<code>/etc/php/8.5/apache2/php.ini</code> (ggf. Versionsnummer
+anpassen)) bearbeiten:</p></li>
 </ul><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PHP<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -575,9 +576,9 @@ Nextcloud-Server getestet werden.</p>
 schnell der Zugriff für PHP auf <code>/dev/random</code> gewährleistet
 werden. Dadurch werden bessere Zufallszahlen berechnet, z.B. für
 Passwörter. Dazu müssen die PHP.ini-Dateien
-(<code>/etc/php/8.2/cli/php.ini</code> und
-<code>/etc/php/8.2/apache2/php.ini</code>) bearbeitet werden und
-folgende Zeile ergänzt werden:</p>
+(<code>/etc/php/8.5/cli/php.ini</code> und
+<code>/etc/php/8.5/apache2/php.ini</code> (ggf. Versionsnummer
+anpassen)) bearbeitet werden und folgende Zeile ergänzt werden:</p>
 <pre><code>open_basedir /var/www/nextcloud/:/dev/urandom/:&lt;Pfad-zum-Datenverzeichnis, z.B. /mnt/data/ncdata/&gt;</code></pre>
 </div>
 <div class="section level3">
