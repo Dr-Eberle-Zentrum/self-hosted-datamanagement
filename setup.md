@@ -51,3 +51,16 @@ Digital Humanities Center, Universität Tübingen
 
 :::
 
+### Hilfreiche Befehle und Workflows
+
+#### Dateiübertragung mit scp
+
+Mit dem scp-Befehl können Dateien sicher über das SSH-Protokoll kopiert werden. Mit dem scp-Befehl können Dateien sowohl vom Client-PC zum Server, also auch vom Server zum Client-PC kopiert werden.
+
+Die grundlegende Sytnax für das kopieren vom Server zum Client-PC lautet: `scp user@server:<entfernter Dateipfad- und name> <lokaler Dateipfad>`, z.B. `scp linus@192.168.50.100:/homer/linus/nextcloud.conf C:\Users\Linus\Desktop\nextcloud.conf` 
+
+Die grundlegende Syntax zum kopieren vom Client-PC zum Server lautet: `scp <lokaler Pfad> user@server:<enterfernter Pfad>` z.B. `scp nextcloud.config linus@192.168.50.100:/homer/linus/nextcloud.conf`
+
+Ergänzt werden muss der Befehl mit dem Parameter `-P Portnummer` für die Angabe des SSH-Ports und `-i <Pfad zum SSH-privat-key>`für die Angabe des SSH-Schlüssels.
+
+Der kompllette Befehl mit Key und Port kann wie folgt aussehen: `scp -P 23816 -i .ssh/raspberrypi linus@192.168.50.100:/etc/apache2/sites-available/nextcloud.conf C:\Users\Linus\Downloads\nextcloud.conf`
