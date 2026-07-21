@@ -63,4 +63,4 @@ Die grundlegende Syntax zum kopieren vom Client-PC zum Server lautet: `scp <loka
 
 Ergänzt werden muss der Befehl mit dem Parameter `-P Portnummer` für die Angabe des SSH-Ports und `-i <Pfad zum SSH-privat-key>`für die Angabe des SSH-Schlüssels.
 
-Der kompllette Befehl mit Key und Port kann wie folgt aussehen: `scp -P 23816 -i .ssh/raspberrypi linus@192.168.50.100:/etc/apache2/sites-available/nextcloud.conf C:\Users\Linus\Downloads\nextcloud.conf`
+Der komplette Befehl mit Key und Port kann wie folgt aussehen: `scp -P 23816 -i .ssh/raspberrypi linus@192.168.50.100:/etc/apache2/sites-available/nextcloud.conf C:\Users\Linus\Downloads\nextcloud.conf`
