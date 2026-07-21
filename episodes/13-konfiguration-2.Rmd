@@ -80,7 +80,7 @@ Möchte man die Option dennoch aktivieren (um z.B. größere ZIP-Dateien, Videod
 
 - Ausreichend Speicherplatz für alle parallel laufenden Uploads im Verzeichnis `/tmp/`
 
-- PHP.ini-Dateien (`/etc/php/8.2/cli/php.ini` und `/etc/php/8.2/apache2/php.ini`) bearbeiten:
+- PHP.ini-Dateien (`/etc/php/8.5/cli/php.ini` und `/etc/php/8.5/apache2/php.ini`) bearbeiten:
 
 ```php
 php_value upload_max_filesize <Größe, z.B. 10G>
