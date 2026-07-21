@@ -623,10 +623,34 @@ Input durch den Dozenten.</p></li>
 </ul></div>
 </div>
 </div>
+<div class="section level3">
+<h3 id="hilfreiche-befehle-und-workflows">Hilfreiche Befehle und Workflows<a class="anchor" aria-label="anchor" href="#hilfreiche-befehle-und-workflows"></a></h3>
+<div class="section level4">
+<h4 id="dateiübertragung-mit-scp">Dateiübertragung mit scp<a class="anchor" aria-label="anchor" href="#datei%C3%BCbertragung-mit-scp"></a></h4>
+<p>Mit dem scp-Befehl können Dateien sicher über das SSH-Protokoll
+kopiert werden. Mit dem scp-Befehl können Dateien sowohl vom Client-PC
+zum Server, also auch vom Server zum Client-PC kopiert werden.</p>
+<p>Die grundlegende Sytnax für das kopieren vom Server zum Client-PC
+lautet:
+<code>scp user@server:&lt;entfernter Dateipfad- und name&gt; &lt;lokaler Dateipfad&gt;</code>,
+z.B.
+<code>scp linus@192.168.50.100:/homer/linus/nextcloud.conf C:\Users\Linus\Desktop\nextcloud.conf</code></p>
+<p>Die grundlegende Syntax zum kopieren vom Client-PC zum Server lautet:
+<code>scp &lt;lokaler Pfad&gt; user@server:&lt;enterfernter Pfad&gt;</code>
+z.B.
+<code>scp nextcloud.config linus@192.168.50.100:/homer/linus/nextcloud.conf</code></p>
+<p>Ergänzt werden muss der Befehl mit dem Parameter
+<code>-P Portnummer</code> für die Angabe des SSH-Ports und
+<code>-i &lt;Pfad zum SSH-privat-key&gt;</code>für die Angabe des
+SSH-Schlüssels.</p>
+<p>Der kompllette Befehl mit Key und Port kann wie folgt aussehen:
+<code>scp -P 23816 -i .ssh/raspberrypi linus@192.168.50.100:/etc/apache2/sites-available/nextcloud.conf C:\Users\Linus\Downloads\nextcloud.conf</code></p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
+</div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Nächstes Kapitel"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="../instructor/01-vorbesprechung.html">Weiter<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
@@ -656,7 +680,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Vorlage lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> von <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
+        <p>Erstellt mit <a href="https://github.com/carpentries/sandpaper/tree/0.20.2" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> und <a href="https://github.com/Dr-Eberle-Zentrum/varnish/tree/e83e91d2c5ad53b329070b9741d678731ea434ae" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
